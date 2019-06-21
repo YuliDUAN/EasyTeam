@@ -54,7 +54,7 @@ body a:hover{
 }
 .center_droc{
     padding: 30px;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     list-style-type: none;
     margin-top: 80px;
     width: 200px;
@@ -171,7 +171,21 @@ body a:hover{
 	-ms-transition: width 350ms ease-in-out;
 	transition: width 350ms ease-in-out;
 	width: 100%;
-} 
+}
+.news{
+    background-color: #ffffff;
+    height: 40px;
+    font-family: 宋体;
+}
+
+.news_title{
+    background-color: #ffffff;
+    font-family: 仿宋;
+    font-size: 20px;
+}
+#news_body{
+    background-color: #f0f0f0;
+}
 .header .nav.navbar-nav.navbar-left li a.dropdown-toggle { 
     color:#fff; 
 	border: none;
@@ -1051,7 +1065,7 @@ body a:hover{
 }
 .left-agileits {
     margin-top: 30px;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     width: 200px;
     margin-left: 50px;
 }
