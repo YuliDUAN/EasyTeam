@@ -1063,6 +1063,17 @@ body a:hover{
 .agileits_mail_grid_right {
     padding-left: 40px;
 }
+.tubiao{
+    margin-top: 25px;
+    margin-left: 20px;
+    width: 20px;
+    height: 20px;
+}
+.all_button{
+    background-image: url("/images/button.png");
+    width: 66px;
+    height: 36px;
+}
 .left-agileits {
     margin-top: 30px;
     background-color: #ffffff;
