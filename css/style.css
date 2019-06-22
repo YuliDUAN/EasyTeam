@@ -108,6 +108,11 @@ body a:hover{
     line-height: inherit;
     font-weight: 400;
 }
+.ctream{
+    width: 500px;
+    height: 100%;
+    margin: 0 auto;
+}
 .header .navbar-header h1 i{
     color:#b2d905;
 }
@@ -1070,9 +1075,11 @@ body a:hover{
     height: 20px;
 }
 .all_button{
-    background-image: url("/images/button.png");
+    background-color: #2eaaf5;
+    padding: 10px 20px;border-radius: 5px; border: 1px  #555 solid; color: #333;
     width: 66px;
     height: 36px;
+
 }
 .left-agileits {
     margin-top: 30px;
