@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="images/logo.ico">
-    <title>校园趣事</title>
+    <title>留言板块</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="" />
@@ -10,7 +10,7 @@
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link href="css/lightcase.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" property="" />
     <!-- //Custom Theme files -->
     <!-- font-awesome icons -->
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -30,21 +30,28 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                     <h1><a href="index.html"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="index.html" class="btn w3ls-hover">首页</a></li>
-                        <li><a href="about.html" class="btn w3ls-hover">备用</a></li>
-                        <li><a href="gallery.html" class="w3ls-hover active">校园趣事</a></li>
+                        <li><a href="gallery.html" class="btn w3ls-hover">校园趣事</a></li>
                         <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="icons.html">正在进行</a></li>
                                 <li><a href="codes.html">已经结束</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html" class="btn w3ls-hover">个人中心</a></li>
+
+                        <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
+                        <li><a href="contact.html" class="w3ls-hover active">个人中心</a></li>
                     </ul>
                     <div class="clearfix"> </div>
                 </div><!-- //navbar-collapse -->
@@ -54,14 +61,107 @@
 
 </div>
 <!-- //banner -->
-<!-- portfolio -->
-<div class="banner-bottom">
+<!--body start here-->
+<div class="mail" id="news_body">
     <div class="container">
+        <div class="w3ls-heading">
+            <h2 class="h-two"> 个 人 中 心 </h2>
+            <p class="sub two">P e r s o n a l C e n t e r.</p>
+        </div>
+        <div class="col-md-5 agileits_mail_grid_right">
+            <div class="center_droc">
+                <img src="images/toxaing.png" />
+                <li><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：康 少</li>
+                <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4 级</li>
+            </div>
+            <div class="left-agileits">
+                <table>
+                    <tr >
+                        <td><img class="tubiao" src="images/news.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="news.html"><h4> 消 息</h4></a></span></td>
+                    </tr>
+                    <tr >
+                        <td><img class="tubiao" src="images/personal.png"></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="contact.html"> <h4> 个 人 信 息 </h4> </a></span></td>
+                    </tr>
+                    <tr >
+                        <td><img class="tubiao" src="images/match.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="myjgames.html"> <h4> 我 的 比 赛 </h4></a></span></td>
+                    </tr>
+                    <tr >
+                        <td><img class="tubiao" src="images/team.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="team.html"> <h4> 我 的 队 伍 </h4></a></span></td>
+                    </tr>
+                    <tr >
+                        <td><img class="tubiao" src="images/evaluate.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="leaveword.html"><h4> 留 言 版 块 </h4></a></span></td>
+                    </tr>
+                    <tr >
+                        <td><img class="tubiao" src="images/collection.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="collect.html"> <h4> 我 的 收 藏 </h4></a></span></td>
+                    </tr>
+                    <tr >
+                        <td style="padding-bottom: 15px"><img class="tubiao" src="images/quit.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 25px"><span><a href="#"> <h4> 退 出 </h4></a></span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="agileits_mail_grids">
+            <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff">
+                <table class="table" style="background-color: #ffffff">
+                    <tbody>
+                    <div style=" margin-top:40px;padding-bottom:20px;border-bottom:5px solid #ddd
+">
+                        <textarea id="leaveText" placeholder="请输入留言内容..."></textarea>
+                        <input class="reply_confirm"  type="button" value="确定" onclick="toAlert();" style="overflow: hidden;  " />
+                    </div>
+                    <div >
+
+                        <div   style="margin-top:30px;float:left;">
+                            <td> <img src="images/t11.jpg"width="60" height="60"/></td>
+                            <td><h4>到饭点要吃饭了.。。。。。。。。。。。。</h4></td>
+                        </div>
+                        <div style="padding-top: 20px;float: left;">
+                            <table style="border-collapse:separate; border-spacing:0px 10px;">
+                                <tr>
+                                    <td><h6>留言人：</h6></td>
+                                    <td><h6>康少</h6></td>
+                                </tr>
+                                <tr>
+                                    <td><h6>时间：</h6></td>
+                                    <td><h6>2019-6-1</h6></td>
+                                </tr>
+                            </table>
+                        </div>
 
 
+                    </tbody>
+                </table>
+            </div>
+            <div class="clearfix"></div>
+        </div>
     </div>
 </div>
-<!-- portfolio -->
+<!-- bootstrap-pop-up -->
+<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fa fa-pagelines" aria-hidden="true"></i>APP创意设计大赛
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <section>
+                <div class="modal-body">
+                    <p>app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。
+                        旨在为学生提供一个基于互联网产品进行创新创意的一个学习交流和团队研发环境
+                        <i>*App创意俱乐部</i></p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- //contact -->
 <!-- footer start here -->
 <div class="footer-agile">
     <div class="container">
@@ -159,22 +259,12 @@
 <!-- smooth-scrolling-of-move-up -->
 <script type="text/javascript">
     $(document).ready(function() {
-        /*
-        var defaults = {
-            containerID: 'toTop', // fading element id
-            containerHoverID: 'toTopHover', // fading element hover id
-            scrollSpeed: 1200,
-            easingType: 'linear'
-        };
-        */
+
+
         $().UItoTop({ easingType: 'easeOutQuart' });
 
     });
 </script>
-<!-- //smooth-scrolling-of-move-up -->
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="js/bootstrap.js"></script>
 </body>
 </html>
