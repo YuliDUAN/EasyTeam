@@ -17,7 +17,6 @@ if(!empty($_POST)){
     $sql="insert into ruser (sno,password,username,phone,sex,major,cls) values 
                             ('$sno','$password','$username','$phone','$sex','$major','$cls')";
 
-
     mysqli_query($conn,$sql);
     //第四步：跳转到登陆页面
     echo '<script>alert("注册成功，返回登陆界面！");window.location.href="index.html"</script>';
