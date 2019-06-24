@@ -142,7 +142,7 @@
           slider.slides.click(function(e){
             e.preventDefault();
             var $slide = $(this),
-                target = $slide.index();
+                target = $slide.index1();
             if (!$(vars.asNavFor).data('flexslider').animating && !$slide.hasClass('active')) {
               slider.direction = (slider.currentItem < target) ? "next" : "prev";
               slider.flexAnimate(target, vars.pauseOnAction, false, true, true);
@@ -182,7 +182,7 @@
           slider.controlNavScaffold.delegate('a, img', eventType, function(event) {
             event.preventDefault();
             var $this = $(this),
-                target = slider.controlNav.index($this);
+                target = slider.controlNav.index1($this);
 
             if (!$this.hasClass(namespace + 'active')) {
               slider.direction = (target > slider.currentSlide) ? "next" : "prev";
@@ -203,7 +203,7 @@
           slider.controlNav.live(eventType, function(event) {
             event.preventDefault();
             var $this = $(this),
-                target = slider.controlNav.index($this);
+                target = slider.controlNav.index1($this);
                 
             if (!$this.hasClass(namespace + 'active')) {
               (target > slider.currentSlide) ? slider.direction = "next" : slider.direction = "prev";
@@ -778,7 +778,7 @@
       vars.added(slider);
     }
     slider.removeSlide = function(obj) {
-      var pos = (isNaN(obj)) ? slider.slides.index($(obj)) : obj;
+      var pos = (isNaN(obj)) ? slider.slides.index1($(obj)) : obj;
       
       // update count
       slider.count -= 1;

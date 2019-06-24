@@ -208,7 +208,7 @@
 				type: _self.settings.type || _self._verifyDataType(_self._determineUrl()),
 				isPartOfSequence: _self._isPartOfSequence($object.attr(_self.settings.attr), ':'),
 				isPartOfSequenceWithSlideshow: _self._isPartOfSequence($object.attr(_self.settings.attr), ':slideshow'),
-				currentIndex: $(_self._determineAttributeSelector()).index($object),
+				currentIndex: $(_self._determineAttributeSelector()).index1($object),
 				sequenceLength: $(_self._determineAttributeSelector()).length
 			};
 

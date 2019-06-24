@@ -13,6 +13,7 @@ while($x = mysqli_fetch_array($replysresult)){
 <html lang="en">
 <head>
     <title>正在进行</title>
+    <link rel="shortcut icon" href="images/logo.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="" />
@@ -57,13 +58,12 @@ while($x = mysqli_fetch_array($replysresult)){
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <h1><a href="index.html"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
+                    <h1><a href="homepage.html"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="index.html" class="btn w3ls-hover">首页</a></li>
-                        <li><a href="about.html" class="btn w3ls-hover">备用</a></li>
+                        <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
                         <li><a href="gallery.html" class="btn w3ls-hover">校园趣事</a></li>
                         <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -71,7 +71,8 @@ while($x = mysqli_fetch_array($replysresult)){
                                 <li><a href="codes.html">已经结束</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html" class="btn w3ls-hover">我的</a></li>
+                        <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
+                        <li><a href="contact.html" class="btn w3ls-hover">个人中心</a></li>
                     </ul>
                     <div class="clearfix"> </div>
                 </div><!-- //navbar-collapse -->
@@ -222,7 +223,7 @@ while($x = mysqli_fetch_array($replysresult)){
         <div class="footer-agileinfo">
             <div class="col-md-5 col-sm-5 footer-wthree-grid">
                 <div class="agileits-w3layouts-tweets">
-                    <h5><a href="index.html"><i class="fa fa-pagelines" aria-hidden="true"></i>赛事</a></h5>
+                    <h5><a href="homepage.html"><i class="fa fa-pagelines" aria-hidden="true"></i>赛事</a></h5>
                 </div>
                 <p>app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。
                     旨在为学生提供一个基于互联网产品进行创新创意的一个学习交流和团队研发环境</p>
@@ -230,7 +231,7 @@ while($x = mysqli_fetch_array($replysresult)){
             <div class="col-md-3 col-sm-3 footer-wthree-grid">
                 <h3>快速连接</h3>
                 <ul>
-                    <li><a href="index.html"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
+                    <li><a href="homepage.html"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
                     <li><a href="about.html"><span class="glyphicon glyphicon-menu-right"></span> 备用</a></li>
                     <li><a href="gallery.html"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
                     <li><a href="codes.html"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
