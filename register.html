@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="Pragma" content="no-cache">
@@ -22,46 +22,38 @@
 
             <table style="table-layout: fixed;word-break: break-all; word-wrap: break-word;">
                 <tr>
-                    <td colspan="4"><input name="sno" type="text" placeholder="学号" onfocus="this.value=''"
-                                           onblur="if(this.value==''){this.value=''}">
+                    <td colspan="4"><input name="sno" type="text" placeholder="学号">
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <input name="password" type="password" placeholder="密码" onfocus="this.value=''"
-                               onblur="if(this.value==''){this.value=''}">
-                        <!--<span id="password_text"-->
-                              <!--onclick="this.style.display='none';document.getElementById('password').style.display='block';document.getElementById('password').focus().select();">密码</span>-->
-                        <!--<input name="password" type="password" id="password" style="display:none;"-->
-                               <!--onblur="if(this.value==''){document.getElementById('password_text').style.display='block';this.style.display='none'};"/>-->
+                        <input name="password" type="password" placeholder="密码">
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4"><input name="name" type="text" placeholder="姓名" onfocus="this.value=''"
-                               onblur="if(this.value==''){this.value=''}"></td>
+                    <td colspan="4"><input name="username" type="text" placeholder="姓名"></td>
                 </tr>
                 <tr>
-                    <td colspan="4"><input name="tel" type="text"  placeholder="电话" onfocus="this.value=''"
-                               onblur="if(this.value==''){this.value=''}"></td>
+                    <td colspan="4"><input name="phone" type="text"  placeholder="电话"></td>
                 </tr>
                 <tr>
                 <td colspan="2">
-                    <input type="radio" name="sex" value="male" checked="checked" style="width:15%" >男
+                    <input type="radio" name="sex" value="男" checked="checked" style="width:15%" >男
                 </td>
                 <td colspan="2">
-                    <input type="radio" name="sex" value="female" style="width:15%">女
+                    <input type="radio" name="sex" value="女" style="width:15%">女
                 </td>
                 </tr>
                 <tr>
                     <td colspan="2" width="150px">
-                        <select name="dept" id="sdept" >
+                        <select name="major" id="sdept" >
                             <option value="软件" selected="selected">软件</option>
                             <option value="计科">计科</option>
                             <option value="网络">网络</option>
                         </select>
                     </td>
                     <td colspan="2" width="150px">
-                        <select name="class" id="sclass">
+                        <select name="cls" id="sclass">
                             <option value="1701" selected="selected" >1701</option>
                             <option value="1702">1702</option>
                             <option value="1703">1703</option>
@@ -71,12 +63,12 @@
                 </tr>
             </table>
             <div>
-                <div style="float: left;width: 45%"><a href="index.html"><input value="登录" style="width:100%;" type="submit"></a></div>
-                <div style="float: right;width: 45%"><a><input value="注册" style="width:100%;" type="submit"></a></div>
+                <div style="float: left;width: 45%"><a href="index.html"><input value="登录" style="width:100%;" type="button"></a></div>
+                <div style="float: right;width: 45%"><input value="注册" style="width:100%;" type="button"></div>
             </div>
         </form>
     </div>
-    <div style="margin-top: 100px" class="copyright">APP创意俱乐部 版权所有©2019-2021 技术支持电话：000-00000000</div>
+    <div  class="copyright"  >APP创意俱乐部 版权所有©2019-2021</div>
 </div>
 </body>
 </html>
