@@ -38,7 +38,6 @@ $replysresult = $conn->query($sql);
     <script>function on_Clicka1() {
             alert("回复成功！");
         }
-
         function on_Clicka2() {
             alert("评论成功！");
         }</script>
