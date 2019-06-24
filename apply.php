@@ -2,22 +2,28 @@
 session_start();
 include "MySqlConnect.php";
 $sql = "select * from forum";
-$result = $conn ->query($sql);
+$result = $conn->query($sql);
 $sql = "select * from replys";
-$replysresult = $conn ->query($sql);
+$replysresult = $conn->query($sql);
 ?>
 <html lang="en">
 <head>
     <title>正在进行</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
     </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" property="" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" property=""/>
     <!-- //Custom Theme files -->
     <!-- font-awesome icons -->
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -26,16 +32,23 @@ $replysresult = $conn ->query($sql);
     <script src="js/jquery-2.2.3.min.js"></script>
     <!-- //js -->
     <!-- web-fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
-    <script>function on_Clicka1() {alert("回复成功！");
+    <script>function on_Clicka1() {
+            alert("回复成功！");
         }
-        function on_Clicka2() {alert("评论成功！");}</script></head>
+
+        function on_Clicka2() {
+            alert("评论成功！");
+        }</script>
+</head>
 <style>
-    h4{
+    h4 {
         font-size: 22px;
     }
-    h5{
+
+    h5 {
         font-size: 15px;
     }
 </style>
@@ -47,7 +60,8 @@ $replysresult = $conn ->query($sql);
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -61,7 +75,8 @@ $replysresult = $conn ->query($sql);
                         <li><a href="index.html" class="btn w3ls-hover">首页</a></li>
                         <li><a href="about.html" class="btn w3ls-hover">备用</a></li>
                         <li><a href="gallery.html" class="btn w3ls-hover">校园趣事</a></li>
-                        <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
+                        <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="icons.html">正在进行</a></li>
                                 <li><a href="codes.html">已经结束</a></li>
@@ -69,7 +84,7 @@ $replysresult = $conn ->query($sql);
                         </li>
                         <li><a href="contact.html" class="btn w3ls-hover">我的</a></li>
                     </ul>
-                    <div class="clearfix"> </div>
+                    <div class="clearfix"></div>
                 </div><!-- //navbar-collapse -->
             </div><!-- //container-fluid -->
         </nav>
@@ -80,13 +95,13 @@ $replysresult = $conn ->query($sql);
 
 <!-- //banner -->
 <!-- typography -->
-<div class="typo"style="background-color: #dddddd">
-    <div class="container"style="width:80%">
+<div class="typo" style="background-color: #dddddd">
+    <div class="container" style="width:80%">
         <h3 class="hdg">APP创意中心宣讲会</h3>
         <div style="width:100%">
             <div style="float: left;width:20%;min-height: 500px;background-color: snow;padding: 20px">
                 <div align="center">
-                    <img src="images/t11.jpg"width="80"height="80"/>
+                    <img src="images/t11.jpg" width="80" height="80"/>
                 </div>
                 <div style="padding-top: 20px">
                     <table style="border-collapse:separate; border-spacing:0px 10px;">
@@ -134,7 +149,7 @@ $replysresult = $conn ->query($sql);
         </div>
 
         <div>
-            <table class="table"style="text-align: right">
+            <table class="table" style="text-align: right">
                 <tbody>
                 <tr>
                     <td class="type-info"><a href="cteam.html"><font size="5">创建队伍</font></a></td>
@@ -144,8 +159,8 @@ $replysresult = $conn ->query($sql);
             </table>
         </div>
 
-        <?php while ($row = mysqli_fetch_array($result)){?>
-<!--            --><?php
+        <?php while ($row = mysqli_fetch_array($result)) { ?>
+            <!--            --><?php
 //            $fid = $row['uid'];
 //            $_SESSION[$fid]=$row['uid'];
 //            $fname = $row['name'];
@@ -154,42 +169,43 @@ $replysresult = $conn ->query($sql);
             <div style="width:100%">
                 <div style="float: left;width:20%;min-height:400px;background-color: snow;padding: 20px;border-top:6px solid #ddd">
                     <div align="center">
-                        <img src="<?php echo $row["image"];?>"width="80" height="80"/>
+                        <img src="<?php echo $row["image"]; ?>" width="80" height="80"/>
                     </div>
                     <div style="padding-top: 20px">
                         <table style="border-collapse:separate; border-spacing:0px 10px;">
                             <tr>
-                                <td><h5><?php echo $row["id"].'楼：';?></h5></td>
-                                <td><h5><?php echo $row["name"];?></h5></td>
+                                <td><h5><?php echo $row["id"] . '楼：'; ?></h5></td>
+                                <td><h5><?php echo $row["name"]; ?></h5></td>
                             </tr>
                             <tr>
                                 <td><h5>回复时间：</h5></td>
-                                <td><h5><?php echo $row["ctime"];?></h5></td>
+                                <td><h5><?php echo $row["ctime"]; ?></h5></td>
                             </tr>
                         </table>
                     </div>
                 </div>
                 <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding:10px;word-break: break-all;border-top:3px solid #ddd">
-                    <p><h4><?php echo $row['comment'];?></h4></p>
+                    <p><h4><?php echo $row['comment']; ?></h4></p>
                 </div>
 
-                <form action="applyInfoAction.php?fid=<?php echo $row['uid']?>&rid=<?php echo $_SESSION['sno']?>&name=<?php echo $_SESSION['username']?>" enctype="multipart/form-data" method="POST">
+                <form action="applyInfoAction.php?fid=<?php echo $row['uid'] ?>&rid=<?php echo $_SESSION['sno'] ?>&name=<?php echo $_SESSION['username'] ?>"
+                      enctype="multipart/form-data" method="POST">
                     <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding:5px;word-break: break-all;border-top:3px solid #ddd">
                         <div style="float: left;width:70%;margin: 20px">
                             <table>
                                 <tr>
                                     <td>
-                                        <?php while($r = mysqli_fetch_array($replysresult)){?>
-                                            <?php if ($r['fid'] == $row['uid']){?>
-                                                <?php echo $r['reply'];?>
-                                            <?php }?>
-                                        <?php }?>
+                                        <?php while ($r = mysqli_fetch_array($replysresult)) { ?>
+                                            <?php if ($r['fid'] == $row['uid']) { ?>
+                                                <?php echo $r['reply']; ?>
+                                            <?php } ?>
+                                        <?php } ?>
                                     </td>
                                 </tr>
                             </table>
                         </div>
                         <div style="float: right;width:20%;margin: 20px">
-                            <textarea name="rinfo"style="width: 100%;min-height: 100px;margin-bottom: 10px"></textarea>
+                            <textarea name="rinfo" style="width: 100%;min-height: 100px;margin-bottom: 10px"></textarea>
                             <div style="float: right">
                                 <button>回复</button>
                             </div>
@@ -199,13 +215,13 @@ $replysresult = $conn ->query($sql);
 
 
             </div>
-        <?php }?>
+        <?php } ?>
 
         <form action="applyAction.php" enctype="multipart/form-data" method="POST">
             <div style="width:100%">
                 <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding: 20px;margin-top: 50px">
                     <div style="margin-bottom: 20px">
-                        <textarea name="comment"style="width: 100%;min-height: 100px"></textarea>
+                        <textarea name="comment" style="width: 100%;min-height: 100px"></textarea>
                     </div>
                     <div style="float: right">
                         <button>评论</button>
@@ -245,7 +261,7 @@ $replysresult = $conn ->query($sql);
                     <li><a href="mailto:info@example.com"> 123 @qq.com</a></li>
                 </ul>
             </div>
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
         </div>
         <div class="copy-right">
             <p>App &copy; 2019.创意实验室 <a href="#" target="_blank" title="App创意实验室">App创意实验室</a></p>
@@ -256,10 +272,10 @@ $replysresult = $conn ->query($sql);
 <!-- FlexSlider -->
 <script defer src="js/jquery.flexslider.js"></script>
 <script type="text/javascript">
-    $(window).load(function(){
+    $(window).load(function () {
         $('.flexslider').flexslider({
             animation: "slide",
-            start: function(slider){
+            start: function (slider) {
                 $('body').removeClass('loading');
             }
         });
@@ -268,9 +284,9 @@ $replysresult = $conn ->query($sql);
 <!-- End-slider-script -->
 <!-- Flexslider-js for-testimonials -->
 <script type="text/javascript">
-    $(window).load(function() {
+    $(window).load(function () {
         $("#flexiselDemo1").flexisel({
-            visibleItems:1,
+            visibleItems: 1,
             animationSpeed: 1000,
             autoPlay: true,
             autoPlaySpeed: 3000,
@@ -278,15 +294,15 @@ $replysresult = $conn ->query($sql);
             enableResponsiveBreakpoints: true,
             responsiveBreakpoints: {
                 portrait: {
-                    changePoint:480,
+                    changePoint: 480,
                     visibleItems: 1
                 },
                 landscape: {
-                    changePoint:640,
-                    visibleItems:1
+                    changePoint: 640,
+                    visibleItems: 1
                 },
                 tablet: {
-                    changePoint:768,
+                    changePoint: 768,
                     visibleItems: 1
                 }
             }
@@ -302,18 +318,18 @@ $replysresult = $conn ->query($sql);
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
             event.preventDefault();
 
-            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
         });
     });
 </script>
 <!-- //end-smooth-scrolling   -->
 <!-- smooth-scrolling-of-move-up -->
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         /*
         var defaults = {
             containerID: 'toTop', // fading element id
@@ -322,7 +338,7 @@ $replysresult = $conn ->query($sql);
             easingType: 'linear'
         };
         */
-        $().UItoTop({ easingType: 'easeOutQuart' });
+        $().UItoTop({easingType: 'easeOutQuart'});
 
     });
 </script>
