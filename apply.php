@@ -3,12 +3,11 @@ session_start();
 include "MySqlConnect.php";
 $sql = "select * from forum";
 $result = $conn ->query($sql);
-$sql = "select * from replys,forum where replys.fid = forum.uid";
-$replysresult = $conn ->query($sql);
-$arr = array();
-while($x = mysqli_fetch_array($replysresult)){
-    array_push($arr,$x);
+$arownews = array();
+while($geren = mysqli_fetch_array($result)){
+    array_push($arownews,$geren);
 }
+$i = 1;
 ?>
 <html lang="en">
 <head>
@@ -42,6 +41,16 @@ while($x = mysqli_fetch_array($replysresult)){
     }
     h5{
         font-size: 15px;
+    }
+    .chart_top{
+        width: 100%;
+        height: 30%;
+        position: relative;
+    }
+    .chart_buttom{
+        width: 100%;
+        height: 10%;
+        position: relative;
     }
 </style>
 <body>
@@ -81,8 +90,6 @@ while($x = mysqli_fetch_array($replysresult)){
     </div><!-- //header -->
 
 </div>
-
-
 <!-- //banner -->
 <!-- typography -->
 <div class="typo"style="background-color: #dddddd">
@@ -149,19 +156,47 @@ while($x = mysqli_fetch_array($replysresult)){
             </table>
         </div>
 
-        <?php while ($row = mysqli_fetch_array($result)){?>
+
+        <?php foreach ($arownews as $row){?>
+            <?php
+            $forumid = $row['uid'];
+            $sql = "select * from replys where replys.fid = $forumid";
+            $replysresult = $conn ->query($sql);
+            $arr = array();
+            while($m = mysqli_fetch_array($replysresult)){
+                array_push($arr,$m);
+            }
+            ?>
+            <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <i class="fa fa-pagelines" aria-hidden="true"></i>APP创意设计大赛
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <section>
+                            <div class="modal-body">
+                                <p>app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。
+                                    旨在为学生提供一个基于互联网产品进行创新创意的一个学习交流和团队研发环境
+                                    <i>*App创意俱乐部</i></p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
 
             <div style="width:100%">
                 <div style="float: left;width:20%;min-height:400px;background-color: snow;padding: 20px;border-top:6px solid #ddd">
                     <div align="center">
-                        <img src="<?php echo $row["image"];?>"width="80" height="80"/>
+                            <img src="<?php echo $row["image"];?>"width="80" height="80"/>
                     </div>
                     <div style="padding-top: 20px">
                         <table style="border-collapse:separate; border-spacing:0px 10px;">
                             <tr>
-                                <td><h5><?php echo $row["id"].'楼：';?></h5></td>
+                                <td><h5><?php echo $i.'楼：';?></h5></td>
                                 <td><h5><?php echo $row["name"];?></h5></td>
                             </tr>
+                            <br>
                             <tr>
                                 <td><h5>回复时间：</h5></td>
                                 <td><h5><?php echo $row["ctime"];?></h5></td>
@@ -172,7 +207,6 @@ while($x = mysqli_fetch_array($replysresult)){
                 <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding:10px;word-break: break-all;border-top:3px solid #ddd">
                     <p><h4><?php echo $row['comment'];?></h4></p>
                 </div>
-
                 <form action="applyInfoAction.php?fid=<?php echo $row['uid']?>&rid=<?php echo $_SESSION['sno']?>&name=<?php echo $_SESSION['username']?>" enctype="multipart/form-data" method="POST">
                     <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding:5px;word-break: break-all;border-top:3px solid #ddd">
                         <div style="float: left;width:70%;margin: 20px">
@@ -180,8 +214,9 @@ while($x = mysqli_fetch_array($replysresult)){
                                 <tr>
                                     <td>
                                         <?php foreach($arr as $r){?>
-                                            <?php if ($r['uid'] == $row['uid']){?>
-                                                <?php echo $r['name']."：".$r['reply'];?>
+                                            <?php if ($r['fid'] == $row['uid']){?>
+                                                <?php ?>
+                                                <?php echo $r['name']."：".$r['reply'];?><br>
                                             <?php }?>
                                         <?php }?>
                                     </td>
@@ -195,10 +230,25 @@ while($x = mysqli_fetch_array($replysresult)){
                             </div>
                         </div>
                     </div>
-                </form>
-
-
             </div>
+            </form>
+
+            <form action="newsAction.php?receive_id=<?php echo $row['uid']?>&send_id=<?php echo $_SESSION['sno']?>&send_name=<?php echo $_SESSION['username']?>" enctype="multipart/form-data" method="post">
+                <div>
+                    <div>
+                        <input type="text" name="titlenews">
+                    </div>
+                    <div>
+                        <textarea name="txtnews"></textarea>
+                    </div>
+                    <div>
+                        <button>发送</button>
+                    </div>
+                </div>
+            </form>
+
+
+            <?php ++$i;?>
         <?php }?>
 
         <form action="applyAction.php" enctype="multipart/form-data" method="POST">
@@ -217,6 +267,8 @@ while($x = mysqli_fetch_array($replysresult)){
 
     </div>
 </div>
+
+
 <!-- footer start here -->
 <div class="footer-agile">
     <div class="container">
@@ -232,10 +284,10 @@ while($x = mysqli_fetch_array($replysresult)){
                 <h3>快速连接</h3>
                 <ul>
                     <li><a href="homepage.html"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
-                    <li><a href="about.html"><span class="glyphicon glyphicon-menu-right"></span> 备用</a></li>
                     <li><a href="gallery.html"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
                     <li><a href="codes.html"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
-                    <li><a href="contact.html"><span class="glyphicon glyphicon-menu-right"></span> 我的</a></li>
+                    <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
+                    <li><a href="contact.html"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
                 </ul>
             </div>
             <div class="col-md-4 col-sm-4 footer-wthree-grid">
@@ -314,22 +366,11 @@ while($x = mysqli_fetch_array($replysresult)){
 <!-- smooth-scrolling-of-move-up -->
 <script type="text/javascript">
     $(document).ready(function() {
-        /*
-        var defaults = {
-            containerID: 'toTop', // fading element id
-            containerHoverID: 'toTopHover', // fading element hover id
-            scrollSpeed: 1200,
-            easingType: 'linear'
-        };
-        */
+
         $().UItoTop({ easingType: 'easeOutQuart' });
 
     });
 </script>
-<!-- //smooth-scrolling-of-move-up -->
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="js/bootstrap.js"></script>
 </body>
 </html>
