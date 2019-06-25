@@ -63,6 +63,14 @@
         alert("已拒绝");
     }
 </script>
+<script language="javascript">
+    function exit() {
+        var se=confirm("确定退出吗？");
+        if (se==true) {
+            location.href="login.html";
+        }
+    }
+</script>
 <!-- //banner -->
 <!--body start here-->
 <div class="mail" id="news_body">
@@ -110,7 +118,8 @@
                     </tr>
                     <tr >
                         <td style="padding-bottom: 15px"><img class="tubiao" src="images/quit.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px"><span onclick="exit()"><a href="index.html"><h4> 退 出 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px">
+                            <span onclick="exit()"><a><h4> 退 出 </h4></a></span></td>
                     </tr>
                 </table>
             </div>
