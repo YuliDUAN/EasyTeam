@@ -1,3 +1,13 @@
+<?php
+session_start();
+include "MySqlConnect.php";
+$sno = $_SESSION['sno'];
+$rsq = "select * from ruser where sno=$sno";
+$result = $conn->query($rsq);
+$row = mysqli_fetch_array($result);
+//$arr =array();
+//array_push($arr,$row);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +17,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
     <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
@@ -59,7 +69,7 @@
                             </ul>
                         </li>
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.html" class="w3ls-hover active">个人中心</a></li>
+                        <li><a href="contact.php" class="w3ls-hover active">个人中心</a></li>
                     </ul>
                     <div class="clearfix"></div>
                 </div><!-- //navbar-collapse -->
@@ -89,7 +99,7 @@
             <div class="center_droc">
                 <img src="images/toxaing.png">
                 <li><a style="margin-top: 5px" href="#">修改头像>>></a></li>
-                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：康 少
+                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：<?php echo $row['username'];?>
                 </li>
                 <li><span style="margin-top: 5px" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4
                     级
@@ -100,7 +110,7 @@
                     <tr>
                         <td><img class="tubiao" src="images/news.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="news.html"><h4> 消 息</h4></a></span></td>
+                                    href="news.php"><h4> 消 息</h4></a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/rudui.png"></td>
@@ -109,12 +119,12 @@
                     <tr>
                         <td><img class="tubiao" src="images/personal.png"></td>
                         <td style="padding-left: 15px;padding-top: 25px"><span><a
-                                href="contact.html"> <h4> 个 人 信 息 </h4> </a></span></td>
+                                    href="contact.php"> <h4> 个 人 信 息 </h4> </a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/match.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="myjgames.html"> <h4> 我 的 比 赛 </h4></a></span></td>
+                                    href="myjgames.html"> <h4> 我 的 比 赛 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/team.png"></td>
@@ -124,40 +134,39 @@
                     <tr>
                         <td><img class="tubiao" src="images/evaluate.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="leaveword.html"><h4> 留 言 版 块 </h4></a></span></td>
+                                    href="leaveword.html"><h4> 留 言 版 块 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/collection.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="collect.html"> <h4> 我 的 收 藏 </h4></a></span></td>
+                                    href="collect.html"> <h4> 我 的 收 藏 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/question.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="question.html"> <h4> 问 题 反 馈 </h4></a></span></td>
+                                    href="question.html"> <h4> 问 题 反 馈 </h4></a></span></td>
                     </tr>
                     <tr >
                         <td style="padding-bottom: 20px"><img class="tubiao" src="images/quit.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px">
-                            <span onclick="exit()"><a><h4> 退 出 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px"><span onclick="exit()"><a><h4> 退 出 </h4></a></span></td></td>
                     </tr>
                 </table>
             </div>
         </div>
         <div class="agileits_mail_grids">
             <div class="col-md-7 agileits_mail_grid_left">
-                <form action="#" method="post">
+                <form action="contactAction.php" method="post" enctype="multipart/form-data">
                     <h4>学号</h4>
-                    <input type="text" name="ID" placeholder="ID..." required="">
+                    <input type="text" name="ID" disabled placeholder="<?php echo $row['sno'];?>" required="">
                     <h4>姓名</h4>
-                    <input type="text" name="Name" placeholder="Name..." required="">
+                    <input type="text" name="Name" disabled placeholder="<?php echo $row ['username'];?>" required="">
                     <h4>专业班级</h4>
-                    <input type="email" name="Class" placeholder="Class..." required="">
+                    <input type="text" name="Class" disabled placeholder="<?php echo $row['major'].$row ['cls'];?>" required="">
                     <h4>联系电话</h4>
-                    <input type="text" name="Phone" placeholder="Phone..." required="">
+                    <input type="text" name="Phone" disabled placeholder="<?php echo $row ['phone'];?>" required="">
                     <h4>个人简介</h4>
-                    <textarea placeholder="Message..." name="Message"></textarea>
-                    <input class="all_button" type="button" value="修改">
+                    <textarea placeholder="<?php echo $row ['brief'];?>" name="Message"></textarea>
+                    <button class="all_button">修改</button>
                 </form>
             </div>
             <div class="clearfix"></div>
@@ -183,7 +192,7 @@
                     <li><a href="gallery.html"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
                     <li><a href="codes.html"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
                     <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
-                    <li><a href="contact.html"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
+                    <li><a href="contact.php"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
                 </ul>
             </div>
             <div class="col-md-4 col-sm-4 footer-wthree-grid">

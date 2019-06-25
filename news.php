@@ -1,3 +1,24 @@
+<?php
+session_start();
+include "MySqlConnect.php";
+$s_id = $_SESSION['sno'];
+$sql = "select * from sendnews where receive_id = $s_id";
+$result = $conn->query($sql);
+$receive_news = array();
+while($row = mysqli_fetch_array($result)){
+array_push($receive_news,$row);
+}
+if(!empty($_SERVER['HTTP_X_REQUESTED_WITH'])){
+$x = $_GET['content'];
+echo $x;
+$sql = "select * from sendnews where id=$x";
+$result = $conn->query($sql);
+$values = array();
+while ($row = mysqli_fetch_array($result)){
+$values = $row;
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +71,7 @@
                             </ul>
                         </li>
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.html" class="w3ls-hover active">个人中心</a></li>
+                        <li><a href="contact.php" class="w3ls-hover active">个人中心</a></li>
                     </ul>
                     <div class="clearfix"> </div>
                 </div><!-- //navbar-collapse -->
@@ -87,7 +108,7 @@
                 <table>
                     <tr >
                         <td><img class="tubiao" src="images/news.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="news.html"><h4> 消 息</h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="news.php"><h4> 消 息</h4></a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/rudui.png"></td>
@@ -95,7 +116,7 @@
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/personal.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="contact.html"><h4> 个 人 信 息 </h4> </a></span></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="contact.php"><h4> 个 人 信 息 </h4> </a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/match.png"></td>
@@ -138,12 +159,19 @@
                         <th width="20%"><font size="4" color="black">时间</font></th>
                         <th width="20%"><font size="4" color="black">详情</font></th>
                     </tr>
+                    <?php foreach($receive_news as $v){?>
                     <tr>
-                        <td><font size="3">张三</font></td>
-                        <td><font size="3">今天下午五点参加app协会在东二503举行的报告会</font></td>
-                        <td><font size="3">2019-6-21</font></td>
-                        <td><font size="3"><a href="#" data-toggle="modal" data-target="#myModal">查看详情</a></font></td>
+                        <td><font size="3"><?php echo $v['send_name'];?></font></td>
+                        <td><font size="3"><?php echo $v['titlenews'];?></font></td>
+                        <td><font size="3"><?php echo $v['send_time'];?></font></td>
+                        <td><font size="3">
+                            <form action="">
+                                <!--                                    data-target="#myModal"-->
+                                <a href="#" onclick="show(this)" data-toggle="modal" data-target="#myModal" data-type="<?php echo $v['id'];?>">查看详情</a>
+                            </form>
+                        </font></td>
                     </tr>
+                    <?php }?>
                     </tbody>
                 </table>
             </div>
@@ -151,26 +179,42 @@
         </div>
     </div>
 </div>
+
+<script src="./js/jquery-2.2.3.min.js"></script>
+<script src="./js/jquery.flexisel.js"></script>
+<script src="./js/jquery.flexslider.js"></script>
+<script>
+    function show(news) {
+        var animalType = news.getAttribute("data-type");
+        $.get("sendnewsAction.php", { 'content': animalType},
+            function(data){
+                alert("消息：\n"+data)
+            });
+    }
+</script>
 <!-- bootstrap-pop-up -->
-<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <i class="fa fa-pagelines" aria-hidden="true"></i>APP创意设计大赛
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <section>
-                <div class="modal-body">
-                    <p>app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。
-                        旨在为学生提供一个基于互联网产品进行创新创意的一个学习交流和团队研发环境
-                        <i>*App创意俱乐部</i></p>
-                </div>
-            </section>
-        </div>
-    </div>
-</div>
+<!--<!-- bootstrap-pop-up -->-->
+<!--<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">-->
+<!--    <div class="modal-dialog" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <i class="fa fa-pagelines" aria-hidden="true"></i>--><?php //echo $v['titlenews'];?><!--.-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+<!--            </div>-->
+<!--            <section>-->
+<!--                <div class="modal-body">-->
+<!--<!--                    -->--><?php ////echo $_GET['news_id'];?>
+<!--                    <p>--><?php //echo $v['txtnews'];?><!--<i>--><?php //echo $v['send_name'];?><!--</i></p>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<!-- //contact -->-->
 <!-- //contact -->
 <!-- footer start here -->
+
+
 <div class="footer-agile">
     <div class="container">
         <div class="footer-agileinfo">
@@ -188,7 +232,7 @@
                     <li><a href="gallery.html"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
                     <li><a href="codes.html"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
                     <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
-                    <li><a href="contact.html"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
+                    <li><a href="contact.php"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
                 </ul>
             </div>
             <div class="col-md-4 col-sm-4 footer-wthree-grid">

@@ -81,7 +81,7 @@ $i = 1;
                             </ul>
                         </li>
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.html" class="btn w3ls-hover">个人中心</a></li>
+                        <li><a href="contact.php" class="btn w3ls-hover">个人中心</a></li>
                     </ul>
                     <div class="clearfix"> </div>
                 </div><!-- //navbar-collapse -->
@@ -241,8 +241,9 @@ $i = 1;
                     <div>
                         <textarea name="txtnews"></textarea>
                     </div>
+
                     <div>
-                        <button>发送</button>
+                        <button class="all_button" value="发送"><span><h5>发送</h5></span></button>
                     </div>
                 </div>
             </form>
@@ -287,7 +288,7 @@ $i = 1;
                     <li><a href="gallery.html"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
                     <li><a href="codes.html"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
                     <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
-                    <li><a href="contact.html"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
+                    <li><a href="contact.php"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
                 </ul>
             </div>
             <div class="col-md-4 col-sm-4 footer-wthree-grid">
