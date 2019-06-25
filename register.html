@@ -28,16 +28,18 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <input name="password" type="password" placeholder="密码" oninput="if(value.length>16)value=value.slice(0,11)"
-                               onKeyUp="value=value.replace(/[\W]/g,'')">
+                        <input name="password" type="password" placeholder="密码"
+                               onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')">
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4"><input name="username" type="text" placeholder="姓名" oninput="if(value.length>4)value=value.slice(0,4)"></td>
+                    <td colspan="4"><input name="username" type="text" placeholder="姓名"
+                                           onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')">
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="4"><input name="phone" type="text"  placeholder="电话"
-                                           onkeyup="if(!/^\d+$/.test(this.value)) {this.value=this.value.replace(/[^\d]+/g,'');}">
+                    onkeyup="if(!/^\d+$/.test(this.value)) {this.value=this.value.replace(/[^\d]+/g,'');}">
                     </td>
                 </tr>
                 <tr>

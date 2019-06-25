@@ -13,7 +13,12 @@ $cls = $_POST['cls'];
 
 $newEmp = array("sno" => $sno, "password" => $password, "username" => $username, "phone" => $phone,
     "sex" => $sex, "major" => $major, "cls" => $cls);
-if ($sno != null && $password != null && $username != null && $phone != null && $sex != null && $major != null && $cls != null) {
+
+if(strlen($sno)!=12){echo '<script>alert("输入学号的格式有误！");window.location.href="register.html"</script>';}
+elseif(strlen($password)<6||strlen($password)>16){echo '<script>alert("请输入6~16位密码！");window.location.href="register.html"</script>';}
+elseif(strlen($username)<6||strlen($username)>12){echo '<script>alert("输入姓名的格式有误！");window.location.href="register.html"</script>';}
+elseif(strlen($phone)!=11){echo '<script>alert("输入手机号的格式有误！");window.location.href="register.html"</script>';}
+elseif ($sno != null && $password != null && $username != null && $phone != null && $sex != null && $major != null && $cls != null) {
     //第二步：获取内存段中的数组，将数据添加到数据库
     $sql = "insert into ruser (sno,password,username,phone,sex,major,cls) values 
                             ('$sno','$password','$username','$phone','$sex','$major','$cls')";
@@ -21,7 +26,7 @@ if ($sno != null && $password != null && $username != null && $phone != null && 
     mysqli_query($conn, $sql);
     //第四步：跳转到登陆页面
     echo '<script>alert("注册成功，返回登陆界面！");window.location.href="index.html"</script>';
-} else {
+}else {
     echo '<script>alert("注册错误，请按要求输入！");window.location.href="register.html"</script>';
 }
 ?>
