@@ -181,7 +181,7 @@ while($x = mysqli_fetch_array($replysresult)){
                                     <td>
                                         <?php foreach($arr as $r){?>
                                             <?php if ($r['uid'] == $row['uid']){?>
-                                                <?php echo $r['name']."：".$r['reply'];?><br>
+                                                <?php echo $r['name']."：".$r['reply'];?>
                                             <?php }?>
                                         <?php }?>
                                     </td>

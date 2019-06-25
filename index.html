@@ -20,13 +20,11 @@
         </div>
         <form method="post" action="loginAction.php" enctype="multipart/form-data">
             <input name="sno" type="text" value="用户名" onfocus="this.value=''"
-                   onblur="if(this.value==''){this.value='用户名'}"
-                   onkeyup="if(!/^\d+$/.test(this.value)) {this.value=this.value.replace(/[^\d]+/g,'');}">
+                   onblur="if(this.value==''){this.value='用户名'}">
             <span id="password_text"
                   onclick="this.style.display='none';document.getElementById('password').style.display='block';document.getElementById('password').focus().select();">密码</span>
             <input name="password" type="password" id="password" style="display:none;"
-                   onblur="if(this.value==''){document.getElementById('password_text').style.display='block';this.style.display='none'};"
-                   onKeyUp="value=value.replace(/[\W]/g,'')"/>
+                   onblur="if(this.value==''){document.getElementById('password_text').style.display='block';this.style.display='none'};"/>
             <a href="register.html" >注册>>></a>
             <input style="margin-top: 10px" value="登录" style="width:100%;" type="submit">
         </form>
@@ -34,17 +32,4 @@
     <div class="copyright">APP创意俱乐部 版权所有©2019-2021</div>
 </div>
 </body>
-<script>
-    function pushHistory(){
-        var state = {
-            title: "title",
-            url: "#"
-        }
-        window.history.pushState(state, "title", "#");
-    }
-    pushHistory()
-    window.addEventListener("popstate", function(){
-        window.location.href = 'login.html'
-    }, false)
-</script>
 </html>
