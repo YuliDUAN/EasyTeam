@@ -1052,6 +1052,25 @@ body a:hover{
     color: #212121;
     padding-left: 1em;
 }
+
+#btn{
+    margin-top: 5px ;
+    padding: 5px 10px;
+    background: #00b0f0;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+}
+label{
+    position: relative;
+}
+#file{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
 .left-agileits ul li span {
     left: -1em;
 }

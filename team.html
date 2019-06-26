@@ -86,8 +86,93 @@
         </div>
         <div class="col-md-5 agileits_mail_grid_right">
             <div class="center_droc">
-                <img src="images/toxaing.png">
-                <li><a style="margin-top: 5px" href="#">修改头像>>></a></li>
+                <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
+                    <img style="width: 120px;height: 120px" src="<?php echo $row['image'];?>">
+                    <label for="file">
+                        <input type="button" id="btn" value="修改头像>>>"><span id="text"></span>
+                        <input type="file" name="avatar" id="file" onchange="verificationPicFile(this)">
+                    </label>
+                    <li><a href="contact.php"><button id="btn"  style="width: 97.7px"><span>确定修改</span></button></a></li>
+
+                    <?php if (isset($message)):?>
+                    <P style="color: hotpink"><?php echo $message?></P>
+                    <?php endif ?>
+                    <script language="JavaScript">
+                        function verificationPicFile(file) {
+                            var fileTypes = [".jpg",".png"];
+                            var filePath = file.value();
+                            if (filePath){
+                                var isNext = false;
+                                var fileEnd = filePath.substring(filePath.indexOf("."));
+                                for (var i = 0; i < fileTypes.length; i++) {
+                                    if (fileTypes[i] == fileEnd) {
+                                        isNext = true;
+                                        break;
+                                    }
+                                }
+                                if (!isNext) {
+                                    $GLOBALS['message'] = '不接受此类型文件，请用jpg或png格式';
+                                    file.value = "";
+                                    return false;
+                                }
+                            } else {
+                                return false;
+                            }
+                        }
+
+                        function verificationPicFile() {
+                            var fileSize = 0;
+                            var fileMaxSize = 1024;
+                            var filePath = file.value;
+                            if (filePath) {
+                                fileSize = file.avatar[0].size;
+                                var size = fileSize/1024;
+                                if (size>fileMaxSize){
+                                    $GLOBALS['message'] = '文件不能大于1M';
+                                    file.value = "";
+                                    return false;
+                                } else if (size <= 0) {
+                                    $GLOBALS['message'] = '文件不能为0M';
+                                    file.value = "";
+                                    return false;
+                                }
+                            }else {
+                                return false;
+                            }
+                        }
+
+                        function verificationPicFile(){
+                            var filePath = file.value;
+                            if(filePath){
+                                //读取图片数据
+                                var filePic = file.avatar[0];
+                                var reader = new FileReader();
+                                reader.onload = function (e) {
+                                    var data = e.target.result;
+
+                                    var image = new Image();
+                                    image.onload = function () {
+                                        var width = image.width;
+                                        var height = image.height;
+                                        if (width == 120 | height == 120) {
+                                            $GLOBALS['message'] = '尺寸符合';
+                                        }else {
+                                            $GLOBALS['message'] = '尺寸大小应为120*120';
+                                            file.value="";
+                                            return false;
+                                        }
+                                    };
+                                    image.src = data;
+
+                                };
+                                reader.readAsDataURL(filePic);
+                            }else {
+                                return false;
+                            }
+                        }
+
+                    </script>
+                </form>
                 <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：康 少
                 </li>
                 <li><span style="margin-top: 5px" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4
