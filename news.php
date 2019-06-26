@@ -16,8 +16,11 @@ $result = $conn->query($sql);
 $values = array();
 while ($row = mysqli_fetch_array($result)){
 $values = $row;
+    }
 }
-}
+$rsq = "select * from ruser where sno=$s_id";
+$result = $conn->query($rsq);
+$row = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,6 +100,9 @@ $values = $row;
             <h2 class="h-two"> 个 人 中 心 </h2>
             <p class="sub two">P e r s o n a l C e n t e r.</p>
         </div>
+
+
+
         <div class="col-md-5 agileits_mail_grid_right">
             <div class="center_droc">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
@@ -198,7 +204,7 @@ $values = $row;
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/rudui.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.html"><h4> 入 队 申 请 </h4> </a></span></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.php"><h4> 入 队 申 请 </h4> </a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/personal.png"></td>
@@ -206,26 +212,26 @@ $values = $row;
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/match.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="myjgames.html"> <h4> 我 的 比 赛 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="myjgames.php"> <h4> 我 的 比 赛 </h4></a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/team.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="team.html"> <h4> 我 的 队 伍 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="team.php"> <h4> 我 的 队 伍 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/evaluate.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="leaveword.html"><h4> 留 言 版 块 </h4></a></span></td>
+                                href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/collection.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="collect.html"> <h4> 我 的 收 藏 </h4></a></span></td>
+                                href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/question.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="question.html"> <h4> 问 题 反 馈 </h4></a></span></td>
+                                href="question.php"> <h4> 问 题 反 馈 </h4></a></span></td>
                     </tr>
                     <tr >
                         <td style="padding-bottom: 20px"><img class="tubiao" src="images/quit.png"></td>

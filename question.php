@@ -1,8 +1,17 @@
+<?php
+session_start();
+include "MySqlConnect.php";
+$sno = $_SESSION['sno'];
+$rsq = "select * from ruser where sno=$sno";
+$result = $conn->query($rsq);
+$row = mysqli_fetch_array($result);
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="">
 <head>
     <link rel="shortcut icon" href="images/logo.ico">
-    <title>留言板块</title>
+    <title>问题反馈</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="" />
@@ -21,6 +30,8 @@
     <!-- web-fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
+    <script>function on_Clickq1() {alert("反馈成功！");}
+    </script>
 </head>
 <body>
 <!-- banner -->
@@ -165,6 +176,7 @@
 
                     </script>
                 </form>
+
                 <li><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：康 少</li>
                 <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4 级</li>
             </div>
@@ -176,7 +188,7 @@
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/rudui.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.html"><h4> 入 队 申 请 </h4> </a></span></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.php"><h4> 入 队 申 请 </h4> </a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/personal.png"></td>
@@ -184,24 +196,24 @@
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/match.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="myjgames.html"> <h4> 我 的 比 赛 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="myjgames.php"> <h4> 我 的 比 赛 </h4></a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/team.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="team.html"> <h4> 我 的 队 伍 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="team.php"> <h4> 我 的 队 伍 </h4></a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/evaluate.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="leaveword.html"><h4> 留 言 版 块 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/collection.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="collect.html"> <h4> 我 的 收 藏 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/question.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="question.html"> <h4> 问 题 反 馈 </h4></a></span></td>
+                                href="question.php"> <h4> 问 题 反 馈 </h4></a></span></td>
                     </tr>
                     <tr >
                         <td style="padding-bottom: 20px"><img class="tubiao" src="images/quit.png"></td>
@@ -213,35 +225,28 @@
         </div>
         <div class="agileits_mail_grids">
             <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff">
-                <table class="table" style="background-color: #ffffff">
-                    <tbody>
-                    <div style=" margin-top:40px;padding-bottom:20px;border-bottom:5px solid #ddd
-">
-                        <textarea id="leaveText" placeholder="请输入留言内容..."></textarea>
-                        <input class="reply_confirm"  type="button" value="确定" onclick="toAlert();" style="overflow: hidden;  " />
+                <div class="col-md-7 agileits_mail_grid_left"style="width:100%;border-bottom:3px solid #ddd">
+                    <table class="table" style="padding-top:30px;background-color: #ffffff"align="center">
+                        <tbody>
+                        <tr>
+                            <th class="anchorjs-icon"width="15%"><font size="4" color="black">序号</font></th>
+                            <th class="anchorjs-icon"width="65%"><font size="4" color="black">问题</font></th>
+                            <th class="anchorjs-icon"width="20%"><font size="4" color="black">时间</font></th>
+                        </tr>
+                        <tr>
+                            <td class="anchorjs-icon"><font size="4">1</font></td>
+                            <td class="anchorjs-icon"><font size="4">平台加载太慢，没有我想要的页面，app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。
+                                旨在为学生提供一</font></td>
+                            <td class="anchorjs-icon"><font size="4">2019-6-24</font></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                    <div style=" width:100%;padding-bottom: 20px">
+                        <textarea id="question" placeholder="请输入问题内容..."></textarea>
+                        <input class="reply_confirm"  type="button" value="确定" onclick="on_Clickq1();" style="overflow: hidden;  " />
                     </div>
-                    <div >
-
-                        <div   style="margin-top:30px;float:left;">
-                            <td> <img src="images/t11.jpg"width="60" height="60"/></td>
-                            <td><h4>到饭点要吃饭了.。。。。。。。。。。。。</h4></td>
-                        </div>
-                        <div style="padding-top: 20px;float: left;">
-                            <table style="border-collapse:separate; border-spacing:0px 10px;">
-                                <tr>
-                                    <td><h6>留言人：</h6></td>
-                                    <td><h6>康少</h6></td>
-                                </tr>
-                                <tr>
-                                    <td><h6>时间：</h6></td>
-                                    <td><h6>2019-6-1</h6></td>
-                                </tr>
-                            </table>
-                        </div>
-
-                    </div>>
-                    </tbody>
-                </table>
             </div>
             <div class="clearfix"></div>
         </div>

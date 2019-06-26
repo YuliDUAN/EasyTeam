@@ -1,12 +1,22 @@
+<?php
+session_start();
+include "MySqlConnect.php";
+$sno = $_SESSION['sno'];
+$rsq = "select * from ruser where sno=$sno";
+$result = $conn->query($rsq);
+$row = mysqli_fetch_array($result);
+
+?>
 <!DOCTYPE html>
-<html lang="en" xmlns="">
+<html lang="en">
 <head>
     <link rel="shortcut icon" href="images/logo.ico">
-    <title>问题反馈</title>
+    <title>入队申请</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
@@ -21,8 +31,6 @@
     <!-- web-fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
-    <script>function on_Clickq1() {alert("反馈成功！");}
-    </script>
 </head>
 <body>
 <!-- banner -->
@@ -32,18 +40,19 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <h1><a href="homepage.html"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
+                    <h1><a href="index.html"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
+                        <li><a href="index.html" class="btn w3ls-hover">首页</a></li>
                         <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
                         <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -51,7 +60,6 @@
                                 <li><a href="codes.html">已经结束</a></li>
                             </ul>
                         </li>
-
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
                         <li><a href="contact.php" class="w3ls-hover active">个人中心</a></li>
                     </ul>
@@ -62,6 +70,15 @@
     </div><!-- //header -->
 
 </div>
+<script >
+    function toAgree (){
+    alert("已同意");
+
+    }
+   function toRefuse() {
+        alert("已拒绝");
+    }
+</script>
 <script language="javascript">
     function exit() {
         var se=confirm("确定退出吗？");
@@ -167,9 +184,8 @@
 
                     </script>
                 </form>
-
-                <li><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：康 少</li>
-                <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4 级</li>
+                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：康 少</li>
+                <li><span style="margin-top: 5px" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4 级</li>
             </div>
             <div class="left-agileits">
                 <table>
@@ -179,35 +195,30 @@
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/rudui.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.html"><h4> 入 队 申 请 </h4> </a></span></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.php"><h4> 入 队 申 请 </h4> </a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/personal.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="contact.php"> <h4> 个 人 信 息 </h4> </a></span></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="contact.php"><h4> 个 人 信 息 </h4> </a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/match.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="myjgames.html"> <h4> 我 的 比 赛 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="myjgames.php"> <h4> 我 的 比 赛 </h4></a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/team.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="team.html"> <h4> 我 的 队 伍 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="team.php"> <h4> 我 的 队 伍 </h4></a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/evaluate.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="leaveword.html"><h4> 留 言 版 块 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
                     </tr>
                     <tr >
                         <td><img class="tubiao" src="images/collection.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="collect.html"> <h4> 我 的 收 藏 </h4></a></span></td>
-                    </tr>
-                    <tr>
-                        <td><img class="tubiao" src="images/question.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="question.html"> <h4> 问 题 反 馈 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
                     </tr>
                     <tr >
-                        <td style="padding-bottom: 20px"><img class="tubiao" src="images/quit.png"></td>
+                        <td style="padding-bottom: 15px"><img class="tubiao" src="images/quit.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px">
                             <span onclick="exit()"><a><h4> 退 出 </h4></a></span></td>
                     </tr>
@@ -216,28 +227,31 @@
         </div>
         <div class="agileits_mail_grids">
             <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff">
-                <div class="col-md-7 agileits_mail_grid_left"style="width:100%;border-bottom:3px solid #ddd">
-                    <table class="table" style="padding-top:30px;background-color: #ffffff"align="center">
-                        <tbody>
-                        <tr>
-                            <th class="anchorjs-icon"width="15%"><font size="4" color="black">序号</font></th>
-                            <th class="anchorjs-icon"width="65%"><font size="4" color="black">问题</font></th>
-                            <th class="anchorjs-icon"width="20%"><font size="4" color="black">时间</font></th>
-                        </tr>
-                        <tr>
-                            <td class="anchorjs-icon"><font size="4">1</font></td>
-                            <td class="anchorjs-icon"><font size="4">平台加载太慢，没有我想要的页面，app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。
-                                旨在为学生提供一</font></td>
-                            <td class="anchorjs-icon"><font size="4">2019-6-24</font></td>
-                        </tr>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th width="15%"><font size="4" color="black">来源</font></th>
+                        <th width="45%"><font size="4" color="black">内容</font></th>
+                        <th width="20%"><font size="4" color="black">时间</font></th>
+                        <th  width="20%"  style="text-align:center"><font size="4" color="black" >处理</font></th>
+                    </tr>
+                    <tr>
+                        <td><font size="3">张三</font></td>
+                        <td><font size="3">张三申请加入你的队伍</font></td>
+                        <td><font size="3">2019-6-21</font></td>
+                        <td><font size="3"><a href="javascript:" onclick="toAgree()" >同意</a>/<a href="javascript:" onclick="toRefuse()">拒绝</a></font></td>
 
-                        </tbody>
-                    </table>
-                </div>
-                    <div style=" width:100%;padding-bottom: 20px">
-                        <textarea id="question" placeholder="请输入问题内容..."></textarea>
-                        <input class="reply_confirm"  type="button" value="确定" onclick="on_Clickq1();" style="overflow: hidden;  " />
-                    </div>
+
+                    </tr>
+                    <tr>
+                        <td><font size="3">王五</font></td>
+                        <td><font size="3">王五申请加入你的队伍</font></td>
+                        <td><font size="3">2019-6-21</font></td>
+                        <td><font size="3"><a href="#">已同意</a></font></td>
+                    </tr>
+
+                    </tbody>
+                </table>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -268,7 +282,7 @@
         <div class="footer-agileinfo">
             <div class="col-md-5 col-sm-5 footer-wthree-grid">
                 <div class="agileits-w3layouts-tweets">
-                    <h5><a href="homepage.html"><i class="fa fa-pagelines" aria-hidden="true"></i>赛事</a></h5>
+                    <h5><a href="index.html"><i class="fa fa-pagelines" aria-hidden="true"></i>赛事</a></h5>
                 </div>
                 <p>app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。
                     旨在为学生提供一个基于互联网产品进行创新创意的一个学习交流和团队研发环境</p>

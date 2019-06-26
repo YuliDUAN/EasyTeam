@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "MySqlConnect.php";
-$sql = "select * from forum";
+$sql = "select * from forum,ruser where ruser.sno = forum.uid";
 $result = $conn->query($sql);
 $arownews = array();
 while ($geren = mysqli_fetch_array($result)) {
