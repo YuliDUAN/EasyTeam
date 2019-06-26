@@ -2,29 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c6ee583-e762-461f-bf34-3cb08e660540" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/login_change.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/activity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/activity.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apply.php" beforeDir="false" afterPath="$PROJECT_DIR$/apply.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codes.html" beforeDir="false" afterPath="$PROJECT_DIR$/codes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collect.html" beforeDir="false" afterPath="$PROJECT_DIR$/collect.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contactAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/contactAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cteam.html" beforeDir="false" afterPath="$PROJECT_DIR$/cteam.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/gallery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cteam.php" beforeDir="false" afterPath="$PROJECT_DIR$/cteam.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/gallery.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons.html" beforeDir="false" afterPath="$PROJECT_DIR$/icons.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jteam.html" beforeDir="false" afterPath="$PROJECT_DIR$/jteam.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons.php" beforeDir="false" afterPath="$PROJECT_DIR$/icons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jteam.php" beforeDir="false" afterPath="$PROJECT_DIR$/jteam.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/leaveword.html" beforeDir="false" afterPath="$PROJECT_DIR$/leaveword.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/link.html" beforeDir="false" afterPath="$PROJECT_DIR$/link.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/loginAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myjgames.html" beforeDir="false" afterPath="$PROJECT_DIR$/myjgames.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news.php" beforeDir="false" afterPath="$PROJECT_DIR$/news.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/question.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ranking.html" beforeDir="false" afterPath="$PROJECT_DIR$/ranking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registerAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/registerAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/team.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teamApply.html" beforeDir="false" afterPath="$PROJECT_DIR$/teamApply.html" afterDir="false" />
     </list>
@@ -42,35 +39,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loginAction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="27" lean-forward="true" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+            <state relative-caret-position="38">
+              <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apply.php">
+        <entry file="file://$PROJECT_DIR$/jteam.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="223" column="65" lean-forward="true" selection-start-line="223" selection-start-column="65" selection-end-line="223" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="29" column="36" lean-forward="true" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jteam.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="80" column="39" lean-forward="true" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
+            <state relative-caret-position="194">
+              <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -80,40 +59,84 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/icons.php">
+        <entry file="file://$PROJECT_DIR$/contact.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
-              <caret line="100" column="6" selection-start-line="100" selection-start-column="6" selection-end-line="100" selection-end-column="6" />
+            <state relative-caret-position="399">
+              <caret line="168" column="39" selection-start-line="168" selection-start-column="39" selection-end-line="168" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cteam.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="119" column="75" selection-start-line="119" selection-start-column="75" selection-end-line="119" selection-end-column="75" />
+            <state relative-caret-position="179">
+              <caret line="1073" column="16" selection-start-line="1073" selection-start-column="16" selection-end-line="1073" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activity.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="91" column="79" lean-forward="true" selection-start-line="91" selection-start-column="67" selection-end-line="91" selection-end-column="79" />
               <folding>
-                <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#3915#3921#0#HTML" expanded="true" />
+                <element signature="e#3921#3927#0#HTML" expanded="true" />
+                <element signature="e#3927#3933#0#HTML" expanded="true" />
+                <element signature="e#3933#3939#0#HTML" expanded="true" />
+                <element signature="e#3939#3945#0#HTML" expanded="true" />
+                <element signature="e#3945#3951#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#4439#4445#0#HTML" expanded="true" />
+                <element signature="e#4445#4451#0#HTML" expanded="true" />
+                <element signature="e#4451#4457#0#HTML" expanded="true" />
+                <element signature="e#4457#4463#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/login_change.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="228">
+              <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+        <entry file="file://$PROJECT_DIR$/images/1.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/file.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gallery.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+            <state relative-caret-position="380">
+              <caret line="217" column="86" lean-forward="true" selection-start-line="217" selection-start-column="86" selection-end-line="217" selection-end-column="86" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cteam.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="517">
+              <caret line="88" column="44" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
+              <folding>
+                <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -157,7 +180,6 @@
         <option value="$PROJECT_DIR$/css/mystyle.css" />
         <option value="$PROJECT_DIR$/js/lightcase.js" />
         <option value="$PROJECT_DIR$/README" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/about.html" />
         <option value="$PROJECT_DIR$/apply.html" />
         <option value="$PROJECT_DIR$/files1.html" />
@@ -196,6 +218,10 @@
         <option value="$PROJECT_DIR$/jteam.html" />
         <option value="$PROJECT_DIR$/icons.php" />
         <option value="$PROJECT_DIR$/cteam.php" />
+        <option value="$PROJECT_DIR$/jteam.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/gallery.php" />
+        <option value="$PROJECT_DIR$/activity.php" />
       </list>
     </option>
   </component>
@@ -270,7 +296,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="D:/AndroidStudio/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -286,9 +312,9 @@
       <recent name="D:\IDEAIU\Project\EasyTeam" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\EasyTeam\js" />
-      <recent name="D:\xampp\htdocs\EasyTeam" />
       <recent name="D:\xampp\htdocs\EasyTeam\images" />
+      <recent name="D:\xampp\htdocs\EasyTeam" />
+      <recent name="D:\xampp\htdocs\EasyTeam\js" />
       <recent name="D:\xampp\htdocs\EasyTeam\css" />
       <recent name="D:\IDEAIU\Project\EasyTeam" />
     </key>
@@ -354,7 +380,7 @@
       <workItem from="1561451675771" duration="338000" />
       <workItem from="1561452139753" duration="3329000" />
       <workItem from="1561462749734" duration="9854000" />
-      <workItem from="1561506638169" duration="7472000" />
+      <workItem from="1561506638169" duration="11099000" />
     </task>
     <task id="LOCAL-00001" summary="添加了消息页面">
       <created>1561083308885</created>
@@ -566,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561468068211</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="加入修改个人信息">
+      <created>1561515216549</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1561515216549</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -576,9 +609,12 @@
     <history-entry file="EasyTeam - 2019.06.25 at 20h 58m 48s.xml">
       <configuration name="EasyTeam" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="EasyTeam - 2019.06.26 at 10h 48m 29s.xml">
+      <configuration name="EasyTeam" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100979000" />
+    <option name="totallyTimeSpent" value="104606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1448" y="100" width="1456" height="876" extended-state="6" />
@@ -661,18 +697,10 @@
     <MESSAGE value="加入入队申请" />
     <MESSAGE value="修改标题" />
     <MESSAGE value="加入消息功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="加入消息功能" />
+    <MESSAGE value="加入修改个人信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="加入修改个人信息" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/images/s2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/s1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/right.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/quit.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -803,13 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gallery.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5073">
-          <caret line="267" column="18" selection-start-line="267" selection-start-column="18" selection-end-line="267" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -821,13 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activity.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="153" column="18" lean-forward="true" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -891,42 +905,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="165" column="95" selection-start-line="165" selection-start-column="95" selection-end-line="165" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loginAction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="27" lean-forward="true" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="29" column="36" lean-forward="true" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jteam.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="80" column="39" lean-forward="true" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -939,11 +921,86 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cteam.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="119" column="75" selection-start-line="119" selection-start-column="75" selection-end-line="119" selection-end-column="75" />
+        <state relative-caret-position="517">
+          <caret line="88" column="44" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
           <folding>
             <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jteam.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="168" column="39" selection-start-line="168" selection-start-column="39" selection-end-line="168" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="1073" column="16" selection-start-line="1073" selection-start-column="16" selection-end-line="1073" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="217" column="86" lean-forward="true" selection-start-line="217" selection-start-column="86" selection-end-line="217" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="91" column="79" lean-forward="true" selection-start-line="91" selection-start-column="67" selection-end-line="91" selection-end-column="79" />
+          <folding>
+            <element signature="e#3915#3921#0#HTML" expanded="true" />
+            <element signature="e#3921#3927#0#HTML" expanded="true" />
+            <element signature="e#3927#3933#0#HTML" expanded="true" />
+            <element signature="e#3933#3939#0#HTML" expanded="true" />
+            <element signature="e#3939#3945#0#HTML" expanded="true" />
+            <element signature="e#3945#3951#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#4439#4445#0#HTML" expanded="true" />
+            <element signature="e#4445#4451#0#HTML" expanded="true" />
+            <element signature="e#4451#4457#0#HTML" expanded="true" />
+            <element signature="e#4457#4463#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
         </state>
       </provider>
     </entry>

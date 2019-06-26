@@ -55,7 +55,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
-                        <li><a href="gallery.html" class="w3ls-hover active">校园趣事</a></li>
+                        <li><a href="gallery.php" class="w3ls-hover active">校园趣事</a></li>
                         <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -204,65 +204,21 @@
                             <br/><font color="#a9a9a9" size="3">加强对学生的诚信教育，提升我院学生整体德育水平，弘扬中华民族的传统美德。</font>
                         </td>
                         <td class="anchorjs-icon"><font size="4">2019-05-29</font></td>
-                        <td class="anchorjs-icon"><font size="4"><a href="activity.html">详情了解&#x3e;&#x3e;</a></font></td>
+                        <td class="anchorjs-icon"><font size="4"><a href="file.php">详情了解&#x3e;&#x3e;</a></font></td>
                     </tr>
-                    <tr>
-                        <td class="anchorjs-icon"><font size="4" color="black"><b>第二届网页设计大赛</b></font>
-                            <br/><font color="#a9a9a9" size="3">培养学生创新设计能力以及团队协作的能力。</font>
-                        </td>
-                        <td class="anchorjs-icon"><font size="4">2019-05-26</font></td>
-                        <td class="anchorjs-icon"><font size="4"><a href="#">详情了解&#x3e;&#x3e;</a></font></td>
-                    </tr>
-                    <tr >
-                        <td class="anchorjs-icon"><font size="4" color="black"><b>“礼敬中国传统文化”第二届汉字听写大赛决赛</b></font>
-                            <br/><font color="#a9a9a9" size="3">书写国魂，汉韵永存。</font>
-                        </td>
-                        <td class="anchorjs-icon"><font size="4">2019-05-23</font></td>
-                        <td class="anchorjs-icon"><font size="4"><a href="#">详情了解&#x3e;&#x3e;</a></font></td>
-                    </tr>
-
-                    <tr>
-                        <td class="anchorjs-icon"><font size="4" color="black"><b>机械争霸</b></font>
-                            <br/><font color="#a9a9a9" size="3">各组比赛成员在比赛中顽强拼搏，励精图治。</font>
-                        </td>
-                        <td class="anchorjs-icon"><font size="4">2019-05-22</font></td>
-                        <td class="anchorjs-icon"><font size="4"><a href="#">详情了解&#x3e;&#x3e;</a></font></td>
-                    </tr>
-                    <tr>
-                        <td class="anchorjs-icon"><font size="4" color="black"><b>青春心向党&nbsp;建功新时代</b></font>
-                            <br/><font color="#a9a9a9" size="3">在新时代青年的手中变为现实。</font>
-                        </td>
-                        <td class="anchorjs-icon"><font size="4">2019-05-20</font></td>
-                        <td class="anchorjs-icon"><font size="4"><a href="#">详情了解&#x3e;&#x3e;</a></font></td>
-                    </tr>
-                    <tr>
-                        <td class="anchorjs-icon"><font size="4" color="black"><b>第二届“礼仪之星”大赛</b></font>
-                            <br/><font color="#a9a9a9" size="3">学生们在比赛中秀出风采，秀出面貌。</font>
-                        </td>
-                        <td class="anchorjs-icon"><font size="4">2019-05-20</font></td>
-                        <td class="anchorjs-icon"><font size="4"><a href="#">详情了解&#x3e;&#x3e;</a></font></td>
-                    </tr>
-                    <tr>
-                        <td class="anchorjs-icon"><font size="4" color="black"><b>第八届“挑战杯”竞赛</b></font>
-                            <br/><font color="#a9a9a9" size="3">国际化、信息化的时代特征。</font>
-                        </td>
-                        <td class="anchorjs-icon"><font size="4">2019-05-18</font></td>
-                        <td class="anchorjs-icon"><font size="4"><a href="#">详情了解&#x3e;&#x3e;</a></font></td>
-                    </tr>
-                    <tr>
-                        <td class="anchorjs-icon"><font size="4" color="black"><b>第一届打字比赛</b></font>
-                            <br/><font color="#a9a9a9" size="3">锻炼同学们的打字速度以提升学习和工作效率。</font>
-                        </td>
-                        <td class="anchorjs-icon"><font size="4">2019-05-16</font></td>
-                        <td class="anchorjs-icon"><font size="4"><a href="#">详情了解&#x3e;&#x3e;</a></font></td>
-                    </tr>
-                    <tr>
-                        <td class="anchorjs-icon"><font size="4" color="black"><b>十佳歌手大赛</b></font>
-                            <br/><font color="#a9a9a9" size="3">为了繁荣校园文化生活，努力营造积极向上、健康文明的校园文化气氛，为学生提供展示自己才华的舞台。</font>
-                        </td>
-                        <td class="anchorjs-icon"><font size="4">2019-05-09</font></td>
-                        <td class="anchorjs-icon"><font size="4"><a href="#">详情了解&#x3e;&#x3e;</a></font></td>
-                    </tr>
+                    <?php
+                    include("MySqlConnect.php");
+                    $result = $conn->query("SELECT * FROM article order by ar_time desc");
+                    while ($row = mysqli_fetch_array($result)) {
+                        ?>
+                        <tr>
+                            <td class="anchorjs-icon"><font size="4" color="black"><b><?php echo $row[1]?></b></font>
+                                <br/><font color="#a9a9a9" size="3"><?php echo $row[3]?></font>
+                            </td>
+                            <td class="anchorjs-icon"><font size="4"><?php echo $row[5]?></font></td>
+                            <td class="anchorjs-icon"><font size="4"><a href="activity.php?ar_id=<?php  echo $row[0] ?>">详情了解&#x3e;&#x3e;</a></font></td>
+                        </tr>
+                    <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -285,7 +241,7 @@
                 <h3>快速连接</h3>
                 <ul>
                     <li><a href="homepage.html"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
-                    <li><a href="gallery.html"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
+                    <li><a href="gallery.php"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
                     <li><a href="codes.html"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
                     <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
                     <li><a href="contact.php"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>

@@ -55,7 +55,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
-                        <li><a href="gallery.html" class="btn w3ls-hover">校园趣事</a></li>
+                        <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
                         <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -120,7 +120,7 @@
                 <h3>快速连接</h3>
                 <ul>
                     <li><a href="homepage.html"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
-                    <li><a href="gallery.html"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
+                    <li><a href="gallery.php"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
                     <li><a href="codes.html"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
                     <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
                     <li><a href="contact.php"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
@@ -202,22 +202,12 @@
 <!-- smooth-scrolling-of-move-up -->
 <script type="text/javascript">
     $(document).ready(function () {
-        /*
-        var defaults = {
-            containerID: 'toTop', // fading element id
-            containerHoverID: 'toTopHover', // fading element hover id
-            scrollSpeed: 1200,
-            easingType: 'linear'
-        };
-        */
+
         $().UItoTop({easingType: 'easeOutQuart'});
 
     });
 </script>
 <!-- //smooth-scrolling-of-move-up -->
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="js/bootstrap.js"></script>
 </body>
 </html>

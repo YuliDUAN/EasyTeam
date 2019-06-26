@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="images/logo.ico">
-    <title>我的队伍</title>
+    <title>校园趣事</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
     <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" property=""/>
+    <link href="css/lightcase.css" rel="stylesheet" type="text/css"/>
     <!-- //Custom Theme files -->
     <!-- font-awesome icons -->
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -49,16 +50,17 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
-                        <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
+                        <li><a href="gallery.php" class="w3ls-hover active">校园趣事</a></li>
                         <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="icons.php">正在进行</a></li>
+                                <li><a href="icons.html">正在进行</a></li>
                                 <li><a href="codes.html">已经结束</a></li>
                             </ul>
                         </li>
+
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" class="w3ls-hover active">个人中心</a></li>
+                        <li><a href="contact.php" class="btn w3ls-hover">个人中心</a></li>
                     </ul>
                     <div class="clearfix"></div>
                 </div><!-- //navbar-collapse -->
@@ -67,105 +69,68 @@
     </div><!-- //header -->
 
 </div>
-
-<script language="javascript">
-    function exit() {
-        var se=confirm("确定退出吗？");
-        if (se==true) {
-            location.href="index.html";
-        }
-    }
-</script>
 <!-- //banner -->
-<!--body start here-->
-<div class="mail" id="news_body">
+<!-- portfolio -->
+<div class="banner-bottom">
     <div class="container">
-        <div class="w3ls-heading">
-            <h2 class="h-two"> 个 人 中 心 </h2>
-            <p class="sub two">P e r s o n a l C e n t e r.</p>
-        </div>
-        <div class="col-md-5 agileits_mail_grid_right">
-            <div class="center_droc">
-                <img src="images/toxaing.png">
-                <li><a style="margin-top: 5px" href="#">修改头像>>></a></li>
-                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：康 少
-                </li>
-                <li><span style="margin-top: 5px" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4
-                    级
-                </li>
+        <div>
+            <h2>计算机学院（大数据学院）顺利举办“弘扬五四精神 构建诚信学院”主题演讲比赛</h2>
+            <hr color="#CCC"/>
+            <p>
+                <font size="3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了加强对学生的诚信教育，提升我院学生整体
+                    德育水平，弘扬中华民族的传统美德，2019年5月24日，由计算机与软件工程学院（大数据与人工智能学院
+                    ）学生党支部和学生会联合举办的“弘扬五四精神 构建诚信校园”主题演讲比赛在文津校区东二五楼报告厅举
+                    行，学院伍祥老师、汤菲菲老师、随小莉老师作为评委出席了本次比赛。
+                </font>
+            </p>
+            <div style="text-align: center">
+                <img style="width: 800px;height: 530px" src="images/g2.jpg" alt="" vspace="20"/><br/>（图为主持人宣布比赛开始）<br/>
             </div>
-            <div class="left-agileits">
-                <table>
-                    <tr>
-                        <td><img class="tubiao" src="images/news.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="news.php"><h4> 消 息</h4></a></span></td>
-                    </tr>
-                    <tr >
-                        <td><img class="tubiao" src="images/rudui.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.html"><h4> 入 队 申 请 </h4> </a></span></td>
-                    </tr>
-                    <tr>
-                        <td><img class="tubiao" src="images/personal.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a
-                                href="contact.php"> <h4> 个 人 信 息 </h4> </a></span></td>
-                    </tr>
-                    <tr>
-                        <td><img class="tubiao" src="images/match.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="myjgames.html"> <h4> 我 的 比 赛 </h4></a></span></td>
-                    </tr>
-                    <tr>
-                        <td><img class="tubiao" src="images/team.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="team.html"> <h4> 我 的 队 伍 </h4></a></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img class="tubiao" src="images/evaluate.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="leaveword.html"><h4> 留 言 版 块 </h4></a></span></td>
-                    </tr>
-                    <tr>
-                        <td><img class="tubiao" src="images/collection.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="collect.html"> <h4> 我 的 收 藏 </h4></a></span></td>
-                    </tr>
-                    <tr>
-                        <td><img class="tubiao" src="images/question.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="question.html"> <h4> 问 题 反 馈 </h4></a></span></td>
-                    </tr>
-                    <tr >
-                        <td style="padding-bottom: 20px"><img class="tubiao" src="images/quit.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px">
-                            <span onclick="exit()"><a><h4> 退 出 </h4></a></span></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="agileits_mail_grids">
-            <div class="col-md-7 agileits_mail_grid_left">
-                <table class="table" style="background-color: #ffffff">
-                    <tbody>
-                    <tr>
-                        <th class="anchorjs-icon"><font size="4" color="black">队伍名称</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">赛事名称</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">成绩</font></th>
-                    </tr>
-                    <tr>
-                        <td class="anchorjs-icon"><font size="4">聚贤阁一队</font></td>
-                        <td class="anchorjs-icon"><font size="4">APP创意设计大赛</font></td>
-                        <td class="anchorjs-icon"><font size="4">二等奖</font></td>
-                    </tr>
+            <p>
+                <font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;比赛伊始，由主持人李
+                    可欣隆重介绍本次比赛评委老师。
+                    随后，在洪亮的共青团团歌下，汤菲菲老师宣布比赛正式开始。参赛选手围绕“弘扬五四精神 构建诚信学院”
+                    进行主题演讲，选手们从不同角度切入主题，感情饱满、自然大方。在台上，每位选手都侃侃而谈，妙语连珠，
+                    展现了大学生应有的自信和大方、认知与才华。演讲者们有的讲述了发生在自己身上的故事，感人至深；有的联系起
+                    社会实践展开对五四精神与诚信的阐述，引人深思；有的配以美妙的音乐，还有的加之以动人的肢体语言。每位演讲
+                    者都尽己所能，充分地展现了当代大学生朝气蓬勃的精神面貌。
+                </font>
+            </p>
 
-                    </tbody>
-                </table>
+            <div style="text-align: center">
+                <img style="width: 800px;height: 530px" src="images/g10.jpg" alt="" vspace="20"/><br/>（图为全体嘉宾、参赛人员、工作人员合影）<br/>
             </div>
-            <div class="clearfix"></div>
+            <p>
+                <font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经过激烈的角逐，来自软件1803的曹阳荣获第一名，来自
+                    软件1807的童宇、陈忠辉与来自计科1704的鲁锦萍并列第二名，大数据1803的程啸霆、计科1702的施米山、
+                    大数据1802的袁仁斌、黄诗雅、孙睿鹏荣获三等奖。比赛的最后，伍祥老师对本次比赛进行了总结，他认为
+                    活动形式有所革新，选手质量不断提高，指出了诚信教育活动的背景和意义，并且提出五四精神与现代诚信
+                    观的内涵，勉励大学生们以活动为契机，将诚信意识内化于心，外化于行。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本次演讲比赛是我校
+                    “诚信教育主题月”活动中的亮点，充分展 示了计算机学院与大数据学院学子的优秀风采，展现了同学们诚
+                    信立身、自强不息的精神，践行了我校“立志 、诚毅、创新”的校训。在宝贵的大学学习阶段，我们应当以诚
+                    立身、秉信立行，怀知恩之心，做感恩之人， 为新时代起航蓄力储能，以青春理想、青春活力、青春奋斗书写
+                    无愧于时代、无愧于历史的华彩篇章。
+                </font>
+            </p>
+            <hr color="#CCC"/>
+            <div>
+                <div style="float: left">
+                    <p>
+                        <em>
+                            <font color="#666666">
+                                2019.05.29&nbsp;&nbsp;&nbsp;&nbsp;来源：安信工计算机学院和大数据学院
+                            </font>
+                        </em>
+                    </p>
+                </div>
+                <div style="text-align: center;float: right;">
+                    文：陈威&nbsp;&nbsp;图：徐涛&nbsp;&nbsp;编辑：王谢贵&nbsp;&nbsp;校对：张梦&nbsp;&nbsp;审核：张璐璐
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<!-- //contact -->
+<!-- portfolio -->
 <!-- footer start here -->
 <div class="footer-agile">
     <div class="container">
@@ -271,7 +236,6 @@
             easingType: 'linear'
         };
         */
-
         $().UItoTop({easingType: 'easeOutQuart'});
 
     });
