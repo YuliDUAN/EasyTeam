@@ -182,7 +182,7 @@ $row = mysqli_fetch_array($result);
 
                     </script>
                 </form>
-                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：康 少
+                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：<?php echo $row['username'];?>
                 </li>
                 <li><span style="margin-top: 5px" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4
                     级

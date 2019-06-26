@@ -89,11 +89,11 @@ $i = 1;
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
-                        <li><a href="gallery.html" class="btn w3ls-hover">校园趣事</a></li>
+                        <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
                         <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="icons.html">正在进行</a></li>
+                                <li><a href="icons.php">正在进行</a></li>
                                 <li><a href="codes.html">已经结束</a></li>
                             </ul>
                         </li>
@@ -166,8 +166,8 @@ $i = 1;
             <table class="table" style="text-align: right">
                 <tbody>
                 <tr>
-                    <td class="type-info"><a href="cteam.html"><font size="5">创建队伍</font></a></td>
-                    <td class="type-info"><a href="jteam.html"><font size="5">加入队伍</font></a></td>
+                    <td class="type-info"><a href="cteam.php"><font size="5">创建队伍</font></a></td>
+                    <td class="type-info"><a href="jteam.php"><font size="5">加入队伍</font></a></td>
                 </tr>
                 </tbody>
             </table>
