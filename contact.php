@@ -64,7 +64,7 @@ $row = mysqli_fetch_array($result);
                         <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="icons.html">正在进行</a></li>
+                                <li><a href="icons.php">正在进行</a></li>
                                 <li><a href="codes.html">已经结束</a></li>
                             </ul>
                         </li>
@@ -163,7 +163,7 @@ $row = mysqli_fetch_array($result);
                     <h4>专业班级</h4>
                     <input type="text" name="Class" disabled placeholder="<?php echo $row['major'].$row ['cls'];?>" required="">
                     <h4>联系电话</h4>
-                    <input type="text" name="Phone" disabled placeholder="<?php echo $row ['phone'];?>" required="">
+                    <input type="text" name="Phone"  placeholder="<?php echo $row ['phone'];?>">
                     <h4>个人简介</h4>
                     <textarea placeholder="<?php echo $row ['brief'];?>" name="Message"></textarea>
                     <button class="all_button">修改</button>

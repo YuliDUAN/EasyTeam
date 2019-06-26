@@ -76,7 +76,7 @@ $i = 1;
                         <li><a href="gallery.html" class="btn w3ls-hover">校园趣事</a></li>
                         <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="icons.html">正在进行</a></li>
+                                <li><a href="icons.php">正在进行</a></li>
                                 <li><a href="codes.html">已经结束</a></li>
                             </ul>
                         </li>
@@ -98,7 +98,7 @@ $i = 1;
         <div style="width:100%">
             <div style="float: left;width:20%;min-height: 500px;background-color: snow;padding: 20px">
                 <div align="center">
-                    <img src="images/t11.jpg"width="80"height="80"/>
+                    <img src="images/t11.jpg"width="80px"height="80px"/>
                 </div>
                 <div style="padding-top: 20px">
                     <table style="border-collapse:separate; border-spacing:0px 10px;">
@@ -149,8 +149,8 @@ $i = 1;
             <table class="table"style="text-align: right">
                 <tbody>
                 <tr>
-                    <td class="type-info"><a href="cteam.html"><font size="5">创建队伍</font></a></td>
-                    <td class="type-info"><a href="jteam.html"><font size="5">加入队伍</font></a></td>
+                    <td class="type-info"><a href="cteam.php"><font size="5">创建队伍</font></a></td>
+                    <td class="type-info"><a href="jteam.php"><font size="5">加入队伍</font></a></td>
                 </tr>
                 </tbody>
             </table>
@@ -186,7 +186,7 @@ $i = 1;
             </div>
 
             <div style="width:100%">
-                <div style="float: left;width:20%;min-height:400px;background-color: snow;padding: 20px;border-top:6px solid #ddd">
+                <div style="float: left;width:20%;min-height:400px;background-color: snow;padding: 20px;border-bottom:6px solid #ddd">
                     <div align="center">
                             <img src="<?php echo $row["image"];?>"width="80" height="80"/>
                     </div>
@@ -203,12 +203,28 @@ $i = 1;
                             </tr>
                         </table>
                     </div>
+                    <div style="padding-top: 10px;border-top:3px solid #ddd">
+                        <form action="newsAction.php?receive_id=<?php echo $row['uid']?>&send_id=<?php echo $_SESSION['sno']?>&send_name=<?php echo $_SESSION['username']?>" enctype="multipart/form-data" method="post">
+                            <div>
+                                <div style="padding-top: 10px">
+                                    <input type="text" name="titlenews"style="border-radius: 5px;width: 90%" placeholder="请输入私信标题">
+                                </div>
+                                <div style="padding-top: 10px">
+                                    <textarea name="txtnews"style="border-radius:10px;width:90%;height: 80px" placeholder="请输入私信内容"></textarea>
+                                </div>
+
+                                <div style="padding-top: 10px">
+                                    <button class="all_button" value="发送"><span><h5 >发送</h5></span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding:10px;word-break: break-all;border-top:3px solid #ddd">
+                <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding:10px;word-break: break-all">
                     <p><h4><?php echo $row['comment'];?></h4></p>
                 </div>
                 <form action="applyInfoAction.php?fid=<?php echo $row['uid']?>&rid=<?php echo $_SESSION['sno']?>&name=<?php echo $_SESSION['username']?>" enctype="multipart/form-data" method="POST">
-                    <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding:5px;word-break: break-all;border-top:3px solid #ddd">
+                    <div style="float: right;width:77%;min-height: 225px;background-color: snow;padding:5px;word-break: break-all;border-top:3px solid #ddd;border-bottom:6px solid #ddd">
                         <div style="float: left;width:70%;margin: 20px">
                             <table>
                                 <tr>
@@ -224,29 +240,15 @@ $i = 1;
                             </table>
                         </div>
                         <div style="float: right;width:20%;margin: 20px">
-                            <textarea name="rinfo"style="width: 100%;min-height: 100px;margin-bottom: 10px"></textarea>
+                            <textarea name="rinfo"style="width: 100%;min-height: 100px;border-radius:10px;margin-bottom: 10px"></textarea>
                             <div style="float: right">
-                                <button>回复</button>
+                                <button class="all_button" value="回复"><span><h5>回复</h5></span></button>
                             </div>
                         </div>
                     </div>
             </div>
             </form>
 
-            <form action="newsAction.php?receive_id=<?php echo $row['uid']?>&send_id=<?php echo $_SESSION['sno']?>&send_name=<?php echo $_SESSION['username']?>" enctype="multipart/form-data" method="post">
-                <div>
-                    <div>
-                        <input type="text" name="titlenews">
-                    </div>
-                    <div>
-                        <textarea name="txtnews"></textarea>
-                    </div>
-
-                    <div>
-                        <button class="all_button" value="发送"><span><h5>发送</h5></span></button>
-                    </div>
-                </div>
-            </form>
 
 
             <?php ++$i;?>
@@ -256,7 +258,7 @@ $i = 1;
             <div style="width:100%">
                 <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding: 20px;margin-top: 50px">
                     <div style="margin-bottom: 20px">
-                        <textarea name="comment"style="width: 100%;min-height: 100px"></textarea>
+                        <textarea name="comment"style="width: 100%;min-height: 100px;border-radius:10px"></textarea>
                     </div>
                     <div style="float: right">
                         <button>评论</button>

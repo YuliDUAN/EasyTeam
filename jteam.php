@@ -59,7 +59,7 @@
                         <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="icons.html">正在进行</a></li>
+                                <li><a href="icons.php">正在进行</a></li>
                                 <li><a href="codes.html">已经结束</a></li>
                             </ul>
                         </li>
@@ -78,7 +78,7 @@
 <div class="typo" style="background-color: #f0f0f0">
     <div class="container">
         <div class="w3ls-heading">
-            <h2 class="h-two">进行中赛事</h2>
+            <h2 class="h-two">比赛队伍</h2>
         </div>
         <div class="grid_3 grid_4 w3layouts">
             <h3 class="hdg">加入队伍</h3>
@@ -97,7 +97,7 @@
                         <td><font size="4">张三</font></td>
                         <td><font size="4">1759812345</font></td>
                         <td><font size="4">6</font></td>
-                        <td onclick="on_Click2();"><font size="5" color="blue"><span>加入</span></font></td>
+                        <td onclick="on_Click2();"><font size="5" color="blue"><span>申请加入</span></font></td>
                     </tr>
                     </tbody>
                 </table>

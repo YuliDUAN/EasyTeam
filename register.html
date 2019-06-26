@@ -34,7 +34,8 @@
                 </tr>
                 <tr>
                     <td colspan="4"><input name="username" type="text" placeholder="姓名"
-                                           onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')">
+                                           onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"
+                                           maxlength=10 name="Numbers">
                     </td>
                 </tr>
                 <tr>
@@ -82,7 +83,7 @@
             </div>
         </form>
     </div>
-    <div  class="copyright"  >APP创意俱乐部 版权所有©2019-2021</div>
+    <div  class="copyright">APP创意俱乐部 版权所有©2019-2021</div>
 </div>
 </body>
 </html>

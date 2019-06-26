@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="images/logo.ico">
-    <title>正在进行</title>
+    <title>创建队伍</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="keywords" content=""/>
-    <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
-
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    function on_Click() {
+        alert("报名成功！");
+    }
+    </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" property=""/>
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" property="" />
     <!-- //Custom Theme files -->
     <!-- font-awesome icons -->
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -25,8 +23,7 @@
     <script src="js/jquery-2.2.3.min.js"></script>
     <!-- //js -->
     <!-- web-fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
-          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
 </head>
 <body>
@@ -51,18 +48,17 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
                         <li><a href="gallery.html" class="btn w3ls-hover">校园趣事</a></li>
-                        <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
+                        <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="icons.html">正在进行</a></li>
+                                <li><a href="icons.php">正在进行</a></li>
                                 <li><a href="codes.html">已经结束</a></li>
                             </ul>
                         </li>
 
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" class="w3ls-hover active">个人中心</a></li>
+                        <li><a href="contact.php" class="btn w3ls-hover">个人中心</a></li>
                     </ul>
-                    <div class="clearfix"></div>
+                    <div class="clearfix"> </div>
                 </div><!-- //navbar-collapse -->
             </div><!-- //container-fluid -->
         </nav>
@@ -71,33 +67,62 @@
 </div>
 <!-- //banner -->
 <!-- typography -->
-<div class="typo">
-    <div class="container">
-        <div class="w3ls-heading">
-            <h2 class="h-two">激烈进行中</h2>
-            <p class="sub two">In full swing.</p>
+<div style="background-color: #f0f0f0 ">
+    <div class="ctream">
+        <div class="w3ls-heading" style="padding-top: 40px">
+            <h2 class="h-two">进行中赛事</h2>
         </div>
-    </div>
-    <div class="grid_3 grid_4 w3layouts">
-        <div class="bs-example">
-            <table class="table" >
-                <tbody>
-                <tr>
-                    <th><font size="4" color="black">赛事名称</font></th>
-                    <th><font size="4" color="black">赛事截止时间</font></th>
-                    <th><font size="4" color="black"> 操作</font></th>
-                </tr>
 
-                <tr>
-                    <td><font size="4">App创意中心宣讲会</font></td>
-                    <td><font size="4">2019-6-30</font></td>
-                    <td><a href="apply.php"><font size="4">查看详情</font></a></td>
-                </tr>
-                </tbody>
-            </table>
+        <div>
+            <h3 class="hdg">创建队伍</h3>
+            <div  style="background-color: #ffffff;margin-bottom: 60px;padding:10px" >
+                <table align="center" style="margin: 20px">
+                    <tr>
+                        <th><font size="5" >填写队伍信息</font></th>
+                    </tr>
+                    <tr style="padding-top: 10px">
+                        <th><font size="4">队伍名称</font></th>
+                        <td><input type="text" name="empName" value=""/></td>
+                    </tr>
+                    <tr>
+                        <th><font size="4">队 长</font></th>
+                        <td><input type="text" name="empName" value=""/></td>
+                    </tr>
+                    <tr>
+                        <th><font size="4">联系方式</font></th>
+                        <td><input type="text" name="tel" value=""/></td>
+                    </tr>
+                    <tr>
+                        <th><font size="4">成员1</font></th>
+                        <td><input type="text" name="emp1"value=""/></td>
+                    </tr>
+                    <tr>
+                        <th><font size="4">成员2</font></th>
+                        <td><input type="text" name="emp2" value=""/></td>
+                    </tr>
+                    <tr>
+                        <th><font size="4">成员3</font></th>
+                        <td><input type="text" name="emp3" value=""/></td>
+                    </tr>
+                    <tr>
+                        <th><font size="4">成员4</font></th>
+                        <td><input type="text" name="emp4" value=""/></td>
+                    </tr>
+                    <tr>
+                        <th><font size="4">成员5</font></th>
+                        <td><input type="text" name="emp5" value=""/></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                </br>
+                <div align="center">
+                    <input class="all_button" type="button" value="取消"/>
+                    <input class="all_button" type="button" value="确认" style="margin-left: 100px ;margin-bottom: 20px" onclick="on_Click();"/>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </div>
 <!-- footer start here -->
 <div class="footer-agile">
@@ -127,7 +152,7 @@
                     <li><a href="mailto:info@example.com"> 123 @qq.com</a></li>
                 </ul>
             </div>
-            <div class="clearfix"></div>
+            <div class="clearfix"> </div>
         </div>
         <div class="copy-right">
             <p>App &copy; 2019.创意实验室 <a href="#" target="_blank" title="App创意实验室">App创意实验室</a></p>
@@ -138,10 +163,10 @@
 <!-- FlexSlider -->
 <script defer src="js/jquery.flexslider.js"></script>
 <script type="text/javascript">
-    $(window).load(function () {
+    $(window).load(function(){
         $('.flexslider').flexslider({
             animation: "slide",
-            start: function (slider) {
+            start: function(slider){
                 $('body').removeClass('loading');
             }
         });
@@ -150,9 +175,9 @@
 <!-- End-slider-script -->
 <!-- Flexslider-js for-testimonials -->
 <script type="text/javascript">
-    $(window).load(function () {
+    $(window).load(function() {
         $("#flexiselDemo1").flexisel({
-            visibleItems: 1,
+            visibleItems:1,
             animationSpeed: 1000,
             autoPlay: true,
             autoPlaySpeed: 3000,
@@ -160,15 +185,15 @@
             enableResponsiveBreakpoints: true,
             responsiveBreakpoints: {
                 portrait: {
-                    changePoint: 480,
+                    changePoint:480,
                     visibleItems: 1
                 },
                 landscape: {
-                    changePoint: 640,
-                    visibleItems: 1
+                    changePoint:640,
+                    visibleItems:1
                 },
                 tablet: {
-                    changePoint: 768,
+                    changePoint:768,
                     visibleItems: 1
                 }
             }
@@ -184,34 +209,24 @@
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $(".scroll").click(function (event) {
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
             event.preventDefault();
 
-            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
         });
     });
 </script>
 <!-- //end-smooth-scrolling   -->
 <!-- smooth-scrolling-of-move-up -->
 <script type="text/javascript">
-    $(document).ready(function () {
-        /*
-        var defaults = {
-            containerID: 'toTop', // fading element id
-            containerHoverID: 'toTopHover', // fading element hover id
-            scrollSpeed: 1200,
-            easingType: 'linear'
-        };
-        */
-        $().UItoTop({easingType: 'easeOutQuart'});
+    $(document).ready(function() {
+
+        $().UItoTop({ easingType: 'easeOutQuart' });
 
     });
 </script>
 <!-- //smooth-scrolling-of-move-up -->
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="js/bootstrap.js"></script>
 </body>
 </html>
