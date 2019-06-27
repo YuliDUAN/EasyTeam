@@ -1,12 +1,9 @@
 <?php
-$_POST['login'];
-
-$sno = $_POST["sno"];
-$psd = $_POST["password"];
 session_start();
 include "MySqlConnect.php";
-if (strlen($sno) != 0 && strlen($psd) != 0) {
-
+$sno = $_POST["sno"];
+$psd = $_POST["password"];
+if (!empty($_POST)&&!empty($sno) && !empty($psd)) {
     $sql = "select * from ruser where sno='$sno' and password='$psd'";
     $result = $conn->query($sql);
     $row = mysqli_fetch_array($result);

@@ -1,8 +1,8 @@
 <?php
 session_start();
 include "MySqlConnect.php";
-if (!empty($_POST)&&!empty($_POST["comment"])){
-    $comment = $_POST["comment"];
+$comment = $_POST["comment"];
+if (!empty($_POST)&&!empty($comment)){
     $ctime = date("Y-m-d");
     $sno = $_SESSION["sno"];
     echo $sno;

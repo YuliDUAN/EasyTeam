@@ -1,8 +1,8 @@
 <?php
 include "MySqlConnect.php";
-if (!empty($_POST)&&!empty($_POST['rinfo'])){
+$reply = $_POST['rinfo'];
+if (!empty($_POST)&&!empty($reply)){
     $rid = $_GET['rid'];
-    $reply = $_POST['rinfo'];
     $rtime = date("Y-m-d");
     $fid = $_GET['fid'];
     $name = $_GET['name'];
