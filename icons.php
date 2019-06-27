@@ -51,16 +51,15 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
                         <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
-                        <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
+                        <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="icons.php">正在进行</a></li>
                                 <li><a href="codes.html">已经结束</a></li>
                             </ul>
                         </li>
-
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" class="w3ls-hover active">个人中心</a></li>
+                        <li><a href="contact.php" class="btn w3ls-hover">个人中心</a></li>
                     </ul>
                     <div class="clearfix"></div>
                 </div><!-- //navbar-collapse -->

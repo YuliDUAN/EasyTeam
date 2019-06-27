@@ -6,7 +6,8 @@ if (!empty($_POST['rinfo'])){
     $rtime = date("Y-m-d");
     $fid = $_GET['fid'];
     $name = $_GET['name'];
-    $sql = "insert into replys(rid,name,reply,rtime,fid)values ('$rid','$name','$reply','$rtime','$fid')";
+    $id = $_GET['id'];
+    $sql = "insert into replys(rid,name,reply,rtime,fid,replyid) values ('$rid','$name','$reply','$rtime','$fid','$id')";
     $request = $conn->query($sql);
     header("location:apply.php");
 }

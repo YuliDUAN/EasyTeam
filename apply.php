@@ -246,7 +246,7 @@ $i = 1;
                     <div style="float: right;width:77%;height: 40%;background-color: snow;padding:10px;word-break: break-all">
                         <p><h4><?php echo $row['comment']; ?></h4></p>
                     </div>
-                    <form action="applyInfoAction.php?fid=<?php echo $row['uid'] ?>&rid=<?php echo $_SESSION['sno'] ?>&name=<?php echo $_SESSION['username'] ?>"
+                    <form action="applyInfoAction.php?fid=<?php echo $row['uid'] ?>&rid=<?php echo $_SESSION['sno'] ?>&name=<?php echo $_SESSION['username'] ?>&id=<?php echo $row['id'] ?>"
                           enctype="multipart/form-data" method="POST">
                         <div style="float: right;width:77%;height: 60%;background-color: snow;padding:5px;word-break: break-all;border-top:3px solid #ddd;border-bottom:6px solid #ddd">
                             <div style="float: left;width:60%;margin:3%">
@@ -254,7 +254,7 @@ $i = 1;
                                     <tr>
                                         <td>
                                             <?php foreach ($arr as $r) { ?>
-                                                <?php if ($r['fid'] == $row['uid']) { ?>
+                                                <?php if ($r['fid'] == $row['uid']&&$row['id']==$r['replyid']) { ?>
                                                     <?php ?>
                                                     <?php echo $r['name'] . "：" . $r['reply']; ?><br>
                                                 <?php } ?>
@@ -280,6 +280,11 @@ $i = 1;
             <?php ++$i; ?>
         <?php } ?>
 
+
+
+
+
+
         <form action="applyAction.php" enctype="multipart/form-data" method="POST">
             <div style="width:100%">
                 <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding: 20px;margin-top: 50px">
@@ -288,7 +293,7 @@ $i = 1;
                     </div>
                     <div style="float: right">
                         <button style="height: 5%;width: 100%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
-                                value="评论"><span><h5>评论</h5></span></button>
+                                value="评论"><span><h5>评论</button>
                     </div>
                 </div>
             </div>
@@ -387,7 +392,6 @@ $i = 1;
     jQuery(document).ready(function ($) {
         $(".scroll").click(function (event) {
             event.preventDefault();
-
             $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
         });
     });

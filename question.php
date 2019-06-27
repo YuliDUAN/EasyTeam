@@ -5,7 +5,9 @@ $sno = $_SESSION['sno'];
 $rsq = "select * from ruser where sno=$sno";
 $result = $conn->query($rsq);
 $row = mysqli_fetch_array($result);
-
+$rsq2 = "select * from question where sno=$sno";
+$result2 = $conn->query($rsq2);
+$i=0;
 ?>
 <!DOCTYPE html>
 <html lang="en" xmlns="">
@@ -233,19 +235,26 @@ $row = mysqli_fetch_array($result);
                             <th class="anchorjs-icon"width="65%"><font size="4" color="black">问题</font></th>
                             <th class="anchorjs-icon"width="20%"><font size="4" color="black">时间</font></th>
                         </tr>
-                        <tr>
-                            <td class="anchorjs-icon"><font size="4">1</font></td>
-                            <td class="anchorjs-icon"><font size="4">平台加载太慢，没有我想要的页面，app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。
-                                旨在为学生提供一</font></td>
-                            <td class="anchorjs-icon"><font size="4">2019-6-24</font></td>
-                        </tr>
+                        <?php
+                        while($rows = mysqli_fetch_array($result2)) {
+                            ?>
+                            <tr>
+                                <td class="anchorjs-icon"><font size="4"><?php echo ++$i ?></font></td>
+                                <td class="anchorjs-icon"><font size="4"><?php echo $rows[2] ?></font></td>
+                                <td class="anchorjs-icon"><font size="4"><?php echo $rows[3] ?></font></td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
 
                         </tbody>
                     </table>
                 </div>
                     <div style=" width:100%;padding-bottom: 20px">
-                        <textarea id="question" placeholder="请输入问题内容..."></textarea>
-                        <input class="reply_confirm"  type="button" value="确定" onclick="on_Clickq1();" style="overflow: hidden;  " />
+                        <form action="questionAction.php" method="post">
+                        <textarea id="question" name="question" placeholder="请输入问题内容..."></textarea>
+                            <button class="reply_confirm" type="submit">提交</button>
+                            <form>
                     </div>
             </div>
             <div class="clearfix"></div>
