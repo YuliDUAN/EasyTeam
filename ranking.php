@@ -48,7 +48,7 @@
                         <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="icons.php">正在进行</a></li>
-                                <li><a href="codes.html">已经结束</a></li>
+                                <li><a href="codes.php">已经结束</a></li>
                             </ul>
                         </li>
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
@@ -104,7 +104,7 @@
                 <ul>
                     <li><a href="homepage.html"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
                     <li><a href="gallery.php"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
-                    <li><a href="codes.html"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
+                    <li><a href="codes.php"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
                     <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
                     <li><a href="contact.php"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
                 </ul>

@@ -64,7 +64,7 @@ $row = mysqli_fetch_array($result);
                                aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="icons.php">正在进行</a></li>
-                                <li><a href="codes.html">已经结束</a></li>
+                                <li><a href="codes.php">已经结束</a></li>
                             </ul>
                         </li>
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
@@ -95,7 +95,7 @@ $row = mysqli_fetch_array($result);
             <p class="sub two">P e r s o n a l C e n t e r.</p>
         </div>
         <div class="col-md-5 agileits_mail_grid_right">
-            <div class="center_droc">
+            <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
                     <img style="width: 120px;height: 120px" src="<?php echo $row['image'];?>">
                     <label for="file">
@@ -275,7 +275,7 @@ $row = mysqli_fetch_array($result);
                 <ul>
                     <li><a href="homepage.html"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
                     <li><a href="gallery.php"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
-                    <li><a href="codes.html"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
+                    <li><a href="codes.php"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
                     <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
                     <li><a href="contact.php"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
                 </ul>

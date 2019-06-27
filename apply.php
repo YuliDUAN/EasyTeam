@@ -94,7 +94,7 @@ $i = 1;
                                aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="icons.php">正在进行</a></li>
-                                <li><a href="codes.html">已经结束</a></li>
+                                <li><a href="codes.php">已经结束</a></li>
                             </ul>
                         </li>
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
@@ -113,24 +113,28 @@ $i = 1;
     <div class="container" style="width:80%">
         <h3 class="hdg">APP创意中心宣讲会</h3>
         <div style="width:100%">
-            <div style="float: left;width:20%;height: 80%;background-color: snow;padding: 20px">
+            <div style="float: left;width:20%;height:550px;background-color: snow;padding: 20px">
                 <div align="center">
                     <img src="images/t11.jpg" width="40%" height="auto"/>
                 </div>
                 <div style="padding-top: 20px">
                     <table style="border-collapse:separate; border-spacing:0px 10px">
                         <tr>
-                            <td><h5>发布者：</h5></td>
-                            <td><h5>APP创意设计俱乐部</h5></td>
+                            <td><font size="3.5">发布者：</font></td>
                         </tr>
                         <tr>
-                            <td><h5>发布时间：</h5></td>
-                            <td><h5>2019-6-1</h5></td>
+                            <td><font size="3.5">&nbsp;&nbsp;APP创意设计俱乐部</font></td>
+                        </tr>
+                        <tr>
+                            <td><font size="3.5">发布时间：</font></td>
+                        </tr>
+                        <tr>
+                            <td><font size="3.5">&nbsp;&nbsp;2019-6-1</font></td>
                         </tr>
                     </table>
                 </div>
             </div>
-            <div style="float: right;height: 80%;width:77%;background-color: snow;padding:60px;word-break: break-all;">
+            <div style="float: right;height: 550px;width:77%;background-color: snow;padding:60px;word-break: break-all;overflow-y:auto">
                 <table style="border-collapse:separate; border-spacing:0px 15px;">
                     <tr>
                         <td style="width: 170px"><h4>比赛名称：</h4></td>
@@ -204,7 +208,7 @@ $i = 1;
             </div>
 
             <div style="width:100%">
-                <div style="float: left;width:20%;height: 60%;background-color: snow;padding: 20px;border-bottom:6px solid #ddd">
+                <div style="float: left;width:20%;height:400px;background-color: snow;padding: 20px;border-bottom:6px solid #ddd">
                     <div align="center">
                         <img src="<?php echo $row["image"]; ?>" width="40%" height="auto"/>
                     </div>
@@ -242,19 +246,19 @@ $i = 1;
                         </form>
                     </div>
                 </div>
-                <div style="height: 60%">
-                    <div style="float: right;width:77%;height: 40%;background-color: snow;padding:10px;word-break: break-all">
+                <div style="height:400px">
+                    <div style="float: right;width:77%;height: 40%;background-color: snow;padding:10px;word-break: break-all;overflow-y:auto">
                         <p><h4><?php echo $row['comment']; ?></h4></p>
                     </div>
                     <form action="applyInfoAction.php?fid=<?php echo $row['uid'] ?>&rid=<?php echo $_SESSION['sno'] ?>&name=<?php echo $_SESSION['username'] ?>&id=<?php echo $row['id'] ?>"
                           enctype="multipart/form-data" method="POST">
                         <div style="float: right;width:77%;height: 60%;background-color: snow;padding:5px;word-break: break-all;border-top:3px solid #ddd;border-bottom:6px solid #ddd">
-                            <div style="float: left;width:60%;margin:3%">
+                            <div style="float: left;width:60%;margin:3%;height:150px;overflow-y:auto">
                                 <table>
                                     <tr>
                                         <td>
                                             <?php foreach ($arr as $r) { ?>
-                                                <?php if ($r['fid'] == $row['uid']&&$row['id']==$r['replyid']) { ?>
+                                                <?php if ($r['fid'] == $row['uid'] && $row['id'] == $r['replyid']) { ?>
                                                     <?php ?>
                                                     <?php echo $r['name'] . "：" . $r['reply']; ?><br>
                                                 <?php } ?>
@@ -281,10 +285,6 @@ $i = 1;
         <?php } ?>
 
 
-
-
-
-
         <form action="applyAction.php" enctype="multipart/form-data" method="POST">
             <div style="width:100%">
                 <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding: 20px;margin-top: 50px">
@@ -293,7 +293,7 @@ $i = 1;
                     </div>
                     <div style="float: right">
                         <button style="height: 5%;width: 100%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
-                                value="评论"><span><h5>评论</button>
+                                value="评论"><span><h5>跟帖</h5>></button>
                     </div>
                 </div>
             </div>
@@ -320,7 +320,7 @@ $i = 1;
                 <ul>
                     <li><a href="homepage.html"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
                     <li><a href="gallery.html"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
-                    <li><a href="codes.html"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
+                    <li><a href="codes.php"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
                     <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
                     <li><a href="contact.php"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
                 </ul>

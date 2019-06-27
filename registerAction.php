@@ -33,4 +33,5 @@ if (strlen($sno) != 12) {
 } else {
     echo '<script>alert("注册错误，请按要求输入！");window.location.href="register.html"</script>';
 }
+mysqli_free_result($result);
 ?>

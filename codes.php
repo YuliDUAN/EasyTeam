@@ -55,7 +55,7 @@
                                aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="icons.php">正在进行</a></li>
-                                <li><a href="codes.html">已经结束</a></li>
+                                <li><a href="codes.php">已经结束</a></li>
                             </ul>
                         </li>
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
@@ -85,11 +85,18 @@
                         <th class="anchorjs-icon"><font size="4" color="black">时间</font></th>
                         <th class="anchorjs-icon"><font size="4" color="black">操作</font></th>
                     </tr>
-                    <tr>
-                        <td class="anchorjs-icon"><font size="4">APP创意设计大赛</font></td>
-                        <td class="anchorjs-icon"><font size="4">2018年11月</font></td>
-                        <td class="type-info"><a href="ranking.html"><font size="4">查看排名</font></a></td>
-                    </tr>
+                    <?php
+                    include "MySqlConnect.php";
+                    $rsq = "select * from activity where state=0";
+                    $result = $conn->query($rsq);
+                    while($row = mysqli_fetch_array($result))
+                    { ?>
+                        <tr>
+                            <td class="anchorjs-icon"><font size="4"><?php echo $row[1] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4"><?php echo $row[7] ?></font></td>
+                            <td class="type-info"><a href="ranking.php?id=<?php echo $row[0] ?>"><font size="4">查看排名</font></a></td>
+                        </tr>
+                    <?php } ?>
 
                     </tbody>
                 </table>
@@ -113,7 +120,7 @@
                 <ul>
                     <li><a href="homepage.html"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
                     <li><a href="gallery.php"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
-                    <li><a href="codes.html"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
+                    <li><a href="codes.php"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
                     <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
                     <li><a href="contact.php"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
                 </ul>

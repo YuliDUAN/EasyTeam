@@ -1,4 +1,6 @@
 <?php
+$_POST['login'];
+
 $sno = $_POST["sno"];
 $psd = $_POST["password"];
 session_start();
