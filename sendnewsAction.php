@@ -9,8 +9,8 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH'])){
         $values = $row;
     }
 
-    echo "标题-".$values['titlenews']."\n";
-    echo "正文:".$values['txtnews']."\n";
-    echo "来源:".$values['send_name'];
+    echo "标题：".$values['titlenews']."\n".",";
+    echo "正文：".$values['txtnews']."\n".",";
+    echo "来源：".$values['send_name'];
 }
 ?>

@@ -6,16 +6,16 @@ $sql = "select * from sendnews where receive_id = $s_id";
 $result = $conn->query($sql);
 $receive_news = array();
 while($row = mysqli_fetch_array($result)){
-array_push($receive_news,$row);
+    array_push($receive_news,$row);
 }
 if(!empty($_SERVER['HTTP_X_REQUESTED_WITH'])){
-$x = $_GET['content'];
-echo $x;
-$sql = "select * from sendnews where id=$x";
-$result = $conn->query($sql);
-$values = array();
-while ($row = mysqli_fetch_array($result)){
-$values = $row;
+    $x = $_GET['content'];
+    echo $x;
+    $sql = "select * from sendnews where id=$x";
+    $result = $conn->query($sql);
+    $values = array();
+    while ($row = mysqli_fetch_array($result)){
+        $values = $row;
     }
 }
 $rsq = "select * from ruser where sno=$s_id";
@@ -45,6 +45,70 @@ $row = mysqli_fetch_array($result);
     <!-- web-fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
+    <style>
+        .dialog {
+            position: fixed;
+            opacity: 1;
+            z-index: 10000;
+            left: 50%;
+            top: 50%;
+            margin-left: -285px;
+            margin-top: -235px;
+            border-color: #b2b2b2;
+
+            overflow: hidden;
+            display: none;
+        }
+        .content {
+            width: 550px;
+            height: 450px;
+            background-color: #fff;
+            overflow: hidden;
+            border-radius:10px;
+        }
+        .btn-close{
+            cursor: pointer;
+            position: absolute;
+            top: -11px;
+            right: -6px;
+            width: 50px;
+            height: 50px;
+            /* border-radius: 50%; */
+
+            padding-top: 34px;
+            /* padding-right: 34px; */
+            text-align: center;
+            line-height: 0px;
+            font-size: 32px;
+            color: black;
+        }
+        .title {
+            font-weight: normal;
+            margin-top: 60px;
+            font-size: 20px;
+            padding-left: 6px;
+        }
+        .content-box {
+            width: 530px;
+            height: 300px;
+            margin: 0 auto;
+            border: 2px solid #eeeeee;
+            border-radius:10px;
+        }
+        .message-title {
+            text-align: center;
+            color: black;
+        }
+        .message-content {
+            width: 96%;
+            height: 80%;
+            margin: 0 auto;
+        }
+        .message-sender {
+            float: right;
+
+        }
+    </style>
 </head>
 <!-- banner -->
 <div class="banner-1">
@@ -100,11 +164,8 @@ $row = mysqli_fetch_array($result);
             <h2 class="h-two"> 个 人 中 心 </h2>
             <p class="sub two">P e r s o n a l C e n t e r.</p>
         </div>
-
-
-
         <div class="col-md-5 agileits_mail_grid_right">
-            <div class="center_droc">
+            <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
                     <img style="width: 120px;height: 120px" src="<?php echo $row['image'];?>">
                     <label for="file">
@@ -221,17 +282,17 @@ $row = mysqli_fetch_array($result);
                     <tr>
                         <td><img class="tubiao" src="images/evaluate.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
+                                        href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/collection.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
+                                        href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/question.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="question.php"> <h4> 问 题 反 馈 </h4></a></span></td>
+                                        href="question.php"> <h4> 问 题 反 馈 </h4></a></span></td>
                     </tr>
                     <tr >
                         <td style="padding-bottom: 20px"><img class="tubiao" src="images/quit.png"></td>
@@ -252,17 +313,17 @@ $row = mysqli_fetch_array($result);
                         <th width="20%"><font size="4" color="black">详情</font></th>
                     </tr>
                     <?php foreach($receive_news as $v){?>
-                    <tr>
-                        <td><font size="3"><?php echo $v['send_name'];?></font></td>
-                        <td><font size="3"><?php echo $v['titlenews'];?></font></td>
-                        <td><font size="3"><?php echo $v['send_time'];?></font></td>
-                        <td><font size="3">
-                            <form action="">
-                                <!--                                    data-target="#myModal"-->
-                                <a href="#" onclick="show(this)" data-toggle="modal" data-target="#myModal" data-type="<?php echo $v['id'];?>">查看详情</a>
-                            </form>
-                        </font></td>
-                    </tr>
+                        <tr>
+                            <td><font size="3"><?php echo $v['send_name'];?></font></td>
+                            <td><font size="3"><?php echo $v['titlenews'];?></font></td>
+                            <td><font size="3"><?php echo $v['send_time'];?></font></td>
+                            <td><font size="3">
+                                    <form action="">
+                                        <!--                                    data-target="#myModal"-->
+                                        <a href="#" onclick="show(this)" data-toggle="modal" data-target="#myModal" data-type="<?php echo $v['id'];?>">查看详情</a>
+                                    </form>
+                                </font></td>
+                        </tr>
                     <?php }?>
                     </tbody>
                 </table>
@@ -272,7 +333,20 @@ $row = mysqli_fetch_array($result);
         </div>
     </div>
 </div>
+<div class="dialog">
+    <div class="content">
+        <div  align="center"><img src="images/new_image1.png"></div>
 
+        <div class="btn-close"><img src="images/new_image2.png"></div>
+        <div class="content-box">
+            <div style="padding-top: 15px;padding-bottom: 25px" > <font ><h2 class="message-title"></h2></font></div>
+            <div style="margin-left: 10px;margin-right: 10px;height:300px;word-break: break-all;overflow-y:auto"><h4 class="message-content"></h4></div>
+        </div>
+        <div style="margin-right: 40px;margin-top: 20px">
+            <p class="message-sender"></p>
+        </div>
+    </div>
+</div>
 <script src="./js/jquery-2.2.3.min.js"></script>
 <script src="./js/jquery.flexisel.js"></script>
 <script src="./js/jquery.flexslider.js"></script>
@@ -281,9 +355,18 @@ $row = mysqli_fetch_array($result);
         var animalType = news.getAttribute("data-type");
         $.get("sendnewsAction.php", { 'content': animalType},
             function(data){
-                alert("消息：\n"+data)
+                var mes = data.split(',');
+                console.log(mes);
+                $('.message-title').html(mes[0]);
+                $('.message-content').html(mes[1]);
+                $('.message-sender').html(mes[2]);
+                $('.dialog').fadeIn(500);
             });
     }
+    //关闭弹框
+    $('.btn-close').click(function() {
+        $('.dialog').fadeOut(300);
+    });
 </script>
 <!-- bootstrap-pop-up -->
 <!--<!-- bootstrap-pop-up -->-->

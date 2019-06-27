@@ -796,13 +796,7 @@ body a:hover{
 .ch-img-2 { 
 	background:url(../images/t4.jpg) center top;
 }
-.ch-img-3 { 
-	background:url(../images/t5.jpg) -9px 0px;
-	background-size: cover;
-}
-.ch-img-4 { 
-	background:url(../images/t6.jpg) -45px -15px;
-}
+
 .ch-info {
 	position: absolute;
 	width: 100%;

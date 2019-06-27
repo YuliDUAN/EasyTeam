@@ -1,5 +1,5 @@
 <?php
-$ar_id=$_GET["ar_id"];
+$ar_id = $_GET["ar_id"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +10,12 @@ $ar_id=$_GET["ar_id"];
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
     <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
@@ -65,6 +65,9 @@ $ar_id=$_GET["ar_id"];
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
                         <li><a href="contact.php" class="btn w3ls-hover">个人中心</a></li>
                     </ul>
+                    <div class="social-icon">
+                        <img src="images/collection_no.png">
+                    </div>
                     <div class="clearfix"></div>
                 </div><!-- //navbar-collapse -->
             </div><!-- //container-fluid -->
@@ -72,6 +75,7 @@ $ar_id=$_GET["ar_id"];
     </div><!-- //header -->
 
 </div>
+
 <!-- //banner -->
 <!-- portfolio -->
 <div class="banner-bottom">
@@ -82,14 +86,14 @@ $ar_id=$_GET["ar_id"];
             $result = $conn->query("SELECT * FROM article where ar_id=$ar_id");
             $row = mysqli_fetch_array($result);
             ?>
-            <h2><?php echo $row[1]?></h2>
+            <h2><?php echo $row[1] ?></h2>
             <hr color="#CCC"/>
             <p>
-                <font size="3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row[4]?>
+                <font size="3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row[4] ?>
                 </font>
             </p>
             <div style="text-align: center">
-                <img style="width: 800px;height: 530px" src="<?php echo $row[2]?>" alt="" vspace="20"/><br/><br/>
+                <img style="width: 800px;height: 530px" src="<?php echo $row[2] ?>" alt="" vspace="20"/><br/><br/>
             </div>
             <hr color="#CCC"/>
             <div>
@@ -97,13 +101,13 @@ $ar_id=$_GET["ar_id"];
                     <p>
                         <em>
                             <font color="#666666">
-                                <?php echo $row[5]?>&nbsp;&nbsp;&nbsp;&nbsp;来源：<?php echo $row[6]?>
+                                <?php echo $row[5] ?>&nbsp;&nbsp;&nbsp;&nbsp;来源：<?php echo $row[6] ?>
                             </font>
                         </em>
                     </p>
                 </div>
                 <div style="text-align: center;float: right;">
-                    浏览次数：<?php echo $row[7]?>
+                    浏览次数：<?php echo $row[7] ?>
                 </div>
             </div>
         </div>

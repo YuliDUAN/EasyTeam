@@ -90,7 +90,7 @@ $i=0;
             <p class="sub two">P e r s o n a l C e n t e r.</p>
         </div>
         <div class="col-md-5 agileits_mail_grid_right">
-            <div class="center_droc">
+            <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
                     <img style="width: 120px;height: 120px" src="<?php echo $row['image'];?>">
                     <label for="file">
@@ -228,7 +228,7 @@ $i=0;
         <div class="agileits_mail_grids">
             <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff">
                 <div class="col-md-7 agileits_mail_grid_left"style="width:100%;border-bottom:3px solid #ddd">
-                    <table class="table" style="padding-top:30px;background-color: #ffffff"align="center">
+                    <table class="table" style="padding-top:30px;background-color: #ffffff;word-break: break-all">
                         <tbody>
                         <tr>
                             <th class="anchorjs-icon"width="15%"><font size="4" color="black">序号</font></th>
@@ -239,9 +239,9 @@ $i=0;
                         while($rows = mysqli_fetch_array($result2)) {
                             ?>
                             <tr>
-                                <td class="anchorjs-icon"><font size="4"><?php echo ++$i ?></font></td>
-                                <td class="anchorjs-icon"><font size="4"><?php echo $rows[2] ?></font></td>
-                                <td class="anchorjs-icon"><font size="4"><?php echo $rows[3] ?></font></td>
+                                <td class="anchorjs-icon"><font size="4"color="black"><?php echo ++$i ?></font></td>
+                                <td class="anchorjs-icon"><font size="4"color="black"><?php echo $rows[2] ?></font></td>
+                                <td class="anchorjs-icon"><font size="4"color="black"><?php echo $rows[3] ?></font></td>
                             </tr>
                             <?php
                         }
@@ -253,8 +253,10 @@ $i=0;
                     <div style=" width:100%;padding-bottom: 20px">
                         <form action="questionAction.php" method="post">
                         <textarea id="question" name="question" placeholder="请输入问题内容..."></textarea>
-                            <button class="reply_confirm" type="submit">提交</button>
-                            <form>
+                            <div style="padding-left: 85%;margin-bottom:20px">
+                            <button id="btn"  style="width:70%" type="submit"><span>提交</span></button>
+                            </div>
+                        </form>
                     </div>
             </div>
             <div class="clearfix"></div>

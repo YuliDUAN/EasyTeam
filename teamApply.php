@@ -96,7 +96,7 @@ $row = mysqli_fetch_array($result);
             <p class="sub two">P e r s o n a l C e n t e r.</p>
         </div>
         <div class="col-md-5 agileits_mail_grid_right">
-            <div class="center_droc">
+            <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
                     <img style="width: 120px;height: 120px" src="<?php echo $row['image'];?>">
                     <label for="file">
