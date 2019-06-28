@@ -1,11 +1,12 @@
 <?php
 session_start();
 include "MySqlConnect.php";
-$sno = $_SESSION['sno'];
+$sno = $_GET['uid'];
+$uid = $_SESSION['sno'];
+$id = $_GET['id'];
 $rsq = "select * from ruser where sno=$sno";
 $result = $conn->query($rsq);
 $row = mysqli_fetch_array($result);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,12 +83,11 @@ $row = mysqli_fetch_array($result);
             <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
                     <img style="width: 120px;height: 120px" src="<?php echo $row['image'];?>">
-                    <label for="file">
-                        <input type="button" id="btn" value="修改头像>>>"><span id="text"></span>
-                        <input type="text" name="avatar" id="file">
-                    </label>
-                    <li><button id="btn"  style="width: 97.7px"><span>确定修改</span></button></li>
-
+<!--                    <label for="file">-->
+<!--                        <input type="button" id="btn" value="修改头像>>>"><span id="text"></span>-->
+<!--                        <input type="text" name="avatar" id="file">-->
+<!--                    </label>-->
+<!--                    <li><button id="btn"  style="width: 97.7px"><span>确定修改</span></button></li>-->
                 </form>
 
                 <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：<?php echo $row['username'];?>
@@ -108,7 +108,7 @@ $row = mysqli_fetch_array($result);
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/personal.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="contact_other.php"> <h4> 个 人 信 息 </h4> </a></span></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="#"> <h4> 个 人 信 息 </h4> </a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/match.png"></td>
@@ -122,7 +122,7 @@ $row = mysqli_fetch_array($result);
                     <tr>
                         <td><img class="tubiao" src="images/evaluate.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                    href="leaveword_other.php"><h4> 留 言 版 块 </h4></a></span></td>
+                                    href="leaveword_other.php?uid=<?php echo $row['sno']?>&id=<?php echo $id?>"><h4> 留 言 版 块 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/collection.png"></td>
@@ -134,7 +134,31 @@ $row = mysqli_fetch_array($result);
                     </tr>
                     <tr >
                         <td style="padding-bottom: 20px"><img class="tubiao" src="images/quit.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px"><span><a href="contact.php"><h4> 返 回 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px">
+                            <?php
+                            if ($sno == $uid){
+                                echo '<'.'span onclick="exit()"'.'><'.'a'.'><'.'h4'.'>';
+                                if ($sno == $uid) {
+                                    echo '退 出';
+                                }else{
+                                    echo '返回';
+                                }
+                                echo '</'.'h4'.'></'.'a'.'>';
+                                echo '</'.'span'.'>';
+                            }else{
+                                ?>
+                                <?php
+                                echo '<'.'a href="apply.php?id='?><?php echo $id?><?php echo '"'.'><'.'h4'.'>';?>
+                                <?php
+                                if ($sno == $uid){
+                                    echo "退 出";
+                                }else{
+                                    echo "返回";
+                                }echo '</'.'h4'.'>';
+                                echo '</'.'a'.'>';
+                            }
+                            ?>
+                            </span></td>
                     </tr>
                 </table>
             </div>
@@ -152,7 +176,6 @@ $row = mysqli_fetch_array($result);
                     <input type="text" name="Phone"  placeholder="<?php echo $row ['phone'];?>">
                     <h4>个人简介</h4>
                     <textarea placeholder="<?php echo $row ['brief'];?>" name="Message"></textarea>
-                    <button class="all_button">修改</button>
                 </form>
             </div>
             <div class="clearfix"></div>

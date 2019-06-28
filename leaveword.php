@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "MySqlConnect.php";
+$uid = &$_GET['uid'];
 $sno = $_SESSION['sno'];
 $rsq = "select * from ruser where sno=$sno";
 $result = $conn->query($rsq);
@@ -12,13 +13,19 @@ $row = mysqli_fetch_array($result);
     <link rel="shortcut icon" href="images/logo.ico">
     <title>留言板块</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" property="" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" property=""/>
     <!-- //Custom Theme files -->
     <!-- font-awesome icons -->
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -27,7 +34,8 @@ $row = mysqli_fetch_array($result);
     <script src="js/jquery-2.2.3.min.js"></script>
     <!-- //js -->
     <!-- web-fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
 </head>
 <body>
@@ -38,7 +46,8 @@ $row = mysqli_fetch_array($result);
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -51,7 +60,8 @@ $row = mysqli_fetch_array($result);
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
                         <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
-                        <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
+                        <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="icons.php">正在进行</a></li>
                                 <li><a href="codes.php">已经结束</a></li>
@@ -61,7 +71,7 @@ $row = mysqli_fetch_array($result);
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
                         <li><a href="contact.php" class="w3ls-hover active">个人中心</a></li>
                     </ul>
-                    <div class="clearfix"> </div>
+                    <div class="clearfix"></div>
                 </div><!-- //navbar-collapse -->
             </div><!-- //container-fluid -->
         </nav>
@@ -70,9 +80,9 @@ $row = mysqli_fetch_array($result);
 </div>
 <script language="javascript">
     function exit() {
-        var se=confirm("确定退出吗？");
-        if (se==true) {
-            location.href="index.html";
+        var se = confirm("确定退出吗？");
+        if (se == true) {
+            location.href = "index.html";
         }
     }
 </script>
@@ -87,21 +97,23 @@ $row = mysqli_fetch_array($result);
         <div class="col-md-5 agileits_mail_grid_right">
             <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
-                    <img style="width: 120px;height: 120px" src="<?php echo $row['image'];?>">
+                    <img style="width: 120px;height: 120px" src="<?php echo $row['image']; ?>">
                     <label for="file">
                         <input type="button" id="btn" value="修改头像>>>"><span id="text"></span>
                         <input type="file" name="avatar" id="file" onchange="verificationPicFile(this)">
                     </label>
-                    <li><a href="contact.php"><button id="btn"  style="width: 97.7px"><span>确定修改</span></button></a></li>
+                    <li><a href="contact.php">
+                            <button id="btn" style="width: 97.7px"><span>确定修改</span></button>
+                        </a></li>
 
-                    <?php if (isset($message)):?>
-                    <P style="color: hotpink"><?php echo $message?></P>
+                    <?php if (isset($message)): ?>
+                        <P style="color: hotpink"><?php echo $message ?></P>
                     <?php endif ?>
                     <script language="JavaScript">
                         function verificationPicFile(file) {
-                            var fileTypes = [".jpg",".png"];
+                            var fileTypes = [".jpg", ".png"];
                             var filePath = file.value();
-                            if (filePath){
+                            if (filePath) {
                                 var isNext = false;
                                 var fileEnd = filePath.substring(filePath.indexOf("."));
                                 for (var i = 0; i < fileTypes.length; i++) {
@@ -126,8 +138,8 @@ $row = mysqli_fetch_array($result);
                             var filePath = file.value;
                             if (filePath) {
                                 fileSize = file.avatar[0].size;
-                                var size = fileSize/1024;
-                                if (size>fileMaxSize){
+                                var size = fileSize / 1024;
+                                if (size > fileMaxSize) {
                                     $GLOBALS['message'] = '文件不能大于1M';
                                     file.value = "";
                                     return false;
@@ -136,14 +148,14 @@ $row = mysqli_fetch_array($result);
                                     file.value = "";
                                     return false;
                                 }
-                            }else {
+                            } else {
                                 return false;
                             }
                         }
 
-                        function verificationPicFile(){
+                        function verificationPicFile() {
                             var filePath = file.value;
-                            if(filePath){
+                            if (filePath) {
                                 //读取图片数据
                                 var filePic = file.avatar[0];
                                 var reader = new FileReader();
@@ -156,9 +168,9 @@ $row = mysqli_fetch_array($result);
                                         var height = image.height;
                                         if (width == 120 | height == 120) {
                                             $GLOBALS['message'] = '尺寸符合';
-                                        }else {
+                                        } else {
                                             $GLOBALS['message'] = '尺寸大小应为120*120';
-                                            file.value="";
+                                            file.value = "";
                                             return false;
                                         }
                                     };
@@ -166,52 +178,60 @@ $row = mysqli_fetch_array($result);
 
                                 };
                                 reader.readAsDataURL(filePic);
-                            }else {
+                            } else {
                                 return false;
                             }
                         }
 
                     </script>
                 </form>
-                <li><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：<?php echo $row['username'];?></li>
+                <li><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵
+                    称：<?php echo $row['username']; ?></li>
                 <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4 级</li>
             </div>
             <div class="left-agileits">
                 <table>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/news.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="news.php"><h4> 消 息</h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                        href="news.php"><h4> 消 息</h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/rudui.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.php"><h4> 入 队 申 请 </h4> </a></span></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a
+                                        href="teamApply.php"><h4> 入 队 申 请 </h4> </a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/personal.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="contact.php"> <h4> 个 人 信 息 </h4> </a></span></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="contact.php"> <h4> 个 人 信 息 </h4> </a></span>
+                        </td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/match.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="myjgames.php"> <h4> 我 的 比 赛 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                        href="myjgames.php"> <h4> 我 的 比 赛 </h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/team.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="team.php"> <h4> 我 的 队 伍 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                        href="team.php"> <h4> 我 的 队 伍 </h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/evaluate.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                        href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/collection.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                        href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/question.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="question.php"> <h4> 问 题 反 馈 </h4></a></span></td>
+                                        href="question.php"> <h4> 问 题 反 馈 </h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td style="padding-bottom: 20px"><img class="tubiao" src="images/quit.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px">
                             <span onclick="exit()"><a><h4> 退 出 </h4></a></span></td>
@@ -220,36 +240,31 @@ $row = mysqli_fetch_array($result);
             </div>
         </div>
         <div class="agileits_mail_grids">
-            <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff">
-                <table class="table" style="background-color: #ffffff">
-                    <tbody>
-                    <div style=" margin-top:40px;padding-bottom:20px;border-bottom:5px solid #ddd
-">
-                        <textarea id="leaveText" placeholder="请输入留言内容..."></textarea>
-                        <input class="reply_confirm"  type="button" value="确定" onclick="toAlert();" style="overflow: hidden;  " />
+            <div class="col-md-7 agileits_mail_grid_left">
+                <?php
+                $sql = "select * from lvmessage,ruser where lmsno = $sno and sno=selfsno";
+                $resultlu = $conn->query($sql);
+                $arr = array();
+                while ($rowlu = mysqli_fetch_array($resultlu)) {
+                    array_push($arr, $rowlu);
+                }
+                ?>
+                <?php foreach ($arr as $r) { ?>
+                    <div style="width:24%;height:170px;padding: 10px;margin-top:30px;border-radius:10px;float:left;background-color: #ffffff">
+                        <div style="margin-bottom: 15px" align="center">
+                            <img src="<?php echo $r['image'];?>" width="60" height="60"/>
+                        </div>
+                        <div>
+                            <p><h5>留言人：</h5></p>
+                            <p><h5 align="center"><?php echo $r['username'];?></h5></p>
+                            <p><h5>时间：</h5></p>
+                            <p><h5 align="center"><?php echo $r['lmtime'];?></h5></p>
+                        </div>
                     </div>
-                    <div >
-
-                        <div   style="margin-top:30px;float:left;">
-                            <td> <img src="images/t11.jpg"width="60" height="60"/></td>
-                            <td><h4>到饭点要吃饭了.。。。。。。。。。。。。</h4></td>
-                        </div>
-                        <div style="padding-top: 20px;float: left;">
-                            <table style="border-collapse:separate; border-spacing:0px 10px;">
-                                <tr>
-                                    <td><h6>留言人：</h6></td>
-                                    <td><h6>康少</h6></td>
-                                </tr>
-                                <tr>
-                                    <td><h6>时间：</h6></td>
-                                    <td><h6>2019-6-1</h6></td>
-                                </tr>
-                            </table>
-                        </div>
-
-                    </div>>
-                    </tbody>
-                </table>
+                    <div style="width:74%;height:170px;padding: 20px;margin-top:30px;float: right;background-color: #ffffff;border-radius: 10px;word-break: break-all;overflow-y:auto">
+                        <h4><?php echo $r['lmessage'];?></h4>
+                    </div>
+                <?php } ?>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -261,7 +276,8 @@ $row = mysqli_fetch_array($result);
         <div class="modal-content">
             <div class="modal-header">
                 <i class="fa fa-pagelines" aria-hidden="true"></i>APP创意设计大赛
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <section>
                 <div class="modal-body">
@@ -302,7 +318,7 @@ $row = mysqli_fetch_array($result);
                     <li><a href="mailto:info@example.com"> 123 @qq.com</a></li>
                 </ul>
             </div>
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
         </div>
         <div class="copy-right">
             <p>App &copy; 2019.创意实验室 <a href="#" target="_blank" title="App创意实验室">App创意实验室</a></p>
@@ -313,10 +329,10 @@ $row = mysqli_fetch_array($result);
 <!-- FlexSlider -->
 <script defer src="js/jquery.flexslider.js"></script>
 <script type="text/javascript">
-    $(window).load(function(){
+    $(window).load(function () {
         $('.flexslider').flexslider({
             animation: "slide",
-            start: function(slider){
+            start: function (slider) {
                 $('body').removeClass('loading');
             }
         });
@@ -325,9 +341,9 @@ $row = mysqli_fetch_array($result);
 <!-- End-slider-script -->
 <!-- Flexslider-js for-testimonials -->
 <script type="text/javascript">
-    $(window).load(function() {
+    $(window).load(function () {
         $("#flexiselDemo1").flexisel({
-            visibleItems:1,
+            visibleItems: 1,
             animationSpeed: 1000,
             autoPlay: true,
             autoPlaySpeed: 3000,
@@ -335,15 +351,15 @@ $row = mysqli_fetch_array($result);
             enableResponsiveBreakpoints: true,
             responsiveBreakpoints: {
                 portrait: {
-                    changePoint:480,
+                    changePoint: 480,
                     visibleItems: 1
                 },
                 landscape: {
-                    changePoint:640,
-                    visibleItems:1
+                    changePoint: 640,
+                    visibleItems: 1
                 },
                 tablet: {
-                    changePoint:768,
+                    changePoint: 768,
                     visibleItems: 1
                 }
             }
@@ -359,21 +375,21 @@ $row = mysqli_fetch_array($result);
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
             event.preventDefault();
 
-            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
         });
     });
 </script>
 <!-- //end-smooth-scrolling   -->
 <!-- smooth-scrolling-of-move-up -->
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
 
 
-        $().UItoTop({ easingType: 'easeOutQuart' });
+        $().UItoTop({easingType: 'easeOutQuart'});
 
     });
 </script>

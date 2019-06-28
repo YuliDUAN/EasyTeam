@@ -1,6 +1,7 @@
 <?php
 $id = $_GET["id"];
-include "MySqlConnect.php"; ?>
+include "MySqlConnect.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,7 +94,7 @@ include "MySqlConnect.php"; ?>
                         <input type="text" name="team_name"
                                style="width:180px;height:35px;border-radius: 15px;border:1px black solid;margin-right: 10px"
                                placeholder="&nbsp;请输入队伍名称">
-                        <button style="background-color: transparent;border: transparent"><img src="images/serch.png" width=30px height=30px "/></button>
+                        <button><img src="images/serch.png" width=30px height=30px "/></button>
                     </form>
                 </div>
             </div>
@@ -108,7 +109,8 @@ include "MySqlConnect.php"; ?>
                 </tr>
 
                 <?php
-                $result = $conn->query("SELECT team_id,team_name,team_cap,team_tel FROM activity,team where activity.id=team.ac_id and activity.id='$id'");
+                $team_name=$_POST['team_name'];
+                $result = $conn->query("SELECT team_id,team_name,team_cap,team_tel FROM activity,team where activity.id=team.ac_id and activity.id='$id' and team_name like '%$team_name%'");
                 while ($row = mysqli_fetch_array($result)) {
                     ?>
                     <tr>
