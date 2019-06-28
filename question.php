@@ -226,9 +226,9 @@ $i=0;
             </div>
         </div>
         <div class="agileits_mail_grids">
-            <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff">
-                <div class="col-md-7 agileits_mail_grid_left"style="width:100%;border-bottom:3px solid #ddd">
-                    <table class="table" style="padding-top:30px;background-color: #ffffff;word-break: break-all">
+            <div class="col-md-7 agileits_mail_grid_left">
+                <div class="col-md-7 agileits_mail_grid_left"style="float:right;width:100%;border-radius:10px;margin-bottom:50px;background-color: #ffffff">
+                    <table class="table" style="padding-top:30px;word-break: break-all">
                         <tbody>
                         <tr>
                             <th class="anchorjs-icon"width="15%"><font size="4" color="black">序号</font></th>
@@ -250,10 +250,10 @@ $i=0;
                         </tbody>
                     </table>
                 </div>
-                    <div style=" width:100%;padding-bottom: 20px">
+                    <div style="float: right; width:100%;border-radius:10px;padding:10px;background-color: #ffffff;margin-top:30px">
                         <form action="questionAction.php" method="post">
                         <textarea id="question" name="question" placeholder="请输入问题内容..."></textarea>
-                            <div style="padding-left: 85%;margin-bottom:20px">
+                            <div style="padding-left: 85%;margin-bottom:10px">
                             <button id="btn"  style="width:70%" type="submit"><span>提交</span></button>
                             </div>
                         </form>

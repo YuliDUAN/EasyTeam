@@ -5,7 +5,6 @@ $sno = $_SESSION['sno'];
 $rsq = "select * from ruser where sno=$sno";
 $result = $conn->query($rsq);
 $row = mysqli_fetch_array($result);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

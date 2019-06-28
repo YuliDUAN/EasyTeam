@@ -67,7 +67,7 @@
     <div class="container">
         <div class="grid_3 grid_4 w3layouts">
             <h3 class="hdg">排名及获奖情况</h3>
-            <div class="bs-example" style="background-color: #ffffff">
+            <div class="bs-example" style="background-color: #ffffff;border-radius: 10px">
                 <table class="table" >
                     <tbody>
                     <tr>

@@ -238,8 +238,8 @@ $row = mysqli_fetch_array($result);
             </div>
         </div>
         <div class="agileits_mail_grids">
-            <div class="col-md-7 agileits_mail_grid_left">
-                <table class="table" style="background-color: #ffffff">
+            <div class="col-md-7 agileits_mail_grid_left" style="border-radius: 10px;background-color: #ffffff">
+                <table class="table">
                     <tbody>
                     <tr>
                         <th class="anchorjs-icon"><font size="4" color="black">队伍名称</font></th>

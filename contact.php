@@ -250,7 +250,7 @@ $row = mysqli_fetch_array($result);
                     <h4>联系电话</h4>
                     <input type="text" name="Phone"  placeholder="<?php echo $row ['phone'];?>">
                     <h4>个人简介</h4>
-                    <textarea placeholder="<?php echo $row ['brief'];?>" name="Message"></textarea>
+                    <textarea placeholder="<?php echo $row ['brief'];?>" name="Message" style="border-radius: 10px"></textarea>
                     <button class="all_button">修改</button>
                 </form>
             </div>

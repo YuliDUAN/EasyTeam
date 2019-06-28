@@ -92,13 +92,19 @@
                         <th><font size="4" color="black">队伍人数</font></th>
                         <th><font size="4" color="black">操作</font></th>
                     </tr>
-                    <tr>
-                        <td><font size="4">222</font></td>
-                        <td><font size="4">张三</font></td>
-                        <td><font size="4">1759812345</font></td>
-                        <td><font size="4">6</font></td>
-                        <td onclick="on_Click2();"><font size="5" color="blue"><span>申请加入</span></font></td>
-                    </tr>
+                    <?php
+                    $id=$_GET["id"];
+                    include"MySqlConnect.php";
+                    $result = $conn->query("SELECT team_id,team_name,team_cap,team_tel FROM activity,team where activity.id=team.ac_id and activity.id='$id'");
+                    while($row = mysqli_fetch_array($result)){?>
+                        <tr>
+                            <td><font size="4"><?php echo $row[1] ?></font></td>
+                            <td><font size="4"><?php echo $row[2] ?></font></td>
+                            <td><font size="4"><?php echo $row[3] ?></font></td>
+                            <td><font size="4">6</font></td>
+                            <td onclick="on_Click2();"><font size="5" color="blue"><span>申请加入</span></font></td>
+                        </tr>
+                    <?php }?>
                     </tbody>
                 </table>
             </div>

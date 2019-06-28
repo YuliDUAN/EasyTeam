@@ -303,7 +303,7 @@ $row = mysqli_fetch_array($result);
             </div>
         </div>
         <div class="agileits_mail_grids">
-            <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff">
+            <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff;border-radius:10px">
                 <table class="table">
                     <tbody>
                     <tr>

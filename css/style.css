@@ -59,6 +59,7 @@ body a:hover{
     margin-top: 80px;
     width: 200px;
     margin-left: 50px;
+    border-radius: 10px;
 }
 
 /*-- banner --*/ 
@@ -1099,6 +1100,7 @@ label{
     background-color: #ffffff;
     width: 200px;
     margin-left: 50px;
+    border-radius: 10px;
 }
 .agile-map iframe {
     min-height: 370px;

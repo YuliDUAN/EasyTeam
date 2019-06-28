@@ -78,7 +78,7 @@
         </div>
     </div>
     <div class="grid_3 grid_4 w3layouts">
-        <div class="bs-example">
+        <div class="bs-example" style="padding-left:10%;padding-right: 10%">
             <table class="table" >
                 <tbody>
                 <tr>
@@ -87,11 +87,19 @@
                     <th><font size="4" color="black"> 操作</font></th>
                 </tr>
 
-                <tr>
-                    <td><font size="4">App创意中心宣讲会</font></td>
-                    <td><font size="4">2019-6-30</font></td>
-                    <td><a href="apply.php"><font size="4">查看详情</font></a></td>
-                </tr>
+                <?php
+                include"MySqlConnect.php";
+                $result = $conn->query("SELECT id,name,time FROM activity where state=1");
+                while($row = mysqli_fetch_array($result)){?>
+                    <tr>
+                        <td><font size="4"><?php echo $row[1]?></font></td>
+                        <td><font size="4"><?php echo $row[2]?></font></td>
+                        <td><a href="apply.php?id=<?php echo $row[0]?>"><font size="4">查看详情</font></a></td>
+                    </tr>
+                    <?php
+                }
+
+                ?>
                 </tbody>
             </table>
         </div>

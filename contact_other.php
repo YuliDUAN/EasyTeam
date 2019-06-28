@@ -1,18 +1,27 @@
+<?php
+session_start();
+include "MySqlConnect.php";
+$sno = $_SESSION['sno'];
+$rsq = "select * from ruser where sno=$sno";
+$result = $conn->query($rsq);
+$row = mysqli_fetch_array($result);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="images/logo.ico">
-    <title>已经结束</title>
+    <title>个人中心</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
     <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
@@ -47,63 +56,110 @@
                     <h1><a href="homepage.html"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
-                        <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
-                        <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="icons.php">正在进行</a></li>
-                                <li><a href="codes.php">已经结束</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" class="btn w3ls-hover">个人中心</a></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div><!-- //navbar-collapse -->
             </div><!-- //container-fluid -->
         </nav>
     </div><!-- //header -->
 
 </div>
+
+<script language="javascript">
+    function exit() {
+        var se=confirm("确定退出吗？");
+        if (se==true) {
+            location.href="index.html";
+        }
+    }
+</script>
 <!-- //banner -->
-<!-- typography -->
-<div class="typo" style="background-color: #f0f0f0">
+<!--body start here-->
+<div class="mail" id="news_body">
     <div class="container">
         <div class="w3ls-heading">
-            <h2 class="h-two">已经结束</h2>
-            <p class="sub two">It's already over.</p>
+            <h2 class="h-two"> 个 人 中 心 </h2>
+            <p class="sub two">P e r s o n a l C e n t e r.</p>
         </div>
-        <div class="grid_3 grid_4 w3layouts">
-            <div class="bs-example" style="background-color: #ffffff;border-radius: 10px">
-                <table class="table">
-                    <tbody>
-                    <tr>
-                        <th class="anchorjs-icon"><font size="4" color="black">赛事名称</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">时间</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">操作</font></th>
-                    </tr>
-                    <?php
-                    include "MySqlConnect.php";
-                    $rsq = "select * from activity where state=0";
-                    $result = $conn->query($rsq);
-                    while($row = mysqli_fetch_array($result))
-                    { ?>
-                        <tr>
-                            <td class="anchorjs-icon"><font size="4"><?php echo $row[1] ?></font></td>
-                            <td class="anchorjs-icon"><font size="4"><?php echo $row[7] ?></font></td>
-                            <td class="type-info"><a href="ranking.php?id=<?php echo $row[0] ?>"><font size="4">查看排名</font></a></td>
-                        </tr>
-                    <?php } ?>
+        <div class="col-md-5 agileits_mail_grid_right">
+            <div class="center_droc" align="center">
+                <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
+                    <img style="width: 120px;height: 120px" src="<?php echo $row['image'];?>">
+                    <label for="file">
+                        <input type="button" id="btn" value="修改头像>>>"><span id="text"></span>
+                        <input type="text" name="avatar" id="file">
+                    </label>
+                    <li><button id="btn"  style="width: 97.7px"><span>确定修改</span></button></li>
 
-                    </tbody>
+                </form>
+
+                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：<?php echo $row['username'];?>
+                </li>
+                <li><span style="margin-top: 5px" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4
+                    级
+                </li>
+            </div>
+            <div class="left-agileits">
+                <table>
+                    <tr>
+                        <td><img class="tubiao" src="images/news.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><h4 style="color: #bababa"> 消 息</h4></span></td>
+                    </tr>
+                    <tr >
+                        <td><img class="tubiao" src="images/rudui.png"></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><h4 style="color: #bababa"> 入 队 申 请 </h4></span></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tubiao" src="images/personal.png"></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="contact_other.php"> <h4> 个 人 信 息 </h4> </a></span></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tubiao" src="images/match.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><h4 style="color: #bababa"> 我 的 比 赛 </h4></span></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tubiao" src="images/team.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><h4 style="color: #bababa"> 我 的 队 伍 </h4></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img class="tubiao" src="images/evaluate.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                    href="leaveword_other.php"><h4> 留 言 版 块 </h4></a></span></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tubiao" src="images/collection.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><h4 style="color: #bababa"> 我 的 收 藏 </h4></span></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tubiao" src="images/question.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span> <h4 style="color: #bababa"> 问 题 反 馈 </h4></span></td>
+                    </tr>
+                    <tr >
+                        <td style="padding-bottom: 20px"><img class="tubiao" src="images/quit.png"></td>
+                        <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px"><span><a href="contact.php"><h4> 返 回 </h4></a></span></td>
+                    </tr>
                 </table>
             </div>
         </div>
+        <div class="agileits_mail_grids">
+            <div class="col-md-7 agileits_mail_grid_left">
+                <form action="contactAction.php" method="post" enctype="multipart/form-data">
+                    <h4>学号</h4>
+                    <input type="text" name="ID" disabled placeholder="<?php echo $row['sno'];?>" required="">
+                    <h4>姓名</h4>
+                    <input type="text" name="Name" disabled placeholder="<?php echo $row ['username'];?>" required="">
+                    <h4>专业班级</h4>
+                    <input type="text" name="Class" disabled placeholder="<?php echo $row['major'].$row ['cls'];?>" required="">
+                    <h4>联系电话</h4>
+                    <input type="text" name="Phone"  placeholder="<?php echo $row ['phone'];?>">
+                    <h4>个人简介</h4>
+                    <textarea placeholder="<?php echo $row ['brief'];?>" name="Message"></textarea>
+                    <button class="all_button">修改</button>
+                </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
     </div>
 </div>
+<!-- //contact -->
 <!-- footer start here -->
 <div class="footer-agile">
     <div class="container">
@@ -183,8 +239,6 @@
 </script>
 <script type="text/javascript" src="js/jquery.flexisel.js"></script>
 <!-- //Flexslider-js for-testimonials -->
-
-
 <!-- start-smooth-scrolling -->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>

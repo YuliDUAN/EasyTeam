@@ -72,21 +72,25 @@
         <div class="w3ls-heading" style="padding-top: 40px">
             <h2 class="h-two">进行中赛事</h2>
         </div>
-
+        <form method="post" action="creamAction.php">
+        <?php
+        $ac_id=$_GET["id"];
+        ?>
         <div>
             <h3 class="hdg">创建队伍</h3>
             <div  style="background-color: #ffffff;margin-bottom: 60px;padding:10px" >
                 <table align="center" style="margin: 20px">
                     <tr>
                         <th><font size="5" >填写队伍信息</font></th>
+                        <th><input type="hidden" name="ac_id" value="<?php echo $ac_id?>"/></th>
                     </tr>
                     <tr style="padding-top: 10px">
                         <th><font size="4">队伍名称</font></th>
-                        <td><input type="text" name="empName" value=""/></td>
+                        <td><input type="text" name="name" value=""/></td>
                     </tr>
                     <tr>
                         <th><font size="4">队 长</font></th>
-                        <td><input type="text" name="empName" value=""/></td>
+                        <td><input type="text" name="cap" value=""/></td>
                     </tr>
                     <tr>
                         <th><font size="4">联系方式</font></th>
@@ -94,34 +98,21 @@
                     </tr>
                     <tr>
                         <th><font size="4">成员1</font></th>
-                        <td><input type="text" name="emp1"value=""/></td>
+                        <td><input type="text" name="mem1"value=""/></td>
                     </tr>
-                    <tr>
-                        <th><font size="4">成员2</font></th>
-                        <td><input type="text" name="emp2" value=""/></td>
-                    </tr>
-                    <tr>
-                        <th><font size="4">成员3</font></th>
-                        <td><input type="text" name="emp3" value=""/></td>
-                    </tr>
-                    <tr>
-                        <th><font size="4">成员4</font></th>
-                        <td><input type="text" name="emp4" value=""/></td>
-                    </tr>
-                    <tr>
-                        <th><font size="4">成员5</font></th>
-                        <td><input type="text" name="emp5" value=""/></td>
-                    </tr>
+
+
 
                     </tbody>
                 </table>
                 </br>
                 <div align="center">
-                    <input class="all_button" type="button" value="取消"/>
-                    <input class="all_button" type="button" value="确认" style="margin-left: 100px ;margin-bottom: 20px" onclick="on_Click();"/>
+                    <input class="all_button" type="button"  onclick="javascrtpt:window.location.href='apply.php?id=<?php echo $id ?>'"value="取消"/>
+                    <input class="all_button" type="submit" value="确认" style="margin-left: 100px ;margin-bottom: 20px" />
                 </div>
             </div>
         </div>
+        </form>
     </div>
 </div>
 <!-- footer start here -->

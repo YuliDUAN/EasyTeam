@@ -1,7 +1,8 @@
 <?php
 session_start();
+$id=$_GET["id"];
 include "MySqlConnect.php";
-$sql = "select * from forum,ruser where ruser.sno = forum.uid";
+$sql = "select * from forum,ruser where ruser.sno = forum.uid and ac_id='$id'";
 $result = $conn->query($sql);
 $arownews = array();
 while ($geren = mysqli_fetch_array($result)) {
@@ -109,11 +110,21 @@ $i = 1;
 </div>
 <!-- //banner -->
 <!-- typography -->
+<?php
+
+
+
+$sql1="SELECT name,title,limi,number,time,prize,id,host,inputtime FROM activity where id='$id'";
+$result = $conn->query($sql1);
+$row = mysqli_fetch_array($result);
+$a_id=$row[6];
+
+?>
 <div class="typo" style="background-color: #dddddd">
     <div class="container" style="width:80%">
-        <h3 class="hdg">APP创意中心宣讲会</h3>
+        <h3 class="hdg"><?php echo $row[0]?></h3>
         <div style="width:100%">
-            <div style="float: left;width:20%;height:550px;background-color: snow;padding: 20px">
+            <div style="float: left;width:20%;height:550px;border-radius: 10px;background-color: snow;padding: 20px">
                 <div align="center">
                     <img src="images/t11.jpg" width="40%" height="auto"/>
                 </div>
@@ -123,44 +134,42 @@ $i = 1;
                             <td><font size="3.5">发布者：</font></td>
                         </tr>
                         <tr>
-                            <td><font size="3.5">&nbsp;&nbsp;APP创意设计俱乐部</font></td>
+                            <td><font size="3.5">&nbsp;&nbsp;<?php echo $row[7]?></font></td>
                         </tr>
                         <tr>
                             <td><font size="3.5">发布时间：</font></td>
                         </tr>
                         <tr>
-                            <td><font size="3.5">&nbsp;&nbsp;2019-6-1</font></td>
+                            <td><font size="3.5">&nbsp;&nbsp;<?php echo $row[8] ?></font></td>
                         </tr>
                     </table>
                 </div>
             </div>
-            <div style="float: right;height: 550px;width:77%;background-color: snow;padding:60px;word-break: break-all;overflow-y:auto">
+            <div style="float: right;height: 550px;width:77%;border-radius: 10px;background-color: snow;padding:60px;word-break: break-all;overflow-y:auto">
                 <table style="border-collapse:separate; border-spacing:0px 15px;">
                     <tr>
                         <td style="width: 170px"><h4>比赛名称：</h4></td>
-                        <td><h4>APP创意设计大赛</h4></td>
+                        <td><h4><?php echo $row[0]?></h4></td>
                     </tr>
                     <tr>
                         <td style="width: 150px"><h4>主题：</h4></td>
-                        <td><h4>APP创意宣讲会是有APP创意设计俱乐部主办,app创意中心现隶属于计算机与软件工程学院，
-                                是学院“双创”实验室中心重要组成实验室之一。APP创意宣讲会是有APP创意设计俱乐部主办,
-                                app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。</h4></td>
+                        <td><h4><?php echo $row[1]?></h4></td>
                     </tr>
                     <tr>
                         <td style="width: 150px"><h4>人员：</h4></td>
-                        <td><h4>17、18全体学生</h4></td>
+                        <td><h4><?php echo $row[2]?></h4></td>
                     </tr>
                     <tr>
                         <td style="width: 150px"><h4>团队人员限制：</h4></td>
-                        <td><h4>6人</h4></td>
+                        <td><h4><?php echo $row[3]?></h4></td>
                     </tr>
                     <tr>
                         <td style="width: 150px"><h4>报名截止日期：</h4></td>
-                        <td><h4>2019-6-15</h4></td>
+                        <td><h4><?php echo $row[4]?></h4></td>
                     </tr>
                     <tr>
                         <td style="width: 150px"><h4>奖励：</h4></td>
-                        <td><h4>奖金、证书、学分</h4></td>
+                        <td><h4><?php echo $row[5]?></h4></td>
                     </tr>
                 </table>
             </div>
@@ -170,8 +179,8 @@ $i = 1;
             <table class="table" style="text-align: right">
                 <tbody>
                 <tr>
-                    <td class="type-info"><a href="cteam.php"><font size="5">创建队伍</font></a></td>
-                    <td class="type-info"><a href="jteam.php"><font size="5">加入队伍</font></a></td>
+                    <td class="type-info"><a href="cteam.php?id=<?php echo $a_id ?>"><font size="5">创建队伍</font></a></td>
+                    <td class="type-info"><a href="jteam.php?id=<?php echo $a_id ?>"><font size="5">加入队伍</font></a></td>
                 </tr>
                 </tbody>
             </table>
@@ -181,7 +190,7 @@ $i = 1;
         <?php foreach ($arownews as $row) { ?>
             <?php
             $forumid = $row['uid'];
-            $sql = "select * from replys where replys.fid = $forumid";
+            $sql = "select * from replys where replys.fid = $forumid ";
             $replysresult = $conn->query($sql);
             $arr = array();
             while ($m = mysqli_fetch_array($replysresult)) {
@@ -208,7 +217,7 @@ $i = 1;
             </div>
 
             <div style="width:100%">
-                <div style="float: left;width:20%;height:400px;background-color: snow;padding: 20px;border-bottom:6px solid #ddd">
+                <div style="float: left;width:20%;height:400px;border-radius: 10px;background-color: snow;padding: 20px;border-bottom:6px solid #ddd">
                     <div align="center">
                         <img src="<?php echo $row["image"]; ?>" width="40%" height="auto"/>
                     </div>
@@ -228,6 +237,7 @@ $i = 1;
                     <div style="padding-top: 10px;border-top:3px solid #ddd">
                         <form action="newsAction.php?receive_id=<?php echo $row['uid'] ?>&send_id=<?php echo $_SESSION['sno'] ?>&send_name=<?php echo $_SESSION['username'] ?>"
                               enctype="multipart/form-data" method="post">
+                            <th><input type="hidden" name="a_id" value="<?php echo $a_id?>"/></th>
                             <div>
                                 <div style="padding-top: 10px">
                                     <input type="text" name="titlenews" style="border-radius: 5px;width: 90%;height: 8%"
@@ -239,7 +249,7 @@ $i = 1;
                                 </div>
 
                                 <div style="padding-top: 10px">
-                                    <button style="height: 10%;width: 40%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
+                                    <button type="submit" style="height: 10%;width: 40%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
                                             value="发送"><span><h5>发送</h5></span></button>
                                 </div>
                             </div>
@@ -247,12 +257,13 @@ $i = 1;
                     </div>
                 </div>
                 <div style="height:400px">
-                    <div style="float: right;width:77%;height: 40%;background-color: snow;padding:10px;word-break: break-all;overflow-y:auto">
+                    <div style="float: right;width:77%;height: 40%;border-radius: 10px;background-color: snow;padding:10px;word-break: break-all;overflow-y:auto">
                         <p><h4><?php echo $row['comment']; ?></h4></p>
                     </div>
                     <form action="applyInfoAction.php?fid=<?php echo $row['uid'] ?>&rid=<?php echo $_SESSION['sno'] ?>&name=<?php echo $_SESSION['username'] ?>&id=<?php echo $row['id'] ?>"
                           enctype="multipart/form-data" method="POST">
-                        <div style="float: right;width:77%;height: 60%;background-color: snow;padding:5px;word-break: break-all;border-top:3px solid #ddd;border-bottom:6px solid #ddd">
+                        <th><input type="hidden" name="a_id" value="<?php echo $a_id?>"/></th>
+                        <div style="float: right;width:77%;height: 60%;border-radius: 10px;background-color: snow;padding:5px;word-break: break-all;border-top:3px solid #ddd;border-bottom:6px solid #ddd">
                             <div style="float: left;width:60%;margin:3%;height:150px;overflow-y:auto">
                                 <table>
                                     <tr>
@@ -271,7 +282,7 @@ $i = 1;
                                 <textarea name="rinfo"
                                           style="width: 100%;height:40%;border-radius:10px;margin-bottom: 10px"></textarea>
                                 <div style="float: right">
-                                    <button style="height: 20%;width: 100%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
+                                    <button type="submit" style="height: 20%;width: 100%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
                                             value="回复"><span><h5>回复</h5></span></button>
                                 </div>
                             </div>
@@ -285,7 +296,7 @@ $i = 1;
         <?php } ?>
 
 
-        <form action="applyAction.php" enctype="multipart/form-data" method="POST">
+        <form action="applyAction.php?ac_id=<?php echo $id?>" enctype="multipart/form-data" method="POST">
             <div style="width:100%">
                 <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding: 20px;margin-top: 50px">
                     <div style="margin-bottom: 20px">
