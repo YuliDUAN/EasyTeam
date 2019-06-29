@@ -52,8 +52,8 @@ $row = mysqli_fetch_array($result);
             z-index: 10000;
             left: 50%;
             top: 50%;
-            margin-left: -285px;
-            margin-top: -235px;
+            margin-left: -20%;
+            margin-top: -250px;
             border-color: #b2b2b2;
 
             overflow: hidden;
@@ -333,14 +333,14 @@ $row = mysqli_fetch_array($result);
         </div>
     </div>
 </div>
-<div class="dialog">
-    <div class="content">
-        <div  align="center"><img src="images/new_image1.png"></div>
+<div class="dialog" style="width: 40%;min-width:200px;height:70%">
+    <div class="content" style="width: 100%;height: auto">
+        <div  align="center"><img src="images/new_image1.png" style="width: 50%;height: auto"></div>
 
         <div class="btn-close"><img src="images/new_image2.png"></div>
-        <div class="content-box">
-            <div style="padding-top: 15px;padding-bottom: 25px" > <font ><h2 class="message-title"></h2></font></div>
-            <div style="margin-left: 10px;margin-right: 10px;height:300px;word-break: break-all;overflow-y:auto"><h4 class="message-content"></h4></div>
+        <div class="content-box" style="width: 90%;height: auto">
+            <div style="padding-top: 15px;padding-bottom: 25px;width: 90%;height: auto" > <font ><h2 class="message-title"></h2></font></div>
+            <div style="margin-left: 10px;margin-right: 10px;width:90%;height:300px;word-break: break-all;overflow-y:auto"><h4 class="message-content"></h4></div>
         </div>
         <div style="margin-right: 40px;margin-top: 20px">
             <p class="message-sender"></p>
@@ -368,29 +368,6 @@ $row = mysqli_fetch_array($result);
         $('.dialog').fadeOut(300);
     });
 </script>
-<!-- bootstrap-pop-up -->
-<!--<!-- bootstrap-pop-up -->-->
-<!--<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">-->
-<!--    <div class="modal-dialog" role="document">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <i class="fa fa-pagelines" aria-hidden="true"></i>--><?php //echo $v['titlenews'];?><!--.-->
-<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-<!--            </div>-->
-<!--            <section>-->
-<!--                <div class="modal-body">-->
-<!--<!--                    -->--><?php ////echo $_GET['news_id'];?>
-<!--                    <p>--><?php //echo $v['txtnews'];?><!--<i>--><?php //echo $v['send_name'];?><!--</i></p>-->
-<!--                </div>-->
-<!--            </section>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--<!-- //contact -->-->
-<!-- //contact -->
-<!-- footer start here -->
-
-
 <div class="footer-agile">
     <div class="container">
         <div class="footer-agileinfo">

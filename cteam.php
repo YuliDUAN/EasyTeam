@@ -1,5 +1,5 @@
 <?php
-$id = $_GET['id'];
+$id = $_GET["id"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,17 +7,24 @@ $id = $_GET['id'];
     <link rel="shortcut icon" href="images/logo.ico">
     <title>创建队伍</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
-    function on_Click() {
-        alert("报名成功！");
-    }
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+        function on_Click() {
+            alert("报名成功！");
+        }
     </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" property="" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" property=""/>
     <!-- //Custom Theme files -->
     <!-- font-awesome icons -->
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -26,7 +33,8 @@ $id = $_GET['id'];
     <script src="js/jquery-2.2.3.min.js"></script>
     <!-- //js -->
     <!-- web-fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
 </head>
 <body>
@@ -51,7 +59,8 @@ $id = $_GET['id'];
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
                         <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
-                        <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
+                        <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="icons.php">正在进行</a></li>
                                 <li><a href="codes.php">已经结束</a></li>
@@ -61,7 +70,7 @@ $id = $_GET['id'];
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
                         <li><a href="contact.php" class="btn w3ls-hover">个人中心</a></li>
                     </ul>
-                    <div class="clearfix"> </div>
+                    <div class="clearfix"></div>
                 </div><!-- //navbar-collapse -->
             </div><!-- //container-fluid -->
         </nav>
@@ -76,43 +85,76 @@ $id = $_GET['id'];
             <h2 class="h-two">进行中赛事</h2>
         </div>
         <form method="post" action="creamAction.php">
-        <?php
-        $ac_id=$_GET["id"];
-        ?>
-        <div>
-            <h3 class="hdg">创建队伍</h3>
-            <div  style="background-color: #ffffff;margin-bottom: 60px;padding:10px" >
-                <table align="center" style="margin: 20px">
-                    <tr>
-                        <th><font size="5" >填写队伍信息</font></th>
-                        <th><input type="hidden" name="ac_id" value="<?php echo $ac_id?>"/></th>
-                    </tr>
-                    <tr style="padding-top: 10px">
-                        <th><font size="4">队伍名称</font></th>
-                        <td><input type="text" name="name" value=""/></td>
-                    </tr>
-                    <tr>
-                        <th><font size="4">队 长</font></th>
-                        <td><input type="text" name="cap" value=""/></td>
-                    </tr>
-                    <tr>
-                        <th><font size="4">联系方式</font></th>
-                        <td><input type="text" name="tel" value=""/></td>
-                    </tr>
-                    <tr>
-                        <th><font size="4">成员1</font></th>
-                        <td><input type="text" name="mem1"value=""/></td>
-                    </tr>
-                    </tbody>
-                </table>
-                </br>
-
-                <div align="center">
-                    <a class="all_button" href='apply.php?id=<?php echo $id?>'><b> 取 消 </b></a>
-                    <input class="all_button" name="submit" type="submit" value="确认" style="margin-left: 100px ;margin-bottom: 20px" />
+            <?php
+            $ac_id = $_GET["id"];
+            session_start();
+            include "MySqlConnect.php";
+            $sno = $_SESSION['sno'];
+            $rsq = "select username,phone from ruser where sno=$sno";
+            $result = $conn->query($rsq);
+            $row = mysqli_fetch_array($result);
+            ?>
+            <div>
+                <h3 class="hdg">创建队伍</h3>
+                <div style="background-color: #ffffff;width:500px;margin-bottom: 60px;border-radius: 10px"
+                     align="center">
+                    <div>
+                        <table style="margin: 20px;border-collapse: separate; border-spacing: 10px">
+                            <tr>
+                                <td align="center"><font size="5"><b>填写队伍信息</b></font></td>
+                            </tr>
+                            <tr>
+                                <th><input type="hidden" name="ac_id" value="<?php echo $ac_id ?>"
+                                           style="border-radius: 10px"/></th>
+                            </tr>
+                            <tr style="padding-top: 10px">
+                                <td align="left"><font size="4" color="blue">队伍名称：</font></td>
+                            </tr>
+                            <tr>
+                                <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name" value=""
+                                                                                  style="width:200px;border-radius: 5px"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><font size="4">队长姓名：</font></td>
+                            </tr>
+                            <tr>
+                                <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cap"
+                                                                                  value="<?php echo $row[0] ?>"
+                                                                                  style="width:200px;border-radius: 5px"
+                                                                                  disabled/></td>
+                            </tr>
+                            <tr>
+                                <td><font size="4">队长学号：</font></td>
+                            </tr>
+                            <tr>
+                                <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sno"
+                                                                                  value="<?php echo $sno ?>"
+                                                                                  style="width:200px;border-radius: 5px"
+                                                                                  disabled/></td>
+                            </tr>
+                            <tr>
+                                <td><font size="4">联系方式：</font></td>
+                            </tr>
+                            <tr>
+                                <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="tel"
+                                                                                  value="<?php echo $row[1] ?>"
+                                                                                  style="width:200px;border-radius: 5px"
+                                                                                  disabled/></td>
+                            </tr>
+                        </table>
+                        </br>
+                        <div align="center">
+                            <a class="all_button" href='apply.php?id=<?php echo $id ?>'><b> 取 消 </b></a>
+                            <input class="all_button" name="submit" type="submit" value="确认"
+                                   style="margin-left: 100px ;margin-bottom: 20px"/>
+                        </div>
+                        <div style="float: bottom;padding-bottom: 10px">
+                            <img src="images/vine_1.png"
+                                 style="margin-left: 1px;margin-bottom: 1px;width: 60%;height: 60%"/>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
         </form>
     </div>
 </div>
@@ -144,7 +186,7 @@ $id = $_GET['id'];
                     <li><a href="mailto:info@example.com"> 123 @qq.com</a></li>
                 </ul>
             </div>
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
         </div>
         <div class="copy-right">
             <p>App &copy; 2019.创意实验室 <a href="#" target="_blank" title="App创意实验室">App创意实验室</a></p>
@@ -155,10 +197,10 @@ $id = $_GET['id'];
 <!-- FlexSlider -->
 <script defer src="js/jquery.flexslider.js"></script>
 <script type="text/javascript">
-    $(window).load(function(){
+    $(window).load(function () {
         $('.flexslider').flexslider({
             animation: "slide",
-            start: function(slider){
+            start: function (slider) {
                 $('body').removeClass('loading');
             }
         });
@@ -167,9 +209,9 @@ $id = $_GET['id'];
 <!-- End-slider-script -->
 <!-- Flexslider-js for-testimonials -->
 <script type="text/javascript">
-    $(window).load(function() {
+    $(window).load(function () {
         $("#flexiselDemo1").flexisel({
-            visibleItems:1,
+            visibleItems: 1,
             animationSpeed: 1000,
             autoPlay: true,
             autoPlaySpeed: 3000,
@@ -177,15 +219,15 @@ $id = $_GET['id'];
             enableResponsiveBreakpoints: true,
             responsiveBreakpoints: {
                 portrait: {
-                    changePoint:480,
+                    changePoint: 480,
                     visibleItems: 1
                 },
                 landscape: {
-                    changePoint:640,
-                    visibleItems:1
+                    changePoint: 640,
+                    visibleItems: 1
                 },
                 tablet: {
-                    changePoint:768,
+                    changePoint: 768,
                     visibleItems: 1
                 }
             }
@@ -201,20 +243,20 @@ $id = $_GET['id'];
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
             event.preventDefault();
 
-            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
         });
     });
 </script>
 <!-- //end-smooth-scrolling   -->
 <!-- smooth-scrolling-of-move-up -->
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-        $().UItoTop({ easingType: 'easeOutQuart' });
+        $().UItoTop({easingType: 'easeOutQuart'});
 
     });
 </script>
