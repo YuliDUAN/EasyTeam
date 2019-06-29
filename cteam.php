@@ -1,3 +1,6 @@
+<?php
+$id = $_GET['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,15 +103,13 @@
                         <th><font size="4">成员1</font></th>
                         <td><input type="text" name="mem1"value=""/></td>
                     </tr>
-
-
-
                     </tbody>
                 </table>
                 </br>
+                <button class="all_button" ><a href='apply.php?id=<?php echo $id?>'><b>取 消</b></a></button>
                 <div align="center">
-                    <input class="all_button" type="button"  onclick="javascrtpt:window.location.href='apply.php?id=<?php echo $id ?>'"value="取消"/>
-                    <input class="all_button" type="submit" value="确认" style="margin-left: 100px ;margin-bottom: 20px" />
+                    <button class="all_button" ><a href='apply.php?id=<?php echo $id?>'><b>取 消</b></a></button>
+                    <input class="all_button" name="submit" type="submit" value="确认" style="margin-left: 100px ;margin-bottom: 20px" />
                 </div>
             </div>
         </div>

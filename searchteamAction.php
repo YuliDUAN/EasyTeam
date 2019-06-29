@@ -94,7 +94,7 @@ include "MySqlConnect.php";
                         <input type="text" name="team_name"
                                style="width:180px;height:35px;border-radius: 15px;border:1px black solid;margin-right: 10px"
                                placeholder="&nbsp;请输入队伍名称">
-                        <button><img src="images/serch.png" width=30px height=30px "/></button>
+                        <button style="background-color: transparent;border: transparent"><img src="images/serch.png" width=30px height=30px "/></button>
                     </form>
                 </div>
             </div>

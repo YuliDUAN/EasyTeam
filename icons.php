@@ -7,12 +7,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
     <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
@@ -79,7 +79,7 @@
     </div>
     <div class="grid_3 grid_4 w3layouts">
         <div class="bs-example" style="padding-left:10%;padding-right: 10%">
-            <table class="table" >
+            <table class="table">
                 <tbody>
                 <tr>
                     <th><font size="4" color="black">赛事名称</font></th>
@@ -88,13 +88,14 @@
                 </tr>
 
                 <?php
-                include"MySqlConnect.php";
+                include "MySqlConnect.php";
                 $result = $conn->query("SELECT id,name,time FROM activity where state=1");
-                while($row = mysqli_fetch_array($result)){?>
+                while ($row = mysqli_fetch_array($result)) {
+                    ?>
                     <tr>
-                        <td><font size="4"><?php echo $row[1]?></font></td>
-                        <td><font size="4"><?php echo $row[2]?></font></td>
-                        <td><a href="apply.php?id=<?php echo $row[0]?>"><font size="4">查看详情</font></a></td>
+                        <td><font size="4"><?php echo $row[1] ?></font></td>
+                        <td><font size="4"><?php echo $row[2] ?></font></td>
+                        <td><a href="apply.php?id=<?php echo $row[0] ?>"><font size="4">查看详情</font></a></td>
                     </tr>
                     <?php
                 }

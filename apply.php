@@ -51,11 +51,11 @@ $i = 1;
 </head>
 <style>
     h4 {
-        font-size: 22px;
+        max-font-size: 22px;
     }
 
     h5 {
-        font-size: 12px;
+        max-font-size: 12px;
     }
 
     .chart_top {
@@ -124,7 +124,7 @@ $a_id = $row[6];
     <div class="container" style="width:80%">
         <h3 class="hdg"><?php echo $row[0] ?></h3>
         <div style="width:100%">
-            <div style="float: left;width:20%;height:550px;border-radius: 10px;background-color: snow;padding: 20px">
+            <div style="float: left;width:20%;height:450px;border-radius: 10px;background-color: #ffffff;padding: 20px">
                 <div align="center">
                     <img src="images/t11.jpg" width="40%" height="auto"/>
                 </div>
@@ -135,31 +135,31 @@ $a_id = $row[6];
                     <p align="center"><font size="4"><b><?php echo $row[8] ?></b></font></p>
                 </div>
             </div>
-            <div style="float: right;height: 550px;width:77%;border-radius: 10px;background-color: snow;padding:60px;word-break: break-all;overflow-y:auto">
+            <div style="float: right;height: 450px;width:77%;border-radius: 10px;background-color:  #ffffff;padding:60px;word-break: break-all;overflow-y:auto">
                 <table style="border-collapse:separate; border-spacing:0px 15px;">
                     <tr>
-                        <td style="width: 170px"><h4>比赛名称：</h4></td>
-                        <td><h4><?php echo $row[0] ?></h4></td>
+                        <td style="width: 170px"><h4><b>比赛名称：</b></h4></td>
+                        <td><h4><b><?php echo $row[0] ?></b></h4></td>
                     </tr>
                     <tr>
-                        <td style="width: 150px"><h4>主题：</h4></td>
-                        <td><h4><?php echo $row[1] ?></h4></td>
+                        <td style="width: 150px"><h4><b>主题：</b></h4></td>
+                        <td><h4><b><?php echo $row[1] ?></b></h4></td>
                     </tr>
                     <tr>
-                        <td style="width: 150px"><h4>人员：</h4></td>
-                        <td><h4><?php echo $row[2] ?></h4></td>
+                        <td style="width: 150px"><h4><b>人员：</b></h4></td>
+                        <td><h4><b><?php echo $row[2] ?></h4></b></td>
                     </tr>
                     <tr>
-                        <td style="width: 150px"><h4>团队人员限制：</h4></td>
+                        <td style="width: 150px"><h4><b>团队人员限制：</b></h4></td>
                         <td><h4><?php echo $row[3] ?></h4></td>
                     </tr>
                     <tr>
-                        <td style="width: 150px"><h4>报名截止日期：</h4></td>
-                        <td><h4><?php echo $row[4] ?></h4></td>
+                        <td style="width: 150px"><h4><b>报名截止日期：</b></h4></td>
+                        <td><h4><b><?php echo $row[4] ?></b></h4></td>
                     </tr>
                     <tr>
-                        <td style="width: 150px"><h4>奖励：</h4></td>
-                        <td><h4><?php echo $row[5] ?></h4></td>
+                        <td style="width: 150px"><h4><b>奖励：</b></h4></td>
+                        <td><h4><b><?php echo $row[5] ?></b></h4></td>
                     </tr>
                 </table>
             </div>
@@ -207,7 +207,7 @@ $a_id = $row[6];
             </div>
 
             <div style="width:100%">
-                <div style="float: left;width:20%;height:400px;border-radius: 10px;background-color: snow;padding: 20px;border-bottom:6px solid #ddd">
+                <div style="float: left;width:20%;height:400px;border-radius: 10px;background-color:  #ffffff;padding: 20px;border-bottom:6px solid #ddd">
                     <div align="center">
                         <a href="
                         <?php
@@ -217,7 +217,7 @@ $a_id = $row[6];
                             echo 'leaveword_other.php';
                         }
                         ?>?uid=<?php echo $row['uid']; ?>&id=<?php echo $id ?>"><img src="<?php echo $row["image"]; ?>"
-                                                                                     width="40%" height="auto"/></a>
+                                                                                     width="60px" height="60px"/></a>
                     </div>
                     <div style="padding-top: 20px">
                         <table style="border-collapse:separate; border-spacing:0px 10px;">
@@ -256,13 +256,13 @@ $a_id = $row[6];
                     </div>
                 </div>
                 <div style="height:400px">
-                    <div style="float: right;width:77%;height: 40%;border-radius: 10px;background-color: snow;padding:10px;word-break: break-all;overflow-y:auto">
+                    <div style="float: right;width:77%;height: 40%;border-radius: 10px;background-color:  #ffffff;padding:10px;word-break: break-all;overflow-y:auto">
                         <p><h4><?php echo $row['comment']; ?></h4></p>
                     </div>
                     <form action="applyInfoAction.php?fid=<?php echo $row['uid'] ?>&rid=<?php echo $_SESSION['sno'] ?>&name=<?php echo $_SESSION['username'] ?>&id=<?php echo $row['id'] ?>"
                           enctype="multipart/form-data" method="POST">
                         <th><input type="hidden" name="a_id" value="<?php echo $a_id ?>"/></th>
-                        <div style="float: right;width:77%;height: 60%;border-radius: 10px;background-color: snow;padding:5px;word-break: break-all;border-top:3px solid #ddd;border-bottom:6px solid #ddd">
+                        <div style="float: right;width:77%;height: 60%;border-radius: 10px;background-color:  #ffffff;padding:5px;word-break: break-all;border-top:3px solid #ddd;border-bottom:6px solid #ddd">
                             <div style="float: left;width:60%;margin:3%;height:150px;overflow-y:auto">
                                 <table>
                                     <tr>
@@ -298,7 +298,7 @@ $a_id = $row[6];
 
         <form action="applyAction.php?ac_id=<?php echo $id ?>" enctype="multipart/form-data" method="POST">
             <div style="width:100%">
-                <div style="float: right;width:77%;min-height: 200px;background-color: snow;padding: 20px;margin-top: 50px">
+                <div style="float: right;width:77%;min-height: 200px;background-color:  #ffffff;padding: 20px;margin-top: 50px">
                     <div style="margin-bottom: 20px">
                         <textarea name="comment" style="width: 100%;min-height: 100px;border-radius:10px"></textarea>
                     </div>

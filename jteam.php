@@ -97,7 +97,7 @@ include "MySqlConnect.php"; ?>
                     </form>
                 </div>
             </div>
-            <table class="table" style="background-color: #ffffff">
+            <table class="table" style="background-color: #ffffff;border-radius: 10px">
                 <tbody>
                 <tr>
                     <th><font size="4" color="black">队伍名称</font></th>
