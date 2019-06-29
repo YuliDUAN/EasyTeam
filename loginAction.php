@@ -13,7 +13,7 @@ if (!empty($_POST)&&!empty($sno) && !empty($psd)) {
         if ($row['sno'] == $sno && $row['password'] == $psd) {
             $_SESSION['username'] = $row['username'];
             $_SESSION['sno'] = $sno;
-            echo '<script>alert("登陆成功，即将跳转！");window.location.href="homepage.html"</script>';
+            echo '<script>window.location.href="homepage.html"</script>';
         }
     }
 } else {

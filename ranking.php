@@ -71,17 +71,38 @@
                 <table class="table" >
                     <tbody>
                     <tr>
-                        <th><font size="4" color="black">排名</font></th>
+                        <th><font size="4" color="black">队伍ID</font></th>
                         <th><font size="4" color="black">队伍名称</font></th>
-                        <th><font size="4" color="black">奖项</font></th>
-                        <th><font size="4" color="black">团队成员</font></th>
+                        <th><font size="4" color="black">队长</font></th>
+                        <th><font size="4" color="black">学号</font></th>
+                        <th><font size="4" color="black">获奖情况</font></th>
                     </tr>
+                    <?php
+                    $ac_id=$_GET["id"];
+                    include"MySqlConnect.php";
+                    $sql2="SELECT team_id,team_name,team_cap,team_prize,cap_sno FROM team where ac_id='$ac_id' and team_prize between 1 and 4 order by team_prize desc";
+                    $result2 = $conn->query($sql2);
+                    while ($rows = mysqli_fetch_array($result2)) {  ?>
                     <tr>
-                        <td><font size="4">1</font></td>
-                        <td><font size="4">队伍1</font></td>
-                        <td><font size="4">一等奖</font></td>
-                        <td><font size="4">队员1 队员2 队员3 队员4 队员5 队员6</font></td>
+                        <td> <?php echo $rows[0]?></td>
+                        <td> <?php echo $rows[1]?></td>
+                        <td> <?php echo $rows[2]?></td>
+                        <td> <?php echo $rows[4]?></td>
+                        <td><?php
+                            if($rows[3]==1){
+                                echo "优胜奖";
+                            }else if ($rows[3]==2){
+                                echo "三等奖";
+                            }else if ($rows[3]==3){
+                                echo "二等奖";
+                            }else if ($rows[3]==4){
+                                echo "一等奖";
+                            }
+                            ?></td>
                     </tr>
+                    <?php }
+                    mysqli_free_result($result2);
+                    ?>
                     </tbody>
                 </table>
             </div>

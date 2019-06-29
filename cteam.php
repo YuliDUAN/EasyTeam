@@ -106,9 +106,9 @@ $id = $_GET['id'];
                     </tbody>
                 </table>
                 </br>
-                <button class="all_button" ><a href='apply.php?id=<?php echo $id?>'><b>取 消</b></a></button>
+
                 <div align="center">
-                    <button class="all_button" ><a href='apply.php?id=<?php echo $id?>'><b>取 消</b></a></button>
+                    <a class="all_button" href='apply.php?id=<?php echo $id?>'><b> 取 消 </b></a>
                     <input class="all_button" name="submit" type="submit" value="确认" style="margin-left: 100px ;margin-bottom: 20px" />
                 </div>
             </div>
