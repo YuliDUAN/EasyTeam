@@ -6,7 +6,7 @@
 
     buttonStyles = '<link href="https://codepen.io/andytran/pen/vLmRVp.css" rel="stylesheet">';
 
-    button = '<a href="z_login.php" class="at-button"><i class="material-icons">link</i></a>';
+    button = '<a href="index.html" class="at-button"><i class="material-icons">link</i></a>';
 
     document.body.innerHTML += materialIcons + buttonStyles + button;
 
