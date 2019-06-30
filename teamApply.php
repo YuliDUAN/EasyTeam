@@ -235,21 +235,75 @@ $row = mysqli_fetch_array($result);
                         <th width="20%"><font size="4" color="black">时间</font></th>
                         <th  width="20%"  style="text-align:center"><font size="4" color="black" >处理</font></th>
                     </tr>
-                    <tr>
-                        <td><font size="3">张三</font></td>
-                        <td><font size="3">张三申请加入你的队伍</font></td>
-                        <td><font size="3">2019-6-21</font></td>
-                        <td><font size="3"><a href="javascript:" onclick="toAgree()" >同意</a>/<a href="javascript:" onclick="toRefuse()">拒绝</a></font></td>
+                    <?php
+                    $sqlst = "select * from static where capsno=$sno";
+                    $resultst = $conn->query($sqlst);
+                    $arr = array();
+                    while($rowst = mysqli_fetch_array($resultst)){
+                        array_push($arr,$rowst);
+                    }
+                    ?>
+                    <!--                    <tr>-->
+                    <!--                        <td><font size="3">张三</font></td>-->
+                    <!--                        <td><font size="3">张三申请加入你的队伍</font></td>-->
+                    <!--                        <td><font size="3">2019-6-21</font></td>-->
+                    <!--                        <td><font size="3"><a href="javascript:" onclick="toAgree()" >同意</a>/<a href="javascript:" onclick="toRefuse()">拒绝</a></font></td>-->
+                    <!--                    </tr>-->
 
+                    <?php foreach ($arr as $r){?>
+                        <?php
+                        $membersno = $r['membersno'];
+                        $sqlmber = "select username from ruser where sno=$membersno";
+                        $resultmber = $conn->query($sqlmber);
+                        $rowmber = mysqli_fetch_array($resultmber);
+                        ?>
+                        <tr>
+                            <td><font size="3"><?php echo $rowmber['username']?></font></td>
+                            <td><font size="3"><?php echo $rowmber['username'].'申请加入你的队伍'?></font></td>
+                            <td><font size="3"><?php echo $r['join_time']?></font></td>
+                            <td><font size="3"><a href="javascript:" onclick="toAgree()" id="enter">同意</a>/<a href="javascript:" onclick="toRefuse()"><span>拒绝</span></a></font></td>
+                        </tr>
+                    <?php
+                    echo "<script>var membersno = \"$membersno\"</script>";
+                    echo "<script>var msno = \"$sno\"</script>";
+                    ?>
+                        <script >
+                            function toAgree (){
+                                var xhr = new XMLHttpRequest();
+                                xhr.open('POST','teamApplyAction.php')
+                                xhr.setRequestHeader('Content-TYpe','application/x-www-form-urlencoded');
+                                xhr.send(`static_join=2&&mber=${membersno}&&cap_sno=${msno}`);
+                                xhr.onreadystatechange = function () {
+                                    if (this.readyState != 4) return;
+                                    <?php
+                                    $sqlteam = "select team.team_id from team where cap_sno = $sno";
+                                    $resultteam = $conn->query($sqlteam);
+                                    $rowteam = mysqli_fetch_array($resultteam);
+                                    $team_id = $rowteam['team_id'];
+                                    $sqlruser = "select username from ruser where sno =$membersno";
+                                    $resultruser = $conn->query($sqlruser);
+                                    $rowruser = mysqli_fetch_array($resultruser);
+                                    $team_member = $rowruser['username'];
+                                    $sqlteam_mem = "insert into team_mem(team_id,team_member,member_sno)values ('$team_id','$team_member','$membersno')";
+                                    $conn->query($sqlteam_mem);
+                                    ?>
+                                    console.log(this.responseText);
+                                }
+                                //alert("已同意");
 
-                    </tr>
-                    <tr>
-                        <td><font size="3">王五</font></td>
-                        <td><font size="3">王五申请加入你的队伍</font></td>
-                        <td><font size="3">2019-6-21</font></td>
-                        <td><font size="3"><a href="#">已同意</a></font></td>
-                    </tr>
-
+                            }
+                            function toRefuse() {
+                                var xhr1 = new XMLHttpRequest();
+                                xhr1.open('POST','teamApplyRefuseAction.php')
+                                xhr1.setRequestHeader('Content-TYpe','application/x-www-form-urlencoded');
+                                xhr1.send(`static_join=3&&mber=${membersno}&&cap_sno=${msno}`);
+                                xhr1.onreadystatechange = function () {
+                                    if (this.readyState != 4) return;
+                                    console.log(this.responseText);
+                                }
+                            }
+                        </script>
+                    <?php }?>
                     </tbody>
                 </table>
             </div>

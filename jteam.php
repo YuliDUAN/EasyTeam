@@ -1,6 +1,14 @@
 <?php
+session_start();
 $id = $_GET["id"];
-include "MySqlConnect.php"; ?>
+include "MySqlConnect.php";
+$sno = $_SESSION['sno'];
+$sql = "select * from ruser where sno =$sno";
+$resultsno = $conn->query($sql);
+$row = mysqli_fetch_array($resultsno);
+$arr = array();
+array_push($arr,$row);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,16 +116,44 @@ include "MySqlConnect.php"; ?>
                 </tr>
 
                 <?php
-                $result = $conn->query("SELECT team_id,team_name,team_cap,team_tel FROM activity,team where activity.id=team.ac_id and activity.id='$id'");
-                while ($row = mysqli_fetch_array($result)) {
+                $result = $conn->query("SELECT team_id,team_name,team_cap,team_tel,cap_sno FROM activity,team where activity.id=team.ac_id and activity.id='$id'");
+                $aresult = array();
+                while ($rw = mysqli_fetch_array($result)) {
+                    array_push($aresult,$rw);
+                }
+                ?>
+
+                <?php
+                foreach ($aresult as $r) {
                     ?>
-                    <tr>
-                        <td><font size="4"><?php echo $row[1] ?></font></td>
-                        <td><font size="4"><?php echo $row[2] ?></font></td>
-                        <td><font size="4"><?php echo $row[3] ?></font></td>
-                        <td><font size="4">6</font></td>
-                        <td onclick="on_Click2();"><font size="5" color="blue"><span>申请加入</span></font></td>
-                    </tr>
+                    <form action="jteamAction.php?member_sno=<?php echo $row['sno']?>&cap_sno=<?php echo $r['cap_sno'];?>&id=<?php echo $id?>" enctype="multipart/form-data" method="post">
+                        <tr>
+                            <td><font size="4"><?php echo $r[1] ?></font></td>
+                            <td><font size="4"><?php echo $r[2] ?></font></td>
+                            <td><font size="4"><?php echo $r[3] ?></font></td>
+                            <td><font size="4">6</font></td>
+                            <td><font size="5" color="blue"><button>
+                                        <?php
+                                        $cap_sno = $r['cap_sno'];
+                                        $sqlstatic = "select static_join from static where membersno = $sno and capsno = $cap_sno";
+                                        $resultstatic = $conn->query($sqlstatic);
+                                        $rowstatic = mysqli_fetch_array($resultstatic);
+                                        if ($rowstatic['static_join']==3){
+                                            echo '已拒绝';
+                                        }
+                                        elseif ($rowstatic['static_join']==1){
+                                            echo '申请中';
+                                        }
+                                        elseif ($rowstatic['static_join']==2){
+                                            echo '已加入';
+                                        }
+                                        else{
+                                            echo '申请加入';
+                                        }
+                                        ?>
+                                    </button></font></td>
+                        </tr>
+                    </form>
                 <?php } ?>
                 </tbody>
             </table>
