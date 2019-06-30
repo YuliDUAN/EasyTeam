@@ -21,6 +21,5 @@ if (!empty($_GET['member_sno'])&&!empty($_GET['cap_sno'])&&$member_sno!=$cap_sno
     echo "<script>var d = \"$id\"</script>";
     echo "<script>alert('你已是队长不可申请！');window.location.href='jteam.php?id='+d</script>";
 }
-
 ?>
 
