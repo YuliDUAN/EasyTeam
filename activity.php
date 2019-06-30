@@ -1,5 +1,6 @@
 <?php
 $ar_id = $_GET["ar_id"];
+$imgs = 'images/collection_no.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +67,7 @@ $ar_id = $_GET["ar_id"];
                         <li><a href="contact.php" class="btn w3ls-hover">个人中心</a></li>
                     </ul>
                     <div class="social-icon">
-                        <img src="images/collection_no.png">
+                        <img src="images/collection_no.png" onclick="collect()" id="caocao_pic">
                     </div>
                     <div class="clearfix"></div>
                 </div><!-- //navbar-collapse -->
@@ -76,6 +77,27 @@ $ar_id = $_GET["ar_id"];
 
 </div>
 
+<?php
+echo "<script>var arid = \"$ar_id\"</script>";
+?>
+<script>
+    function collect() {
+        var curl = window.location.href;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST','activityCollectAction.php','true');
+        xhr.setRequestHeader('Content-TYpe','application/x-www-form-urlencoded');
+        xhr.send(`arid=${arid}&&url=${curl}`);
+        xhr.onreadystatechange = function(){
+            if (this.readyState != 4) return;
+            var imgObj = document.getElementById("caocao_pic");
+            if(imgObj.getAttribute("src",2)=="images/collection_no.png"){
+                imgObj.src="images/collection_yes.png";
+            }
+            alert(this.responseText);
+
+        }
+    }
+</script>
 <!-- //banner -->
 <!-- portfolio -->
 <div class="banner-bottom">

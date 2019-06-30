@@ -50,9 +50,9 @@ $row = mysqli_fetch_array($result);
             position: fixed;
             opacity: 1;
             z-index: 10000;
-            left: 50%;
+            left: 25%;
+            right:30%;
             top: 50%;
-            margin-left: -20%;
             margin-top: -250px;
             border-color: #b2b2b2;
 
@@ -70,9 +70,9 @@ $row = mysqli_fetch_array($result);
             cursor: pointer;
             position: absolute;
             top: -11px;
-            right: -6px;
-            width: 50px;
-            height: 50px;
+            right: 2%;
+            width: 5%;
+            height: 5%;
             /* border-radius: 50%; */
 
             padding-top: 34px;
@@ -89,7 +89,7 @@ $row = mysqli_fetch_array($result);
             padding-left: 6px;
         }
         .content-box {
-            width: 530px;
+            width: 80%;
             height: 300px;
             margin: 0 auto;
             border: 2px solid #eeeeee;
@@ -333,7 +333,7 @@ $row = mysqli_fetch_array($result);
         </div>
     </div>
 </div>
-<div class="dialog" style="width: 40%;min-width:200px;height:70%">
+<div class="dialog" style="width: 50%;height:70%">
     <div class="content" style="width: 100%;height: auto">
         <div  align="center"><img src="images/new_image1.png" style="width: 50%;height: auto"></div>
 

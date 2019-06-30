@@ -234,22 +234,59 @@ $row = mysqli_fetch_array($result);
                 </table>
             </div>
         </div>
-        <div class="agileits_mail_grids">
-            <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff;border-radius:10px;min-height: 100px;border:3px solid #ddd">
-                <table style="border-collapse:separate; border-spacing:0px 15px;">
-                    <tr>
-                        <td class="anchorjs-icon" width="89%"><font size="4" color="black">
-                            <font color="#a9a9a9" size="5"><a><b>第三届APP创意设计大赛 </b></a>
-                            </font></font>
-                        </td>
-                        <td class="anchorjs-icon" width="12%"><font size="3">取消收藏</font></td>
-                    </tr>
-                    <tr>
-                        <td class="anchorjs-icon" width="22%"><font size="3">2019-05-22</font></td>
-                    </tr>
-                </table>
-            </div>
 
+
+
+        <?php
+        $csql = "select * from article,collect where ar_id=c_ar_id and c_sno = $sno";
+        $cresult = $conn->query($csql);
+        $arr = array();
+        while ($crow = mysqli_fetch_array($cresult)) {
+            array_push($arr, $crow);
+        }
+        ?>
+        <div class="agileits_mail_grids">
+            <?php
+            echo "<script>var asno = \"$sno\"</script>";
+            ?>
+            <?php foreach ($arr as $item) { ?>
+                <?php $am_id = $item['c_ar_id'];?>
+                <div class="col-md-7 agileits_mail_grid_left"
+                     style="background-color: #ffffff;border-radius:10px;padding:10px;min-height: 100px;border:3px solid #ddd;margin-bottom: 5px">
+                    <script type="text/javascript">
+                        function cancel(news) {
+                            var aid = news.getAttribute("data-type");
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('POST','collectCancelAction.php','true')
+                            xhr.setRequestHeader('Content-TYpe','application/x-www-form-urlencoded');
+                            xhr.send(`c_id=${aid}&&c_sno=${asno}`);
+                            xhr.onreadystatechange = function () {
+                                if (this.readyState != 4) return;
+                                alert(this.responseText);window.location.href='collect.php';
+                            }
+                        }
+                    </script>
+                    <div style="width: 90%">
+                        <p class="anchorjs-icon" width="100%"><font size="4" color="black"
+                                                                    style="width:100%;white-space: nowrap;display:inline-block;overflow:hidden;text-overflow: ellipsis">
+                                <font color="#a9a9a9" size="5"><a
+                                            href="<?php echo $item['url']; ?>"><b><?php echo $item['ar_title']; ?> </b></a>
+                                </font></font>
+                        </p>
+                    </div>
+                    <div>
+                        <table style="width: 90%">
+                            <td class="anchorjs-icon" width="22%"><font size="3"><?php echo $item['c_time']; ?></font></td>
+                            <td class="anchorjs-icon" width="12%" align="right" style="float: right">
+                                <button type="submit"
+                                        style="height: 30px;width: 100px;border-radius: 5px; border: 1px  #555 solid; color: #333;background-color: transparent;border: transparent"
+                                        value="取消收藏" data-type="<?php echo $am_id ?>" onclick="cancel(this)"><span><b>取消收藏</b></span></button>
+                            </td>
+                        </table>
+                    </div>
+
+                </div>
+            <?php } ?>
             <div class="clearfix"></div>
         </div>
     </div>

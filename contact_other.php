@@ -83,11 +83,6 @@ $row = mysqli_fetch_array($result);
             <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
                     <img style="width: 120px;height: 120px" src="<?php echo $row['image'];?>">
-<!--                    <label for="file">-->
-<!--                        <input type="button" id="btn" value="修改头像>>>"><span id="text"></span>-->
-<!--                        <input type="text" name="avatar" id="file">-->
-<!--                    </label>-->
-<!--                    <li><button id="btn"  style="width: 97.7px"><span>确定修改</span></button></li>-->
                 </form>
 
                 <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：<?php echo $row['username'];?>

@@ -246,11 +246,52 @@ $row = mysqli_fetch_array($result);
                         <th class="anchorjs-icon"><font size="4" color="black">赛事名称</font></th>
                         <th class="anchorjs-icon"><font size="4" color="black">成绩</font></th>
                     </tr>
-                    <tr>
-                        <td class="anchorjs-icon"><font size="4">聚贤阁一队</font></td>
-                        <td class="anchorjs-icon"><font size="4">APP创意设计大赛</font></td>
-                        <td class="anchorjs-icon"><font size="4">二等奖</font></td>
-                    </tr>
+                    <?php
+                    $sql1 = "select team_name,activity.name,team_prize from team,activity where cap_sno=$sno and team.ac_id=activity.id";
+                    $result1 = $conn->query($sql1);
+                    while($rows = mysqli_fetch_array($result1)){
+                        ?>
+                        <tr>
+                            <td class="anchorjs-icon"><font size="4"><?php echo $rows[0] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4"><?php echo $rows[1] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4">
+                                    <?php
+                                    if($rows[2]==0)
+                                        echo "未获奖";
+                                    else if($rows[2]==1)
+                                        echo "三等奖";
+                                    else if($rows[2]==2)
+                                        echo "二等奖";
+                                    else if($rows[2]==3)
+                                        echo "一等奖";
+                                    ?></font></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                    <?php
+                    $sql2 = "select team_name,activity.name,team_prize from team,team_mem,activity where member_sno=$sno and team.ac_id=activity.id and team_mem.team_id=team.team_id";
+                    $result2 = $conn->query($sql2);
+                    while($rows2 = mysqli_fetch_array($result2)){
+                        ?>
+                        <tr>
+                            <td class="anchorjs-icon"><font size="4"><?php echo $rows2[0] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4"><?php echo $rows2[1] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4">
+                                    <?php
+                                    if($rows2[2]==0)
+                                        echo "未获奖";
+                                    else if($rows2[2]==1)
+                                        echo "三等奖";
+                                    else if($rows2[2]==2)
+                                        echo "二等奖";
+                                    else if($rows2[2]==3)
+                                        echo "一等奖";
+                                    ?></font></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
 
                     </tbody>
                 </table>

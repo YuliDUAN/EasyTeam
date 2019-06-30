@@ -228,11 +228,22 @@ $row = mysqli_fetch_array($result);
                         <th class="anchorjs-icon"><font size="4" color="black">时间</font></th>
                         <th class="anchorjs-icon"><font size="4" color="black">主办方</font></th>
                     </tr>
-                    <tr>
-                        <td class="anchorjs-icon"><font size="4">APP创意设计大赛</font></td>
-                        <td class="anchorjs-icon"><font size="4">2018年11月</font></td>
-                        <td class="type-info"><font size="4">APP创意中心</font></td>
-                    </tr>
+                    <?php
+                    $sql2="select distinct ac_id from team inner join team_mem on team_mem.team_id=team.team_id where cap_sno=$s_id or member_sno=$s_id";
+                    $result2 = $conn->query($sql2);
+                    while($rows2 = mysqli_fetch_array($result2)){
+                        $sql1="select name,time,host from activity where id=$rows2[0]";
+                        $result1=$conn->query($sql1);
+                        $rows = mysqli_fetch_array($result1);
+                        ?>
+                        <tr>
+                            <td class="anchorjs-icon"><font size="4"><?php echo $rows[0] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4"><?php echo $rows[1] ?></font></td>
+                            <td class="type-info"><font size="4"><?php echo $rows[2] ?></font></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
                     </tbody>
                 </table>
             </div>

@@ -128,11 +128,20 @@ array_push($arr,$row);
                     ?>
                     <form action="jteamAction.php?member_sno=<?php echo $row['sno']?>&cap_sno=<?php echo $r['cap_sno'];?>&id=<?php echo $id?>" enctype="multipart/form-data" method="post">
                         <tr>
-                            <td><font size="4"><?php echo $r[1] ?></font></td>
-                            <td><font size="4"><?php echo $r[2] ?></font></td>
-                            <td><font size="4"><?php echo $r[3] ?></font></td>
-                            <td><font size="4">6</font></td>
-                            <td><font size="5" color="blue"><button>
+                            <?php
+                            $cap_sno = $r['cap_sno'];
+                            $sqltm = "select count(team.team_id) n from team,team_mem where team.team_id=team_mem.team_id and cap_sno = $cap_sno";
+                            $resulttm = $conn->query($sqltm);
+                            $ar = array();
+                            while($rowtm = mysqli_fetch_array($resulttm)){
+                                array_push($ar,$rowtm);
+                            }
+                            ?>
+                            <td><font size="4" color="black"><?php echo $r[1] ?></font></td>
+                            <td><font size="4" color="black"><?php echo $r[2] ?></font></td>
+                            <td><font size="4" color="black"><?php echo $r[3] ?></font></td>
+                            <td><font size="4"><?php echo count($ar);?></font></td>
+                            <td><font size="5" color="blue"><button style="background-color: transparent;border: transparent">
                                         <?php
                                         $cap_sno = $r['cap_sno'];
                                         $sqlstatic = "select static_join from static where membersno = $sno and capsno = $cap_sno";
@@ -142,16 +151,22 @@ array_push($arr,$row);
                                             echo '已拒绝';
                                         }
                                         elseif ($rowstatic['static_join']==1){
-                                            echo '申请中';
+                                            echo '申请中...';
                                         }
                                         elseif ($rowstatic['static_join']==2){
                                             echo '已加入';
                                         }
                                         else{
+                                            $sqltem = "select * from team_mem where team_mem.team_id = $id and member = $sno";
+                                            $resultem = $conn->query($sqltem);
+                                            if (!empty($resultem)){
+                                                echo '申请加入';
+                                            }
                                             echo '申请加入';
+
                                         }
                                         ?>
-                                    </button></font></td>
+                                        </button></font></td>
                         </tr>
                     </form>
                 <?php } ?>
