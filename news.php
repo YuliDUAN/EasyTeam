@@ -8,7 +8,7 @@ $receive_news = array();
 while($row = mysqli_fetch_array($result)){
     array_push($receive_news,$row);
 }
-if(!empty($_SERVER['HTTP_X_REQUESTED_WITH'])){
+/*if(!empty($_SERVER['HTTP_X_REQUESTED_WITH'])){
     $x = $_GET['content'];
     echo $x;
     $sql = "select * from sendnews where id=$x";
@@ -17,7 +17,7 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH'])){
     while ($row = mysqli_fetch_array($result)){
         $values = $row;
     }
-}
+}*/
 $rsq = "select * from ruser where sno=$s_id";
 $result = $conn->query($rsq);
 $row = mysqli_fetch_array($result);
@@ -108,8 +108,31 @@ $row = mysqli_fetch_array($result);
             float: right;
 
         }
+        .gl_sm_list li .sp{
+            position: absolute;
+            /* left: 50%; */
+            /* top: 4px; */
+            margin-top: 2px;
+            margin-left: -16px;
+            border-radius: 100%;
+            background-color: #fc6678;
+            font-size: 4px;
+            color: #fff;
+            line-height: 1;
+            vertical-align: 10px;
+            padding: 2px 4px;
+
+        }
     </style>
 </head>
+<?php
+$sqlnums = "select * from sendnews where receive_id = $s_id and static_news = 0";
+$resultnums = $conn->query($sqlnums);
+$news_nums = array();
+while($rownums = mysqli_fetch_array($resultnums)){
+    array_push($news_nums,$rownums);
+}
+?>
 <!-- banner -->
 <div class="banner-1">
     <div class="header agileinfo-header"><!-- header -->
@@ -127,7 +150,7 @@ $row = mysqli_fetch_array($result);
                     <h1><a href="homepage.html"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse gl_sm_list" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
                         <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
@@ -138,7 +161,20 @@ $row = mysqli_fetch_array($result);
                             </ul>
                         </li>
                         <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" class="w3ls-hover active">个人中心</a></li>
+                        <li><a href="contact.php" class="w3ls-hover active">
+                                <?php
+                                if (!empty($news_nums)){?>
+                                    <?php
+                                    echo '<'.'span class="sp"'.'>';
+                                    echo count($news_nums);
+                                    echo '</'.'span'.'>';
+                                    ?>
+                                <?php }else{?>
+                                    <?php
+                                    echo "";
+                                    ?>
+                                <?php }?>
+                                个人中心</a></li>
                     </ul>
                     <div class="clearfix"> </div>
                 </div><!-- //navbar-collapse -->
@@ -320,7 +356,16 @@ $row = mysqli_fetch_array($result);
                             <td><font size="3">
                                     <form action="">
                                         <!--                                    data-target="#myModal"-->
-                                        <a href="#" onclick="show(this)" data-toggle="modal" data-target="#myModal" data-type="<?php echo $v['id'];?>">查看详情</a>
+                                        <a href="#" onclick="show(this)" data-toggle="modal"
+                                           data-target="#myModal" data-type="<?php echo $v['id'];?>"
+                                           style="color: #5c9eff" class="<?php echo $v['id'];?>">
+                                            <?php
+                                            if ($v['static_news']==0){
+                                                echo "查看详情";
+                                            }else{
+                                                echo "已读";
+                                            }
+                                            ?></a>
                                     </form>
                                 </font></td>
                         </tr>
@@ -360,12 +405,14 @@ $row = mysqli_fetch_array($result);
                 $('.message-title').html(mes[0]);
                 $('.message-content').html(mes[1]);
                 $('.message-sender').html(mes[2]);
+                $("."+animalType).html("已读");
                 $('.dialog').fadeIn(500);
             });
     }
     //关闭弹框
     $('.btn-close').click(function() {
         $('.dialog').fadeOut(300);
+        window.location.href="news.php"
     });
 </script>
 <div class="footer-agile">

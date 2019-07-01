@@ -135,7 +135,8 @@ $a_id = $row[6];
                     <p align="center"><font size="4"><b><?php echo $row[8] ?></b></font></p>
                 </div>
             </div>
-            <div style="float: right;height: 400px;width:77%;border-radius: 10px;background-color:  #ffffff;padding-right:60px;padding-left:60px;padding-top:30px;padding-bottom:30px;word-break: break-all;overflow-y:auto">
+        <div style="float: right;height: 400px;width:77%;border-radius: 10px;background-color:  #ffffff;padding-right:60px;padding-left:60px;padding-top:30px;padding-bottom:30px;word-break: break-all;overflow-y:auto">
+            <div >
                 <table style="border-collapse:separate; border-spacing:0px 15px;">
                     <tr>
                         <td style="width: 170px"><h4><b>比赛名称：</b></h4></td>
@@ -162,16 +163,25 @@ $a_id = $row[6];
                         <td><h4><b><?php echo $row[5] ?></b></h4></td>
                     </tr>
                 </table>
+                <div style="margin-top: 12px;border-top:3px solid #ddd"">
+                    <table class="table" style="text-align: right">
+                        <tbody>
+                        <tr>
+                            <td class="type-info"><a href="cteam.php?id=<?php echo $a_id ?>"><font size="5">创建队伍</font></a></td>
+                            <td class="type-info"><a href="jteam.php?id=<?php echo $a_id ?>"><font size="5">加入队伍</font></a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
+        </div>
         </div>
 
         <div>
             <table class="table" style="text-align: right">
                 <tbody>
-                <tr>
-                    <td class="type-info"><a href="cteam.php?id=<?php echo $a_id ?>"><font size="5">创建队伍</font></a></td>
-                    <td class="type-info"><a href="jteam.php?id=<?php echo $a_id ?>"><font size="5">加入队伍</font></a></td>
-                </tr>
+                <tr></tr>
                 </tbody>
             </table>
         </div>

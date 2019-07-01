@@ -23,7 +23,7 @@ $name = $_GET["name"];
         <label class="button button-little bg-green"><span class="icon-home"></span> 你好！管理员<?php echo $name ?></label>
         <a class="button button-little bg-red" href="z_login.php"><span class="icon-power-off"></span> 退出登录</a></div>
 </div>
-<div class="leftnav">
+<div class="leftnav" style="float: left">
     <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
     <h2><span class="icon-user"></span>活动管理</h2>
     <ul style="display:block">
