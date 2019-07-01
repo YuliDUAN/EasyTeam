@@ -31,8 +31,33 @@ $row = mysqli_fetch_array($result);
     <!-- web-fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
+    <style>
+        .gl_sm_list li .sp{
+            position: absolute;
+            /* left: 50%; */
+            /* top: 4px; */
+            margin-top: 2px;
+            margin-left: -16px;
+            border-radius: 100%;
+            background-color: #fc6678;
+            font-size: 4px;
+            color: #fff;
+            line-height: 1;
+            vertical-align: 10px;
+            padding: 2px 4px;
+
+        }
+    </style>
 </head>
 <body>
+<?php
+$sqlnums = "select * from sendnews where receive_id = $sno and static_news = 0";
+$resultnums = $conn->query($sqlnums);
+$news_nums = array();
+while($rownums = mysqli_fetch_array($resultnums)){
+    array_push($news_nums,$rownums);
+}
+?>
 <!-- banner -->
 <div class="banner-1">
     <div class="header agileinfo-header"><!-- header -->
@@ -50,7 +75,7 @@ $row = mysqli_fetch_array($result);
                     <h1><a href="index.html"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse gl_sm_list" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="index.html" class="btn w3ls-hover">首页</a></li>
                         <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
@@ -60,8 +85,21 @@ $row = mysqli_fetch_array($result);
                                 <li><a href="codes.php">已经结束</a></li>
                             </ul>
                         </li>
-                        <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" class="w3ls-hover active">个人中心</a></li>
+                        <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
+                        <li><a href="contact.php">
+                                <?php
+                                if (!empty($news_nums)){?>
+                                    <?php
+                                    echo '<'.'span class="sp"'.'>';
+                                    echo count($news_nums);
+                                    echo '</'.'span'.'>';
+                                    ?>
+                                <?php }else{?>
+                                    <?php
+                                    echo "";
+                                    ?>
+                                <?php }?>
+                                个人中心</a></li>
                     </ul>
                     <div class="clearfix"> </div>
                 </div><!-- //navbar-collapse -->
@@ -344,10 +382,10 @@ $row = mysqli_fetch_array($result);
             <div class="col-md-3 col-sm-3 footer-wthree-grid">
                 <h3>快速连接</h3>
                 <ul>
-                    <li><a href="homepage.html"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
+                    <li><a href="homepage.php"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
                     <li><a href="gallery.php"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
                     <li><a href="codes.php"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
-                    <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
+                    <li><a href="link.php"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
                     <li><a href="contact.php"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
                 </ul>
             </div>

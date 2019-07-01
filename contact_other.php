@@ -54,7 +54,7 @@ $row = mysqli_fetch_array($result);
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <h1><a href="homepage.html"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
+                    <h1><a href="homepage.php"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
             </div><!-- //container-fluid -->
@@ -184,7 +184,7 @@ $row = mysqli_fetch_array($result);
         <div class="footer-agileinfo">
             <div class="col-md-5 col-sm-5 footer-wthree-grid">
                 <div class="agileits-w3layouts-tweets">
-                    <h5><a href="homepage.html"><i class="fa fa-pagelines" aria-hidden="true"></i>赛事</a></h5>
+                    <h5><a href="homepage.php"><i class="fa fa-pagelines" aria-hidden="true"></i>赛事</a></h5>
                 </div>
                 <p>app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。
                     旨在为学生提供一个基于互联网产品进行创新创意的一个学习交流和团队研发环境</p>
@@ -192,10 +192,10 @@ $row = mysqli_fetch_array($result);
             <div class="col-md-3 col-sm-3 footer-wthree-grid">
                 <h3>快速连接</h3>
                 <ul>
-                    <li><a href="homepage.html"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
+                    <li><a href="homepage.php"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
                     <li><a href="gallery.php"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
                     <li><a href="codes.php"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
-                    <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
+                    <li><a href="link.php"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
                     <li><a href="contact.php"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
                 </ul>
             </div>

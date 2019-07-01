@@ -1,3 +1,8 @@
+<?php
+include "MySqlConnect.php";
+session_start();
+$sno = $_SESSION['sno'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!--看看更新成功了没有-->
@@ -22,8 +27,33 @@
     <!-- web-fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
+    <style>
+        .gl_sm_list li .sp{
+            position: absolute;
+            /* left: 50%; */
+            /* top: 4px; */
+            margin-top: 2px;
+            margin-left: -16px;
+            border-radius: 100%;
+            background-color: #fc6678;
+            font-size: 4px;
+            color: #fff;
+            line-height: 1;
+            vertical-align: 10px;
+            padding: 2px 4px;
+
+        }
+    </style>
 </head>
 <body>
+<?php
+$sqlnums = "select * from sendnews where receive_id = $sno and static_news = 0";
+$resultnums = $conn->query($sqlnums);
+$news_nums = array();
+while($rownums = mysqli_fetch_array($resultnums)){
+    array_push($news_nums,$rownums);
+}
+?>
 <!-- banner -->
 <div class="banner-1">
     <div class="header agileinfo-header"><!-- header -->
@@ -38,12 +68,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <h1><a href="homepage.html"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
+                    <h1><a href="homepage.php"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse gl_sm_list" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
+                        <li><a href="homepage.php" class="btn w3ls-hover">首页</a></li>
                         <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
                         <li><a href="#" class="dropdown-toggle w3ls-hover active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园赛事<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -51,8 +81,22 @@
                                 <li><a href="codes.php">已经结束</a></li>
                             </ul>
                         </li>
-                        <li><a href="link.html" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" class="btn w3ls-hover">个人中心</a></li>
+                        <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
+
+                        <li><a href="contact.php">
+                                <?php
+                                if (!empty($news_nums)){?>
+                                    <?php
+                                    echo '<'.'span class="sp"'.'>';
+                                    echo count($news_nums);
+                                    echo '</'.'span'.'>';
+                                    ?>
+                                <?php }else{?>
+                                    <?php
+                                    echo "";
+                                    ?>
+                                <?php }?>
+                                个人中心</a></li>
                     </ul>
                     <div class="clearfix"> </div>
                 </div><!-- //navbar-collapse -->
@@ -115,7 +159,7 @@
         <div class="footer-agileinfo">
             <div class="col-md-5 col-sm-5 footer-wthree-grid">php
                 <div class="agileits-w3layouts-tweets">
-                    <h5><a href="homepage.html"><i class="fa fa-pagelines" aria-hidden="true"></i>赛事</a></h5>
+                    <h5><a href="homepage.php"><i class="fa fa-pagelines" aria-hidden="true"></i>赛事</a></h5>
                 </div>
                 <p>app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。
                     旨在为学生提供一个基于互联网产品进行创新创意的一个学习交流和团队研发环境</p>
@@ -123,10 +167,10 @@
             <div class="col-md-3 col-sm-3 footer-wthree-grid">
                 <h3>快速连接</h3>
                 <ul>
-                    <li><a href="homepage.html"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
+                    <li><a href="homepage.php"><span class="glyphicon glyphicon-menu-right"></span> 首页</a></li>
                     <li><a href="gallery.php"><span class="glyphicon glyphicon-menu-right"></span> 校园趣事</a></li>
                     <li><a href="codes.php"><span class="glyphicon glyphicon-menu-right"></span>校园赛事</a></li>
-                    <li><a href="link.html"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
+                    <li><a href="link.php"><span class="glyphicon glyphicon-menu-right"></span> 报名入口</a></li>
                     <li><a href="contact.php"><span class="glyphicon glyphicon-menu-right"></span> 个人中心</a></li>
                 </ul>
             </div>
