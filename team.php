@@ -92,7 +92,7 @@ while($rownums = mysqli_fetch_array($resultnums)){
                             </ul>
                         </li>
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php">
+                        <li><a href="contact.php" class="w3ls-hover active">
                                 <?php
                                 if (!empty($news_nums)){?>
                                     <?php

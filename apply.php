@@ -49,7 +49,7 @@ $i = 1;
             alert("评论成功！");
         }</script>
     <style>
-        .gl_sm_list li .sp{
+        .gl_sm_list li .sp {
             position: absolute;
             /* left: 50%; */
             /* top: 4px; */
@@ -93,8 +93,8 @@ $i = 1;
 $sqlnums = "select * from sendnews where receive_id = $sno and static_news = 0";
 $resultnums = $conn->query($sqlnums);
 $news_nums = array();
-while($rownums = mysqli_fetch_array($resultnums)){
-    array_push($news_nums,$rownums);
+while ($rownums = mysqli_fetch_array($resultnums)) {
+    array_push($news_nums, $rownums);
 }
 ?>
 <div class="banner-1">
@@ -125,19 +125,21 @@ while($rownums = mysqli_fetch_array($resultnums)){
                             </ul>
                         </li>
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" >
+                        <li><a href="contact.php">
                                 <?php
-                                if (!empty($news_nums)){?>
-                                    <?php
-                                    echo '<'.'span class="sp"'.'>';
-                                    echo count($news_nums);
-                                    echo '</'.'span'.'>';
+                                if (!empty($news_nums)) {
                                     ?>
-                                <?php }else{?>
+                                    <?php
+                                    echo '<' . 'span class="sp"' . '>';
+                                    echo count($news_nums);
+                                    echo '</' . 'span' . '>';
+                                    ?>
+                                <?php } else {
+                                    ?>
                                     <?php
                                     echo "";
                                     ?>
-                                <?php }?>
+                                <?php } ?>
                                 个人中心</a></li>
                     </ul>
                     <div class="clearfix"></div>
@@ -173,40 +175,43 @@ $a_id = $row[6];
                     <p align="center"><font size="4"><b><?php echo $row[8] ?></b></font></p>
                 </div>
             </div>
-        <div style="float: right;height: 400px;width:77%;border-radius: 10px;background-color:  #ffffff;padding-right:60px;padding-left:60px;padding-top:30px;padding-bottom:30px;word-break: break-all;overflow-y:auto">
-            <div >
-                <table style="border-collapse:separate; border-spacing:0px 15px;">
-                    <tr>
-                        <td style="width: 170px"><h4><b>比赛名称：</b></h4></td>
-                        <td><h4><b><?php echo $row[0] ?></b></h4></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 150px"><h4><b>主题：</b></h4></td>
-                        <td><h4><b><?php echo $row[1] ?></b></h4></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 150px"><h4><b>人员：</b></h4></td>
-                        <td><h4><b><?php echo $row[2] ?></h4></b></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 150px"><h4><b>团队人员限制：</b></h4></td>
-                        <td><h4><?php echo $row[3] ?></h4></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 150px"><h4><b>报名截止日期：</b></h4></td>
-                        <td><h4><b><?php echo $row[4] ?></b></h4></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 150px"><h4><b>奖励：</b></h4></td>
-                        <td><h4><b><?php echo $row[5] ?></b></h4></td>
-                    </tr>
-                </table>
-                <div style="margin-top: 12px;border-top:3px solid #ddd"">
+            <div style="float: right;height: 400px;width:77%;border-radius: 10px;background-color:  #ffffff;padding-right:60px;padding-left:60px;padding-top:30px;padding-bottom:30px;word-break: break-all;overflow-y:auto">
+                <div>
+                    <table style="border-collapse:separate; border-spacing:0px 15px;">
+                        <tr>
+                            <td style="width: 170px"><h4><b>比赛名称：</b></h4></td>
+                            <td><h4><b><?php echo $row[0] ?></b></h4></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px"><h4><b>主题：</b></h4></td>
+                            <td><h4><b><?php echo $row[1] ?></b></h4></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px"><h4><b>人员：</b></h4></td>
+                            <td><h4><b><?php echo $row[2] ?></h4></b></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px"><h4><b>团队人员限制：</b></h4></td>
+                            <td><h4><?php echo $row[3] ?></h4></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px"><h4><b>报名截止日期：</b></h4></td>
+                            <td><h4><b><?php echo $row[4] ?></b></h4></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px"><h4><b>奖励：</b></h4></td>
+                            <td><h4><b><?php echo $row[5] ?></b></h4></td>
+                        </tr>
+                    </table>
+                    <div style="margin-top: 12px;border-top:3px solid #ddd"
+                    ">
                     <table class="table" style="text-align: right">
                         <tbody>
                         <tr>
-                            <td class="type-info"><a href="cteam.php?id=<?php echo $a_id ?>"><font size="5">创建队伍</font></a></td>
-                            <td class="type-info"><a href="jteam.php?id=<?php echo $a_id ?>"><font size="5">加入队伍</font></a></td>
+                            <td class="type-info"><a href="cteam.php?id=<?php echo $a_id ?>"><font size="5">创建队伍</font></a>
+                            </td>
+                            <td class="type-info"><a href="jteam.php?id=<?php echo $a_id ?>"><font size="5">加入队伍</font></a>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -214,152 +219,152 @@ $a_id = $row[6];
             </div>
 
         </div>
-        </div>
+    </div>
 
-        <div>
-            <table class="table" style="text-align: right">
-                <tbody>
-                <tr></tr>
-                </tbody>
-            </table>
-        </div>
+    <div>
+        <table class="table" style="text-align: right">
+            <tbody>
+            <tr></tr>
+            </tbody>
+        </table>
+    </div>
 
 
-        <?php foreach ($arownews as $row) { ?>
-            <?php
-            $forumid = $row['uid'];
-            $sql = "select * from replys where replys.fid = $forumid ";
-            $replysresult = $conn->query($sql);
-            $arr = array();
-            while ($m = mysqli_fetch_array($replysresult)) {
-                array_push($arr, $m);
-            }
-            ?>
-            <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <i class="fa fa-pagelines" aria-hidden="true"></i>APP创意设计大赛
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                        aria-hidden="true">&times;</span></button>
-                        </div>
-                        <section>
-                            <div class="modal-body">
-                                <p>app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。
-                                    旨在为学生提供一个基于互联网产品进行创新创意的一个学习交流和团队研发环境
-                                    <i>*App创意俱乐部</i></p>
-                            </div>
-                        </section>
+    <?php foreach ($arownews as $row) { ?>
+        <?php
+        $forumid = $row['uid'];
+        $sql = "select * from replys where replys.fid = $forumid ";
+        $replysresult = $conn->query($sql);
+        $arr = array();
+        while ($m = mysqli_fetch_array($replysresult)) {
+            array_push($arr, $m);
+        }
+        ?>
+        <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <i class="fa fa-pagelines" aria-hidden="true"></i>APP创意设计大赛
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
                     </div>
+                    <section>
+                        <div class="modal-body">
+                            <p>app创意中心现隶属于计算机与软件工程学院，是学院“双创”实验室中心重要组成实验室之一。
+                                旨在为学生提供一个基于互联网产品进行创新创意的一个学习交流和团队研发环境
+                                <i>*App创意俱乐部</i></p>
+                        </div>
+                    </section>
                 </div>
             </div>
+        </div>
 
-            <div style="width:100%">
-                <div style="float: left;width:20%;height:400px;border-radius: 10px;background-color:  #ffffff;padding: 20px;border-bottom:6px solid #ddd">
-                    <div align="center">
-                        <a href="
+        <div style="width:100%">
+            <div style="float: left;width:20%;height:400px;border-radius: 10px;background-color:  #ffffff;padding: 20px;border-bottom:6px solid #ddd">
+                <div align="center">
+                    <a href="
                         <?php
-                        if ($sno == $row['uid']) {
-                            echo 'leaveword.php';
-                        } else {
-                            echo 'leaveword_other.php';
-                        }
-                        ?>?uid=<?php echo $row['uid']; ?>&id=<?php echo $id ?>"><img src="<?php echo $row["image"]; ?>"
-                                                                                     width="60px" height="60px"/></a>
-                    </div>
-                    <div style="padding-top: 20px">
-                        <table style="border-collapse:separate; border-spacing:0px 10px;">
-                            <tr>
-                                <td><h5><?php echo $i . '楼：'; ?></h5></td>
-                                <td><h5><?php echo $row["name"]; ?></h5></td>
-                            </tr>
-                            <br>
-                            <tr>
-                                <td><h5>回复时间：</h5></td>
-                                <td><h5><?php echo $row["ctime"]; ?></h5></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="padding-top: 10px;border-top:3px solid #ddd">
-                        <form action="newsAction.php?receive_id=<?php echo $row['uid'] ?>&send_id=<?php echo $_SESSION['sno'] ?>&send_name=<?php echo $_SESSION['username'] ?>"
-                              enctype="multipart/form-data" method="post">
-                            <th><input type="hidden" name="a_id" value="<?php echo $a_id ?>"/></th>
-                            <div>
-                                <div style="padding-top: 10px">
-                                    <input type="text" name="titlenews" style="border-radius: 5px;width: 90%;height: 8%"
-                                           placeholder="请输入私信标题">
-                                </div>
-                                <div style="padding-top: 10px">
+                    if ($sno == $row['uid']) {
+                        echo 'leaveword.php';
+                    } else {
+                        echo 'leaveword_other.php';
+                    }
+                    ?>?uid=<?php echo $row['uid']; ?>&id=<?php echo $id ?>"><img src="<?php echo $row["image"]; ?>"
+                                                                                 width="60px" height="60px"/></a>
+                </div>
+                <div style="padding-top: 20px">
+                    <table style="border-collapse:separate; border-spacing:0px 10px;">
+                        <tr>
+                            <td><h5><?php echo $i . '楼：'; ?></h5></td>
+                            <td><h5><?php echo $row["name"]; ?></h5></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td><h5>回复时间：</h5></td>
+                            <td><h5><?php echo $row["ctime"]; ?></h5></td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="padding-top: 10px;border-top:3px solid #ddd">
+                    <form action="newsAction.php?receive_id=<?php echo $row['uid'] ?>&send_id=<?php echo $_SESSION['sno'] ?>&send_name=<?php echo $_SESSION['username'] ?>"
+                          enctype="multipart/form-data" method="post">
+                        <th><input type="hidden" name="a_id" value="<?php echo $a_id ?>"/></th>
+                        <div>
+                            <div style="padding-top: 10px">
+                                <input type="text" name="titlenews" style="border-radius: 5px;width: 90%;height: 8%"
+                                       placeholder="请输入私信标题">
+                            </div>
+                            <div style="padding-top: 10px">
                                     <textarea name="txtnews" style="border-radius:10px;width:90%;height:20%"
                                               placeholder="请输入私信内容"></textarea>
-                                </div>
+                            </div>
 
-                                <div style="padding-top: 10px">
-                                    <button type="submit"
-                                            style="height: 10%;width: 40%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
-                                            value="发送"><span><h5>发送</h5></span></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div style="height:400px">
-                    <div style="float: right;width:77%;height: 40%;border-radius: 10px;background-color:  #ffffff;padding:10px;word-break: break-all;overflow-y:auto">
-                        <p><h4><?php echo $row['comment']; ?></h4></p>
-                    </div>
-                    <form action="applyInfoAction.php?fid=<?php echo $row['uid'] ?>&rid=<?php echo $_SESSION['sno'] ?>&name=<?php echo $_SESSION['username'] ?>&id=<?php echo $row['id'] ?>"
-                          enctype="multipart/form-data" method="POST">
-                        <th><input type="hidden" name="a_id" value="<?php echo $a_id ?>"/></th>
-                        <div style="float: right;width:77%;height: 60%;border-radius: 10px;background-color:  #ffffff;padding:5px;word-break: break-all;border-top:3px solid #ddd;border-bottom:6px solid #ddd">
-                            <div style="float: left;width:60%;margin:3%;height:150px;overflow-y:auto">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <?php foreach ($arr as $r) { ?>
-                                                <?php if ($r['fid'] == $row['uid'] && $row['id'] == $r['replyid']) { ?>
-                                                    <?php ?>
-                                                    <?php echo $r['name'] . "：" . $r['reply']; ?><br>
-                                                <?php } ?>
-                                            <?php } ?>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div style="float: right;width:20%;margin: 5%;height: 80%">
-                                <textarea name="rinfo"
-                                          style="width: 100%;height:40%;border-radius:10px;margin-bottom: 10px"></textarea>
-                                <div style="float: right">
-                                    <button type="submit"
-                                            style="height: 20%;width: 100%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
-                                            value="回复"><span><h5>回复</h5></span></button>
-                                </div>
+                            <div style="padding-top: 10px">
+                                <button type="submit"
+                                        style="height: 10%;width: 40%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
+                                        value="发送"><span><h5>发送</h5></span></button>
                             </div>
                         </div>
-                </div>
-                </form>
-            </div>
-
-
-            <?php ++$i; ?>
-        <?php } ?>
-
-
-        <form action="applyAction.php?ac_id=<?php echo $id ?>" enctype="multipart/form-data" method="POST">
-            <div style="width:100%">
-                <div style="float: right;width:77%;min-height: 200px;background-color:  #ffffff;padding: 20px;margin-top: 50px;border-radius: 10px;">
-                    <div style="margin-bottom: 20px">
-                        <textarea name="comment" style="width: 100%;min-height: 100px;border-radius:10px"></textarea>
-                    </div>
-                    <div style="float: right">
-                        <button style="height: 5%;width: 100%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
-                                value="评论"><span><h5>跟帖</h5></button>
-                    </div>
+                    </form>
                 </div>
             </div>
-        </form>
+            <div style="height:400px">
+                <div style="float: right;width:77%;height: 40%;border-radius: 10px;background-color:  #ffffff;padding:10px;word-break: break-all;overflow-y:auto">
+                    <p><h4><?php echo $row['comment']; ?></h4></p>
+                </div>
+                <form action="applyInfoAction.php?fid=<?php echo $row['uid'] ?>&rid=<?php echo $_SESSION['sno'] ?>&name=<?php echo $_SESSION['username'] ?>&id=<?php echo $row['id'] ?>"
+                      enctype="multipart/form-data" method="POST">
+                    <th><input type="hidden" name="a_id" value="<?php echo $a_id ?>"/></th>
+                    <div style="float: right;width:77%;height: 60%;border-radius: 10px;background-color:  #ffffff;padding:5px;word-break: break-all;border-top:3px solid #ddd;border-bottom:6px solid #ddd">
+                        <div style="float: left;width:60%;margin:3%;height:150px;overflow-y:auto">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <?php foreach ($arr as $r) { ?>
+                                            <?php if ($r['fid'] == $row['uid'] && $row['id'] == $r['replyid']) { ?>
+                                                <?php ?>
+                                                <?php echo $r['name'] . "：" . $r['reply']; ?><br>
+                                            <?php } ?>
+                                        <?php } ?>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="float: right;width:20%;margin: 5%;height: 80%">
+                                <textarea name="rinfo"
+                                          style="width: 100%;height:40%;border-radius:10px;margin-bottom: 10px"></textarea>
+                            <div style="float: right">
+                                <button type="submit"
+                                        style="height: 20%;width: 100%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
+                                        value="回复"><span><h5>回复</h5></span></button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </form>
+        </div>
 
 
-    </div>
+        <?php ++$i; ?>
+    <?php } ?>
+
+
+    <form action="applyAction.php?ac_id=<?php echo $id ?>" enctype="multipart/form-data" method="POST">
+        <div style="width:100%">
+            <div style="float: right;width:77%;min-height: 200px;background-color:  #ffffff;padding: 20px;margin-top: 50px;border-radius: 10px;">
+                <div style="margin-bottom: 20px">
+                    <textarea name="comment" style="width: 100%;min-height: 100px;border-radius:10px"></textarea>
+                </div>
+                <div style="float: right">
+                    <button style="height: 5%;width: 100%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
+                            value="评论"><span><h5>跟帖</h5></button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>
 </div>
 
 

@@ -8,16 +8,7 @@ $receive_news = array();
 while($row = mysqli_fetch_array($result)){
     array_push($receive_news,$row);
 }
-/*if(!empty($_SERVER['HTTP_X_REQUESTED_WITH'])){
-    $x = $_GET['content'];
-    echo $x;
-    $sql = "select * from sendnews where id=$x";
-    $result = $conn->query($sql);
-    $values = array();
-    while ($row = mysqli_fetch_array($result)){
-        $values = $row;
-    }
-}*/
+
 $rsq = "select * from ruser where sno=$s_id";
 $result = $conn->query($rsq);
 $row = mysqli_fetch_array($result);
@@ -343,17 +334,17 @@ while($rownums = mysqli_fetch_array($resultnums)){
                 <table class="table">
                     <tbody>
                     <tr>
-                        <th width="15%"><font size="4" color="black">来源</font></th>
-                        <th width="40%"><font size="4" color="black">标题</font></th>
-                        <th width="20%"><font size="4" color="black">时间</font></th>
-                        <th width="20%"><font size="4" color="black">详情</font></th>
+                        <th width="15%"><font-size="4" color="black">来源</font></th>
+                        <th width="40%"><font-size="4" color="black">标题</font></th>
+                        <th width="20%"><font-size="4" color="black">时间</font></th>
+                        <th width="20%"><font-size="4" color="black">详情</font></th>
                     </tr>
                     <?php foreach($receive_news as $v){?>
                         <tr>
-                            <td><font size="3"><?php echo $v['send_name'];?></font></td>
-                            <td><font size="3"><?php echo $v['titlenews'];?></font></td>
-                            <td><font size="3"><?php echo $v['send_time'];?></font></td>
-                            <td><font size="3">
+                            <td><font-size="3"><?php echo $v['send_name'];?></font></td>
+                            <td><font-size="3"><?php echo $v['titlenews'];?></font></td>
+                            <td><font-size="3"><?php echo $v['send_time'];?></font></td>
+                            <td><font-size="3">
                                     <form action="">
                                         <!--                                    data-target="#myModal"-->
                                         <a href="#" onclick="show(this)" data-toggle="modal"

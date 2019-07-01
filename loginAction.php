@@ -13,7 +13,7 @@ if (!empty($_POST)&&!empty($sno) && !empty($psd)) {
         if ($row['sno'] == $sno && $row['password'] == $psd) {
             $_SESSION['username'] = $row['username'];
             $_SESSION['sno'] = $sno;
-            echo '<script>window.location.href=homepage.php/script>';
+            echo '<script>window.location.href="homepage.php"</script>';
         }
     }
 } else {
