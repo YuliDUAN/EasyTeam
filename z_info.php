@@ -16,7 +16,7 @@
 
 </head>
 <body>
-<div class="panel admin-panel">
+<div class="panel admin-panel" align="center">
     <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 添加活动信息</strong></div>
     <div class="body-content">
         <form method="post" class="form-x" action="z_infoAction.php">

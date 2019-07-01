@@ -247,7 +247,9 @@ $row = mysqli_fetch_array($result);
                         <th class="anchorjs-icon"><font size="4" color="black">成绩</font></th>
                     </tr>
                     <?php
-                    $sql1 = "select team_name,activity.name,team_prize from team,activity where cap_sno=$sno and team.ac_id=activity.id";
+                    $sql1 = "select team_name,activity.name,team_prize from team,activity where team.ac_id=activity.id
+                  and team_id in(select distinct team_id from team where cap_sno=$sno union all select distinct team_id from team_mem
+                  where member_sno=$sno) ";
                     $result1 = $conn->query($sql1);
                     while($rows = mysqli_fetch_array($result1)){
                         ?>

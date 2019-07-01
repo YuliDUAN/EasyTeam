@@ -124,9 +124,9 @@ $a_id = $row[6];
     <div class="container" style="width:80%">
         <h3 class="hdg"><?php echo $row[0] ?></h3>
         <div style="width:100%">
-            <div style="float: left;width:20%;height:450px;border-radius: 10px;background-color: #ffffff;padding: 20px">
+            <div style="float: left;width:20%;height:400px;border-radius: 10px;background-color: #ffffff;padding: 20px">
                 <div align="center">
-                    <img src="images/t11.jpg" width="40%" height="auto"/>
+                    <img src="images/t21.jpg" width="40%" height="auto"/>
                 </div>
                 <div style="padding: 20px">
                     <p><font size="3.5"><b>发布者：</b></font></p>
@@ -135,7 +135,7 @@ $a_id = $row[6];
                     <p align="center"><font size="4"><b><?php echo $row[8] ?></b></font></p>
                 </div>
             </div>
-            <div style="float: right;height: 450px;width:77%;border-radius: 10px;background-color:  #ffffff;padding:60px;word-break: break-all;overflow-y:auto">
+            <div style="float: right;height: 400px;width:77%;border-radius: 10px;background-color:  #ffffff;padding-right:60px;padding-left:60px;padding-top:30px;padding-bottom:30px;word-break: break-all;overflow-y:auto">
                 <table style="border-collapse:separate; border-spacing:0px 15px;">
                     <tr>
                         <td style="width: 170px"><h4><b>比赛名称：</b></h4></td>
@@ -298,7 +298,7 @@ $a_id = $row[6];
 
         <form action="applyAction.php?ac_id=<?php echo $id ?>" enctype="multipart/form-data" method="POST">
             <div style="width:100%">
-                <div style="float: right;width:77%;min-height: 200px;background-color:  #ffffff;padding: 20px;margin-top: 50px">
+                <div style="float: right;width:77%;min-height: 200px;background-color:  #ffffff;padding: 20px;margin-top: 50px;border-radius: 10px;">
                     <div style="margin-bottom: 20px">
                         <textarea name="comment" style="width: 100%;min-height: 100px;border-radius:10px"></textarea>
                     </div>

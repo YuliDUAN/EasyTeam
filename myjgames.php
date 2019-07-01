@@ -229,7 +229,9 @@ $row = mysqli_fetch_array($result);
                         <th class="anchorjs-icon"><font size="4" color="black">主办方</font></th>
                     </tr>
                     <?php
-                    $sql2="select distinct ac_id from team inner join team_mem on team_mem.team_id=team.team_id where cap_sno=$s_id or member_sno=$s_id";
+                    $sql2="select distinct ac_id from team where 
+                  team_id in(select team_id from team where cap_sno=$s_id union select team_id from team_mem
+                  where member_sno=$s_id) ";
                     $result2 = $conn->query($sql2);
                     while($rows2 = mysqli_fetch_array($result2)){
                         $sql1="select name,time,host from activity where id=$rows2[0]";
