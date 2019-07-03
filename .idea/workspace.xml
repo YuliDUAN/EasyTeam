@@ -2,32 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c6ee583-e762-461f-bf34-3cb08e660540" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/stateAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/mislider-cameo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/mislider-skin-cameo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/mislider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/chenyuedong.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/daiping.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/gaochao.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/liuqingfeng.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/wanjiashan.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/wujinhua.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/wumin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zhangsongyun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zhoumingzheng.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/html5shiv/html5shiv.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/mislider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/mislider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/mislider.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/modernizr.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/modernizr/modernizr-custom.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/html5shiv/html5shiv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/html5shiv/html5shiv.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/modernizr/modernizr-custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/modernizr/modernizr-custom.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/retrieve.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/activity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apply.php" beforeDir="false" afterPath="$PROJECT_DIR$/apply.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codes.php" beforeDir="false" afterPath="$PROJECT_DIR$/codes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collect.php" beforeDir="false" afterPath="$PROJECT_DIR$/collect.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact_other.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact_other.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/creamAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/creamAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cteam.php" beforeDir="false" afterPath="$PROJECT_DIR$/cteam.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file.php" beforeDir="false" afterPath="$PROJECT_DIR$/file.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/gallery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/homepage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons.php" beforeDir="false" afterPath="$PROJECT_DIR$/icons.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jteam.php" beforeDir="false" afterPath="$PROJECT_DIR$/jteam.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leaveword.php" beforeDir="false" afterPath="$PROJECT_DIR$/leaveword.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leaveword_other.php" beforeDir="false" afterPath="$PROJECT_DIR$/leaveword_other.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/link.php" beforeDir="false" afterPath="$PROJECT_DIR$/link.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/loginAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myjgames.php" beforeDir="false" afterPath="$PROJECT_DIR$/myjgames.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news.php" beforeDir="false" afterPath="$PROJECT_DIR$/news.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question.php" beforeDir="false" afterPath="$PROJECT_DIR$/question.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ranking.php" beforeDir="false" afterPath="$PROJECT_DIR$/ranking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registerAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/registerAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team.php" beforeDir="false" afterPath="$PROJECT_DIR$/team.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teamApply.php" beforeDir="false" afterPath="$PROJECT_DIR$/teamApply.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,28 +49,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stateAction.php">
+        <entry file="file://$PROJECT_DIR$/contact.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+            <state relative-caret-position="380">
+              <caret line="70" column="16" lean-forward="true" selection-start-line="70" selection-start-column="16" selection-end-line="75" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
+        <entry file="file://$PROJECT_DIR$/link.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/registerAction.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="90" />
+            <state relative-caret-position="399">
+              <caret line="120" column="39" lean-forward="true" selection-start-line="120" selection-start-column="39" selection-end-line="120" selection-end-column="39" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#figure#0;n#div#2;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,12 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/searchteamAction.php" />
-        <option value="$PROJECT_DIR$/test.php" />
-        <option value="$PROJECT_DIR$/jteamAction.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/js/jquery.js" />
-        <option value="$PROJECT_DIR$/z_add.php" />
         <option value="$PROJECT_DIR$/z_addprizes.php" />
         <option value="$PROJECT_DIR$/z_article_modify.php" />
         <option value="$PROJECT_DIR$/z_frist.php" />
@@ -130,7 +126,6 @@
         <option value="$PROJECT_DIR$/z_student.php" />
         <option value="$PROJECT_DIR$/z_team.php" />
         <option value="$PROJECT_DIR$/js/login_change.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/login_change1.js" />
         <option value="$PROJECT_DIR$/z_login.php" />
         <option value="$PROJECT_DIR$/css/admin.css" />
@@ -142,7 +137,6 @@
         <option value="$PROJECT_DIR$/apply.php" />
         <option value="$PROJECT_DIR$/codes.php" />
         <option value="$PROJECT_DIR$/collect.php" />
-        <option value="$PROJECT_DIR$/contact.php" />
         <option value="$PROJECT_DIR$/contact_other.php" />
         <option value="$PROJECT_DIR$/creamAction.php" />
         <option value="$PROJECT_DIR$/cteam.php" />
@@ -152,15 +146,23 @@
         <option value="$PROJECT_DIR$/jteam.php" />
         <option value="$PROJECT_DIR$/leaveword.php" />
         <option value="$PROJECT_DIR$/leaveword_other.php" />
-        <option value="$PROJECT_DIR$/link.php" />
         <option value="$PROJECT_DIR$/myjgames.php" />
-        <option value="$PROJECT_DIR$/news.php" />
         <option value="$PROJECT_DIR$/question.php" />
         <option value="$PROJECT_DIR$/ranking.php" />
         <option value="$PROJECT_DIR$/team.php" />
         <option value="$PROJECT_DIR$/teamApply.php" />
         <option value="$PROJECT_DIR$/registerAction.php" />
         <option value="$PROJECT_DIR$/stateAction.php" />
+        <option value="$PROJECT_DIR$/news.php" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/register.css" />
+        <option value="$PROJECT_DIR$/css/login.css" />
+        <option value="$PROJECT_DIR$/retrieve.html" />
+        <option value="$PROJECT_DIR$/register.html" />
+        <option value="$PROJECT_DIR$/contact.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/js/html5shiv/html5shiv.min.js" />
+        <option value="$PROJECT_DIR$/link.php" />
       </list>
     </option>
   </component>
@@ -173,10 +175,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1294" />
-    <option name="y" value="242" />
-    <option name="width" value="1093" />
-    <option name="height" value="706" />
+    <option name="x" value="-1309" />
+    <option name="y" value="139" />
+    <option name="width" value="1094" />
+    <option name="height" value="707" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -200,6 +202,17 @@
             </path>
             <path>
               <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EasyTeam" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EasyTeam" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="html5shiv" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
@@ -220,6 +233,58 @@
               <item name="htdocs" type="462c0819:PsiDirectoryNode" />
               <item name="EasyTeam" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="PHP" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="EasyTeam" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="PHP" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="EasyTeam" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="PHP" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="EasyTeam" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="html5shiv" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="PHP" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="EasyTeam" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="PHP" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="EasyTeam" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="PHP" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="EasyTeam" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery.js" type="620a8d5e:NestingTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -232,7 +297,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="D:/AndroidStudio/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -246,11 +311,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\EasyTeam" />
       <recent name="D:\xampp\htdocs\EasyTeam\js" />
+      <recent name="D:\xampp\htdocs\EasyTeam" />
+      <recent name="D:\xampp\htdocs\EasyTeam\js\Carousel" />
       <recent name="D:\xampp\htdocs\EasyTeam\css" />
       <recent name="D:\xampp\htdocs\EasyTeam\images" />
-      <recent name="D:\IDEAIU\Project\EasyTeam" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\EasyTeam\images" />
@@ -330,13 +395,6 @@
       <workItem from="1561810242749" duration="7049000" />
       <workItem from="1561860870603" duration="16322000" />
       <workItem from="1561938790052" duration="4507000" />
-    </task>
-    <task id="LOCAL-00002" summary="添加了消息页面">
-      <created>1561084037918</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1561084037918</updated>
     </task>
     <task id="LOCAL-00003" summary="添加了消息页面">
       <created>1561119753469</created>
@@ -674,7 +732,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562122008095</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="加入单点登陆">
+      <created>1562138881506</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1562138881506</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -710,7 +775,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243076000" />
+    <option name="totallyTimeSpent" value="250990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1448" y="100" width="1456" height="876" extended-state="6" />
@@ -748,7 +813,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="加入问题反馈" />
     <MESSAGE value="修改起始界面" />
     <MESSAGE value="修改了登陆链接bug" />
     <MESSAGE value="错误修改完毕" />
@@ -773,48 +837,10 @@
     <MESSAGE value="加入后台部分" />
     <MESSAGE value="硬件问题，从新拷贝" />
     <MESSAGE value="加入天气" />
-    <option name="LAST_COMMIT_MESSAGE" value="加入天气" />
+    <MESSAGE value="加入单点登陆" />
+    <option name="LAST_COMMIT_MESSAGE" value="加入单点登陆" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/z_teamDelete.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_team.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1178">
-          <caret line="62" column="7" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#857#863#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-570">
-          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_addAction.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="54" column="33" lean-forward="true" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/z_infoAction.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -849,13 +875,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/login.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/searchteamAction.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/register.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
@@ -893,13 +913,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/collect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contact.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
@@ -944,13 +957,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homepage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/icons.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -985,13 +991,6 @@
     <entry file="file://$PROJECT_DIR$/leavewordAction.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/link.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loginAction.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -999,22 +998,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myjgames.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MySqlConnect.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/question.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1036,9 +1021,6 @@
           <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/team.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1067,6 +1049,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/myjgames.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/register.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="68" column="9" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#a#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="145" column="23" lean-forward="true" selection-start-line="145" selection-start-column="23" selection-end-line="145" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homepage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="169" column="58" selection-start-line="169" selection-start-column="58" selection-end-line="169" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="2744" column="1" selection-start-line="2744" selection-start-column="1" selection-end-line="2744" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/mislider.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Carousel/html5shiv/html5shiv.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jquery/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/retrieve.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="30" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#3;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#td#1;n#tr#3;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#a#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/stateAction.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -1074,10 +1145,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/html5shiv/html5shiv.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+        <state relative-caret-position="380">
+          <caret line="70" column="16" lean-forward="true" selection-start-line="70" selection-start-column="16" selection-end-line="75" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/link.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="120" column="39" lean-forward="true" selection-start-line="120" selection-start-column="39" selection-end-line="120" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#figure#0;n#div#2;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

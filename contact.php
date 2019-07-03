@@ -37,7 +37,7 @@ $row = mysqli_fetch_array($result);
           rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
     <style>
-        .gl_sm_list li .sp{
+        .gl_sm_list li .sp {
             position: absolute;
             /* left: 50%; */
             /* top: 4px; */
@@ -59,8 +59,8 @@ $row = mysqli_fetch_array($result);
 $sqlnums = "select * from sendnews where receive_id = $sno and static_news = 0";
 $resultnums = $conn->query($sqlnums);
 $news_nums = array();
-while($rownums = mysqli_fetch_array($resultnums)){
-    array_push($news_nums,$rownums);
+while ($rownums = mysqli_fetch_array($resultnums)) {
+    array_push($news_nums, $rownums);
 }
 ?>
 <!-- banner -->
@@ -100,17 +100,19 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
                         <li><a href="contact.php" class="w3ls-hover active">
                                 <?php
-                                if (!empty($news_nums)){?>
-                                    <?php
-                                    echo '<'.'span class="sp"'.'>';
-                                    echo count($news_nums);
-                                    echo '</'.'span'.'>';
+                                if (!empty($news_nums)) {
                                     ?>
-                                <?php }else{?>
+                                    <?php
+                                    echo '<' . 'span class="sp"' . '>';
+                                    echo count($news_nums);
+                                    echo '</' . 'span' . '>';
+                                    ?>
+                                <?php } else {
+                                    ?>
                                     <?php
                                     echo "";
                                     ?>
-                                <?php }?>
+                                <?php } ?>
                                 个人中心</a></li>
                     </ul>
                     <div class="clearfix"></div>
@@ -123,9 +125,9 @@ while($rownums = mysqli_fetch_array($resultnums)){
 
 <script language="javascript">
     function exit() {
-        var se=confirm("确定退出吗？");
-        if (se==true) {
-            location.href="index.html";
+        var se = confirm("确定退出吗？");
+        if (se == true) {
+            location.href = "index.html";
         }
     }
 </script>
@@ -140,94 +142,97 @@ while($rownums = mysqli_fetch_array($resultnums)){
         <div class="col-md-5 agileits_mail_grid_right">
             <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
-                    <img style="width: 120px;height: 120px" src="<?php echo $row['image'];?>">
+                    <img style="width: 120px;height: 120px" src="<?php echo $row['image']; ?>">
                     <label for="file">
                         <input type="button" id="btn" value="修改头像>>>"><span id="text"></span>
                         <input type="file" name="avatar" id="file" onchange="verificationPicFile(this)">
                     </label>
-                    <li><a href="contact.php"><button id="btn"  style="width: 97.7px"><span>确定修改</span></button></a></li>
+                    <li><a href="contact.php">
+                            <button id="btn" style="width: 97.7px"><span>确定修改</span></button>
+                        </a></li>
 
-                <?php if (isset($message)):?>
-                    <P style="color: hotpink"><?php echo $message?></P>
-                <?php endif ?>
-                <script language="JavaScript">
-                    function verificationPicFile(file) {
-                        var fileTypes = [".jpg",".png"];
-                        var filePath = file.value();
-                        if (filePath){
-                            var isNext = false;
-                            var fileEnd = filePath.substring(filePath.indexOf("."));
-                            for (var i = 0; i < fileTypes.length; i++) {
-                                if (fileTypes[i] == fileEnd) {
-                                    isNext = true;
-                                    break;
-                                }
-                            }
-                            if (!isNext) {
-                                $GLOBALS['message'] = '不接受此类型文件，请用jpg或png格式';
-                                file.value = "";
-                                return false;
-                            }
-                        } else {
-                            return false;
-                        }
-                    }
-
-                    function verificationPicFile() {
-                        var fileSize = 0;
-                        var fileMaxSize = 1024;
-                        var filePath = file.value;
-                        if (filePath) {
-                            fileSize = file.avatar[0].size;
-                            var size = fileSize/1024;
-                            if (size>fileMaxSize){
-                                $GLOBALS['message'] = '文件不能大于1M';
-                                file.value = "";
-                                return false;
-                            } else if (size <= 0) {
-                                $GLOBALS['message'] = '文件不能为0M';
-                                file.value = "";
-                                return false;
-                            }
-                        }else {
-                            return false;
-                        }
-                    }
-
-                    function verificationPicFile(){
-                        var filePath = file.value;
-                        if(filePath){
-                            //读取图片数据
-                            var filePic = file.avatar[0];
-                            var reader = new FileReader();
-                            reader.onload = function (e) {
-                                var data = e.target.result;
-
-                                var image = new Image();
-                                image.onload = function () {
-                                    var width = image.width;
-                                    var height = image.height;
-                                    if (width == 120 | height == 120) {
-                                        $GLOBALS['message'] = '尺寸符合';
-                                    }else {
-                                        $GLOBALS['message'] = '尺寸大小应为120*120';
-                                        file.value="";
-                                        return false;
+                    <?php if (isset($message)): ?>
+                        <P style="color: hotpink"><?php echo $message ?></P>
+                    <?php endif ?>
+                    <script language="JavaScript">
+                        function verificationPicFile(file) {
+                            var fileTypes = [".jpg", ".png"];
+                            var filePath = file.value();
+                            if (filePath) {
+                                var isNext = false;
+                                var fileEnd = filePath.substring(filePath.indexOf("."));
+                                for (var i = 0; i < fileTypes.length; i++) {
+                                    if (fileTypes[i] == fileEnd) {
+                                        isNext = true;
+                                        break;
                                     }
-                                };
-                                image.src = data;
-
-                            };
-                            reader.readAsDataURL(filePic);
-                        }else {
-                            return false;
+                                }
+                                if (!isNext) {
+                                    $GLOBALS['message'] = '不接受此类型文件，请用jpg或png格式';
+                                    file.value = "";
+                                    return false;
+                                }
+                            } else {
+                                return false;
+                            }
                         }
-                    }
 
-                </script>
+                        function verificationPicFile() {
+                            var fileSize = 0;
+                            var fileMaxSize = 1024;
+                            var filePath = file.value;
+                            if (filePath) {
+                                fileSize = file.avatar[0].size;
+                                var size = fileSize / 1024;
+                                if (size > fileMaxSize) {
+                                    $GLOBALS['message'] = '文件不能大于1M';
+                                    file.value = "";
+                                    return false;
+                                } else if (size <= 0) {
+                                    $GLOBALS['message'] = '文件不能为0M';
+                                    file.value = "";
+                                    return false;
+                                }
+                            } else {
+                                return false;
+                            }
+                        }
+
+                        function verificationPicFile() {
+                            var filePath = file.value;
+                            if (filePath) {
+                                //读取图片数据
+                                var filePic = file.avatar[0];
+                                var reader = new FileReader();
+                                reader.onload = function (e) {
+                                    var data = e.target.result;
+
+                                    var image = new Image();
+                                    image.onload = function () {
+                                        var width = image.width;
+                                        var height = image.height;
+                                        if (width == 120 | height == 120) {
+                                            $GLOBALS['message'] = '尺寸符合';
+                                        } else {
+                                            $GLOBALS['message'] = '尺寸大小应为120*120';
+                                            file.value = "";
+                                            return false;
+                                        }
+                                    };
+                                    image.src = data;
+
+                                };
+                                reader.readAsDataURL(filePic);
+                            } else {
+                                return false;
+                            }
+                        }
+
+                    </script>
                 </form>
 
-                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：<?php echo $row['username'];?>
+                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵
+                    称：<?php echo $row['username']; ?>
                 </li>
                 <li><span style="margin-top: 5px" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4
                     级
@@ -238,45 +243,49 @@ while($rownums = mysqli_fetch_array($resultnums)){
                     <tr>
                         <td><img class="tubiao" src="images/news.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                    href="news.php"><h4> 消 息</h4></a></span></td>
+                                        href="news.php"><h4> 消 息</h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/rudui.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.php"><h4> 入 队 申 请 </h4> </a></span></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a
+                                        href="teamApply.php"><h4> 入 队 申 请 </h4> </a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/personal.png"></td>
                         <td style="padding-left: 15px;padding-top: 25px"><span><a
-                                    href="contact.php"> <h4> 个 人 信 息 </h4> </a></span></td>
+                                        href="contact.php"> <h4> 个 人 信 息 </h4> </a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/match.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                    href="myjgames.php"> <h4> 我 的 比 赛 </h4></a></span></td>
+                                        href="myjgames.php"> <h4> 我 的 比 赛 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/team.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="team.php"> <h4> 我 的 队 伍 </h4></a></span>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                        href="team.php"> <h4> 我 的 队 伍 </h4></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/evaluate.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                    href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
+                                        href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/collection.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                    href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
+                                        href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/question.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                    href="question.php"> <h4> 问 题 反 馈 </h4></a></span></td>
+                                        href="question.php"> <h4> 问 题 反 馈 </h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td style="padding-bottom: 20px"><img class="tubiao" src="images/quit.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px"><span onclick="exit()"><a><h4> 退 出 </h4></a></span></td></td>
+                        <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px"><span
+                                    onclick="exit()"><a><h4> 退 出 </h4></a></span></td>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -285,15 +294,19 @@ while($rownums = mysqli_fetch_array($resultnums)){
             <div class="col-md-7 agileits_mail_grid_left">
                 <form action="contactAction.php" method="post" enctype="multipart/form-data">
                     <h4>学号</h4>
-                    <input type="text" name="ID" disabled placeholder="<?php echo $row['sno'];?>" required="">
+                    <input type="text" name="ID" disabled placeholder="<?php echo $row['sno']; ?>" required="">
                     <h4>姓名</h4>
-                    <input type="text" name="Name" disabled placeholder="<?php echo $row ['username'];?>" required="">
+                    <input type="text" name="Name" disabled placeholder="<?php echo $row ['username']; ?>" required="">
+                    <h4>邮箱</h4>
+                    <input type="text" name="email" disabled placeholder="<?php echo $row ['email']; ?>" required="">
                     <h4>专业班级</h4>
-                    <input type="text" name="Class" disabled placeholder="<?php echo $row['major'].$row ['cls'];?>" required="">
+                    <input type="text" name="Class" disabled placeholder="<?php echo $row['major'] . $row ['cls']; ?>"
+                           required="">
                     <h4>联系电话</h4>
-                    <input type="text" name="Phone"  placeholder="<?php echo $row ['phone'];?>">
+                    <input type="text" name="Phone" placeholder="<?php echo $row ['phone']; ?>">
                     <h4>个人简介</h4>
-                    <textarea placeholder="<?php echo $row ['brief'];?>" name="Message" style="border-radius: 10px"></textarea>
+                    <textarea placeholder="<?php echo $row ['brief']; ?>" name="Message"
+                              style="border-radius: 10px"></textarea>
                     <button class="all_button">修改</button>
                 </form>
             </div>

@@ -12,12 +12,12 @@ include "stateAction.php";
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
     <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
@@ -33,33 +33,43 @@ include "stateAction.php";
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
           rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
-    <style>
-        .gl_sm_list li .sp{
-            position: absolute;
-            /* left: 50%; */
-            /* top: 4px; */
-            margin-top: 2px;
-            margin-left: -16px;
-            border-radius: 100%;
-            background-color: #fc6678;
-            font-size: 4px;
-            color: #fff;
-            line-height: 1;
-            vertical-align: 10px;
-            padding: 2px 4px;
+    <script src="lib/modernizr/modernizr-custom.js"></script>
+    <!--<script src="../lib/html5shiv/html5shiv.js"></script>-->
 
-        }
-    </style>
+    <!-- Load jQuery -->
+    <script src="lib/jquery/jquery.js"></script>
+
+    <!-- Load miSlider -->
+    <link href="css/mislider.css" rel="stylesheet">
+    <link href="css/mislider-skin-cameo.css" rel="stylesheet">
+    <script src="js/mislider.js"></script>
+    <script>
+        jQuery(function ($) {
+            var slider = $('.mis-stage').miSlider({
+                //  The height of the stage in px. Options: false or positive integer. false = height is calculated using maximum slide heights. Default: false
+                stageHeight: 380,
+                //  Number of slides visible at one time. Options: false or positive integer. false = Fit as many as possible.  Default: 1
+                slidesOnStage: false,
+                //  The location of the current slide on the stage. Options: 'left', 'right', 'center'. Defualt: 'left'
+                slidePosition: 'center',
+                //  The slide to start on. Options: 'beg', 'mid', 'end' or slide number starting at 1 - '1','2','3', etc. Defualt: 'beg'
+                slideStart: 'mid',
+                //  The relative percentage scaling factor of the current slide - other slides are scaled down. Options: positive number 100 or higher. 100 = No scaling. Defualt: 100
+                slideScaling: 150,
+                //  The vertical offset of the slide center as a percentage of slide height. Options:  positive or negative number. Neg value = up. Pos value = down. 0 = No offset. Default: 0
+                offsetV: -5,
+                //  Center slide contents vertically - Boolean. Default: false
+                centerV: true,
+                //  Opacity of the prev and next button navigation when not transitioning. Options: Number between 0 and 1. 0 (transparent) - 1 (opaque). Default: .5
+                navButtonsOpacity: 1
+            });
+        });
+    </script>
+    <!-- Apply other styles -->
+    <link href='http://fonts.useso.com/css?family=Roboto+Condensed:400|Roboto:500' rel='stylesheet'>
+    <link href="css/styles.css" rel="stylesheet">
 </head>
-<body>
-<?php
-$sqlnums = "select * from sendnews where receive_id = $sno and static_news = 0";
-$resultnums = $conn->query($sqlnums);
-$news_nums = array();
-while($rownums = mysqli_fetch_array($resultnums)){
-    array_push($news_nums,$rownums);
-}
-?>
+<br>
 <!-- banner -->
 <div class="banner-1">
     <div class="header agileinfo-header"><!-- header -->
@@ -80,12 +90,12 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <h1><a href="homepage.php"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
+                    <h1><a href="homepage.html"><i class="fa fa-pagelines" aria-hidden="true"></i>易组队</a></h1>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse gl_sm_list" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="homepage.php" class="btn w3ls-hover">首页</a></li>
+                        <li><a href="homepage.html" class="btn w3ls-hover">首页</a></li>
                         <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
                         <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
@@ -94,21 +104,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
                                 <li><a href="codes.php">已经结束</a></li>
                             </ul>
                         </li>
-                        <li><a href="link.php" class="w3ls-hover active">报名入口</a></li>
-                        <li><a href="contact.php">
-                                <?php
-                                if (!empty($news_nums)){?>
-                                    <?php
-                                    echo '<'.'span class="sp"'.'>';
-                                    echo count($news_nums);
-                                    echo '</'.'span'.'>';
-                                    ?>
-                                <?php }else{?>
-                                    <?php
-                                    echo "";
-                                    ?>
-                                <?php }?>
-                                个人中心</a></li>
+                        <li><a href="link.html" class="w3ls-hover active">报名入口</a></li>
+                        <li><a href="contact.php" class="btn w3ls-hover">个人中心</a></li>
                     </ul>
                     <div class="clearfix"></div>
                 </div><!-- //navbar-collapse -->
@@ -116,6 +113,98 @@ while($rownums = mysqli_fetch_array($resultnums)){
         </nav>
     </div><!-- //header -->
 
+</div>
+
+<div class="main-textgrids">
+    <div class="container">
+        <div class="w3ls-heading">
+            <h2 class="h-two">指导教师</h2>
+            <p class="sub two">I n s t r u c t o r</p>
+        </div>
+    </div>
+</div>
+<div id="wrapper">
+    <figure>
+        <div class="mis-stage" style="border-radius: 50px">
+            <!-- The element to select and apply miSlider to - the class is optional -->
+            <ol class="mis-slider">
+                <!-- The slider element - the class is optional -->
+
+                <li class="mis-slide">
+                    <a href="#" class="mis-container">
+                        <figure>
+                            <img src="images/zhangsongyun.jpg" alt="Pond with Lillies">
+                            <figcaption>张松云</br>科大讯飞双师</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="mis-slide">
+                    <a href="#" class="mis-container">
+                        <figure>
+                            <img src="images/wujinhua.jpg" alt="Hidden Pond">
+                            <figcaption>吴锦华</br>计算机与软件工程学院教学主管</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="mis-slide">
+                    <a href="#" class="mis-container">
+                        <figure>
+                            <img src="images/daiping.jpg" alt="Shrine">
+                            <figcaption>戴平</br>计算机与软件工程学院副院长</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="mis-slide">
+                    <a href="#" class="mis-container">
+                        <figure>
+                            <img src="images/chenyuedong.JPG" alt="Shrine">
+                            <figcaption>陈跃东</br>安徽省教学名师、副校长</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="mis-slide">
+                    <a href="#" class="mis-container">
+                        <figure>
+                            <img src="images/liuqingfeng.jpg" alt="White Water Lillies">
+                            <figcaption>刘庆峰</br>国家级科技奖获得者</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="mis-slide">
+                    <a href="#" class="mis-container">
+                        <figure>
+                            <img src="images/wumin.jpg" alt="Garden Walkway">
+                            <figcaption>吴敏</br>安徽信息工程学院校长、党委副书记</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="mis-slide">
+                    <a href="#" class="mis-container">
+                        <figure>
+                            <img src="images/zhoumingzheng.jpg" alt="Lilly with Bee">
+                            <figcaption>周鸣争</br>计算机与软件工程学院执行院长</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="mis-slide">
+                    <a href="#" class="mis-container">
+                        <figure>
+                            <img src="images/gaochao.JPG" alt="Lilly with Bee">
+                            <figcaption>高超</br>计算机基础教研室副主任</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="mis-slide">
+                    <a href="#" class="mis-container">
+                        <figure>
+                            <img src="images/wanjiashan.JPG" alt="Pond with Lillies">
+                            <figcaption>万家山</br>计算机与软件工程学院院长助理</figcaption>
+                        </figure>
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </figure>
 </div>
 <!-- //banner -->
 <!-- about -->
@@ -144,7 +233,7 @@ while($rownums = mysqli_fetch_array($resultnums)){
         <div class="statements" style="margin-bottom: 70px;padding-bottom:30px;border-bottom:5px solid #ddd">
             <div class="col-md-7">
                 <p>
-                <h3><b>全国大学生挑战杯官方网站</b></h3></p>
+                <h3><b>全国大学生挑战杯官网</b></h3></p>
                 <p><font size="4" color="black">挑战杯大学生创业大赛每届由一所高校主办，以“电子对抗系统”和“ERP管理软件”为竞赛平台，经专家评审团点评和网友投票进行综合评判，最终赛出名次。
                     全国大学生创业大赛是一项全面提升大学生创业意识、提升创业能力的综合性赛事。大赛将充分结合多种评价方法来综合考评参赛大学生的综合素质能力。</font></p>
                 <p style="text-align: right"><a href="http://www.tiaozhanbei.net/" target="_blank"><h4>
