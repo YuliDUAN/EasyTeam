@@ -39,12 +39,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4"><input name="phone" type="text"  placeholder="电话"
-                                           onkeyup="if(!/^\d+$/.test(this.value)) {this.value=this.value.replace(/[^\d]+/g,'');}">
+                    <td colspan="4">
+                        <input type="email" name="email" placeholder="邮箱" title="请输入正确的邮箱格式" />
                     </td>
                 </tr>
                 <tr>
-                    <input type="email" placeholder="邮箱" title="请输入正确的邮箱格式" />
+                    <td colspan="4"><input name="phone" type="text"  placeholder="电话"
+                                           onkeyup="if(!/^\d+$/.test(this.value)) {this.value=this.value.replace(/[^\d]+/g,'');}">
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2">

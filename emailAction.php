@@ -32,8 +32,10 @@ if (!empty($_POST['email'])){
         return $authnum;
     }
     $nums = srandnums();
+    $_SESSION['code'] = $nums;
+    exit(var_dump(sendMail($email,'易组队','验证码是：'.$nums)));
+}else{
+    exit('邮箱为空！');
 }
-$_SESSION['code'] = $nums;
-sendMail($email,'易组队','验证码是：'.$nums);
-exit('发送成功！');
+
             ?>

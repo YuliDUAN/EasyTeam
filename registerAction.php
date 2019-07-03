@@ -7,6 +7,7 @@ $sno = $_POST['sno'];
 $password = $_POST['password'];
 $username = $_POST['username'];
 $phone = $_POST['phone'];
+$email=$_POST['email'];
 $sex = $_POST['sex'];
 $major = $_POST['major'];
 $cls = $_POST['cls'];
@@ -20,9 +21,11 @@ if (strlen($sno) != 12) {
     echo '<script>alert("请输入6~16位密码！");window.location.href="register.html"</script>';
 } elseif (strlen($username) < 6 || strlen($username) > 12) {
     echo '<script>alert("输入姓名的格式有误！");window.location.href="register.html"</script>';
+}elseif (!empty($_POST)&&!empty($email)) {
+    echo '<script>alert("邮箱输入错误！");window.location.href="register.html"</script>';
 } elseif (strlen($phone) != 11) {
     echo '<script>alert("输入手机号的格式有误！");window.location.href="register.html"</script>';
-} elseif ($sno != null && $password != null && $username != null && $phone != null && $sex != null && $major != null && $cls != null) {
+} elseif ($sno != null && $password != null && $username != null && $phone != null && $sex != null &&$email!=null && $major != null && $cls != null) {
     $sql = "select * from ruser where sno='$sno'";
     $result = $conn->query($sql);
     $nums = mysqli_num_rows($result);
@@ -38,8 +41,8 @@ if (strlen($sno) != 12) {
         }
         $password=createPassword($password);
         //第二步：获取内存段中的数组，将数据添加到数据库
-        $sql = "insert into ruser (sno,password,username,phone,sex,major,cls,image) values 
-                            ('$sno','$password','$username','$phone','$sex','$major','$cls','$image')";
+        $sql = "insert into ruser (sno,password,username,email,phone,sex,major,cls,image) values 
+                            ('$sno','$password','$username','$email','$phone','$sex','$major','$cls','$image')";
         mysqli_query($conn, $sql);
         //第四步：跳转到登陆页面
         echo '<script>alert("注册成功，返回登陆界面！");window.location.href="index.html"</script>';

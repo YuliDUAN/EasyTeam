@@ -129,110 +129,103 @@ while($rownums = mysqli_fetch_array($resultnums)){
             <h2 class="h-two">活动快照</h2>
             <p class="sub two">Photos of various activities.</p>
         </div>
-        <div class="w3ls_portfolio_grids">
-            <div class="col-md-4 agileinfo_portfolio_grid">
-                <div class="w3_agile_portfolio_grid1">
-                    <a href="images/g1.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
-                       title="Competition">
-                        <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
-                            <div class="w3layouts_port_head">
-                                <h3>第二届汉字听写大赛</h3>
+        <div class="w3ls_portfolio_grids" align="center">
+            <div>
+                <div class="col-md-4 agileinfo_portfolio_grid">
+                    <div class="w3_agile_portfolio_grid1">
+                        <a href="images/g1.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                           title="Competition">
+                            <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
+                                <div class="w3layouts_port_head">
+                                    <h3>第二届汉字听写大赛</h3>
+                                </div>
+                                <img src="images/g1.jpg" alt=" " class="img-responsive"/>
                             </div>
-                            <img src="images/g1.jpg" alt=" " class="img-responsive"/>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    <div class="w3_agile_portfolio_grid1">
+                        <a href="images/g2.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                           title="Competition">
+                            <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
+                                <div class="w3layouts_port_head">
+                                    <h3>“五四精神”主题演讲比赛</h3>
+                                </div>
+                                <img src="images/g2.jpg" alt=" " class="img-responsive"/>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="w3_agile_portfolio_grid1">
-                    <a href="images/g2.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
-                       title="Competition">
-                        <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
-                            <div class="w3layouts_port_head">
-                                <h3>“五四精神”主题演讲比赛</h3>
+                <div class="col-md-4 agileinfo_portfolio_grid">
+                    <div class="w3_agile_portfolio_grid1">
+                        <a href="images/g4.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                           title="Competition">
+                            <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
+                                <div class="w3layouts_port_head">
+                                    <h3>第二届网页设计大赛</h3>
+                                </div>
+                                <img src="images/g4.jpg" alt=" " class="img-responsive"/>
                             </div>
-                            <img src="images/g2.jpg" alt=" " class="img-responsive"/>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    <div class="w3_agile_portfolio_grid1">
+                        <a href="images/g5.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                           title="Competition">
+                            <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
+                                <div class="w3layouts_port_head">
+                                    <h3>青春心向党&nbsp;建功新时代</h3>
+                                </div>
+                                <img src="images/g5.jpg" alt=" " class="img-responsive"/>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="w3_agile_portfolio_grid1">
-                    <a href="images/g3.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
-                       title="Competition">
-                        <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
-                            <div class="w3layouts_port_head">
-                                <h3>十佳歌手大赛</h3>
+                <div class="col-md-4 agileinfo_portfolio_grid">
+                    <div class="w3_agile_portfolio_grid1">
+                        <a href="images/g7.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                           title="Competition">
+                            <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
+                                <div class="w3layouts_port_head">
+                                    <h3>机械争霸</h3>
+                                </div>
+                                <img src="images/g7.jpg" alt=" " class="img-responsive"/>
                             </div>
-                            <img src="images/g3.jpg" alt=" " class="img-responsive"/>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    <div class="w3_agile_portfolio_grid1">
+                        <a href="images/g8.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                           title="Competition">
+                            <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
+                                <div class="w3layouts_port_head">
+                                    <h3>第二届“礼仪之星”大赛</h3>
+                                </div>
+                                <img src="images/g8.jpg" alt=" " class="img-responsive"/>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 agileinfo_portfolio_grid">
-                <div class="w3_agile_portfolio_grid1">
-                    <a href="images/g4.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
-                       title="Competition">
-                        <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
-                            <div class="w3layouts_port_head">
-                                <h3>第二届网页设计大赛</h3>
+                <div class="col-md-4 agileinfo_portfolio_grid">
+                    <div class="w3_agile_portfolio_grid1">
+                        <a href="images/g9.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                           title="Competition">
+                            <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
+                                <div class="w3layouts_port_head">
+                                    <h3>第八届“挑战杯”竞赛</h3>
+                                </div>
+                                <img src="images/g9.jpg" alt=" " class="img-responsive"/>
                             </div>
-                            <img src="images/g4.jpg" alt=" " class="img-responsive"/>
-                        </div>
-                    </a>
-                </div>
-                <div class="w3_agile_portfolio_grid1">
-                    <a href="images/g5.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
-                       title="Competition">
-                        <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
-                            <div class="w3layouts_port_head">
-                                <h3>青春心向党&nbsp;建功新时代</h3>
+                        </a>
+                    </div>
+                    <div class="w3_agile_portfolio_grid1">
+                        <a href="images/g3.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                           title="Competition">
+                            <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
+                                <div class="w3layouts_port_head">
+                                    <h3>十佳歌手大赛</h3>
+                                </div>
+                                <img src="images/g3.jpg" alt=" " class="img-responsive"/>
                             </div>
-                            <img src="images/g5.jpg" alt=" " class="img-responsive"/>
-                        </div>
-                    </a>
-                </div>
-                <div class="w3_agile_portfolio_grid1">
-                    <a href="images/g6.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
-                       title="Competition">
-                        <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
-                            <div class="w3layouts_port_head">
-                                <h3>第一届打字比赛</h3>
-                            </div>
-                            <img src="images/g6.jpg" alt=" " class="img-responsive"/>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 agileinfo_portfolio_grid">
-                <div class="w3_agile_portfolio_grid1">
-                    <a href="images/g7.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
-                       title="Competition">
-                        <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
-                            <div class="w3layouts_port_head">
-                                <h3>机械争霸</h3>
-                            </div>
-                            <img src="images/g7.jpg" alt=" " class="img-responsive"/>
-                        </div>
-                    </a>
-                </div>
-                <div class="w3_agile_portfolio_grid1">
-                    <a href="images/g8.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
-                       title="Competition">
-                        <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
-                            <div class="w3layouts_port_head">
-                                <h3>第二届“礼仪之星”大赛</h3>
-                            </div>
-                            <img src="images/g8.jpg" alt=" " class="img-responsive"/>
-                        </div>
-                    </a>
-                </div>
-                <div class="w3_agile_portfolio_grid1">
-                    <a href="images/g9.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
-                       title="Competition">
-                        <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
-                            <div class="w3layouts_port_head">
-                                <h3>第八届“挑战杯”竞赛</h3>
-                            </div>
-                            <img src="images/g9.jpg" alt=" " class="img-responsive"/>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="clearfix"></div>

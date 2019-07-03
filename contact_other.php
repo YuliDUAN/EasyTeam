@@ -3,7 +3,7 @@ include "MySqlConnect.php";
 include "stateAction.php";
 $sno = $_GET['uid'];
 $id = $_GET['id'];
-$rsq = "select * from ruser where sno=$sno";
+$rsq = "select * from ruser where sno='$sno'";
 $result = $conn->query($rsq);
 $row = mysqli_fetch_array($result);
 ?>

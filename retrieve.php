@@ -31,14 +31,16 @@
                     <input name="password" type="password" placeholder="密码"
                            onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')">
                 </tr>
+            </table>
+            <table>
                 <tr>
-                    <td colspan="2"><input name="code" type="text"  placeholder="验证码"
+                    <td style="width: 60%"><input name="code" type="text"  placeholder="验证码"
                                            onkeyup="if(!/^\d+$/.test(this.value)) {this.value=this.value.replace(/[^\d]+/g,'');}">
                     </td>
-                    <td >
-                        <div style="float: right;width: 45%">
-                            <input type="button" class="all_button" style="width: 60px;height: 30px" onclick="gain()" value="获取"></input>
-                        </div>
+                    <td style="width: 20%">
+<!--                        <div style="float: right;width: 45%">-->
+                            <input type="button"  onclick="gain()" value="获取" style="height: 40px">
+<!--                        </div>-->
                     </td>
                 </tr>
             </table>

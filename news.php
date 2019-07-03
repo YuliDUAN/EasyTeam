@@ -2,7 +2,7 @@
 include "MySqlConnect.php";
 include "stateAction.php";
 $s_id = $_SESSION['sno'];
-$sql = "select * from sendnews where receive_id = $s_id";
+$sql = "select * from sendnews where receive_id = '$s_id'";
 $result = $conn->query($sql);
 $receive_news = array();
 while($row = mysqli_fetch_array($result)){
