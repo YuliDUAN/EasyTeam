@@ -67,6 +67,12 @@ array_push($news_nums,$rownums);
     <div class="header agileinfo-header"><!-- header -->
         <nav class="navbar navbar-default">
             <div class="container">
+                <div style="margin-top: 15px;position:absolute;z-index:-3;margin-left: 70%" >
+                    <iframe width="300" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
+                            allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&amp;
+                        id=1&amp;icon=1&amp;wind=0&amp;num=1&amp;site=14">
+                    </iframe>
+                </div>
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -142,7 +148,11 @@ array_push($news_nums,$rownums);
 </div>
 <!-- //banner -->
 
-
+<?php
+$sql1="SELECT title,con,time,adr,image FROM lecture where state=1 and number=1";
+$result = $conn->query($sql1);
+$row = mysqli_fetch_array($result);
+?>
 <!-- welcome -->
 <div class="features" style="background-color: #f5f5f5">
     <div class="container">
@@ -153,28 +163,28 @@ array_push($news_nums,$rownums);
         <div class="w3-agile-top-info">
             <div class="w3-welcome-grids">
                 <div class="col-md-7 w3-welcome-left">
-                    <h5>互联网+宣讲会</h5>
-                    <p>“互联网+”是互联网思维的进一步实践成果，推动经济形态不断地发生演变，
-                        从而带动社会经济实体的生命力，为改革、创新、发展提供广阔的网络平台。
-                        通俗的说，“互联网+”就是“互联网+各个传统行业”，但这并不是简单的两者相加，
-                        而是利用信息通信技术以及互联网平台，让互联网与传统行业进行深度融合，创造新的发展生态。
-                        <span>时间：2019-08-01&nbsp;地点：东二503</span></p>
+                    <h5><?php echo $row[0] ?></h5>
+                    <p><?php echo $row[1] ?>
+                        <span>时间：<?php echo $row[2] ?>&nbsp;地点：<?php echo $row[3] ?></span></p>
                 </div>
                 <div class="col-md-5 w3ls-welcome-img1">
-                    <img src="images/s1.jpg" alt="" height="250" width="500"/>
+                    <img src="<?php echo $row[4] ?>" alt="" height="250" width="500"/>
                 </div>
                 <div class="clearfix"></div>
             </div>
+            <?php
+            $sql2="SELECT title,con,time,adr,image FROM lecture where state=1 and number=2";
+            $result2 = $conn->query($sql2);
+            $row2 = mysqli_fetch_array($result2);
+            ?>
             <div class="w3-welcome-grids w3-welcome-bottom">
                 <div class="col-md-5 w3ls-welcome-img1 w3ls-welcome-img2">
-                    <img src="images/s2.jpg" alt="" height="250" width="500"/>
+                    <img src="<?php echo $row2[4] ?>" alt="" height="250" width="500"/>
                 </div>
                 <div class="col-md-7 w3-welcome-left">
-                    <h5>创青春宣讲会</h5>
-                    <p>创青春是“创青春”全国大学生创业大赛的简称，是“挑战杯”中国大学生创业计划竞赛的改革提升。
-                        2013年11月8日，习近平总书记向2013年全球创业周中国站活动组委会专门致贺信，
-                        特别强调了青年学生在创新创业中的重要作用，并指出全社会都应当重视和支持青年创新创业。
-                        <span>时间：2019-08-01&nbsp;地点：东二503</span></p>
+                    <h5><?php echo $row2[0] ?></h5>
+                    <p><?php echo $row2[1] ?>
+                        <span>时间：<?php echo $row2[2] ?>&nbsp;地点：<?php echo $row2[3] ?></span></p>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -182,6 +192,20 @@ array_push($news_nums,$rownums);
     </div>
 </div>
 <!-- //welcome -->
+<?php
+$sql_1="SELECT image,name,host FROM nova where state=1 and number=1";
+$sql_2="SELECT image,name,host FROM nova where state=1 and number=2";
+$sql_3="SELECT image,name,host FROM nova where state=1 and number=3";
+$sql_4="SELECT image,name,host FROM nova where state=1 and number=4";
+$result_1 = $conn->query($sql_1);
+$result_2 = $conn->query($sql_2);
+$result_3 = $conn->query($sql_3);
+$result_4 = $conn->query($sql_4);
+$row_1= mysqli_fetch_array($result_1);
+$row_2= mysqli_fetch_array($result_2);
+$row_3= mysqli_fetch_array($result_3);
+$row_4= mysqli_fetch_array($result_4);
+?>
 <div class="team">
     <div class="container">
         <div class="w3ls-heading">
@@ -190,31 +214,31 @@ array_push($news_nums,$rownums);
         </div>
         <div class="agileinfo-team-grids">
             <div class="col-md-3 wthree-team-grid">
-                <img src="images/t1.jpg" alt="">
+                <img src="<?php echo $row_1[0] ?>" alt="">
                 <div class="wthree-team-grid-info">
-                    <h4>王 家 乐</h4>
-                    <p>app创意俱乐部</p>
+                    <h4><?php echo $row_1[1] ?></h4>
+                    <p><?php echo $row_1[2] ?></p>
                 </div>
             </div>
             <div class="col-md-3 wthree-team-grid">
-                <img src="images/t2.jpg" alt="">
+                <img src="<?php echo $row_2[0] ?>" alt="">
                 <div class="wthree-team-grid-info">
-                    <h4>徐 一 城</h4>
-                    <p>app创意俱乐部</p>
+                    <h4><?php echo $row_2[1] ?></h4>
+                    <p><?php echo $row_2[2] ?></p>
                 </div>
             </div>
             <div class="col-md-3 wthree-team-grid">
-                <img src="images/t3.jpg" alt="">
+                <img src="<?php echo $row_3[0] ?>" alt="">
                 <div class="wthree-team-grid-info">
-                    <h4>聚贤阁 康少</h4>
-                    <p>app创意俱乐部</p>
+                    <h4><?php echo $row_3[1] ?></h4>
+                    <p><?php echo $row_3[2] ?></p>
                 </div>
             </div>
             <div class="col-md-3 wthree-team-grid">
-                <img src="images/t4.jpg" alt="">
+                <img src="<?php echo $row_4[0] ?>" alt="">
                 <div class="wthree-team-grid-info">
-                    <h4>程 涛 </h4>
-                    <p>app创意俱乐部</p>
+                    <h4><?php echo $row_4[1] ?> </h4>
+                    <p><?php echo $row_4[2] ?></p>
                 </div>
             </div>
             <div class="clearfix"></div>

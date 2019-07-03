@@ -77,6 +77,12 @@ while($rownums = mysqli_fetch_array($resultnums)){
     <div class="header agileinfo-header"><!-- header -->
         <nav class="navbar navbar-default">
             <div class="container">
+                <div style="margin-top: 15px;position:absolute;z-index:-3;margin-left: 70%">
+                    <iframe width="300" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
+                            allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&amp;
+                        id=1&amp;icon=1&amp;wind=0&amp;num=1&amp;site=14">
+                    </iframe>
+                </div>
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -91,7 +97,7 @@ while($rownums = mysqli_fetch_array($resultnums)){
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse gl_sm_list" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="index.html" class="btn w3ls-hover">首页</a></li>
+                        <li><a href="homepage.php" class="btn w3ls-hover">首页</a></li>
                         <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
                         <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
