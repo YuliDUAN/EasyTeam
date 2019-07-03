@@ -29,6 +29,14 @@ if (strlen($sno) != 12) {
     if (!empty($nums)) {
         echo '<script>alert("注册失败，已有该用户！");window.location.href="register.html"</script>';
     } else {
+        //对密码进行加密处理
+        function createPassword($password){
+            if(!$password){
+                return false;
+            }
+            return md5(md5($password).'eTeam');
+        }
+        $password=createPassword($password);
         //第二步：获取内存段中的数组，将数据添加到数据库
         $sql = "insert into ruser (sno,password,username,phone,sex,major,cls,image) values 
                             ('$sno','$password','$username','$phone','$sex','$major','$cls','$image')";

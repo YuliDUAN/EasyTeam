@@ -1,7 +1,7 @@
 
 <?php
 include "MySqlConnect.php";
-$sno = $_SESSION['sno'];
+include "stateAction.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

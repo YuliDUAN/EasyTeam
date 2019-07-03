@@ -1,6 +1,6 @@
 <?php
-session_start();
 include "MySqlConnect.php";
+include "stateAction.php";
 $s_id = $_SESSION['sno'];
 $sql = "select * from sendnews where receive_id = $s_id";
 $result = $conn->query($sql);

@@ -5,9 +5,8 @@
  * Date: 2019/6/26
  * Time: 16:17
  */
-session_start();
 
-$sno = $_SESSION['sno'];
+include "stateAction.php";
 $rsq = "select username,phone from ruser where sno=$sno";
 include "MySqlConnect.php";
 $result2 = $conn->query($rsq);

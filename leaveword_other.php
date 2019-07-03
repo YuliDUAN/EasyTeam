@@ -1,7 +1,6 @@
 <?php
-session_start();
 include "MySqlConnect.php";
-$sno = $_SESSION['sno'];
+include "stateAction.php";
 $_SESSION['uid'] = $_GET['uid'];
 $uid = $_SESSION['uid'];
 $id = $_GET['id'];

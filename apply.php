@@ -1,8 +1,7 @@
 <?php
-session_start();
 $id = $_GET["id"];
-$sno = $_SESSION['sno'];
 include "MySqlConnect.php";
+include "stateAction.php";
 $sql = "select * from forum,ruser where ruser.sno = forum.uid and ac_id='$id'";
 $result = $conn->query($sql);
 $arownews = array();
@@ -210,22 +209,20 @@ $a_id = $row[6];
                         </tr>
                     </table>
                 </div>
-                    <div style="margin-top: 12px;border-top:3px solid #ddd">
-                        <div>
-                        <table class="table" style="text-align: center">
-                            <tbody>
-                            <tr>
-                                <td class="type-info"><a href="cteam.php?id=<?php echo $a_id ?>"><font
+                <div style="margin-top:12px;border-top:3px solid #ddd">
+                    <table class="table" style="text-align: center">
+                        <tbody>
+                        <tr>
+                            <td class="type-info"><a href="cteam.php?id=<?php echo $a_id ?>"><font
                                                 size="5">创建队伍</font></a>
-                                </td>
-                                <td class="type-info"><a href="jteam.php?id=<?php echo $a_id ?>"><font
+                            </td>
+                            <td class="type-info"><a href="jteam.php?id=<?php echo $a_id ?>"><font
                                                 size="5">加入队伍</font></a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        </div>
-                    </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 

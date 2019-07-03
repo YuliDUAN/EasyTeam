@@ -1,7 +1,6 @@
 <?php
 include "MySqlConnect.php";
-session_start();
-$sno = $_SESSION['sno'];
+include "stateAction.php";
 $ar_id = $_GET["ar_id"];
 $imgs = 'images/collection_no.png';
 ?>

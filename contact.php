@@ -1,7 +1,6 @@
 <?php
-session_start();
 include "MySqlConnect.php";
-$sno = $_SESSION['sno'];
+include "stateAction.php";
 $rsq = "select * from ruser where sno=$sno";
 $result = $conn->query($rsq);
 $row = mysqli_fetch_array($result);
