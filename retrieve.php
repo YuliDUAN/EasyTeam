@@ -18,28 +18,26 @@
         <div class="login_name">
             <p>请填写相应信息</p>
         </div>
-        <form  action="registerAction.php" method="post">
-
+        <form  action="emailCodeAction.php" method="post">
             <table style="table-layout: fixed;word-break: break-all; word-wrap: break-word;">
                 <tr>
                     <input name="sno" type="text" placeholder="学号"
-                                           onkeyup="if(!/^\d+$/.test(this.value)) {this.value=this.value.replace(/[^\d]+/g,'');}">
-
+                           onkeyup="if(!/^\d+$/.test(this.value)) {this.value=this.value.replace(/[^\d]+/g,'');}">
                 </tr>
                 <tr>
-                    <input type="email" placeholder="邮箱" title="请输入正确的邮箱格式" />
+                    <input type="text" id="email" name="email" title="email"  placeholder="邮箱" title="请输入正确的邮箱格式" />
                 </tr>
                 <tr>
-                        <input name="password" type="password" placeholder="密码"
-                               onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')">
+                    <input name="password" type="password" placeholder="密码"
+                           onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')">
                 </tr>
                 <tr>
-                    <td colspan="2"><input name="phone" type="text"  placeholder="验证码"
+                    <td colspan="2"><input name="code" type="text"  placeholder="验证码"
                                            onkeyup="if(!/^\d+$/.test(this.value)) {this.value=this.value.replace(/[^\d]+/g,'');}">
                     </td>
                     <td >
                         <div style="float: right;width: 45%">
-                            <button class="all_button" style="width: 60px;height: 30px">获取</button>
+                            <input type="button" class="all_button" style="width: 60px;height: 30px" onclick="gain()" value="获取"></input>
                         </div>
                     </td>
                 </tr>
@@ -52,5 +50,20 @@
     </div>
     <div  class="copyright">APP创意俱乐部 版权所有©2019-2021</div>
 </div>
+
+<script type="text/javascript">
+    function gain() {
+        var email = document.getElementById("email").value;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST','emailAction.php');
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        xhr.send(`email=${email}`);
+        xhr.onreadystatechange = function () {
+            if (this.readyState != 4) return;
+            alert(this.responseText);
+        }
+
+    }
+</script>
 </body>
 </html>

@@ -52,6 +52,20 @@ $row = mysqli_fetch_array($result);
             padding: 2px 4px;
 
         }
+        .spa{
+            position: absolute;
+            /* left: 50%; */
+            /* top: 4px; */
+            margin-top: 2px;
+            margin-left: -16px;
+            border-radius: 100%;
+            background-color: #fc6678;
+            font-size: 4px;
+            color: #fff;
+            line-height: 1;
+            vertical-align: 10px;
+            padding: 2px 4px;
+        }
     </style>
 </head>
 <body>
@@ -238,6 +252,14 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                     级
                 </li>
             </div>
+            <?php
+            $sqlstatic = "select * from static where capsno=$sno and static_join = 1";
+            $resultstatic = $conn->query($sqlstatic);
+            $arrstatic = array();
+            while($rowstatic = mysqli_fetch_array($resultstatic)){
+                array_push($arrstatic,$rowstatic);
+            }
+            ?>
             <div class="left-agileits">
                 <table>
                     <tr>
@@ -248,7 +270,17 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                     <tr>
                         <td><img class="tubiao" src="images/rudui.png"></td>
                         <td style="padding-left: 15px;padding-top: 25px"><span><a
-                                        href="teamApply.php"><h4> 入 队 申 请 </h4> </a></span></td>
+                                        href="teamApply.php"><h4>
+                                        <?php
+                                        if (!empty($arrstatic)){
+                                            echo '<span class="spa">';
+                                            echo count($arrstatic);
+                                            echo '</span>';
+                                        }else{
+                                            echo "";
+                                        }
+                                        ?>
+                                        入 队 申 请 </h4> </a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/personal.png"></td>
