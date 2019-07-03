@@ -3,21 +3,6 @@ body{
 	font-family: 'Roboto', sans-serif;
 	background: #fff;
 }
-.gl_sm_list li .sp{
-    position: absolute;
-    /* left: 50%; */
-    /* top: 4px; */
-    margin-top: 2px;
-    margin-left: -16px;
-    border-radius: 100%;
-    background-color: #fc6678;
-    font-size: 4px;
-    color: #fff;
-    line-height: 1;
-    vertical-align: 10px;
-    padding: 2px 4px;
-
-}
 body a{ 
 	-webkit-transition: 0.5s all;
 	-moz-transition: 0.5s all;

@@ -18,7 +18,7 @@ ul,li{ list-style-type:none;}
 .head-l{ float:left; margin-top:17px; margin-left:15px; }
 .head-l .button{ padding:8px 15px;}
 .head-l .bg-blue:hover{ background-color:#03b6fd;}
-.leftnav{width:180px; height:100%; position:fixed;}
+.leftnav{width:180px; height:100%; position:fixed; top:70px; left:0px;}
 .leftnav-title { height:50px; background:url(../images/bg.jpg) no-repeat 0 -1000px;  color:#FFF; padding-left:22px;  font-size:14px; line-height:50px;}
 .leftnav-title span{ margin-right:10px;}
 .leftnav h2{ padding:10px 0 10px 22px; transition:all .1s ease-in-out; display:block; cursor:pointer; font-weight:bold; font-size:14px; border-top:1px solid #b5cfd9;}
@@ -37,7 +37,7 @@ ul,li{ list-style-type:none;}
 .content{width:100%;}
 .body-content{padding:20px 0; overflow:hidden;}
 .content .title{ border-bottom:1px solid #dfdfdf; line-height:35px; font-size:14px; font-weight:bold; color:#09c}
-.form-x .form-group .label{ width:80px;}
+.form-x .form-group .label{ width:10%;}
 .form-x .form-button { margin-left:10%;}
 .w50 { width:25%; float:left;}
 .form-x .tipss{ float:left; padding-left:10px; color:#888; line-height:42px;}
