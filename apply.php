@@ -290,7 +290,19 @@ $a_id = $row[6];
                             </tr>
                         </table>
                     </div>
-                    <div style="padding-top: 10px;border-top:3px solid #ddd">
+<!--                    <script>-->
+<!--                        function disfun() {-->
+<!--                            var dis = document.getElementById("dis");-->
+<!--                            if (dis.style.display == "none") {-->
+<!--                                dis.style.display ="block";-->
+<!--                            }else-->
+<!--                            {-->
+<!--                                dis.style.display = "none";-->
+<!--                            }-->
+<!--                        }-->
+<!--                    </script>-->
+<!--                    <div onclick="disfun()">隐藏</div>-->
+                    <div id="dis" style="padding-top: 10px;border-top:3px solid #ddd;">
                         <form action="newsAction.php?receive_id=<?php echo $row['uid'] ?>&send_id=<?php echo $_SESSION['sno'] ?>&send_name=<?php echo $_SESSION['username'] ?>"
                               enctype="multipart/form-data" method="post">
                             <th><input type="hidden" name="a_id" value="<?php echo $a_id ?>"/></th>

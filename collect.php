@@ -153,9 +153,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
         <div class="col-md-5 agileits_mail_grid_right">
             <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
-                    <img style="width: 120px;height: 120px" src="<?php echo $row['image'];?>">
-                    <label for="file">
-                        <input type="button" id="btn" value="修改头像>>>"><span id="text"></span>
+                    <label class="file">
+                        <img style="width: 120px;height: 120px;border-radius: 100px" src="<?php echo $row['image'];?>"><span id="text"></span>
                         <input type="file" name="avatar" id="file" onchange="verificationPicFile(this)">
                     </label>
                     <li><a href="contact.php"><button id="btn"  style="width: 97.7px"><span>确定修改</span></button></a></li>

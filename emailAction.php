@@ -6,6 +6,7 @@ if (!empty($_POST['email'])){
         require './PHPMailer/PHPMailerAutoload.php';
         $mail = new PHPMailer;
         $mail->isSMTP();
+        $mail->CharSet = "UTF-8";
         $mail->SMTPAuth = true;
         $mail->Host = 'smtp.qq.com';
         $mail->Username = '1546857936@qq.com';
