@@ -32,18 +32,15 @@
                            onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')">
                 </tr>
             </table>
-            <table>
-                <tr>
-                    <td style="width: 60%"><input name="code" type="text"  placeholder="验证码"
+            <div>
+                <div style="width: 60%;float: left">
+                    <input name="code" type="text"  placeholder="验证码"
                                            onkeyup="if(!/^\d+$/.test(this.value)) {this.value=this.value.replace(/[^\d]+/g,'');}">
-                    </td>
-                    <td style="width: 20%">
-<!--                        <div style="float: right;width: 45%">-->
-                            <input type="button"  onclick="gain()" value="获取" style="height: 40px">
-<!--                        </div>-->
-                    </td>
-                </tr>
-            </table>
+                </div>
+                <div style="width: 25%;float: left;margin-left: 45px;margin-top: 5px">
+                   <input type="button"  onclick="gain()" style="height: 30px;width: 50px;border:1px solid black;background-image: url('images/huoqu.jpg');z-index: 2">
+                </div>
+            </div>
             <div style="margin-top: 20px">
                 <div style="float: left;width: 45%"><a href="index.html"><input value="返回" style="width:100%;" type="button"></a></div>
                 <div style="float: right;width: 45%"><input name="retrieve" value="确定" style="width:100%;" type="submit"></div>

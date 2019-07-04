@@ -132,97 +132,137 @@ while($rownums = mysqli_fetch_array($resultnums)){
         <div class="w3ls_portfolio_grids" align="center">
             <div>
                 <div class="col-md-4 agileinfo_portfolio_grid">
+                    <?php
+                    include "MySqlConnect.php";
+                    $result1 = $conn->query("SELECT * FROM article order by ar_time desc LIMIT 0, 1");
+                    $row1 = mysqli_fetch_array($result1);
+                        ?>
                     <div class="w3_agile_portfolio_grid1">
-                        <a href="images/g1.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                        <a href="activity.php?ar_id=<?php  echo $row1[0] ?>" class="showcase" data-rel="lightcase:myCollection:slideshow"
                            title="Competition">
                             <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
                                 <div class="w3layouts_port_head">
-                                    <h3>第二届汉字听写大赛</h3>
+                                    <h3><?php  echo $row1[1] ?></h3>
                                 </div>
-                                <img src="images/g1.jpg" alt=" " class="img-responsive"/>
+                                <img src=<?php  echo $row1[2] ?> alt=" " class="img-responsive"/>
                             </div>
                         </a>
                     </div>
+                    <?php
+                    include "MySqlConnect.php";
+                    $result2= $conn->query("SELECT * FROM article order by ar_time desc LIMIT 1, 2");
+                    $row2 = mysqli_fetch_array($result2);
+                    ?>
                     <div class="w3_agile_portfolio_grid1">
-                        <a href="images/g2.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                        <a href="activity.php?ar_id=<?php  echo $row2[0] ?>" class="showcase" data-rel="lightcase:myCollection:slideshow"
                            title="Competition">
                             <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
                                 <div class="w3layouts_port_head">
-                                    <h3>“五四精神”主题演讲比赛</h3>
+                                    <h3><?php  echo $row2[1] ?></h3>
                                 </div>
-                                <img src="images/g2.jpg" alt=" " class="img-responsive"/>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 agileinfo_portfolio_grid">
-                    <div class="w3_agile_portfolio_grid1">
-                        <a href="images/g4.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
-                           title="Competition">
-                            <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
-                                <div class="w3layouts_port_head">
-                                    <h3>第二届网页设计大赛</h3>
-                                </div>
-                                <img src="images/g4.jpg" alt=" " class="img-responsive"/>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="w3_agile_portfolio_grid1">
-                        <a href="images/g5.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
-                           title="Competition">
-                            <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
-                                <div class="w3layouts_port_head">
-                                    <h3>青春心向党&nbsp;建功新时代</h3>
-                                </div>
-                                <img src="images/g5.jpg" alt=" " class="img-responsive"/>
+                                <img src=<?php  echo $row2[2] ?> alt=" " class="img-responsive"/>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4 agileinfo_portfolio_grid">
+                    <?php
+                    include "MySqlConnect.php";
+                    $result3= $conn->query("SELECT * FROM article order by ar_time desc LIMIT 2, 3");
+                    $row3 = mysqli_fetch_array($result3);
+                    ?>
                     <div class="w3_agile_portfolio_grid1">
-                        <a href="images/g7.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                        <a href="activity.php?ar_id=<?php  echo $row3[0] ?>" class="showcase" data-rel="lightcase:myCollection:slideshow"
                            title="Competition">
                             <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
                                 <div class="w3layouts_port_head">
-                                    <h3>机械争霸</h3>
+                                    <h3><?php  echo $row3[1] ?></h3>
                                 </div>
-                                <img src="images/g7.jpg" alt=" " class="img-responsive"/>
+                                <img src=<?php  echo $row3[2] ?> alt='' class="img-responsive"/>
                             </div>
                         </a>
                     </div>
+                    <?php
+                    include "MySqlConnect.php";
+                    $result4= $conn->query("SELECT * FROM article order by ar_time desc LIMIT 3, 4");
+                    $row4 = mysqli_fetch_array($result4);
+                    ?>
                     <div class="w3_agile_portfolio_grid1">
-                        <a href="images/g8.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                        <a href="activity.php?ar_id=<?php  echo $row4[0] ?>" class="showcase" data-rel="lightcase:myCollection:slideshow"
                            title="Competition">
                             <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
                                 <div class="w3layouts_port_head">
-                                    <h3>第二届“礼仪之星”大赛</h3>
+                                    <h3><?php  echo $row4[1] ?></h3>
                                 </div>
-                                <img src="images/g8.jpg" alt=" " class="img-responsive"/>
+                                <img src=<?php  echo $row4[2] ?> alt='' class="img-responsive"/>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4 agileinfo_portfolio_grid">
+                    <?php
+                    include "MySqlConnect.php";
+                    $result5= $conn->query("SELECT * FROM article order by ar_time desc LIMIT 4, 5");
+                    $row5 = mysqli_fetch_array($result5);
+                    ?>
                     <div class="w3_agile_portfolio_grid1">
-                        <a href="images/g9.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                        <a href="activity.php?ar_id=<?php  echo $row5[0] ?>" class="showcase" data-rel="lightcase:myCollection:slideshow"
                            title="Competition">
                             <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
                                 <div class="w3layouts_port_head">
-                                    <h3>第八届“挑战杯”竞赛</h3>
+                                    <h3><?php  echo $row5[1] ?></h3>
                                 </div>
-                                <img src="images/g9.jpg" alt=" " class="img-responsive"/>
+                                <img src=<?php  echo $row5[2] ?> alt=" " class="img-responsive"/>
                             </div>
                         </a>
                     </div>
+                    <?php
+                    include "MySqlConnect.php";
+                    $result6= $conn->query("SELECT * FROM article order by ar_time desc LIMIT 5, 6");
+                    $row6 = mysqli_fetch_array($result6);
+                    ?>
                     <div class="w3_agile_portfolio_grid1">
-                        <a href="images/g3.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                        <a href="activity.php?ar_id=<?php  echo $row6[0] ?>" class="showcase" data-rel="lightcase:myCollection:slideshow"
                            title="Competition">
                             <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
                                 <div class="w3layouts_port_head">
-                                    <h3>十佳歌手大赛</h3>
+                                    <h3><?php  echo $row6[1] ?></h3>
                                 </div>
-                                <img src="images/g3.jpg" alt=" " class="img-responsive"/>
+                                <img src=<?php  echo $row6[2] ?> alt=" " class="img-responsive"/>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 agileinfo_portfolio_grid">
+                    <?php
+                    include "MySqlConnect.php";
+                    $result7= $conn->query("SELECT * FROM article order by ar_time desc LIMIT 6, 7");
+                    $row7 = mysqli_fetch_array($result7);
+                    ?>
+                    <div class="w3_agile_portfolio_grid1">
+                        <a href="activity.php?ar_id=<?php  echo $row7[0] ?>" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                           title="Competition">
+                            <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
+                                <div class="w3layouts_port_head">
+                                    <h3><?php  echo $row7[1] ?></h3>
+                                </div>
+                                <img src=<?php  echo $row7[2] ?> alt=" " class="img-responsive"/>
+                            </div>
+                        </a>
+                    </div>
+                    <?php
+                    include "MySqlConnect.php";
+                    $result8= $conn->query("SELECT * FROM article order by ar_time desc LIMIT 7, 8");
+                    $row8 = mysqli_fetch_array($result8);
+                    ?>
+                    <div class="w3_agile_portfolio_grid1">
+                        <a href="activity.php?ar_id=<?php  echo $row8[0] ?>" class="showcase" data-rel="lightcase:myCollection:slideshow"
+                           title="Competition">
+                            <div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">
+                                <div class="w3layouts_port_head">
+                                    <h3><?php  echo $row8[1] ?></h3>
+                                </div>
+                                <img src=<?php  echo $row8[2] ?> alt=" " class="img-responsive"/>
                             </div>
                         </a>
                     </div>
