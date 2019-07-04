@@ -2,7 +2,7 @@
 $id = $_GET["id"];
 include "MySqlConnect.php";
 include "stateAction.php";
-$sql = "select * from forum,ruser where ruser.sno = forum.uid and ac_id='$id'";
+$sql = "select * from forum,ruser where ruser.sno = forum.uid and ac_id='$id' order by ctime";
 $result = $conn->query($sql);
 $arownews = array();
 while ($geren = mysqli_fetch_array($result)) {
