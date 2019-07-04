@@ -10,7 +10,7 @@ if ($static_join == 2){
     $sql = "update static set static_join=$static_join where membersno=$mber and capsno=$cap_sno";
     $result = $conn->query($sql);
     $row = mysqli_affected_rows($result);
-    exit('提交成功');
+    exit('已同意');
 }
 exit();
 ?>

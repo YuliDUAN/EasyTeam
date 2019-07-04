@@ -14,8 +14,10 @@ if (!empty($_GET['member_sno'])&&!empty($_GET['cap_sno'])&&$member_sno!=$cap_sno
         $conn->query($sql);
         header("location:jteam.php?id=".$id);
     }else{
+        $sql_c = "delete from static where membersno = $member_sno and capsno = $cap_sno";
+        $conn->query($sql_c);
         echo "<script>var d = \"$id\"</script>";
-        echo "<script>alert('你已申请，请等待回复！');window.location.href='jteam.php?id='+d</script>";
+        echo "<script>alert('取消成功！');window.location.href='jteam.php?id='+d</script>";
     }
 }else{
     echo "<script>var d = \"$id\"</script>";

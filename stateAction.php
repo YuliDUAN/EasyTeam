@@ -1,4 +1,5 @@
 <?php
+include 'MySqlConnect.php';
 session_start();
 $sno = $_SESSION["sno"];
 $zhuangtai=$_SESSION["zhuangtai"];

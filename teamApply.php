@@ -307,7 +307,7 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <th width="15%"><font size="4" color="black">来源</font></th>
                         <th width="45%"><font size="4" color="black">内容</font></th>
                         <th width="20%"><font size="4" color="black">时间</font></th>
-                        <th  width="20%"  style="text-align:center"><font size="4" color="black" >处理</font></th>
+                        <th  width="20%"><font size="4" color="black" >处理</font></th>
                     </tr>
                     <?php
                     $sqlst = "select * from static where capsno=$sno";
@@ -348,7 +348,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
                                         echo '<a>已拒绝</a>';
                                     }
                                     ?>
-                                </font></td>
+                                </font>
+                            </td>
                         </tr>
                     <?php
                     echo "<script>var membersno = \"$membersno\"</script>";

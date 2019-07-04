@@ -329,7 +329,7 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         $page = 1;
                     };
                     $start_from = ($page - 1) * $num_rec_per_page;
-                    $sql1 = "select team_name,activity.name,team_prize from team,activity where team.ac_id=activity.id
+                    $sql1 = "select team_name,activity.name,team_prize,activity.state from team,activity where team.ac_id=activity.id
                   and team_id in(select distinct team_id from team where cap_sno=$sno union select distinct team_id from team_mem
                   where member_sno=$sno) LIMIT $start_from, $num_rec_per_page";
                     $result1 = $conn->query($sql1);
@@ -340,14 +340,21 @@ while($rownums = mysqli_fetch_array($resultnums)){
                             <td class="anchorjs-icon"><font size="4"><?php echo $rows[1] ?></font></td>
                             <td class="anchorjs-icon"><font size="4">
                                     <?php
-                                    if($rows[2]==0)
-                                        echo "未获奖";
-                                    else if($rows[2]==1)
-                                        echo "三等奖";
-                                    else if($rows[2]==2)
-                                        echo "二等奖";
-                                    else if($rows[2]==3)
-                                        echo "一等奖";
+                                    if($rows[3]==0) {
+                                        if ($rows[2] == 0)
+                                            echo "未获奖";
+                                        else if ($rows[2] == 1)
+                                            echo "优胜奖";
+                                        else if ($rows[2] == 2)
+                                            echo "三等奖";
+                                        else if ($rows[2] == 3)
+                                            echo "二等奖";
+                                        else if ($rows[2] == 4)
+                                            echo "一等奖";
+                                    }else{
+                                        echo "";
+                                    }
+
                                     ?></font></td>
                         </tr>
                         <?php

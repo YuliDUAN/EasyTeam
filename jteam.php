@@ -1,10 +1,11 @@
 <?php
 include "MySqlConnect.php";
 include "stateAction.php";
+$id = $_GET['id'];
 $sno = $_SESSION['sno'];
-$sql = "select * from ruser where sno =$sno";
-$resultsno = $conn->query($sql);
-$row = mysqli_fetch_array($resultsno);
+$sql = "select * from ruser where sno ='$sno'";
+$result_sno = $conn->query($sql);
+$row = mysqli_fetch_array($result_sno);
 $arr = array();
 array_push($arr,$row);
 ?>
@@ -142,7 +143,7 @@ while($rownums = mysqli_fetch_array($resultnums)){
                 <div style="float: right;margin-right: 3%">
                     <form action="searchteamAction.php?id=<?php echo "$id" ?>" method="post">
                         <input type="text" name="team_name"
-                               style="width:180px;height:35px;border-radius: 15px;border:1px black solid;margin-right: 10px"
+                               style="width:210px;height:35px;border-radius: 15px;border:1px black solid;margin-right: 10px"
                                placeholder="&nbsp;请输入队伍名称">
                         <button style="background-color: transparent;border: transparent"><img src="images/serch.png" width=30px height=30px "/></button>
                     </form>
@@ -184,32 +185,27 @@ while($rownums = mysqli_fetch_array($resultnums)){
                             <td><font size="4" color="black"><?php echo $r[2] ?></font></td>
                             <td><font size="4" color="black"><?php echo $r[3] ?></font></td>
                             <td><font size="4"><?php echo count($ar);?></font></td>
-                            <td><font size="5" color="blue"><button style="background-color: transparent;border: transparent">
-                                        <?php
-                                        $cap_sno = $r['cap_sno'];
-                                        $sqlstatic = "select static_join from static where membersno = $sno and capsno = $cap_sno";
-                                        $resultstatic = $conn->query($sqlstatic);
-                                        $rowstatic = mysqli_fetch_array($resultstatic);
-                                        if ($rowstatic['static_join']==3){
-                                            echo '已拒绝';
-                                        }
-                                        elseif ($rowstatic['static_join']==1){
-                                            echo '申请中...';
-                                        }
-                                        elseif ($rowstatic['static_join']==2){
-                                            echo '已加入';
-                                        }
-                                        else{
-                                            $sqltem = "select * from team_mem where team_mem.team_id = $id and member = $sno";
-                                            $resultem = $conn->query($sqltem);
-                                            if (!empty($resultem)){
-                                                echo '申请加入';
-                                            }
-                                            echo '申请加入';
-
-                                        }
-                                        ?>
-                                        </button></font></td>
+                            <td><font size="4" color="black">
+                                    <?php
+                                    $cap_sno = $r['cap_sno'];
+                                    $sqlstatic = "select static_join from static where membersno = $sno and capsno = $cap_sno";
+                                    $resultstatic = $conn->query($sqlstatic);
+                                    $rowstatic = mysqli_fetch_array($resultstatic);
+                                    if ($rowstatic['static_join']==3){
+                                        echo '<button style="background-color: transparent;border: transparent"><a style="color: red"><b>已拒绝</b></a></button>';
+                                    }
+                                    elseif ($rowstatic['static_join']==1){
+                                        echo '<button style="background-color: transparent;border: transparent"><a style="color: orange"><b>申请中...</b></a></button>
+                                        <button style="background-color: transparent;border: transparent;margin-left: 50px"><a style="color: red">取消</a> </button>';
+                                    }
+                                    elseif ($rowstatic['static_join']==2){
+                                        echo '<button style="background-color: transparent;border: transparent"><a style="color: #66fa41"><b>已加入</b></a></button>';
+                                    }
+                                    else{
+                                        echo '<button style="background-color: transparent;border: transparent"><a style="color: blue"><b>申请加入</b></a></button>';
+                                    }
+                                    ?>
+                                </font></td>
                         </tr>
                     </form>
                 <?php } ?>
