@@ -129,7 +129,14 @@ while($rownums = mysqli_fetch_array($resultnums)){
                     <?php
                     $ac_id=$_GET["id"];
                     include"MySqlConnect.php";
-                    $sql2="SELECT team_id,team_name,team_cap,team_prize,cap_sno FROM team where ac_id='$ac_id' and team_prize between 1 and 4 order by team_prize desc";
+                    $num_rec_per_page =8;   // 每页显示数量
+                    if (isset($_GET["page"])) {
+                        $page = $_GET["page"];
+                    } else {
+                        $page = 1;
+                    };
+                    $start_from = ($page - 1) * $num_rec_per_page;
+                    $sql2="SELECT team_id,team_name,team_cap,team_prize,cap_sno FROM team where ac_id='$ac_id' and team_prize between 1 and 4 order by team_prize desc LIMIT $start_from, $num_rec_per_page";
                     $result2 = $conn->query($sql2);
                     while ($rows = mysqli_fetch_array($result2)) {  ?>
                     <tr>
@@ -150,8 +157,25 @@ while($rownums = mysqli_fetch_array($resultnums)){
                             ?></td>
                     </tr>
                     <?php }
+                    $rs_result = $conn->query("SELECT * FROM team where ac_id='$ac_id' and team_prize between 1 and 4"); //查询数据
+                    $total_records = mysqli_num_rows($rs_result);  // 统计总共的记录条数
+                    $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
                     mysqli_free_result($result2);
                     ?>
+                    <tr align="center">
+                        <td colspan="5">
+                            <div class=class="bs-example"><a href="ranking.php?page=1&id=<?php echo $ac_id ?>">首页</a>
+                                <?php
+                                if($total_pages==0)
+                                    $total_pages=1;
+                                for ($i = 1; $i <= $total_pages; $i++) { ?>
+                                    <a href='ranking.php?page=<?php echo $i ?>&id=<?php echo $ac_id ?>'><?php echo $i ?></a>
+                                <?php } ?>
+
+                                <a href="ranking.php?page=<?php echo $total_pages ?>&id=<?php echo $ac_id ?>">末页</a>
+                            </div>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>

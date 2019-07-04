@@ -304,9 +304,16 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <th class="anchorjs-icon"><font size="4" color="black">主办方</font></th>
                     </tr>
                     <?php
+                    $num_rec_per_page =8;   // 每页显示数量
+                    if (isset($_GET["page"])) {
+                        $page = $_GET["page"];
+                    } else {
+                        $page = 1;
+                    };
+                    $start_from = ($page - 1) * $num_rec_per_page;
                     $sql2="select distinct ac_id from team where 
                   team_id in(select team_id from team where cap_sno=$s_id union select team_id from team_mem
-                  where member_sno=$s_id) ";
+                  where member_sno=$s_id) LIMIT $start_from, $num_rec_per_page ";
                     $result2 = $conn->query($sql2);
                     while($rows2 = mysqli_fetch_array($result2)){
                         $sql1="select name,time,host from activity where id=$rows2[0]";
@@ -320,11 +327,33 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         </tr>
                         <?php
                     }
+                    $rs_result = $conn->query("select distinct ac_id from team where 
+                  team_id in(select team_id from team where cap_sno=$s_id union select team_id from team_mem
+                  where member_sno=$s_id)"); //查询数据
+                    $total_records = mysqli_num_rows($rs_result);  // 统计总共的记录条数
+                    $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
+                    mysqli_free_result($result2);
                     ?>
                     </tbody>
                 </table>
             </div>
             <div class="clearfix"></div>
+            <div align="center">
+            <tr align="center">
+                <td colspan="3">
+                    <div class=class="bs-example"><a href="myjgames.php?page=1">首页</a>
+                        <?php
+                        if($total_pages==0)
+                            $total_pages=1;
+                        for ($i = 1; $i <= $total_pages; $i++) { ?>
+                            <a href='myjgames.php?page=<?php echo $i ?>'><?php echo $i ?></a>
+                        <?php } ?>
+
+                        <a href="myjgames.php?page=<?php echo $total_pages ?>">末页</a>
+                    </div>
+                </td>
+            </tr>
+            </div>
         </div>
     </div>
 </div>

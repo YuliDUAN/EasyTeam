@@ -316,7 +316,14 @@ while($rownums = mysqli_fetch_array($resultnums)){
         <div class="agileits_mail_grids">
             <div class="col-md-7 agileits_mail_grid_left">
                 <?php
-                $sql = "select * from lvmessage,ruser where lmsno = $sno and sno=selfsno";
+                $num_rec_per_page =8;   // 每页显示数量
+                if (isset($_GET["page"])) {
+                    $page = $_GET["page"];
+                } else {
+                    $page = 1;
+                };
+                $start_from = ($page - 1) * $num_rec_per_page;
+                $sql = "select * from lvmessage,ruser where lmsno = $sno and sno=selfsno LIMIT $start_from, $num_rec_per_page";
                 $resultlu = $conn->query($sql);
                 $arr = array();
                 while ($rowlu = mysqli_fetch_array($resultlu)) {
@@ -338,9 +345,32 @@ while($rownums = mysqli_fetch_array($resultnums)){
                     <div style="width:74%;height:170px;padding: 20px;margin-top:30px;float: right;background-color: #ffffff;border-radius: 10px;word-break: break-all;overflow-y:auto">
                         <h4><?php echo $r['lmessage'];?></h4>
                     </div>
-                <?php } ?>
+                <?php }
+                $rs_result = $conn->query("select * from lvmessage,ruser where lmsno = $sno and sno=selfsno "); //查询数据
+                $total_records = mysqli_num_rows($rs_result);  // 统计总共的记录条数
+                $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
+                ?>
+
             </div>
             <div class="clearfix"></div>
+            <div>
+                <table align="center">
+                    <tr align="center">
+                        <td colspan="3">
+                            <div class=class="bs-example"><a href="leaveword.php?page=1">首页</a>
+                                <?php
+                                if($total_pages==0)
+                                    $total_pages=1;
+                                for ($i = 1; $i <= $total_pages; $i++) { ?>
+                                    <a href='leaveword.php?page=<?php echo $i ?>'><?php echo $i ?></a>
+                                <?php } ?>
+
+                                <a href="leaveword.php?page=<?php echo $total_pages ?>">末页</a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </div>

@@ -21,14 +21,14 @@ $row = mysqli_fetch_array($result);
     <script src="js/pintuer.js"></script>
 </head>
 <body>
-<div class="panel admin-panel">
+<div class="panel admin-panel" style="margin-left: 10%;margin-right: 10%">
     <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>修改<?php echo $row[0] ?>
             队伍获奖信息</strong></div>
     <div class="body-content">
         <form method="post" class="form-x" action="z_addprizesAction.php">
             <div class="form-group">
                 <div class="label">
-                    <label>获奖队伍名称：</label>
+                    <label><h5><b>获奖队伍名称：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input w50" value="<?php echo $row[0] ?>" name="team_name" disabled/>
@@ -37,7 +37,7 @@ $row = mysqli_fetch_array($result);
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label>队长：</label>
+                    <label><h5><b>队长：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input w50" value="<?php echo $row[1] ?>" name="team_cap" disabled/>
@@ -46,7 +46,7 @@ $row = mysqli_fetch_array($result);
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label>获奖队伍名称：</label>
+                    <label><h5><b>获奖队伍名称：</b></h5></label>
                 </div>
                 <div class="label" style="width: auto">
                     <table>
@@ -65,7 +65,7 @@ $row = mysqli_fetch_array($result);
                 <div class="label">
                     <label></label>
                 </div>
-                <div class="field">
+                <div class="field" align="center">
                     <input type="hidden" name="ac_id" value="<?php echo $ac_id ?>"
                            style="border-radius: 10px"/>
                     <input type="hidden" name="id" value="<?php echo $id ?>"

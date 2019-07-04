@@ -20,14 +20,14 @@ $row = mysqli_fetch_array($result);
     <script src="js/pintuer.js"></script>
 </head>
 <body>
-<div class="panel admin-panel">
+<div class="panel admin-panel" style="margin-left: 10%;margin-right: 10%">
     <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 修改学号为：<?php echo $sno ?>
             &nbsp;的信息</strong></div>
     <form method="post" class="form-x" action="z_stu_modifyAction.php?sno=<?php echo $sno ?>">
         <div class="body-content">
             <div class="form-group">
                 <div class="label">
-                    <label>姓名：</label>
+                    <label><h5><b>姓名：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" id="url1" class="input tips" name="name" value="<?php echo $row[1] ?>"/>
@@ -35,7 +35,7 @@ $row = mysqli_fetch_array($result);
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label>性别：</label>
+                    <label><h5><b>性别：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" id="url1" class="input tips" name="sex" value="<?php echo $row[2] ?>"/>
@@ -43,7 +43,7 @@ $row = mysqli_fetch_array($result);
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label>电话：</label>
+                    <label><h5><b>电话：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input" name="tel" value="<?php echo $row[3] ?>"/>
@@ -51,7 +51,7 @@ $row = mysqli_fetch_array($result);
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label>学院：</label>
+                    <label><h5><b>学院：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input" name="adpt" value="<?php echo $row[4] ?>"/>
@@ -59,7 +59,7 @@ $row = mysqli_fetch_array($result);
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label>专业：</label>
+                    <label><h5><b>专业：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input" name="major" value="<?php echo $row[5] ?>"/>
@@ -68,7 +68,7 @@ $row = mysqli_fetch_array($result);
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label>班级：</label>
+                    <label><h5><b>班级：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input" name="class" value="<?php echo $row[6] ?>"/>
@@ -77,7 +77,7 @@ $row = mysqli_fetch_array($result);
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label>图片：</label>
+                    <label><h5><b>图片：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input" name="image" value="<?php echo $row[7] ?>"/>
@@ -88,7 +88,7 @@ $row = mysqli_fetch_array($result);
                 <div class="label">
                     <label></label>
                 </div>
-                <div class="field">
+                <div class="field" align="center">
                     <button class="button bg-main icon-check-square-o" type="submit"> 修改</button>
                 </div>
             </div>

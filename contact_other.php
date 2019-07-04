@@ -2,6 +2,7 @@
 include "MySqlConnect.php";
 include "stateAction.php";
 $sno = $_GET['uid'];
+$uid = $_SESSION['sno'];
 $id = $_GET['id'];
 $rsq = "select * from ruser where sno='$sno'";
 $result = $conn->query($rsq);
@@ -170,6 +171,8 @@ $row = mysqli_fetch_array($result);
                     <input type="text" name="ID" disabled placeholder="<?php echo $row['sno'];?>" required="">
                     <h4>姓名</h4>
                     <input type="text" name="Name" disabled placeholder="<?php echo $row ['username'];?>" required="">
+                    <h4>邮箱</h4>
+                    <input type="text" name="email" disabled placeholder="<?php echo $row ['email']; ?>" required="">
                     <h4>专业班级</h4>
                     <input type="text" name="Class" disabled placeholder="<?php echo $row['major'].$row ['cls'];?>" required="">
                     <h4>联系电话</h4>

@@ -1,61 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c6ee583-e762-461f-bf34-3cb08e660540" name="Default Changelist" comment="更新后台代码">
-      <change afterPath="$PROJECT_DIR$/images/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/aa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/laydate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/need/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/dahong/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/dahong/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/danlan/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/danlan/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/default/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/default/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/molv/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/molv/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/qianhuang/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/qianhuang/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/yahui/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/yahui/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/yalan/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skins/yalan/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_deletelecture.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_deletenova.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_endlecture.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_endnova.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_lecture.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_lectureAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_lectureAdd.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_nova.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_novaAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_novaAdd.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_stuSearch.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_stu_resetpwd.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z_teamSearch.php" afterDir="false" />
+    <list default="true" id="4c6ee583-e762-461f-bf34-3cb08e660540" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/applyCollectAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collectCancelActivityAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apply.php" beforeDir="false" afterPath="$PROJECT_DIR$/apply.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codes.php" beforeDir="false" afterPath="$PROJECT_DIR$/codes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collect.php" beforeDir="false" afterPath="$PROJECT_DIR$/collect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact_other.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact_other.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/admin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/pintuer.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/pintuer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/gallery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons.php" beforeDir="false" afterPath="$PROJECT_DIR$/icons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaveword.php" beforeDir="false" afterPath="$PROJECT_DIR$/leaveword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myjgames.php" beforeDir="false" afterPath="$PROJECT_DIR$/myjgames.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news.php" beforeDir="false" afterPath="$PROJECT_DIR$/news.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question.php" beforeDir="false" afterPath="$PROJECT_DIR$/question.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ranking.php" beforeDir="false" afterPath="$PROJECT_DIR$/ranking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/team.php" beforeDir="false" afterPath="$PROJECT_DIR$/team.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/z_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_add.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/z_addprizes.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_addprizes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_addprizesAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_addprizesAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_frist.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/z_article_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_article_modify.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/z_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_infoAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_infoAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/z_lectureAdd.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_lectureAdd.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/z_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_modify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_modifyAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_modifyAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_prize.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_prize.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_prizeinformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_prizeinformation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/z_novaAdd.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_novaAdd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/z_pass.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_pass.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/z_stu_modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_stu_modify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_stu_modifyAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_stu_modifyAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_student.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/z_team.php" beforeDir="false" afterPath="$PROJECT_DIR$/z_team.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,74 +44,56 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/z_stu_modify.php">
+        <entry file="file://$PROJECT_DIR$/news.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+            <state relative-caret-position="171">
+              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/z_stu_modifyAction.php">
+        <entry file="file://$PROJECT_DIR$/teamApply.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/z_stu_resetpwd.php">
+        <entry file="file://$PROJECT_DIR$/question.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="75" selection-start-line="5" selection-start-column="75" selection-end-line="5" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/z_student.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/z_stuSearch.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/z_team.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/z_teamDelete.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/z_teamSearch.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+            <state relative-caret-position="382">
+              <caret line="347" column="30" selection-start-line="347" selection-start-column="30" selection-end-line="347" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README">
+        <entry file="file://$PROJECT_DIR$/myjgames.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+            <state relative-caret-position="306">
+              <caret line="338" column="12" selection-start-line="338" selection-start-column="12" selection-end-line="338" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/leaveword.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="371" column="24" selection-start-line="371" selection-start-column="24" selection-end-line="371" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/team.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="364" column="30" selection-start-line="364" selection-start-column="30" selection-end-line="364" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -180,6 +134,8 @@
       <find>body</find>
       <find>about</find>
       <find>z_frist</find>
+      <find>soc</find>
+      <find>$v</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,57 +145,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/stateAction.php" />
-        <option value="$PROJECT_DIR$/css/register.css" />
-        <option value="$PROJECT_DIR$/css/login.css" />
-        <option value="$PROJECT_DIR$/js/html5shiv/html5shiv.min.js" />
-        <option value="$PROJECT_DIR$/retrieve.html" />
-        <option value="$PROJECT_DIR$/emailCodeAction.php" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/contact.php" />
-        <option value="$PROJECT_DIR$/leaveword.php" />
-        <option value="$PROJECT_DIR$/collect.php" />
-        <option value="$PROJECT_DIR$/question.php" />
-        <option value="$PROJECT_DIR$/myjgames.php" />
-        <option value="$PROJECT_DIR$/news.php" />
-        <option value="$PROJECT_DIR$/contact_other.php" />
-        <option value="$PROJECT_DIR$/link.php" />
-        <option value="$PROJECT_DIR$/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/emailAction.php" />
         <option value="$PROJECT_DIR$/register.html" />
         <option value="$PROJECT_DIR$/retrieve.php" />
         <option value="$PROJECT_DIR$/js/jquery/jquery.min.js" />
         <option value="$PROJECT_DIR$/lib/jquery/jquery.min.js" />
         <option value="$PROJECT_DIR$/registerAction.php" />
-        <option value="$PROJECT_DIR$/gallery.php" />
-        <option value="$PROJECT_DIR$/team.php" />
-        <option value="$PROJECT_DIR$/z_add.php" />
-        <option value="$PROJECT_DIR$/z_addprizes.php" />
-        <option value="$PROJECT_DIR$/z_article_modify.php" />
         <option value="$PROJECT_DIR$/z_endlecture.php" />
         <option value="$PROJECT_DIR$/z_endnova.php" />
         <option value="$PROJECT_DIR$/z_index.php" />
-        <option value="$PROJECT_DIR$/z_info.php" />
         <option value="$PROJECT_DIR$/z_lecture.php" />
         <option value="$PROJECT_DIR$/z_lectureAction.php" />
-        <option value="$PROJECT_DIR$/z_lectureAdd.php" />
         <option value="$PROJECT_DIR$/z_list.php" />
         <option value="$PROJECT_DIR$/z_login.php" />
-        <option value="$PROJECT_DIR$/z_modify.php" />
         <option value="$PROJECT_DIR$/z_nova.php" />
-        <option value="$PROJECT_DIR$/z_novaAdd.php" />
         <option value="$PROJECT_DIR$/z_page.php" />
-        <option value="$PROJECT_DIR$/z_pass.php" />
         <option value="$PROJECT_DIR$/z_prize.php" />
         <option value="$PROJECT_DIR$/z_prizeinformation.php" />
-        <option value="$PROJECT_DIR$/z_stu_modify.php" />
         <option value="$PROJECT_DIR$/z_stu_resetpwd.php" />
         <option value="$PROJECT_DIR$/z_student.php" />
         <option value="$PROJECT_DIR$/z_stuSearch.php" />
         <option value="$PROJECT_DIR$/z_team.php" />
         <option value="$PROJECT_DIR$/z_teamSearch.php" />
         <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/contact.php" />
+        <option value="$PROJECT_DIR$/teamApply.php" />
+        <option value="$PROJECT_DIR$/emailAction.php" />
+        <option value="$PROJECT_DIR$/contact_other.php" />
+        <option value="$PROJECT_DIR$/apply.php" />
+        <option value="$PROJECT_DIR$/applyCollectAction.php" />
+        <option value="$PROJECT_DIR$/collectCancelActivityAction.php" />
+        <option value="$PROJECT_DIR$/z_info.php" />
+        <option value="$PROJECT_DIR$/css/pintuer.css" />
+        <option value="$PROJECT_DIR$/css/admin.css" />
+        <option value="$PROJECT_DIR$/z_stu_modify.php" />
+        <option value="$PROJECT_DIR$/z_novaAdd.php" />
+        <option value="$PROJECT_DIR$/z_pass.php" />
+        <option value="$PROJECT_DIR$/z_addprizes.php" />
+        <option value="$PROJECT_DIR$/z_add.php" />
+        <option value="$PROJECT_DIR$/z_lectureAdd.php" />
+        <option value="$PROJECT_DIR$/z_article_modify.php" />
+        <option value="$PROJECT_DIR$/z_modify.php" />
+        <option value="$PROJECT_DIR$/codes.php" />
+        <option value="$PROJECT_DIR$/icons.php" />
+        <option value="$PROJECT_DIR$/gallery.php" />
+        <option value="$PROJECT_DIR$/ranking.php" />
+        <option value="$PROJECT_DIR$/news.php" />
+        <option value="$PROJECT_DIR$/collect.php" />
+        <option value="$PROJECT_DIR$/myjgames.php" />
+        <option value="$PROJECT_DIR$/team.php" />
+        <option value="$PROJECT_DIR$/leaveword.php" />
+        <option value="$PROJECT_DIR$/question.php" />
       </list>
     </option>
   </component>
@@ -252,10 +208,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1451" />
-    <option name="y" value="153" />
-    <option name="width" value="1094" />
-    <option name="height" value="707" />
+    <option name="x" value="-1148" />
+    <option name="y" value="276" />
+    <option name="width" value="875" />
+    <option name="height" value="566" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -273,6 +229,24 @@
             <path>
               <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="PHP" type="20ee2d1f:SyntheticLibraryElementNode" />
+            </path>
+            <path>
+              <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="PHP" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="PHP" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="EasyTeam" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -387,21 +361,7 @@
       <workItem from="1561860870603" duration="16322000" />
       <workItem from="1561938790052" duration="4507000" />
       <workItem from="1562164389485" duration="522000" />
-      <workItem from="1562200153114" duration="11874000" />
-    </task>
-    <task id="LOCAL-00007" summary="加上读取消息的弹窗">
-      <created>1561189986405</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1561189986405</updated>
-    </task>
-    <task id="LOCAL-00008" summary="加上读取消息的弹窗">
-      <created>1561193555230</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1561193555230</updated>
+      <workItem from="1562200153114" duration="30781000" />
     </task>
     <task id="LOCAL-00009" summary="添加我的队伍">
       <created>1561203435596</created>
@@ -732,7 +692,21 @@
       <option name="project" value="LOCAL" />
       <updated>1562209641731</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="更新后台代码">
+      <created>1562212062297</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1562212062297</updated>
+    </task>
+    <task id="LOCAL-00057" summary="修改头像">
+      <created>1562222176032</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1562222176032</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -768,7 +742,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269258000" />
+    <option name="totallyTimeSpent" value="288165000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -783,7 +757,7 @@
     <frame x="-1448" y="100" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1850789" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19655667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -804,7 +778,7 @@
       <window_info anchor="bottom" id="PHP-CGI Server" order="13" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24964131" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -845,7 +819,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改标题" />
     <MESSAGE value="加入消息功能" />
     <MESSAGE value="加入修改个人信息" />
     <MESSAGE value="校园趣事" />
@@ -870,154 +843,35 @@
     <MESSAGE value="增加找回密码功能" />
     <MESSAGE value="修改校园趣事" />
     <MESSAGE value="更新后台代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新后台代码" />
+    <MESSAGE value="修改头像" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改头像" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/images/10.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/laydate.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/pintuer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="53" lean-forward="true" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-          <folding>
-            <element signature="n#style#0;n#a#1;n#div#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/team.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_addAction.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_addprizes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_addprizesAction.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_article_modify.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_deleteAction.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_articleDeleteAction.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_article_modifyAction.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_deletelecture.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/z_deletenova.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_endlecture.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_frist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_endnova.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="53" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="418">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_info.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_infoAction.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_lecture.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_lectureAction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_lectureAdd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_login.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1027,18 +881,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/z_loginAction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z_modify.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_modifyAction.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1047,57 +890,47 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_nova.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_novaAction.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_novaAdd.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+        <state relative-caret-position="496">
+          <caret line="63" column="48" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/z_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_pass.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+        <state relative-caret-position="406">
+          <caret line="67" column="48" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z_passAction.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_prize.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z_prizeAction.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_prizeinformation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_state.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_stu_modify.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        <state relative-caret-position="572">
+          <caret line="90" column="48" selection-start-line="90" selection-start-column="48" selection-end-line="90" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1105,61 +938,174 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_stu_resetpwd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="75" selection-start-line="5" selection-start-column="75" selection-end-line="5" selection-end-column="75" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_student.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_stuSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_team.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/z_teamDelete.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/pintuer.css">
+    <entry file="file://$PROJECT_DIR$/z_addprizes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="203" column="16" selection-start-line="203" selection-start-column="16" selection-end-line="203" selection-end-column="16" />
+        <state relative-caret-position="1123">
+          <caret line="67" column="48" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/need/laydate.css">
+    <entry file="file://$PROJECT_DIR$/z_infoAction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        <state relative-caret-position="133">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z_addprizesAction.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z_lectureAdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z_article_modifyAction.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="112" column="34" lean-forward="true" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z_addAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/z_teamSearch.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z_article_modify.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        <state relative-caret-position="876">
+          <caret line="67" column="44" lean-forward="true" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/z_modify.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+        <state relative-caret-position="475">
+          <caret line="85" column="35" lean-forward="true" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="160" column="40" lean-forward="true" selection-start-line="160" selection-start-column="40" selection-end-line="160" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/icons.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="160" column="18" lean-forward="true" selection-start-line="160" selection-start-column="18" selection-end-line="160" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="316" column="66" selection-start-line="316" selection-start-column="66" selection-end-line="316" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ranking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="164" selection-start-line="164" selection-end-line="177" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teamApply.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="1097" column="1" selection-start-line="1097" selection-start-column="1" selection-end-line="1097" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="369" column="22" lean-forward="true" selection-start-line="369" selection-start-column="22" selection-end-line="369" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="347" column="30" selection-start-line="347" selection-start-column="30" selection-end-line="347" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leaveword.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="371" column="24" selection-start-line="371" selection-start-column="24" selection-end-line="371" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="364" column="30" selection-start-line="364" selection-start-column="30" selection-end-line="364" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myjgames.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="338" column="12" selection-start-line="338" selection-start-column="12" selection-end-line="338" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

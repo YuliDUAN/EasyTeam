@@ -2,7 +2,7 @@
 include "MySqlConnect.php";
 include "stateAction.php";
 $s_id = $_SESSION['sno'];
-$sql = "select * from sendnews where receive_id = '$s_id'";
+$sql = "select * from sendnews where receive_id = '$s_id' ";
 $result = $conn->query($sql);
 $receive_news = array();
 while($row = mysqli_fetch_array($result)){
@@ -377,7 +377,9 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <th width="20%"><font-size="4" color="black">时间</font></th>
                         <th width="20%"><font-size="4" color="black">详情</font></th>
                     </tr>
-                    <?php foreach($receive_news as $v){?>
+                    <?php
+
+                    foreach($receive_news as $v){?>
                         <tr>
                             <td><font-size="3"><?php echo $v['send_name'];?></font></td>
                             <td><font-size="3"><?php echo $v['titlenews'];?></font></td>
@@ -398,7 +400,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
                                     </form>
                                 </font></td>
                         </tr>
-                    <?php }?>
+                    <?php }
+                    ?>
                     </tbody>
                 </table>
 

@@ -100,12 +100,6 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
     <div class="header agileinfo-header"><!-- header -->
         <nav class="navbar navbar-default">
             <div class="container">
-                <div style="margin-top: 15px;position:absolute;z-index:-3;margin-left: 70%">
-                    <iframe width="300" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
-                            allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&amp;
-                        id=1&amp;icon=1&amp;wind=0&amp;num=1&amp;site=14">
-                    </iframe>
-                </div>
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -147,6 +141,9 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                                 <?php } ?>
                                 个人中心</a></li>
                     </ul>
+                    <div class="social-icon">
+                        <img src="images/collection_no.png" onclick="collect()" id="caocao_pic">
+                    </div>
                     <div class="clearfix"></div>
                 </div><!-- //navbar-collapse -->
             </div><!-- //container-fluid -->
@@ -154,6 +151,27 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
     </div><!-- //header -->
 
 </div>
+<?php
+echo "<script>var id = \"$id\"</script>";
+?>
+<script>
+    function collect() {
+        var curl = window.location.href;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST','applyCollectAction.php','true');
+        xhr.setRequestHeader('Content-TYpe','application/x-www-form-urlencoded');
+        xhr.send(`id=${id}&&url=${curl}`);
+        xhr.onreadystatechange = function(){
+            if (this.readyState != 4) return;
+            var imgObj = document.getElementById("caocao_pic");
+            if(imgObj.getAttribute("src",2)=="images/collection_no.png"){
+                imgObj.src="images/collection_yes.png";
+            }
+            alert(this.responseText);
+
+        }
+    }
+</script>
 <!-- //banner -->
 <!-- typography -->
 <?php

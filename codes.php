@@ -135,7 +135,14 @@ while($rownums = mysqli_fetch_array($resultnums)){
                     </tr>
                     <?php
                     include "MySqlConnect.php";
-                    $rsq = "select * from activity where state=0";
+                    $num_rec_per_page =8;   // 每页显示数量
+                    if (isset($_GET["page"])) {
+                        $page = $_GET["page"];
+                    } else {
+                        $page = 1;
+                    };
+                    $start_from = ($page - 1) * $num_rec_per_page;
+                    $rsq = "select * from activity where state=0 LIMIT $start_from, $num_rec_per_page";
                     $result = $conn->query($rsq);
                     while($row = mysqli_fetch_array($result))
                     { ?>
@@ -144,8 +151,26 @@ while($rownums = mysqli_fetch_array($resultnums)){
                             <td class="anchorjs-icon"><font size="4"><?php echo $row[7] ?></font></td>
                             <td class="type-info"><a href="ranking.php?id=<?php echo $row[0] ?>"><font size="4">查看排名</font></a></td>
                         </tr>
-                    <?php } ?>
+                    <?php }
+                    $rs_result = $conn->query("SELECT * FROM activity where state=0"); //查询数据
+                    $total_records = mysqli_num_rows($rs_result);  // 统计总共的记录条数
+                    $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
+                    mysqli_free_result($result);
+                    ?>
+                    <tr align="center">
+                        <td colspan="3">
+                            <div class=class="bs-example"><a href="codes.php?page=1">首页</a>
+                                <?php
+                                if($total_pages==0)
+                                    $total_pages=1;
+                                for ($i = 1; $i <= $total_pages; $i++) { ?>
+                                    <a href='codes.php?page=<?php echo $i ?>'><?php echo $i ?></a>
+                                <?php } ?>
 
+                                <a href="codes.php?page=<?php echo $total_pages ?>">末页</a>
+                            </div>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>

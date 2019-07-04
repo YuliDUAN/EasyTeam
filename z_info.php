@@ -16,13 +16,13 @@
 
 </head>
 <body>
-<div class="panel admin-panel">
+<div class="panel admin-panel" style="margin-left: 10%;margin-right: 10%">
     <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 添加活动信息</strong></div>
     <div class="body-content">
         <form method="post" class="form-x" action="z_infoAction.php" enctype="multipart/form-data">
             <div class="form-group">
                 <div class="label">
-                    <label>活动名称：</label>
+                    <label><h5><b>活动名称：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input" name="stitle" value=""/>
@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label>活动简介：</label>
+                    <label><h5><b>活动简介：</b></h5></label>
                 </div>
                 <div class="field">
                     <textarea class="input" name="skeywords" style="height:80px"></textarea>
@@ -41,7 +41,7 @@
 
             <div class="form-group">
                 <div class="label">
-                    <label>负责人：</label>
+                    <label><h5><b>负责人：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input" name="s_name" value=""/>
@@ -51,7 +51,7 @@
 
             <div class="form-group">
                 <div class="label">
-                    <label>参赛对象：</label>
+                    <label><h5><b>参赛对象：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input" name="s_tel" value=""/>
@@ -62,7 +62,7 @@
 
             <div class="form-group">
                 <div class="label">
-                    <label>限制人数：</label>
+                    <label><h5><b>限制人数：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input" name="s_qqu" value=""/>
@@ -72,7 +72,7 @@
 
             <div class="form-group">
                 <div class="label">
-                    <label>赛事截止时间：</label>
+                    <label><h5><b>赛事截止时间：</b></h5></label>
                 </div>
                 <div class="label" style="width: auto">
                     <!-- <input type="text" class="input" name="s_time" value="" />-->
@@ -82,7 +82,7 @@
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label>奖项：</label>
+                    <label><h5><b>奖项：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input" name="s_address" value=""/>
@@ -95,7 +95,7 @@
                 <div class="label">
                     <label></label>
                 </div>
-                <div class="field">
+                <div class="field" align="center">
                     <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
                 </div>
             </div>

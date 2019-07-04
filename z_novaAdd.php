@@ -17,13 +17,13 @@ $number = $_GET["number"];
     <script src="js/pintuer.js"></script>
 </head>
 <body>
-<div class="panel admin-panel">
+<div class="panel admin-panel" style="margin-left: 10%;margin-right: 10%">
     <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>替换内容</strong></div>
     <div class="body-content">
         <form method="post" class="form-x" action="z_novaAction.php" enctype="multipart/form-data">
             <div class="form-group">
                 <div class="label">
-                    <label>姓名：</label>
+                    <label><h5><b>姓名：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input w50" value="" name="title" maxlength="50" placeholder="字数请不要超过5"
@@ -35,7 +35,7 @@ $number = $_GET["number"];
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label>图片：</label>
+                    <label><h5><b>图片：</b></h5></label>
                 </div>
                 <div class="field" style="align:center">
                     <input type="file" name="fileField" id="fileField" accept="image/*" data-validate="required:请添加图片"/>
@@ -48,7 +48,7 @@ $number = $_GET["number"];
 
             <div class="form-group">
                 <div class="label">
-                    <label>主办方：</label>
+                    <label><h5><b>主办方：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input w50" name="authour" value="" maxlength="30" placeholder="字数请不要超过30"
@@ -61,7 +61,7 @@ $number = $_GET["number"];
                 <div class="label">
                     <label></label>
                 </div>
-                <div class="field">
+                <div class="field" align="center">
                     <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
                 </div>
             </div>

@@ -322,9 +322,16 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <th class="anchorjs-icon"><font size="4" color="black">成绩</font></th>
                     </tr>
                     <?php
+                    $num_rec_per_page =8;   // 每页显示数量
+                    if (isset($_GET["page"])) {
+                        $page = $_GET["page"];
+                    } else {
+                        $page = 1;
+                    };
+                    $start_from = ($page - 1) * $num_rec_per_page;
                     $sql1 = "select team_name,activity.name,team_prize from team,activity where team.ac_id=activity.id
-                  and team_id in(select distinct team_id from team where cap_sno=$sno union all select distinct team_id from team_mem
-                  where member_sno=$sno) ";
+                  and team_id in(select distinct team_id from team where cap_sno=$sno union select distinct team_id from team_mem
+                  where member_sno=$sno) LIMIT $start_from, $num_rec_per_page";
                     $result1 = $conn->query($sql1);
                     while($rows = mysqli_fetch_array($result1)){
                         ?>
@@ -345,35 +352,32 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         </tr>
                         <?php
                     }
+                    $rs_result = $conn->query("select team_name,activity.name,team_prize from team,activity where team.ac_id=activity.id
+                  and team_id in(select distinct team_id from team where cap_sno=$sno union select distinct team_id from team_mem
+                  where member_sno=$sno) "); //查询数据
+                    $total_records = mysqli_num_rows($rs_result);  // 统计总共的记录条数
+                    $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
                     ?>
-                    <?php
-                    $sql2 = "select team_name,activity.name,team_prize from team,team_mem,activity where member_sno=$sno and team.ac_id=activity.id and team_mem.team_id=team.team_id";
-                    $result2 = $conn->query($sql2);
-                    while($rows2 = mysqli_fetch_array($result2)){
-                        ?>
-                        <tr>
-                            <td class="anchorjs-icon"><font size="4"><?php echo $rows2[0] ?></font></td>
-                            <td class="anchorjs-icon"><font size="4"><?php echo $rows2[1] ?></font></td>
-                            <td class="anchorjs-icon"><font size="4">
-                                    <?php
-                                    if($rows2[2]==0)
-                                        echo "未获奖";
-                                    else if($rows2[2]==1)
-                                        echo "三等奖";
-                                    else if($rows2[2]==2)
-                                        echo "二等奖";
-                                    else if($rows2[2]==3)
-                                        echo "一等奖";
-                                    ?></font></td>
-                        </tr>
-                        <?php
-                    }
-                    ?>
-
                     </tbody>
                 </table>
             </div>
             <div class="clearfix"></div>
+            <div align="center">
+                <tr align="center">
+                    <td colspan="3">
+                        <div class=class="bs-example"><a href="team.php?page=1">首页</a>
+                            <?php
+                            if($total_pages==0)
+                                $total_pages=1;
+                            for ($i = 1; $i <= $total_pages; $i++) { ?>
+                                <a href='team.php?page=<?php echo $i ?>'><?php echo $i ?></a>
+                            <?php } ?>
+
+                            <a href="team.php?page=<?php echo $total_pages ?>">末页</a>
+                        </div>
+                    </td>
+                </tr>
+            </div>
         </div>
     </div>
 </div>

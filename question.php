@@ -4,7 +4,14 @@ include "stateAction.php";
 $rsq = "select * from ruser where sno=$sno";
 $result = $conn->query($rsq);
 $row = mysqli_fetch_array($result);
-$rsq2 = "select * from question where sno=$sno";
+$num_rec_per_page =8;   // 每页显示数量
+if (isset($_GET["page"])) {
+    $page = $_GET["page"];
+} else {
+    $page = 1;
+};
+$start_from = ($page - 1) * $num_rec_per_page;
+$rsq2 = "select * from question where sno=$sno LIMIT $start_from, $num_rec_per_page";
 $result2 = $conn->query($rsq2);
 $i=0;
 ?>
@@ -310,6 +317,7 @@ while($rownums = mysqli_fetch_array($resultnums)){
                             <th class="anchorjs-icon"width="20%"><font size="4" color="black">时间</font></th>
                         </tr>
                         <?php
+
                         while($rows = mysqli_fetch_array($result2)) {
                             ?>
                             <tr>
@@ -319,8 +327,11 @@ while($rownums = mysqli_fetch_array($resultnums)){
                             </tr>
                             <?php
                         }
+                        $rs_result = $conn->query("select * from question where sno=$sno"); //查询数据
+                        $total_records = mysqli_num_rows($rs_result);  // 统计总共的记录条数
+                        $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
+                        mysqli_free_result($result2);
                         ?>
-
                         </tbody>
                     </table>
                 </div>
@@ -334,6 +345,22 @@ while($rownums = mysqli_fetch_array($resultnums)){
                     </div>
             </div>
             <div class="clearfix"></div>
+            <div align="center">
+                <tr align="center">
+                    <td colspan="3">
+                        <div class=class="bs-example"><a href="question.php?page=1">首页</a>
+                            <?php
+                            if($total_pages==0)
+                                $total_pages=1;
+                            for ($i = 1; $i <= $total_pages; $i++) { ?>
+                                <a href='question.php?page=<?php echo $i ?>'><?php echo $i ?></a>
+                            <?php } ?>
+
+                            <a href="question.php?page=<?php echo $total_pages ?>">末页</a>
+                        </div>
+                    </td>
+                </tr>
+            </div>
         </div>
     </div>
 </div>
