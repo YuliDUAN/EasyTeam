@@ -1,7 +1,8 @@
 <?php
 $id = $_GET["id"];
+$ac_id = $_GET["ac_id"];
 include "z_mysql.php";
-$sql = "SELECT name FROM activity where id='$id'";
+$sql = "SELECT team_name,team_cap FROM team where team_id='$id' and ac_id='$ac_id'";
 $result = $conn->query($sql);
 $row = mysqli_fetch_array($result);
 ?>
@@ -21,17 +22,16 @@ $row = mysqli_fetch_array($result);
 </head>
 <body>
 <div class="panel admin-panel">
-    <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>添加或修改<?php echo $row[0] ?>
-            获奖信息</strong></div>
+    <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>修改<?php echo $row[0] ?>
+            队伍获奖信息</strong></div>
     <div class="body-content">
-        <form method="post" class="form-x" action="z_addprizesAction.php?id=<?php echo $id ?>">
+        <form method="post" class="form-x" action="z_addprizesAction.php">
             <div class="form-group">
                 <div class="label">
                     <label>获奖队伍名称：</label>
                 </div>
                 <div class="field">
-                    <input type="text" class="input w50" value="" name="team_name" maxlength="40"
-                           data-validate="required:请输入获奖队伍名称"/>
+                    <input type="text" class="input w50" value="<?php echo $row[0] ?>" name="team_name" disabled/>
                     <div class="tips"></div>
                 </div>
             </div>
@@ -40,8 +40,7 @@ $row = mysqli_fetch_array($result);
                     <label>队长：</label>
                 </div>
                 <div class="field">
-                    <input type="text" class="input w50" value="" name="team_cap" maxlength="20"
-                           data-validate="required:请输入队长名称"/>
+                    <input type="text" class="input w50" value="<?php echo $row[1] ?>" name="team_cap" disabled/>
                     <div class="tips"></div>
                 </div>
             </div>
@@ -67,6 +66,10 @@ $row = mysqli_fetch_array($result);
                     <label></label>
                 </div>
                 <div class="field">
+                    <input type="hidden" name="ac_id" value="<?php echo $ac_id ?>"
+                           style="border-radius: 10px"/>
+                    <input type="hidden" name="id" value="<?php echo $id ?>"
+                           style="border-radius: 10px"/>
                     <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
                 </div>
             </div>

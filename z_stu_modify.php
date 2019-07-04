@@ -27,14 +27,6 @@ $row = mysqli_fetch_array($result);
         <div class="body-content">
             <div class="form-group">
                 <div class="label">
-                    <label>密码：</label>
-                </div>
-                <div class="field">
-                    <input type="text" class="input" name="pass" value="<?php echo $row[0] ?>"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="label">
                     <label>姓名：</label>
                 </div>
                 <div class="field">

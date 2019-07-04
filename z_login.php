@@ -47,6 +47,6 @@
         </div>
     </div>
 </div>
-<script src="js/login_change1.js"></script>
+
 </body>
 </html>

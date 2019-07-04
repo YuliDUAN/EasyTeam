@@ -32,14 +32,18 @@ $row = mysqli_fetch_array($result);
             <th colspan="2">队名</th>
             <th>队长</th>
             <th>学号</th>
-            <th colspan="3">所获奖项</th>
-            <!--            <th>成员</th>-->
-
-            <!--            <th colspan="2">操作</th>-->
+            <th colspan="5">所获奖项</th>
         </tr>
         <?php
         include "z_mysql.php";
-        $sql2 = "SELECT team_id,team_name,team_cap,team_prize,cap_sno FROM team,activity where team.ac_id=activity.id and activity.id='$ac_id' and team_prize in(1,2,3,4) order by team_prize desc";
+        $num_rec_per_page = 4;   // 每页显示数量
+        if (isset($_GET["page"])) {
+            $page = $_GET["page"];
+        } else {
+            $page = 1;
+        };
+        $start_from = ($page - 1) * $num_rec_per_page;
+        $sql2 = "SELECT team_id,team_name,team_cap,team_prize,cap_sno FROM team,activity where team.ac_id=activity.id and activity.id='$ac_id' and team_prize in(1,2,3,4) order by team_prize desc LIMIT $start_from, $num_rec_per_page";
         $result2 = $conn->query($sql2);
         while ($rows = mysqli_fetch_array($result2)) { ?>
             <tr>
@@ -47,7 +51,7 @@ $row = mysqli_fetch_array($result);
                 <td colspan="2"> <?php echo $rows[1] ?></td>
                 <td> <?php echo $rows[2] ?></td>
                 <td> <?php echo $rows[4] ?></td>
-                <td colspan="3"><?php
+                <td colspan="5"><?php
                     if ($rows[3] == 1) {
                         echo "优胜奖";
                     } else if ($rows[3] == 2) {
@@ -60,11 +64,21 @@ $row = mysqli_fetch_array($result);
                     ?></td>
             </tr>
         <?php }
+        $rs_result = $conn->query("SELECT * FROM team,activity where team.ac_id=activity.id and activity.id='$ac_id' and team_prize in(1,2,3,4)"); //查询数据
+        $total_records = mysqli_num_rows($rs_result);  // 统计总共的记录条数
+        $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
         mysqli_free_result($result);
         ?>
         <tr>
-            <td colspan="6">
-                <div class="pagelist"><a>上一页</a> <span class="current">1</span><a>2</a><a>3</a><a>下一页</a><a>尾页</a></div>
+            <td colspan="8">
+                <div class="pagelist"><a href="z_prizeinformation.php?page=1&id=<?php echo $ac_id ?>">首页</a>
+
+                    <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
+                        <a href='z_prizeinformation.php?page=<?php echo $i ?>&id=<?php echo $ac_id ?>'><?php echo $i ?></a>
+                    <?php } ?>
+
+                    <a href="z_prizeinformation.php?page=<?php echo $total_pages ?>&id=<?php echo $ac_id ?>">末页</a>
+                </div>
             </td>
             <td></td>
             <td></td>

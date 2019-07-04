@@ -23,12 +23,12 @@ $name = $_GET["name"];
         <label class="button button-little bg-green"><span class="icon-home"></span> 你好！管理员<?php echo $name ?></label>
         <a class="button button-little bg-red" href="z_login.php"><span class="icon-power-off"></span> 退出登录</a></div>
 </div>
-<div class="leftnav" style="float: left">
+<div class="leftnav">
     <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
     <h2><span class="icon-user"></span>活动管理</h2>
     <ul style="display:block">
 
-        <li><a href="z_frist.php" target="right"><span class="icon-caret-right"></span>首页</a></li>
+        <!--<li><a href="z_frist.php" target="right"><span class="icon-caret-right"></span>首页</a></li>-->
         <li><a href="z_page.php" target="right"><span class="icon-caret-right"></span>活动信息</a></li>
         <li><a href="z_info.php" target="right"><span class="icon-caret-right"></span>活动添加</a></li>
 
@@ -44,9 +44,9 @@ $name = $_GET["name"];
     <h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
     <ul>
         <li><a href="z_list.php" target="right"><span class="icon-caret-right"></span>新闻管理</a></li>
+        <li><a href="z_lecture.php" target="right"><span class="icon-caret-right"></span>宣讲会管理</a></li>
+        <li><a href="z_nova.php" target="right"><span class="icon-caret-right"></span>赛事新星管理</a></li>
 
-        <!--<li><a href="book.html" target="right"><span class="icon-caret-right"></span>无</a></li>-->
-        <!--<li><a href="column.html" target="right"><span class="icon-caret-right"></span>无</a></li>-->
     </ul>
 </div>
 <script type="text/javascript">
@@ -62,12 +62,8 @@ $name = $_GET["name"];
         })
     });
 </script>
-<ul class="bread">
-    <li><a href="z_frist.php" target="right" class="icon-home"> 首页</a></li>
-    <li><a href="##" id="a_leader_txt">网站信息</a></li>
-</ul>
 <div class="admin">
-    <iframe scrolling="auto" rameborder="0" src="z_frist.php" name="right" width="100%" height="100%"></iframe>
+    <iframe scrolling="auto" rameborder="0" src="z_page.php" name="right" width="100%" height="100%"></iframe>
 </div>
 </body>
 </html>

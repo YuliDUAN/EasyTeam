@@ -16,14 +16,6 @@
 <form method="post" action="">
     <div class="panel admin-panel">
         <div class="panel-head"><strong class="icon-reorder"> 活动管理</strong></div>
-        <!--<div class="padding border-bottom">
-          <ul class="search">
-            <li>
-              <button type="button"  class="button border-green" id="checkall"><span class="icon-check"></span> 全选</button>
-              <button type="submit" class="button border-red"><span class="icon-trash-o"></span> 批量删除</button>
-            </li>
-          </ul>
-        </div>-->
 
         <table class="table table-hover text-center">
             <tr>
@@ -31,13 +23,20 @@
                 <th>活动名称</th>
                 <th>主办方</th>
                 <th>活动状态</th>
-                <th>发布时间</th>
+                <th>截止时间</th>
                 <!-- <th width="120">留言时间</th>-->
                 <th colspan="5">操作</th>
             </tr>
             <?php
             include "z_mysql.php";
-            $result = $conn->query("SELECT id,name,host,state,time FROM activity");
+            $num_rec_per_page = 4;   // 每页显示数量
+            if (isset($_GET["page"])) {
+                $page = $_GET["page"];
+            } else {
+                $page = 1;
+            };
+            $start_from = ($page - 1) * $num_rec_per_page;
+            $result = $conn->query("SELECT id,name,host,state,time FROM activity  LIMIT $start_from, $num_rec_per_page");
             while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
                     <td> <?php echo $row[0] ?></td>
@@ -80,14 +79,23 @@
 
                 </tr>
             <?php }
+            $rs_result = $conn->query("SELECT * FROM activity"); //查询数据
+            $total_records = mysqli_num_rows($rs_result);  // 统计总共的记录条数
+            $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
             mysqli_free_result($result);
             ?>
 
 
             <tr>
                 <td colspan="8">
-                    <div class="pagelist"><a href="z_page.php">上一页</a> <span class="current">1</span><a
-                                href="z_page.php">2</a><a href="z_page.php">3</a><a href="z_page.php">下一页</a></div>
+                    <div class="pagelist"><a href="z_page.php?page=1">首页</a>
+
+                        <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
+                            <a href='z_page.php?page=<?php echo $i ?>'><?php echo $i ?></a>
+                        <?php } ?>
+
+                        <a href="z_page.php?page=<?php echo $total_pages ?>">末页</a>
+                    </div>
                 </td>
                 <td></td>
                 <td></td>

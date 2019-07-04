@@ -21,12 +21,6 @@
         <div class="padding border-bottom">
             <ul class="search" style="padding-left:10px;">
                 <li><a class="button border-main icon-plus-square-o" href="z_add.php"> 添加内容</a></li>
-                <!--                <li>搜索：</li>-->
-                <!---->
-                <!--                <li>-->
-                <!--                    <input type="text" placeholder="请输入比赛关键字" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block" />-->
-                <!--                    <a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()" > 搜索</a>-->
-                <!--                </li>-->
             </ul>
         </div>
         <table class="table table-hover text-center">
@@ -41,8 +35,15 @@
             <volist name="list" id="vo">
                 <?php
                 include("z_mysql.php");
+                $num_rec_per_page = 4;   // 每页显示数量
+                if (isset($_GET["page"])) {
+                    $page = $_GET["page"];
+                } else {
+                    $page = 1;
+                };
+                $start_from = ($page - 1) * $num_rec_per_page;
                 $i = 0;
-                $result = $conn->query("SELECT * FROM article order by ar_time desc");
+                $result = $conn->query("SELECT * FROM article order by ar_time desc LIMIT $start_from, $num_rec_per_page");
                 while ($row = mysqli_fetch_array($result)) {
                     ?>
                     <tr>
@@ -61,11 +62,30 @@
                         </td>
                         <!--                    <a class="button border-red" onclick="del();" ><span class="icon-trash-o"></span> 删除</a> </div></td>-->
                     </tr>
-                <?php } ?>
+                <?php }
+                $rs_result = $conn->query("SELECT * FROM article"); //查询数据
+                $total_records = mysqli_num_rows($rs_result);  // 统计总共的记录条数
+                $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
+                mysqli_free_result($result);
+                ?>
                 <!--                <tr>-->
                 <!--                    <td colspan="8"><div class="pagelist"> <a href="z_list.php">上一页</a> <span class="current">1</span><a href="z_list.php">2</a><a href="z_list.php">3</a><a href="z_list.php">下一页</a><a href="z_list.php">尾页</a> </div></td>-->
                 <!--                </tr>-->
             </volist>
+            <tr>
+                <td colspan="8">
+                    <div class="pagelist"><a href="z_list.php?page=1">首页</a>
+
+                        <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
+                            <a href='z_list.php?page=<?php echo $i ?>'><?php echo $i ?></a>
+                        <?php } ?>
+
+                        <a href="z_list.php?page=<?php echo $total_pages ?>">末页</a>
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
         </table>
     </div>
 </form>
