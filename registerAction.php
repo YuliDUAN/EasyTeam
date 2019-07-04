@@ -21,7 +21,7 @@ if (strlen($sno) != 12) {
     echo '<script>alert("请输入6~16位密码！");window.location.href="register.html"</script>';
 } elseif (strlen($username) < 6 || strlen($username) > 12) {
     echo '<script>alert("输入姓名的格式有误！");window.location.href="register.html"</script>';
-}elseif (!empty($_POST)&&!empty($email)) {
+}elseif (empty($email)) {
     echo '<script>alert("邮箱不能为空！");window.location.href="register.html"</script>';
 } elseif (strlen($phone) != 11) {
     echo '<script>alert("输入手机号的格式有误！");window.location.href="register.html"</script>';
