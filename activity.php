@@ -50,6 +50,13 @@ $imgs = 'images/collection_no.png';
             padding: 2px 4px;
 
         }
+        .infoWin {
+            position: fixed;
+            left: 15px;
+            bottom: -10px;
+            width: 70px;
+            height: 120px;
+        }
     </style>
 </head>
 <body>
@@ -174,6 +181,12 @@ echo "<script>var arid = \"$ar_id\"</script>";
             </div>
         </div>
     </div>
+</div>
+<div class="infoWin" align="center">
+    <a href="gallery.php">
+        <img src="images/back.png">
+        <label>返回</label>
+    </a>
 </div>
 <!-- portfolio -->
 <!-- footer start here -->
