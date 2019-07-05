@@ -148,7 +148,7 @@ while($rownums = mysqli_fetch_array($resultnums)){
                     { ?>
                         <tr>
                             <td class="anchorjs-icon"><font size="4"><?php echo $row[1] ?></font></td>
-                            <td class="anchorjs-icon"><font size="4"><?php echo $row[7] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4"><?php echo $row[6] ?></font></td>
                             <td class="type-info"><a href="ranking.php?id=<?php echo $row[0] ?>"><font size="4">查看排名</font></a></td>
                         </tr>
                     <?php }

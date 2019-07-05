@@ -15,11 +15,12 @@ $row = mysqli_fetch_array($result);
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
     <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
@@ -36,7 +37,7 @@ $row = mysqli_fetch_array($result);
           rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
     <style>
-        .gl_sm_list li .sp{
+        .gl_sm_list li .sp {
             position: absolute;
             /* left: 50%; */
             /* top: 4px; */
@@ -51,7 +52,8 @@ $row = mysqli_fetch_array($result);
             padding: 2px 4px;
 
         }
-        .spa{
+
+        .spa {
             position: absolute;
             /* left: 50%; */
             /* top: 4px; */
@@ -73,8 +75,8 @@ $row = mysqli_fetch_array($result);
 $sqlnums = "select * from sendnews where receive_id = $sno and static_news = 0";
 $resultnums = $conn->query($sqlnums);
 $news_nums = array();
-while($rownums = mysqli_fetch_array($resultnums)){
-    array_push($news_nums,$rownums);
+while ($rownums = mysqli_fetch_array($resultnums)) {
+    array_push($news_nums, $rownums);
 }
 ?>
 <!-- banner -->
@@ -114,17 +116,19 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
                         <li><a href="contact.php" class="w3ls-hover active">
                                 <?php
-                                if (!empty($news_nums)){?>
-                                    <?php
-                                    echo '<'.'span class="sp"'.'>';
-                                    echo count($news_nums);
-                                    echo '</'.'span'.'>';
+                                if (!empty($news_nums)) {
                                     ?>
-                                <?php }else{?>
+                                    <?php
+                                    echo '<' . 'span class="sp"' . '>';
+                                    echo count($news_nums);
+                                    echo '</' . 'span' . '>';
+                                    ?>
+                                <?php } else {
+                                    ?>
                                     <?php
                                     echo "";
                                     ?>
-                                <?php }?>
+                                <?php } ?>
                                 个人中心</a></li>
                     </ul>
                     <div class="clearfix"></div>
@@ -137,9 +141,9 @@ while($rownums = mysqli_fetch_array($resultnums)){
 
 <script language="javascript">
     function exit() {
-        var se=confirm("确定退出吗？");
-        if (se==true) {
-            location.href="index.html";
+        var se = confirm("确定退出吗？");
+        if (se == true) {
+            location.href = "index.html";
         }
     }
 </script>
@@ -155,19 +159,24 @@ while($rownums = mysqli_fetch_array($resultnums)){
             <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
                     <label class="file">
-                        <img style="width: 120px;height: 120px;border-radius: 100px" src="<?php echo $row['image'];?>"><span id="text"></span>
+                        <div title="点击修改头像">
+                            <img style="width: 120px;height: 120px;border-radius: 100px"
+                                 src="<?php echo $row['image']; ?>"><span id="text"></span>
+                        </div>
                         <input type="file" name="avatar" id="file" onchange="verificationPicFile(this)">
                     </label>
-                    <li><a href="contact.php"><button id="btn"  style="width: 97.7px"><span>确定修改</span></button></a></li>
+                    <li><a href="contact.php">
+                            <button id="btn" style="width: 97.7px"><span>确定修改</span></button>
+                        </a></li>
 
-                    <?php if (isset($message)):?>
-                    <P style="color: hotpink"><?php echo $message?></P>
+                    <?php if (isset($message)): ?>
+                        <P style="color: hotpink"><?php echo $message ?></P>
                     <?php endif ?>
                     <script language="JavaScript">
                         function verificationPicFile(file) {
-                            var fileTypes = [".jpg",".png"];
+                            var fileTypes = [".jpg", ".png"];
                             var filePath = file.value();
-                            if (filePath){
+                            if (filePath) {
                                 var isNext = false;
                                 var fileEnd = filePath.substring(filePath.indexOf("."));
                                 for (var i = 0; i < fileTypes.length; i++) {
@@ -192,8 +201,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
                             var filePath = file.value;
                             if (filePath) {
                                 fileSize = file.avatar[0].size;
-                                var size = fileSize/1024;
-                                if (size>fileMaxSize){
+                                var size = fileSize / 1024;
+                                if (size > fileMaxSize) {
                                     $GLOBALS['message'] = '文件不能大于1M';
                                     file.value = "";
                                     return false;
@@ -202,14 +211,14 @@ while($rownums = mysqli_fetch_array($resultnums)){
                                     file.value = "";
                                     return false;
                                 }
-                            }else {
+                            } else {
                                 return false;
                             }
                         }
 
-                        function verificationPicFile(){
+                        function verificationPicFile() {
                             var filePath = file.value;
-                            if(filePath){
+                            if (filePath) {
                                 //读取图片数据
                                 var filePic = file.avatar[0];
                                 var reader = new FileReader();
@@ -222,9 +231,9 @@ while($rownums = mysqli_fetch_array($resultnums)){
                                         var height = image.height;
                                         if (width == 120 | height == 120) {
                                             $GLOBALS['message'] = '尺寸符合';
-                                        }else {
+                                        } else {
                                             $GLOBALS['message'] = '尺寸大小应为120*120';
-                                            file.value="";
+                                            file.value = "";
                                             return false;
                                         }
                                     };
@@ -232,14 +241,15 @@ while($rownums = mysqli_fetch_array($resultnums)){
 
                                 };
                                 reader.readAsDataURL(filePic);
-                            }else {
+                            } else {
                                 return false;
                             }
                         }
 
                     </script>
                 </form>
-                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：<?php echo $row['username'];?>
+                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵
+                    称：<?php echo $row['username']; ?>
                 </li>
                 <li><span style="margin-top: 5px" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4
                     级
@@ -249,8 +259,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
             $sqlstatic = "select * from static where capsno=$sno and static_join = 1";
             $resultstatic = $conn->query($sqlstatic);
             $arrstatic = array();
-            while($rowstatic = mysqli_fetch_array($resultstatic)){
-                array_push($arrstatic,$rowstatic);
+            while ($rowstatic = mysqli_fetch_array($resultstatic)) {
+                array_push($arrstatic, $rowstatic);
             }
             ?>
             <div class="left-agileits">
@@ -258,17 +268,17 @@ while($rownums = mysqli_fetch_array($resultnums)){
                     <tr>
                         <td><img class="tubiao" src="images/news.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="news.php"><h4> 消 息</h4></a></span></td>
+                                        href="news.php"><h4> 消 息</h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/rudui.png"></td>
                         <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.php"><h4>
                                         <?php
-                                        if (!empty($arrstatic)){
+                                        if (!empty($arrstatic)) {
                                             echo '<span class="spa">';
                                             echo count($arrstatic);
                                             echo '</span>';
-                                        }else{
+                                        } else {
                                             echo "";
                                         }
                                         ?>
@@ -277,34 +287,35 @@ while($rownums = mysqli_fetch_array($resultnums)){
                     <tr>
                         <td><img class="tubiao" src="images/personal.png"></td>
                         <td style="padding-left: 15px;padding-top: 25px"><span><a
-                                href="contact.php"> <h4> 个 人 信 息 </h4> </a></span></td>
+                                        href="contact.php"> <h4> 个 人 信 息 </h4> </a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/match.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="myjgames.php"> <h4> 我 的 比 赛 </h4></a></span></td>
+                                        href="myjgames.php"> <h4> 我 的 比 赛 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/team.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="team.php"> <h4> 我 的 队 伍 </h4></a></span>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                        href="team.php"> <h4> 我 的 队 伍 </h4></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/evaluate.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
+                                        href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/collection.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
+                                        href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/question.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="question.php"> <h4> 问 题 反 馈 </h4></a></span></td>
+                                        href="question.php"> <h4> 问 题 反 馈 </h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td style="padding-bottom: 20px"><img class="tubiao" src="images/quit.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px">
                             <span onclick="exit()"><a><h4> 退 出 </h4></a></span></td>
@@ -322,7 +333,7 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <th class="anchorjs-icon"><font size="4" color="black">成绩</font></th>
                     </tr>
                     <?php
-                    $num_rec_per_page =8;   // 每页显示数量
+                    $num_rec_per_page = 8;   // 每页显示数量
                     if (isset($_GET["page"])) {
                         $page = $_GET["page"];
                     } else {
@@ -333,14 +344,14 @@ while($rownums = mysqli_fetch_array($resultnums)){
                   and team_id in(select distinct team_id from team where cap_sno=$sno union select distinct team_id from team_mem
                   where member_sno=$sno) LIMIT $start_from, $num_rec_per_page";
                     $result1 = $conn->query($sql1);
-                    while($rows = mysqli_fetch_array($result1)){
+                    while ($rows = mysqli_fetch_array($result1)) {
                         ?>
                         <tr>
                             <td class="anchorjs-icon"><font size="4"><?php echo $rows[0] ?></font></td>
                             <td class="anchorjs-icon"><font size="4"><?php echo $rows[1] ?></font></td>
                             <td class="anchorjs-icon"><font size="4">
                                     <?php
-                                    if($rows[3]==0) {
+                                    if ($rows[3] == 0) {
                                         if ($rows[2] == 0)
                                             echo "未获奖";
                                         else if ($rows[2] == 1)
@@ -351,7 +362,7 @@ while($rownums = mysqli_fetch_array($resultnums)){
                                             echo "二等奖";
                                         else if ($rows[2] == 4)
                                             echo "一等奖";
-                                    }else{
+                                    } else {
                                         echo "";
                                     }
 
@@ -374,8 +385,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
                     <td colspan="3">
                         <div class=class="bs-example"><a href="team.php?page=1">首页</a>
                             <?php
-                            if($total_pages==0)
-                                $total_pages=1;
+                            if ($total_pages == 0)
+                                $total_pages = 1;
                             for ($i = 1; $i <= $total_pages; $i++) { ?>
                                 <a href='team.php?page=<?php echo $i ?>'><?php echo $i ?></a>
                             <?php } ?>

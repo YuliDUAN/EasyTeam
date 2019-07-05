@@ -7,7 +7,7 @@ include "MySqlConnect.php";
  * Date: 2019/6/25
  * Time: 21:38
  */
-if($_SERVER['REQUEST_METHOD']=='POST'){
+if($_SERVER['REQUEST_METHOD']=='POST'&&!isset($_FILES['avatar'])){
     //var_dump($_FILES);
     if (!isset($_FILES['avatar'])){
         $GLOBALS['message'] = '未上传文件';
@@ -30,5 +30,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $sql = "update ruser set image='$target' where sno='$sno'";
     $result = $conn->query($sql);
     header("location:contact.php");
+}else{
+    echo "<script>alert('未上传头像');window.location.href='contact.php'</script>";
 }
+
 ?>

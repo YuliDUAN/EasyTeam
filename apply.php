@@ -2,7 +2,7 @@
 $id = $_GET["id"];
 include "MySqlConnect.php";
 include "stateAction.php";
-$sql = "select * from forum,ruser where ruser.sno = forum.uid and ac_id='$id' order by ctime";
+$sql = "select * from forum,ruser where ac_id='$id' and ruser.sno = forum.uid order by ctime";
 $result = $conn->query($sql);
 $arownews = array();
 while ($geren = mysqli_fetch_array($result)) {
@@ -189,7 +189,7 @@ $a_id = $row[6];
         <div style="width:100%">
             <div style="float: left;width:20%;height:430px;border-radius: 10px;background-color: #ffffff;padding: 20px">
                 <div align="center">
-                    <img src="images/t21.jpg" width="40%" height="auto"/>
+                    <img src="images/t21.jpg" width="60%" height="auto" style="border-radius: 100px"/>
                 </div>
                 <div style="padding: 20px">
                     <p><font size="3.5"><b>发布者：</b></font></p>
@@ -284,7 +284,7 @@ $a_id = $row[6];
 
             <div style="width:100%">
                 <div style="float: left;width:20%;height:400px;border-radius: 10px;background-color:  #ffffff;padding: 20px;border-bottom:6px solid #ddd">
-                    <div align="center">
+                    <div align="center" title="点击查看信息">
                         <a href="
                         <?php
                         if ($sno == $row['uid']) {
@@ -293,9 +293,9 @@ $a_id = $row[6];
                             echo 'leaveword_other.php';
                         }
                         ?>?uid=<?php echo $row['uid']; ?>&id=<?php echo $id ?>"><img src="<?php echo $row["image"]; ?>"
-                                                                                     width="60px" height="60px"/></a>
+                                                                                     width="50%" height="auto" style="border-radius: 100px"/></a>
                     </div>
-                    <div style="padding-top: 20px">
+                    <div style="padding-top: 0px">
                         <table style="border-collapse:separate; border-spacing:0px 10px;">
                             <tr>
                                 <td><h5><?php echo $i . '楼：'; ?></h5></td>

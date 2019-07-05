@@ -37,7 +37,7 @@ $row = mysqli_fetch_array($result);
           rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
     <style>
-        .gl_sm_list li .sp{
+        .gl_sm_list li .sp {
             position: absolute;
             /* left: 50%; */
             /* top: 4px; */
@@ -52,7 +52,8 @@ $row = mysqli_fetch_array($result);
             padding: 2px 4px;
 
         }
-        .spa{
+
+        .spa {
             position: absolute;
             /* left: 50%; */
             /* top: 4px; */
@@ -73,8 +74,8 @@ $row = mysqli_fetch_array($result);
 $sqlnums = "select * from sendnews where receive_id = $sno and static_news = 0";
 $resultnums = $conn->query($sqlnums);
 $news_nums = array();
-while($rownums = mysqli_fetch_array($resultnums)){
-    array_push($news_nums,$rownums);
+while ($rownums = mysqli_fetch_array($resultnums)) {
+    array_push($news_nums, $rownums);
 }
 ?>
 <!-- banner -->
@@ -115,17 +116,19 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
                         <li><a href="contact.php" class="w3ls-hover active">
                                 <?php
-                                if (!empty($news_nums)){?>
-                                    <?php
-                                    echo '<'.'span class="sp"'.'>';
-                                    echo count($news_nums);
-                                    echo '</'.'span'.'>';
+                                if (!empty($news_nums)) {
                                     ?>
-                                <?php }else{?>
+                                    <?php
+                                    echo '<' . 'span class="sp"' . '>';
+                                    echo count($news_nums);
+                                    echo '</' . 'span' . '>';
+                                    ?>
+                                <?php } else {
+                                    ?>
                                     <?php
                                     echo "";
                                     ?>
-                                <?php }?>
+                                <?php } ?>
                                 个人中心</a></li>
                     </ul>
                     <div class="clearfix"></div>
@@ -155,7 +158,10 @@ while($rownums = mysqli_fetch_array($resultnums)){
             <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
                     <label class="file">
-                        <img style="width: 120px;height: 120px;border-radius: 100px" src="<?php echo $row['image'];?>"><span id="text"></span>
+                        <div title="点击修改头像">
+                            <img style="width: 120px;height: 120px;border-radius: 100px"
+                                 src="<?php echo $row['image']; ?>"><span id="text"></span>
+                        </div>
                         <input type="file" name="avatar" id="file" onchange="verificationPicFile(this)">
                     </label>
                     <li><a href="contact.php">
@@ -249,8 +255,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
             $sqlstatic = "select * from static where capsno=$sno and static_join = 1";
             $resultstatic = $conn->query($sqlstatic);
             $arrstatic = array();
-            while($rowstatic = mysqli_fetch_array($resultstatic)){
-                array_push($arrstatic,$rowstatic);
+            while ($rowstatic = mysqli_fetch_array($resultstatic)) {
+                array_push($arrstatic, $rowstatic);
             }
             ?>
             <div class="left-agileits">
@@ -265,11 +271,11 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <td style="padding-left: 15px;padding-top: 25px"><span><a
                                         href="teamApply.php"><h4>
                                         <?php
-                                        if (!empty($arrstatic)){
+                                        if (!empty($arrstatic)) {
                                             echo '<span class="spa">';
                                             echo count($arrstatic);
                                             echo '</span>';
-                                        }else{
+                                        } else {
                                             echo "";
                                         }
                                         ?>
@@ -316,7 +322,7 @@ while($rownums = mysqli_fetch_array($resultnums)){
         <div class="agileits_mail_grids">
             <div class="col-md-7 agileits_mail_grid_left">
                 <?php
-                $num_rec_per_page =8;   // 每页显示数量
+                $num_rec_per_page = 8;   // 每页显示数量
                 if (isset($_GET["page"])) {
                     $page = $_GET["page"];
                 } else {
@@ -333,17 +339,17 @@ while($rownums = mysqli_fetch_array($resultnums)){
                 <?php foreach ($arr as $r) { ?>
                     <div style="width:24%;height:170px;padding: 10px;margin-top:30px;border-radius:10px;float:left;background-color: #ffffff">
                         <div style="margin-bottom: 15px" align="center">
-                            <img src="<?php echo $r['image'];?>" width="60" height="60"/>
+                            <img src="<?php echo $r['image']; ?>" width="60" height="60"/>
                         </div>
                         <div>
                             <p><h5>留言人：</h5></p>
-                            <p><h5 align="center"><?php echo $r['username'];?></h5></p>
+                            <p><h5 align="center"><?php echo $r['username']; ?></h5></p>
                             <p><h5>时间：</h5></p>
-                            <p><h5 align="center"><?php echo $r['lmtime'];?></h5></p>
+                            <p><h5 align="center"><?php echo $r['lmtime']; ?></h5></p>
                         </div>
                     </div>
                     <div style="width:74%;height:170px;padding: 20px;margin-top:30px;float: right;background-color: #ffffff;border-radius: 10px;word-break: break-all;overflow-y:auto">
-                        <h4><?php echo $r['lmessage'];?></h4>
+                        <h4><?php echo $r['lmessage']; ?></h4>
                     </div>
                 <?php }
                 $rs_result = $conn->query("select * from lvmessage,ruser where lmsno = $sno and sno=selfsno "); //查询数据
@@ -359,8 +365,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <td colspan="3">
                             <div class=class="bs-example"><a href="leaveword.php?page=1">首页</a>
                                 <?php
-                                if($total_pages==0)
-                                    $total_pages=1;
+                                if ($total_pages == 0)
+                                    $total_pages = 1;
                                 for ($i = 1; $i <= $total_pages; $i++) { ?>
                                     <a href='leaveword.php?page=<?php echo $i ?>'><?php echo $i ?></a>
                                 <?php } ?>

@@ -192,14 +192,14 @@ while($rownums = mysqli_fetch_array($resultnums)){
                                     $resultstatic = $conn->query($sqlstatic);
                                     $rowstatic = mysqli_fetch_array($resultstatic);
                                     if ($rowstatic['static_join']==3){
-                                        echo '<button style="background-color: transparent;border: transparent"><a style="color: red"><b>已拒绝</b></a></button>';
+                                        echo '<input type="button" style="background-color: transparent;border: transparent"><a style="color: red"><b>已拒绝</b></a></button>';
                                     }
                                     elseif ($rowstatic['static_join']==1){
-                                        echo '<button style="background-color: transparent;border: transparent"><a style="color: orange"><b>申请中...</b></a></button>
+                                        echo '<input type="button" style="background-color: transparent;border: transparent"><a style="color: orange"><b>申请中...</b></a></input>
                                         <button style="background-color: transparent;border: transparent;margin-left: 50px"><a style="color: red">取消</a> </button>';
                                     }
                                     elseif ($rowstatic['static_join']==2){
-                                        echo '<button style="background-color: transparent;border: transparent"><a style="color: #66fa41"><b>已加入</b></a></button>';
+                                        echo '<input type="button" style="background-color: transparent;border: transparent"><a style="color: #66fa41"><b>已加入</b></a></input>';
                                     }
                                     else{
                                         echo '<button style="background-color: transparent;border: transparent"><a style="color: blue"><b>申请加入</b></a></button>';

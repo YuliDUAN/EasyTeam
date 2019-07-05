@@ -35,7 +35,7 @@
             <th>姓名</th>
             <th>性别</th>
             <th>电话</th>
-            <th>学院</th>
+<!--            <th>学院</th>-->
             <th>专业</th>
             <th>班级</th>
             <!-- <th width="120">留言时间</th>-->
@@ -59,7 +59,7 @@
                 <td> <?php echo $row[1] ?></td>
                 <td> <?php echo $row[2] ?></td>
                 <td> <?php echo $row[3] ?></td>
-                <td> <?php echo $row[4] ?></td>
+<!--                <td> --><?php //echo $row[4] ?><!--</td>-->
                 <td> <?php echo $row[5] ?></td>
                 <td> <?php echo $row[6] ?></td>
                 <td colspan="3">

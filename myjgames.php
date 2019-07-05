@@ -12,13 +12,19 @@ $row = mysqli_fetch_array($result);
     <link rel="shortcut icon" href="images/logo.ico">
     <title>我的比赛</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
     <!-- Custom Theme files -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" property="" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" property=""/>
     <!-- //Custom Theme files -->
     <!-- font-awesome icons -->
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -27,10 +33,11 @@ $row = mysqli_fetch_array($result);
     <script src="js/jquery-2.2.3.min.js"></script>
     <!-- //js -->
     <!-- web-fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
     <style>
-        .gl_sm_list li .sp{
+        .gl_sm_list li .sp {
             position: absolute;
             /* left: 50%; */
             /* top: 4px; */
@@ -45,7 +52,8 @@ $row = mysqli_fetch_array($result);
             padding: 2px 4px;
 
         }
-        .spa{
+
+        .spa {
             position: absolute;
             /* left: 50%; */
             /* top: 4px; */
@@ -67,8 +75,8 @@ $row = mysqli_fetch_array($result);
 $sqlnums = "select * from sendnews where receive_id = $s_id and static_news = 0";
 $resultnums = $conn->query($sqlnums);
 $news_nums = array();
-while($rownums = mysqli_fetch_array($resultnums)){
-    array_push($news_nums,$rownums);
+while ($rownums = mysqli_fetch_array($resultnums)) {
+    array_push($news_nums, $rownums);
 }
 ?>
 <div class="banner-1">
@@ -83,7 +91,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
                 </div>
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -96,7 +105,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="homepage.php" class="btn w3ls-hover">首页</a></li>
                         <li><a href="gallery.php" class="btn w3ls-hover">校园趣事</a></li>
-                        <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
+                        <li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">校园赛事 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="icons.php">正在进行</a></li>
                                 <li><a href="codes.php">已经结束</a></li>
@@ -105,20 +115,22 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
                         <li><a href="contact.php" class="w3ls-hover active">
                                 <?php
-                                if (!empty($news_nums)){?>
-                                    <?php
-                                    echo '<'.'span class="sp"'.'>';
-                                    echo count($news_nums);
-                                    echo '</'.'span'.'>';
+                                if (!empty($news_nums)) {
                                     ?>
-                                <?php }else{?>
+                                    <?php
+                                    echo '<' . 'span class="sp"' . '>';
+                                    echo count($news_nums);
+                                    echo '</' . 'span' . '>';
+                                    ?>
+                                <?php } else {
+                                    ?>
                                     <?php
                                     echo "";
                                     ?>
-                                <?php }?>
+                                <?php } ?>
                                 个人中心</a></li>
                     </ul>
-                    <div class="clearfix"> </div>
+                    <div class="clearfix"></div>
                 </div><!-- //navbar-collapse -->
             </div><!-- //container-fluid -->
         </nav>
@@ -128,9 +140,9 @@ while($rownums = mysqli_fetch_array($resultnums)){
 
 <script language="javascript">
     function exit() {
-        var se=confirm("确定退出吗？");
-        if (se==true) {
-            location.href="index.html";
+        var se = confirm("确定退出吗？");
+        if (se == true) {
+            location.href = "index.html";
         }
     }
 </script>
@@ -146,19 +158,24 @@ while($rownums = mysqli_fetch_array($resultnums)){
             <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
                     <label class="file">
-                        <img style="width: 120px;height: 120px;border-radius: 100px" src="<?php echo $row['image'];?>"><span id="text"></span>
+                        <div title="点击修改头像">
+                            <img style="width: 120px;height: 120px;border-radius: 100px"
+                                 src="<?php echo $row['image']; ?>"><span id="text"></span>
+                        </div>
                         <input type="file" name="avatar" id="file" onchange="verificationPicFile(this)">
                     </label>
-                    <li><a href="contact.php"><button id="btn"  style="width: 97.7px"><span>确定修改</span></button></a></li>
+                    <li><a href="contact.php">
+                            <button id="btn" style="width: 97.7px"><span>确定修改</span></button>
+                        </a></li>
 
-                    <?php if (isset($message)):?>
-                    <P style="color: hotpink"><?php echo $message?></P>
+                    <?php if (isset($message)): ?>
+                        <P style="color: hotpink"><?php echo $message ?></P>
                     <?php endif ?>
                     <script language="JavaScript">
                         function verificationPicFile(file) {
-                            var fileTypes = [".jpg",".png"];
+                            var fileTypes = [".jpg", ".png"];
                             var filePath = file.value();
-                            if (filePath){
+                            if (filePath) {
                                 var isNext = false;
                                 var fileEnd = filePath.substring(filePath.indexOf("."));
                                 for (var i = 0; i < fileTypes.length; i++) {
@@ -183,8 +200,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
                             var filePath = file.value;
                             if (filePath) {
                                 fileSize = file.avatar[0].size;
-                                var size = fileSize/1024;
-                                if (size>fileMaxSize){
+                                var size = fileSize / 1024;
+                                if (size > fileMaxSize) {
                                     $GLOBALS['message'] = '文件不能大于1M';
                                     file.value = "";
                                     return false;
@@ -193,14 +210,14 @@ while($rownums = mysqli_fetch_array($resultnums)){
                                     file.value = "";
                                     return false;
                                 }
-                            }else {
+                            } else {
                                 return false;
                             }
                         }
 
-                        function verificationPicFile(){
+                        function verificationPicFile() {
                             var filePath = file.value;
-                            if(filePath){
+                            if (filePath) {
                                 //读取图片数据
                                 var filePic = file.avatar[0];
                                 var reader = new FileReader();
@@ -213,9 +230,9 @@ while($rownums = mysqli_fetch_array($resultnums)){
                                         var height = image.height;
                                         if (width == 120 | height == 120) {
                                             $GLOBALS['message'] = '尺寸符合';
-                                        }else {
+                                        } else {
                                             $GLOBALS['message'] = '尺寸大小应为120*120';
-                                            file.value="";
+                                            file.value = "";
                                             return false;
                                         }
                                     };
@@ -223,70 +240,79 @@ while($rownums = mysqli_fetch_array($resultnums)){
 
                                 };
                                 reader.readAsDataURL(filePic);
-                            }else {
+                            } else {
                                 return false;
                             }
                         }
 
                     </script>
                 </form>
-                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵 称：<?php echo $row['username'];?></li>
-                <li><span style="margin-top: 5px" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4 级</li>
+                <li><span style="margin-top: 5px" class="glyphicon glyphicon-home" aria-hidden="true"></span> 昵
+                    称：<?php echo $row['username']; ?></li>
+                <li><span style="margin-top: 5px" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4
+                    级
+                </li>
             </div>
             <?php
             $sqlstatic = "select * from static where capsno=$sno and static_join = 1";
             $resultstatic = $conn->query($sqlstatic);
             $arrstatic = array();
-            while($rowstatic = mysqli_fetch_array($resultstatic)){
-                array_push($arrstatic,$rowstatic);
+            while ($rowstatic = mysqli_fetch_array($resultstatic)) {
+                array_push($arrstatic, $rowstatic);
             }
             ?>
             <div class="left-agileits">
                 <table>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/news.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="news.php"><h4> 消 息</h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                        href="news.php"><h4> 消 息</h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/rudui.png"></td>
                         <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.php"><h4>
                                         <?php
-                                        if (!empty($arrstatic)){
+                                        if (!empty($arrstatic)) {
                                             echo '<span class="spa">';
                                             echo count($arrstatic);
                                             echo '</span>';
-                                        }else{
+                                        } else {
                                             echo "";
                                         }
                                         ?>
                                         入 队 申 请 </h4> </a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/personal.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="contact.php"> <h4> 个 人 信 息 </h4> </a></span></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="contact.php"> <h4> 个 人 信 息 </h4> </a></span>
+                        </td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/match.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="myjgames.php"> <h4> 我 的 比 赛 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                        href="myjgames.php"> <h4> 我 的 比 赛 </h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/team.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="team.php"> <h4> 我 的 队 伍 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                        href="team.php"> <h4> 我 的 队 伍 </h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/evaluate.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                        href="leaveword.php"><h4> 留 言 版 块 </h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td><img class="tubiao" src="images/collection.png"></td>
-                        <td style="padding-left: 15px ;padding-top: 25px"><span><a href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
+                        <td style="padding-left: 15px ;padding-top: 25px"><span><a
+                                        href="collect.php"> <h4> 我 的 收 藏 </h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/question.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                href="question.php"> <h4> 问 题 反 馈 </h4></a></span></td>
+                                        href="question.php"> <h4> 问 题 反 馈 </h4></a></span></td>
                     </tr>
-                    <tr >
+                    <tr>
                         <td style="padding-bottom: 20px"><img class="tubiao" src="images/quit.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px;padding-bottom: 20px">
                             <span onclick="exit()"><a><h4> 退 出 </h4></a></span></td>
@@ -304,20 +330,20 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         <th class="anchorjs-icon"><font size="4" color="black">主办方</font></th>
                     </tr>
                     <?php
-                    $num_rec_per_page =8;   // 每页显示数量
+                    $num_rec_per_page = 8;   // 每页显示数量
                     if (isset($_GET["page"])) {
                         $page = $_GET["page"];
                     } else {
                         $page = 1;
                     };
                     $start_from = ($page - 1) * $num_rec_per_page;
-                    $sql2="select distinct ac_id from team where 
+                    $sql2 = "select distinct ac_id from team where 
                   team_id in(select team_id from team where cap_sno=$s_id union select team_id from team_mem
                   where member_sno=$s_id) LIMIT $start_from, $num_rec_per_page ";
                     $result2 = $conn->query($sql2);
-                    while($rows2 = mysqli_fetch_array($result2)){
-                        $sql1="select name,time,host from activity where id=$rows2[0]";
-                        $result1=$conn->query($sql1);
+                    while ($rows2 = mysqli_fetch_array($result2)) {
+                        $sql1 = "select name,time,host from activity where id=$rows2[0]";
+                        $result1 = $conn->query($sql1);
                         $rows = mysqli_fetch_array($result1);
                         ?>
                         <tr>
@@ -339,20 +365,20 @@ while($rownums = mysqli_fetch_array($resultnums)){
             </div>
             <div class="clearfix"></div>
             <div align="center">
-            <tr align="center">
-                <td colspan="3">
-                    <div class=class="bs-example"><a href="myjgames.php?page=1">首页</a>
-                        <?php
-                        if($total_pages==0)
-                            $total_pages=1;
-                        for ($i = 1; $i <= $total_pages; $i++) { ?>
-                            <a href='myjgames.php?page=<?php echo $i ?>'><?php echo $i ?></a>
-                        <?php } ?>
+                <tr align="center">
+                    <td colspan="3">
+                        <div class=class="bs-example"><a href="myjgames.php?page=1">首页</a>
+                            <?php
+                            if ($total_pages == 0)
+                                $total_pages = 1;
+                            for ($i = 1; $i <= $total_pages; $i++) { ?>
+                                <a href='myjgames.php?page=<?php echo $i ?>'><?php echo $i ?></a>
+                            <?php } ?>
 
-                        <a href="myjgames.php?page=<?php echo $total_pages ?>">末页</a>
-                    </div>
-                </td>
-            </tr>
+                            <a href="myjgames.php?page=<?php echo $total_pages ?>">末页</a>
+                        </div>
+                    </td>
+                </tr>
             </div>
         </div>
     </div>
@@ -363,7 +389,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
         <div class="modal-content">
             <div class="modal-header">
                 <i class="fa fa-pagelines" aria-hidden="true"></i>APP创意设计大赛
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <section>
                 <div class="modal-body">
@@ -404,7 +431,7 @@ while($rownums = mysqli_fetch_array($resultnums)){
                     <li><a href="mailto:info@example.com"> 123 @qq.com</a></li>
                 </ul>
             </div>
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
         </div>
         <div class="copy-right">
             <p>App &copy; 2019.创意实验室 <a href="#" target="_blank" title="App创意实验室">App创意实验室</a></p>
@@ -415,10 +442,10 @@ while($rownums = mysqli_fetch_array($resultnums)){
 <!-- FlexSlider -->
 <script defer src="js/jquery.flexslider.js"></script>
 <script type="text/javascript">
-    $(window).load(function(){
+    $(window).load(function () {
         $('.flexslider').flexslider({
             animation: "slide",
-            start: function(slider){
+            start: function (slider) {
                 $('body').removeClass('loading');
             }
         });
@@ -427,9 +454,9 @@ while($rownums = mysqli_fetch_array($resultnums)){
 <!-- End-slider-script -->
 <!-- Flexslider-js for-testimonials -->
 <script type="text/javascript">
-    $(window).load(function() {
+    $(window).load(function () {
         $("#flexiselDemo1").flexisel({
-            visibleItems:1,
+            visibleItems: 1,
             animationSpeed: 1000,
             autoPlay: true,
             autoPlaySpeed: 3000,
@@ -437,15 +464,15 @@ while($rownums = mysqli_fetch_array($resultnums)){
             enableResponsiveBreakpoints: true,
             responsiveBreakpoints: {
                 portrait: {
-                    changePoint:480,
+                    changePoint: 480,
                     visibleItems: 1
                 },
                 landscape: {
-                    changePoint:640,
-                    visibleItems:1
+                    changePoint: 640,
+                    visibleItems: 1
                 },
                 tablet: {
-                    changePoint:768,
+                    changePoint: 768,
                     visibleItems: 1
                 }
             }
@@ -461,21 +488,21 @@ while($rownums = mysqli_fetch_array($resultnums)){
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
             event.preventDefault();
 
-            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
         });
     });
 </script>
 <!-- //end-smooth-scrolling   -->
 <!-- smooth-scrolling-of-move-up -->
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
 
 
-        $().UItoTop({ easingType: 'easeOutQuart' });
+        $().UItoTop({easingType: 'easeOutQuart'});
 
     });
 </script>

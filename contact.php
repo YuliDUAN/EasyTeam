@@ -52,7 +52,8 @@ $row = mysqli_fetch_array($result);
             padding: 2px 4px;
 
         }
-        .spa{
+
+        .spa {
             position: absolute;
             /* left: 50%; */
             /* top: 4px; */
@@ -157,7 +158,10 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
             <div class="center_droc" align="center">
                 <form enctype="multipart/form-data" method="post" action="contactImageAction.php">
                     <label class="file">
-                        <img style="width: 120px;height: 120px;border-radius: 100px" src="<?php echo $row['image'];?>"><span id="text"></span>
+                        <div title="点击修改头像">
+                            <img style="width: 120px;height: 120px;border-radius: 100px"
+                                 src="<?php echo $row['image']; ?>"><span id="text"></span>
+                        </div>
                         <input type="file" name="avatar" id="file" onchange="verificationPicFile(this)">
                     </label>
                     <li><a href="contact.php">
@@ -254,8 +258,8 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
             $sqlstatic = "select * from static where capsno=$sno and static_join = 1";
             $resultstatic = $conn->query($sqlstatic);
             $arrstatic = array();
-            while($rowstatic = mysqli_fetch_array($resultstatic)){
-                array_push($arrstatic,$rowstatic);
+            while ($rowstatic = mysqli_fetch_array($resultstatic)) {
+                array_push($arrstatic, $rowstatic);
             }
             ?>
             <div class="left-agileits">
@@ -270,11 +274,11 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                         <td style="padding-left: 15px;padding-top: 25px"><span><a
                                         href="teamApply.php"><h4>
                                         <?php
-                                        if (!empty($arrstatic)){
+                                        if (!empty($arrstatic)) {
                                             echo '<span class="spa">';
                                             echo count($arrstatic);
                                             echo '</span>';
-                                        }else{
+                                        } else {
                                             echo "";
                                         }
                                         ?>
