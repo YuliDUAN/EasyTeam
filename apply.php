@@ -189,7 +189,7 @@ $a_id = $row[6];
         <div style="width:100%">
             <div style="float: left;width:20%;height:430px;border-radius: 10px;background-color: #ffffff;padding: 20px">
                 <div align="center">
-                    <img src="images/t21.jpg" width="60%" height="auto" style="border-radius: 100px"/>
+                    <img src="images/t21.jpg" width="120px" height="120px" style="border-radius: 100px"/>
                 </div>
                 <div style="padding: 20px">
                     <p><font size="3.5"><b>发布者：</b></font></p>
@@ -293,7 +293,7 @@ $a_id = $row[6];
                             echo 'leaveword_other.php';
                         }
                         ?>?uid=<?php echo $row['uid']; ?>&id=<?php echo $id ?>"><img src="<?php echo $row["image"]; ?>"
-                                                                                     width="50%" height="auto" style="border-radius: 100px"/></a>
+                                                                                     width="100px" height="100px" style="border-radius: 100px"/></a>
                     </div>
                     <div style="padding-top: 0px">
                         <table style="border-collapse:separate; border-spacing:0px 10px;">
