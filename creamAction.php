@@ -16,20 +16,22 @@ $_POST['submit'];
 
 $ac_id = $_POST["ac_id"];
 $name = $_POST["name"];
-
 if (!empty($_POST["name"])&&!empty($_POST)) {
-    $sql = "select * from team where team_name='$name' and team_cap='$row[0]'";
+    $sql = "select * from team where ac_id=$ac_id and cap_sno=$sno ";
     $result = $conn->query($sql);
     $nums = mysqli_num_rows($result);
     if (!empty($nums)) {
-        echo "<script>alert('队伍已存在！');window.location.href=\"cteam.php?id=<?php echo $ac_id?>\"</script>";
+        echo "<script>var d = \"$ac_id\"</script>";
+        echo "<script >alert('您已创建过队伍，不可重复创建');window.location.href=\"apply.php?id=\"+d</script>";
     } else {
+        echo "<script>var d = \"$ac_id\"</script>";
         $result = $conn->query("insert into team(ac_id,team_name,team_cap,cap_sno,team_tel) values ('$ac_id','$name','$row[0]','$sno','$row[1]')");
-        echo "<script >alert('创建成功');location.href='icons.php';</script>";
+        echo "<script >alert('创建成功');window.location.href=\"apply.php?id=\"+d</script>";
     }
 
 } else {
-    echo '<script>alert("输入的内容不能为空！");window.location.href=\"cteam.php?id=<?php echo $ac_id?>\"</script>';
+    echo "<script>var d = \"$ac_id\"</script>";
+    echo '<script>alert("输入的内容不能为空！");window.location.href="apply.php?id="+d;</script>';
 }
-mysqli_free_result($result);
+
 ?>

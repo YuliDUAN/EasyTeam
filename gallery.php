@@ -280,13 +280,6 @@ while($rownums = mysqli_fetch_array($resultnums)){
             <div class="bs-example">
                 <table class="table">
                     <tbody>
-                    <tr>
-                        <td class="anchorjs-icon"><font size="4" color="black"><b>“弘扬五四精神&nbsp;构建诚信校园”主题演讲比赛</b></font>
-                            <br/><font color="#a9a9a9" size="3">加强对学生的诚信教育，提升我院学生整体德育水平，弘扬中华民族的传统美德。</font>
-                        </td>
-                        <td class="anchorjs-icon"><font size="4">2019-05-29</font></td>
-                        <td class="anchorjs-icon"><font size="4"><a href="file.php">详情了解&#x3e;&#x3e;</a></font></td>
-                    </tr>
                     <?php
                     include("MySqlConnect.php");
                     $num_rec_per_page =8;   // 每页显示数量
