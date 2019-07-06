@@ -68,6 +68,7 @@ $row = mysqli_fetch_array($result);
             vertical-align: 10px;
             padding: 2px 4px;
         }
+
     </style>
 </head>
 <body>
@@ -77,6 +78,14 @@ $resultnums = $conn->query($sqlnums);
 $news_nums = array();
 while ($rownums = mysqli_fetch_array($resultnums)) {
     array_push($news_nums, $rownums);
+}
+?>
+<?php
+$sqlstatic = "select * from static where capsno=$sno and static_join = 1";
+$resultstatic = $conn->query($sqlstatic);
+$arrstatic = array();
+while ($rowstatic = mysqli_fetch_array($resultstatic)) {
+    array_push($arrstatic, $rowstatic);
 }
 ?>
 <!-- banner -->
@@ -114,13 +123,13 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                             </ul>
                         </li>
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" class="w3ls-hover active">
+                        <li><a href="news.php" class="w3ls-hover active">
                                 <?php
                                 if (!empty($news_nums)) {
                                     ?>
                                     <?php
                                     echo '<' . 'span class="sp"' . '>';
-                                    echo count($news_nums);
+                                    echo count($news_nums)+count($arrstatic);
                                     echo '</' . 'span' . '>';
                                     ?>
                                 <?php } else {
@@ -263,20 +272,22 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                     级
                 </li>
             </div>
-            <?php
-            $sqlstatic = "select * from static where capsno=$sno and static_join = 1";
-            $resultstatic = $conn->query($sqlstatic);
-            $arrstatic = array();
-            while ($rowstatic = mysqli_fetch_array($resultstatic)) {
-                array_push($arrstatic, $rowstatic);
-            }
-            ?>
             <div class="left-agileits">
                 <table>
                     <tr>
                         <td><img class="tubiao" src="images/news.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                        href="news.php"><h4> 消 息</h4></a></span></td>
+                                        href="news.php"><h4>
+                                        <?php
+                                        if (!empty($news_nums)) {
+                                            echo '<span class="spa">';
+                                            echo count($news_nums);
+                                            echo '</span>';
+                                        } else {
+                                            echo "";
+                                        }
+                                        ?>
+                                        消 息</h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/rudui.png"></td>
@@ -359,14 +370,14 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                                     <?php
                                     if ($r['static_join']==1){
                                         echo '<a href="javascript:" onclick="toAgree(this)" id="enter" class="';
-                                        echo $r['membersno'].$r['capsno'].$r['tm_id'];
+                                        echo $r['membersno'].','.$r['capsno'].','.$r['tm_id'];
                                         echo '" data-type="';
-                                        echo $r['tm_id'];
+                                        echo $r['membersno'].','.$r['capsno'].','.$r['tm_id'];
                                         echo '">同意</a>/';
                                         echo '<a href="javascript:" onclick="toRefuse(this)" class="';
-                                        echo $r['membersno'].$r['capsno'].$r['tm_id'].'r';
+                                        echo $r['membersno'].','.$r['capsno'].','.$r['tm_id'];
                                         echo '" data-type="';
-                                        echo $r['tm_id'];
+                                        echo $r['membersno'].','.$r['capsno'].','.$r['tm_id'];
                                         echo '"><span>拒绝</span></a>';
                                     }elseif ($r['static_join']==2){
                                         echo '<a>已同意</a>';
@@ -374,54 +385,34 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                                         echo '<a>已拒绝</a>';
                                     }
                                     ?>
-                                    <!--                                    <a>同意</a>-->
-                                    <!--                                    <a href="javascript:" onclick="toRefuse(this)" class="--><?php
-                                    //                                    echo $r['membersno'].$r['capsno'].'r';
-                                    //                                    ?><!--" data-type="--><?php
-                                    //                                    echo $r['membersno'].$r['capsno'].'r';
-                                    //                                    ?><!--"><span>拒绝</span></a>-->
                                 </font>
                             </td>
                         </tr>
-                    <?php
-                    echo "<script>var membersno = \"$membersno\"</script>";
-                    echo "<script>var msno = \"$sno\"</script>";
-                    ?>
                         <script >
                             function toAgree (news){
-                                var team_id = news.getAttribute("data-type");
+                                var animalType = news.getAttribute("data-type");
+                                var str = animalType.split(",");
                                 var xhr = new XMLHttpRequest();
                                 xhr.open('POST','teamApplyAction.php')
                                 xhr.setRequestHeader('Content-TYpe','application/x-www-form-urlencoded');
-                                xhr.send(`static_join=2&&mber=${membersno}&&cap_sno=${msno}&&team_id=${team_id}`);
+                                xhr.send(`static_join=2&&mber=${str[0]}&&cap_sno=${str[1]}&&team_id=${str[2]}`);
                                 xhr.onreadystatechange = function () {
                                     if (this.readyState != 4) return;
-                                    <?php
-                                    $sqlteam = "select team.team_id from team where cap_sno = $sno";
-                                    $resultteam = $conn->query($sqlteam);
-                                    $rowteam = mysqli_fetch_array($resultteam);
-                                    $team_id = $rowteam['team_id'];
-                                    $sqlruser = "select username from ruser where sno =$membersno";
-                                    $resultruser = $conn->query($sqlruser);
-                                    $rowruser = mysqli_fetch_array($resultruser);
-                                    $team_member = $rowruser['username'];
-                                    $sqlteam_mem = "insert into team_mem(team_id,team_member,member_sno)values ('$team_id','$team_member','$membersno')";
-                                    $conn->query($sqlteam_mem);
-                                    ?>
                                     console.log(this.responseText);
                                 }
                                 alert("已同意");
                                 window.location.href="teamApply.php"
-                                $('.'+team_id).html("已同意");
+                                $('.'+animalType).html("已同意");
                             }
                         </script>
                         <script>
                             function toRefuse(news) {
                                 var xhr1 = new XMLHttpRequest();
-                                var team_id = news.getAttribute("data-type");
+                                var animalType = news.getAttribute("data-type");
+                                var str = animalType.split(",");
                                 xhr1.open('POST','teamApplyRefuseAction.php')
                                 xhr1.setRequestHeader('Content-TYpe','application/x-www-form-urlencoded');
-                                xhr1.send(`static_join=3&&mber=${membersno}&&cap_sno=${msno}&&team_id=${team_id}`);
+                                xhr1.send(`static_join=3&&mber=${str[0]}&&cap_sno=${str[1]}&&team_id=${str[2]}`);
                                 xhr1.onreadystatechange = function () {
                                     if (this.readyState != 4) return;
                                     console.log(this.responseText);
@@ -429,7 +420,7 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                                 alert("已拒绝");
                                 window.location.href="teamApply.php"
                             }
-                            $('.'+membersno+msno+team_id).html("已拒绝");
+                            $('.'+animalType).html("已拒绝");
                         </script>
                     <?php }?>
                     </tbody>

@@ -61,6 +61,14 @@ while($rownums = mysqli_fetch_array($resultnums)){
 array_push($news_nums,$rownums);
 }
 ?>
+<?php
+$sqlstatic = "select * from static where capsno=$sno and static_join = 1";
+$resultstatic = $conn->query($sqlstatic);
+$arrstatic = array();
+while ($rowstatic = mysqli_fetch_array($resultstatic)) {
+    array_push($arrstatic, $rowstatic);
+}
+?>
 <!-- banner -->
 <div class="banner">
     <div class="header agileinfo-header"><!-- header -->
@@ -96,19 +104,21 @@ array_push($news_nums,$rownums);
                             </ul>
                         </li>
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" >
+                        <li><a href="news.php" class="w3ls-hover">
                                 <?php
-                                if (!empty($news_nums)){?>
-                                    <?php
-                                    echo '<'.'span class="sp"'.'>';
-                                    echo count($news_nums);
-                                    echo '</'.'span'.'>';
+                                if (!empty($news_nums)||!empty($arrstatic)) {
                                     ?>
-                                <?php }else{?>
+                                    <?php
+                                    echo '<' . 'span class="sp"' . '>';
+                                    echo count($news_nums)+count($arrstatic);
+                                    echo '</' . 'span' . '>';
+                                    ?>
+                                <?php } else {
+                                    ?>
                                     <?php
                                     echo "";
                                     ?>
-                                <?php }?>
+                                <?php } ?>
                                 个人中心</a></li>
                     </ul>
                     <div class="clearfix"></div>
@@ -216,28 +226,28 @@ $row_4= mysqli_fetch_array($result_4);
                 <img src="<?php echo $row_1[0] ?>" alt="">
                 <div class="wthree-team-grid-info">
                     <h4><?php echo $row_1[1] ?></h4>
-                    <p><?php echo $row_1[2] ?></p>
+                    <p style="color: black"><?php echo $row_1[2] ?></p>
                 </div>
             </div>
             <div class="col-md-3 wthree-team-grid">
                 <img src="<?php echo $row_2[0] ?>" alt="">
                 <div class="wthree-team-grid-info">
                     <h4><?php echo $row_2[1] ?></h4>
-                    <p><?php echo $row_2[2] ?></p>
+                    <p style="color: black"><?php echo $row_2[2] ?></p>
                 </div>
             </div>
             <div class="col-md-3 wthree-team-grid">
                 <img src="<?php echo $row_3[0] ?>" alt="">
                 <div class="wthree-team-grid-info">
                     <h4><?php echo $row_3[1] ?></h4>
-                    <p><?php echo $row_3[2] ?></p>
+                    <p style="color: black"><?php echo $row_3[2] ?></p>
                 </div>
             </div>
             <div class="col-md-3 wthree-team-grid">
                 <img src="<?php echo $row_4[0] ?>" alt="">
                 <div class="wthree-team-grid-info">
                     <h4><?php echo $row_4[1] ?> </h4>
-                    <p><?php echo $row_4[2] ?></p>
+                    <p style="color: black"><?php echo $row_4[2] ?></p>
                 </div>
             </div>
             <div class="clearfix"></div>

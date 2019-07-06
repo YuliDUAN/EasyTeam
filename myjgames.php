@@ -79,6 +79,14 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
     array_push($news_nums, $rownums);
 }
 ?>
+<?php
+$sqlstatic = "select * from static where capsno=$sno and static_join = 1";
+$resultstatic = $conn->query($sqlstatic);
+$arrstatic = array();
+while ($rowstatic = mysqli_fetch_array($resultstatic)) {
+    array_push($arrstatic, $rowstatic);
+}
+?>
 <div class="banner-1">
     <div class="header agileinfo-header"><!-- header -->
         <nav class="navbar navbar-default">
@@ -113,13 +121,13 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                             </ul>
                         </li>
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" class="w3ls-hover active">
+                        <li><a href="news.php" class="w3ls-hover active">
                                 <?php
-                                if (!empty($news_nums)) {
+                                if (!empty($news_nums)||!empty($arrstatic)) {
                                     ?>
                                     <?php
                                     echo '<' . 'span class="sp"' . '>';
-                                    echo count($news_nums);
+                                    echo count($news_nums)+count($arrstatic);
                                     echo '</' . 'span' . '>';
                                     ?>
                                 <?php } else {
@@ -253,20 +261,22 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                     级
                 </li>
             </div>
-            <?php
-            $sqlstatic = "select * from static where capsno=$sno and static_join = 1";
-            $resultstatic = $conn->query($sqlstatic);
-            $arrstatic = array();
-            while ($rowstatic = mysqli_fetch_array($resultstatic)) {
-                array_push($arrstatic, $rowstatic);
-            }
-            ?>
             <div class="left-agileits">
                 <table>
                     <tr>
                         <td><img class="tubiao" src="images/news.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                        href="news.php"><h4> 消 息</h4></a></span></td>
+                                        href="news.php"><h4>
+                                        <?php
+                                        if (!empty($news_nums)||!empty($arrstatic)) {
+                                            echo '<span class="spa">';
+                                            echo count($news_nums);
+                                            echo '</span>';
+                                        } else {
+                                            echo "";
+                                        }
+                                        ?>
+                                        消 息</h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/rudui.png"></td>
@@ -347,9 +357,9 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                         $rows = mysqli_fetch_array($result1);
                         ?>
                         <tr>
-                            <td class="anchorjs-icon"><font size="4"><?php echo $rows[0] ?></font></td>
-                            <td class="anchorjs-icon"><font size="4"><?php echo $rows[1] ?></font></td>
-                            <td class="type-info"><font size="4"><?php echo $rows[2] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4" color="black"><?php echo $rows[0] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4" color="black"><?php echo $rows[1] ?></font></td>
+                            <td class="type-info"><font size="4" color="black"><?php echo $rows[2] ?></font></td>
                         </tr>
                         <?php
                     }

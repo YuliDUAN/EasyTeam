@@ -92,6 +92,14 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
     array_push($news_nums, $rownums);
 }
 ?>
+<?php
+$sqlstatic = "select * from static where capsno=$sno and static_join = 1";
+$resultstatic = $conn->query($sqlstatic);
+$arrstatic = array();
+while ($rowstatic = mysqli_fetch_array($resultstatic)) {
+    array_push($arrstatic, $rowstatic);
+}
+?>
 <div class="banner-1">
     <div class="header agileinfo-header"><!-- header -->
         <nav class="navbar navbar-default">
@@ -127,13 +135,13 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                         </li>
 
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" class="w3ls-hover active">
+                        <li><a href="news.php" class="w3ls-hover active">
                                 <?php
                                 if (!empty($news_nums)) {
                                     ?>
                                     <?php
                                     echo '<' . 'span class="sp"' . '>';
-                                    echo count($news_nums);
+                                    echo count($news_nums)+count($arrstatic);
                                     echo '</' . 'span' . '>';
                                     ?>
                                 <?php } else {
@@ -265,20 +273,22 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                     称：<?php echo $row['username']; ?></li>
                 <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 等 级：4 级</li>
             </div>
-            <?php
-            $sqlstatic = "select * from static where capsno=$sno and static_join = 1";
-            $resultstatic = $conn->query($sqlstatic);
-            $arrstatic = array();
-            while ($rowstatic = mysqli_fetch_array($resultstatic)) {
-                array_push($arrstatic, $rowstatic);
-            }
-            ?>
             <div class="left-agileits">
                 <table>
                     <tr>
                         <td><img class="tubiao" src="images/news.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                        href="news.php"><h4> 消 息</h4></a></span></td>
+                                        href="news.php"><h4>
+                                        <?php
+                                        if (!empty($news_nums)) {
+                                            echo '<span class="spa">';
+                                            echo count($news_nums);
+                                            echo '</span>';
+                                        } else {
+                                            echo "";
+                                        }
+                                        ?>
+                                        消 息</h4></a></span></td>
                     </tr>
                     <tr>
                         <td><img class="tubiao" src="images/rudui.png"></td>

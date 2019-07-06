@@ -59,6 +59,14 @@ while($rownums = mysqli_fetch_array($resultnums)){
     array_push($news_nums,$rownums);
 }
 ?>
+<?php
+$sqlstatic = "select * from static where capsno=$sno and static_join = 1";
+$resultstatic = $conn->query($sqlstatic);
+$arrstatic = array();
+while ($rowstatic = mysqli_fetch_array($resultstatic)) {
+    array_push($arrstatic, $rowstatic);
+}
+?>
 <!-- banner -->
 <div class="banner-1">
     <div class="header agileinfo-header"><!-- header -->
@@ -94,19 +102,21 @@ while($rownums = mysqli_fetch_array($resultnums)){
                             </ul>
                         </li>
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php">
+                        <li><a href="news.php" class="w3ls-hover">
                                 <?php
-                                if (!empty($news_nums)){?>
-                                    <?php
-                                    echo '<'.'span class="sp"'.'>';
-                                    echo count($news_nums);
-                                    echo '</'.'span'.'>';
+                                if (!empty($news_nums)||!empty($arrstatic)) {
                                     ?>
-                                <?php }else{?>
+                                    <?php
+                                    echo '<' . 'span class="sp"' . '>';
+                                    echo count($news_nums)+count($arrstatic);
+                                    echo '</' . 'span' . '>';
+                                    ?>
+                                <?php } else {
+                                    ?>
                                     <?php
                                     echo "";
                                     ?>
-                                <?php }?>
+                                <?php } ?>
                                 个人中心</a></li>
                     </ul>
                     <div class="clearfix"></div>
@@ -148,8 +158,8 @@ while($rownums = mysqli_fetch_array($resultnums)){
                 while ($row = mysqli_fetch_array($result)) {
                     ?>
                     <tr>
-                        <td><font size="4"><?php echo $row[1] ?></font></td>
-                        <td><font size="4"><?php echo $row[2] ?></font></td>
+                        <td><font size="4" color="black"><?php echo $row[1] ?></font></td>
+                        <td><font size="4" color="black"><?php echo $row[2] ?></font></td>
                         <td><a href="apply.php?id=<?php echo $row[0] ?>"><font size="4">查看详情</font></a></td>
                     </tr>
                     <?php

@@ -68,7 +68,7 @@ include "MySqlConnect.php";
                             </ul>
                         </li>
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" class="btn w3ls-hover">个人中心</a></li>
+                        <li><a href="news.php" class="btn w3ls-hover">个人中心</a></li>
                     </ul>
                     <div class="clearfix"></div>
                 </div><!-- //navbar-collapse -->

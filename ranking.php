@@ -53,6 +53,14 @@ while($rownums = mysqli_fetch_array($resultnums)){
     array_push($news_nums,$rownums);
 }
 ?>
+<?php
+$sqlstatic = "select * from static where capsno=$sno and static_join = 1";
+$resultstatic = $conn->query($sqlstatic);
+$arrstatic = array();
+while ($rowstatic = mysqli_fetch_array($resultstatic)) {
+    array_push($arrstatic, $rowstatic);
+}
+?>
 <!-- banner -->
 <div class="banner-1">
     <div class="header agileinfo-header"><!-- header -->
@@ -88,19 +96,21 @@ while($rownums = mysqli_fetch_array($resultnums)){
                         </li>
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
 
-                        <li><a href="contact.php">
+                        <li><a href="news.php" class="w3ls-hover">
                                 <?php
-                                if (!empty($news_nums)){?>
-                                    <?php
-                                    echo '<'.'span class="sp"'.'>';
-                                    echo count($news_nums);
-                                    echo '</'.'span'.'>';
+                                if (!empty($news_nums)||!empty($arrstatic)) {
                                     ?>
-                                <?php }else{?>
+                                    <?php
+                                    echo '<' . 'span class="sp"' . '>';
+                                    echo count($news_nums)+count($arrstatic);
+                                    echo '</' . 'span' . '>';
+                                    ?>
+                                <?php } else {
+                                    ?>
                                     <?php
                                     echo "";
                                     ?>
-                                <?php }?>
+                                <?php } ?>
                                 个人中心</a></li>
                     </ul>
                     <div class="clearfix"> </div>
@@ -140,21 +150,24 @@ while($rownums = mysqli_fetch_array($resultnums)){
                     $result2 = $conn->query($sql2);
                     while ($rows = mysqli_fetch_array($result2)) {  ?>
                     <tr>
-                        <td> <?php echo $rows[0]?></td>
-                        <td> <?php echo $rows[1]?></td>
-                        <td> <?php echo $rows[2]?></td>
-                        <td> <?php echo $rows[4]?></td>
-                        <td><?php
-                            if($rows[3]==1){
-                                echo "优胜奖";
-                            }else if ($rows[3]==2){
-                                echo "三等奖";
-                            }else if ($rows[3]==3){
-                                echo "二等奖";
-                            }else if ($rows[3]==4){
-                                echo "一等奖";
-                            }
-                            ?></td>
+                        <td><font size="3" color="black" ><?php echo $rows[0]?></font></td>
+                        <td><font size="3" color="black" > <?php echo $rows[1]?></font></td>
+                        <td><font size="3" color="black" >  <?php echo $rows[2]?></font></td>
+                        <td> <font size="3" color="black" > <?php echo $rows[4]?></font></td>
+                        <td><font size="3" color="black">
+                                <?php
+                                if($rows[3]==1){
+                                    echo "优胜奖";
+                                }else if ($rows[3]==2){
+                                    echo "三等奖";
+                                }else if ($rows[3]==3){
+                                    echo "二等奖";
+                                }else if ($rows[3]==4){
+                                    echo "一等奖";
+                                }
+                                ?>
+                            </font>
+                        </td>
                     </tr>
                     <?php }
                     $rs_result = $conn->query("SELECT * FROM team where ac_id='$ac_id' and team_prize between 1 and 4"); //查询数据

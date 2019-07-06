@@ -154,6 +154,14 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
     array_push($news_nums, $rownums);
 }
 ?>
+<?php
+$sqlstatic = "select * from static where capsno=$sno and static_join = 1";
+$resultstatic = $conn->query($sqlstatic);
+$arrstatic = array();
+while ($rowstatic = mysqli_fetch_array($resultstatic)) {
+    array_push($arrstatic, $rowstatic);
+}
+?>
 <!-- banner -->
 <div class="banner-1">
     <div class="header agileinfo-header"><!-- header -->
@@ -189,13 +197,13 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                             </ul>
                         </li>
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
-                        <li><a href="contact.php" class="w3ls-hover active">
+                        <li><a href="news.php" class="w3ls-hover active">
                                 <?php
-                                if (!empty($news_nums)) {
+                                if (!empty($news_nums)||!empty($arrstatic)) {
                                     ?>
                                     <?php
                                     echo '<' . 'span class="sp"' . '>';
-                                    echo count($news_nums);
+                                    echo count($news_nums)+count($arrstatic);
                                     echo '</' . 'span' . '>';
                                     ?>
                                 <?php } else {
@@ -343,20 +351,30 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                     <tr>
                         <td><img class="tubiao" src="images/news.png"></td>
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
-                                        href="news.php"><h4> 消 息</h4></a></span></td>
-                    </tr>
-                    <tr>
-                        <td><img class="tubiao" src="images/rudui.png"></td>
-                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.php"><h4>
+                                        href="news.php"><h4>
                                         <?php
-                                        if (!empty($arrstatic)) {
+                                        if (!empty($news_nums)) {
                                             echo '<span class="spa">';
-                                            echo count($arrstatic);
+                                            echo count($news_nums);
                                             echo '</span>';
                                         } else {
                                             echo "";
                                         }
                                         ?>
+                                        消 息</h4></a></span></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tubiao" src="images/rudui.png"></td>
+                        <td style="padding-left: 15px;padding-top: 25px"><span><a href="teamApply.php"><h4>
+                                         <?php
+                                         if (!empty($arrstatic)) {
+                                             echo '<span class="spa">';
+                                             echo count($arrstatic);
+                                             echo '</span>';
+                                         } else {
+                                             echo "";
+                                         }
+                                         ?>
                                         入 队 申 请 </h4> </a></span></td>
                     </tr>
                     <tr>
@@ -403,17 +421,13 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                     <tbody>
                     <tr>
                         <th width="15%">
-                            <font-size
-                            ="4" color="black">来源</font></th>
+                            <label style="color: black;font-size:18px">来源</label></th>
                         <th width="40%">
-                            <font-size
-                            ="4" color="black">标题</font></th>
+                            <label style="color: black;font-size:18px">标题</label></th>
                         <th width="20%">
-                            <font-size
-                            ="4" color="black">时间</font></th>
+                            <label style="color: black;font-size:18px">时间</label></th>
                         <th width="20%">
-                            <font-size
-                            ="4" color="black">详情</font></th>
+                            <label style="color: black;font-size:18px">详情</label></th>
                     </tr>
                     <?php
 
@@ -421,17 +435,13 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                         ?>
                         <tr>
                             <td>
-                                <font-size
-                                ="3"><?php echo $v['send_name']; ?></font></td>
+                                <p style="color: black;font-size: 14px"><?php echo $v['send_name']; ?></p></td>
                             <td>
-                                <font-size
-                                ="3"><?php echo $v['titlenews']; ?></font></td>
+                                <p style="color: black;font-size: 14px"><?php echo $v['titlenews']; ?></p></td>
                             <td>
-                                <font-size
-                                ="3"><?php echo $v['send_time']; ?></font></td>
+                                <p style="color: black;font-size: 14px"><?php echo $v['send_time']; ?></p></td>
                             <td>
-                                <font-size
-                                ="3">
+                                <p style="color: black;font-size: 14px">
                                 <form action="">
                                     <!--                                    data-target="#myModal"-->
                                     <a href="#" onclick="show(this)" data-toggle="modal"
@@ -445,7 +455,8 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                                         }
                                         ?></a>
                                 </form>
-                                </font></td>
+                                </p>
+                            </td>
                         </tr>
                     <?php }
                     ?>

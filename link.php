@@ -94,6 +94,14 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
     array_push($news_nums, $rownums);
 }
 ?>
+<?php
+$sqlstatic = "select * from static where capsno=$sno and static_join = 1";
+$resultstatic = $conn->query($sqlstatic);
+$arrstatic = array();
+while ($rowstatic = mysqli_fetch_array($resultstatic)) {
+    array_push($arrstatic, $rowstatic);
+}
+?>
 <!-- banner -->
 <div class="banner-1">
     <div class="header agileinfo-header"><!-- header -->
@@ -129,13 +137,13 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                             </ul>
                         </li>
                         <li><a href="link.php" class="w3ls-hover active">报名入口</a></li>
-                        <li><a href="contact.php">
+                        <li><a href="contact.php" class="w3ls-hover">
                                 <?php
-                                if (!empty($news_nums)) {
+                                if (!empty($news_nums)||!empty($arrstatic)) {
                                     ?>
                                     <?php
                                     echo '<' . 'span class="sp"' . '>';
-                                    echo count($news_nums);
+                                    echo count($news_nums)+count($arrstatic);
                                     echo '</' . 'span' . '>';
                                     ?>
                                 <?php } else {
