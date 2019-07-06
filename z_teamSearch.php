@@ -34,7 +34,7 @@ $ac_id = $_GET["ac_id"]
         </tr>
         <?php
         include "z_mysql.php";
-        $sql = "SELECT team_id,team_name,team_cap,team_prize FROM team where team_name LIKE '%$key%'and ac_id='$ac_id' ";
+        $sql = "SELECT team_id,team_name,team_cap,team_prize FROM team where team_name LIKE '%$key%' or team_cap like '%$key%' and ac_id='$ac_id' ";
         $result = $conn->query($sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result)) { ?>

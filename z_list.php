@@ -35,7 +35,7 @@
             <volist name="list" id="vo">
                 <?php
                 include("z_mysql.php");
-                $num_rec_per_page = 4;   // 每页显示数量
+                $num_rec_per_page = 6;   // 每页显示数量
                 if (isset($_GET["page"])) {
                     $page = $_GET["page"];
                 } else {
@@ -68,15 +68,15 @@
                 $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
                 mysqli_free_result($result);
                 ?>
-                <!--                <tr>-->
-                <!--                    <td colspan="8"><div class="pagelist"> <a href="z_list.php">上一页</a> <span class="current">1</span><a href="z_list.php">2</a><a href="z_list.php">3</a><a href="z_list.php">下一页</a><a href="z_list.php">尾页</a> </div></td>-->
-                <!--                </tr>-->
             </volist>
             <tr>
                 <td colspan="8">
                     <div class="pagelist"><a href="z_list.php?page=1">首页</a>
 
-                        <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
+                        <?php
+                        if($total_pages==0)
+                            $total_pages=1;
+                        for ($i = 1; $i <= $total_pages; $i++) { ?>
                             <a href='z_list.php?page=<?php echo $i ?>'><?php echo $i ?></a>
                         <?php } ?>
 

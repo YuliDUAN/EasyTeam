@@ -170,7 +170,6 @@ while($rownums = mysqli_fetch_array($resultnums)){
                 <?php
                 foreach ($aresult as $r) {
                     ?>
-                    <form action="jteamAction.php?member_sno=<?php echo $row['sno']?>&cap_sno=<?php echo $r['cap_sno'];?>&id=<?php echo $id?>" enctype="multipart/form-data" method="post">
                         <tr>
                             <?php
                             $cap_sno = $r['cap_sno'];
@@ -187,27 +186,32 @@ while($rownums = mysqli_fetch_array($resultnums)){
                             <td><font size="4"><?php echo count($ar);?></font></td>
                             <td><font size="4" color="black">
                                     <?php
+                                    $member_sno = $row['sno'];
+                                    $cap_sno = $r['cap_sno'];
+                                    $tm_id = $r['team_id'];
+                                    ?>
+                                    <?php
                                     $cap_sno = $r['cap_sno'];
                                     $sqlstatic = "select static_join from static where membersno = $sno and capsno = $cap_sno";
                                     $resultstatic = $conn->query($sqlstatic);
                                     $rowstatic = mysqli_fetch_array($resultstatic);
                                     if ($rowstatic['static_join']==3){
-                                        echo '<input type="button" style="background-color: transparent;border: transparent"><a style="color: red"><b>已拒绝</b></a></button>';
+                                        echo '<input type="button" style="background-color: transparent;border: transparent"><a style="color: red">已拒绝</a></button>';
                                     }
-                                    elseif ($rowstatic['static_join']==1){
-                                        echo '<input type="button" style="background-color: transparent;border: transparent"><a style="color: orange"><b>申请中...</b></a></input>
-                                        <button style="background-color: transparent;border: transparent;margin-left: 50px"><a style="color: red">取消</a> </button>';
-                                    }
+                                    elseif ($rowstatic['static_join']==1){?>
+                                        <?php echo '<input type="button" style="background-color: transparent;border: transparent"><a style="color: orange">申请中...</a></input>' ?>
+                                        <?php echo '<a style="margin-left: 50px;color: red" href="jteamAction.php?member_sno='?><?php echo $member_sno?><?php echo '&cap_sno='?><?php echo $cap_sno?><?php echo '&id='?><?php echo $id?><?php echo '&tm_id='?><?php echo $tm_id?>
+                                        <?php echo '" '.'enctype="multipart/form-data" method="post">取消</a>'?>
+                                    <?php }
                                     elseif ($rowstatic['static_join']==2){
-                                        echo '<input type="button" style="background-color: transparent;border: transparent"><a style="color: #66fa41"><b>已加入</b></a></input>';
+                                        echo '<input type="button" style="background-color: transparent;border: transparent"><a style="color: #66fa41">已加入</a></input>';
                                     }
-                                    else{
-                                        echo '<button style="background-color: transparent;border: transparent"><a style="color: blue"><b>申请加入</b></a></button>';
-                                    }
-                                    ?>
+                                    else{?>
+                                        <?php echo '<a style="color: #1D7AC7" href="jteamAction.php?member_sno='?><?php echo $member_sno?><?php echo '&cap_sno='?><?php echo $cap_sno?><?php echo '&id='?><?php echo $id?><?php echo '&tm_id='?><?php echo $tm_id?>
+                                    <?php echo '" '.'enctype="multipart/form-data" method="post">申请加入</a>'?>
+                                    <?php }?>
                                 </font></td>
                         </tr>
-                    </form>
                 <?php } ?>
                 </tbody>
             </table>

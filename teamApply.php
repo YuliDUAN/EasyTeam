@@ -344,7 +344,7 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                     }
                     ?>
 
-                    <?php foreach ($arr as $r) { ?>
+                    <?php foreach ($arr as $r){?>
                         <?php
                         $membersno = $r['membersno'];
                         $sqlmber = "select username from ruser where sno=$membersno";
@@ -352,28 +352,34 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                         $rowmber = mysqli_fetch_array($resultmber);
                         ?>
                         <tr>
-                            <td><font size="3"><?php echo $rowmber['username'] ?></font></td>
-                            <td><font size="3"><?php echo $rowmber['username'] . '申请加入你的队伍' ?></font></td>
-                            <td><font size="3"><?php echo $r['join_time'] ?></font></td>
+                            <td><font size="3"><?php echo $rowmber['username']?></font></td>
+                            <td><font size="3"><?php echo $rowmber['username'].'申请加入你的队伍'?></font></td>
+                            <td><font size="3"><?php echo $r['join_time']?></font></td>
                             <td><font size="3">
                                     <?php
-                                    if ($r['static_join'] == 1) {
+                                    if ($r['static_join']==1){
                                         echo '<a href="javascript:" onclick="toAgree(this)" id="enter" class="';
-                                        echo $r['membersno'] . $r['capsno'];
+                                        echo $r['membersno'].$r['capsno'].$r['tm_id'];
                                         echo '" data-type="';
-                                        echo $r['membersno'] . $r['capsno'];
+                                        echo $r['tm_id'];
                                         echo '">同意</a>/';
                                         echo '<a href="javascript:" onclick="toRefuse(this)" class="';
-                                        echo $r['membersno'] . $r['capsno'] . 'r';
+                                        echo $r['membersno'].$r['capsno'].$r['tm_id'].'r';
                                         echo '" data-type="';
-                                        echo $r['membersno'] . $r['capsno'] . 'r';
+                                        echo $r['tm_id'];
                                         echo '"><span>拒绝</span></a>';
-                                    } elseif ($r['static_join'] == 2) {
+                                    }elseif ($r['static_join']==2){
                                         echo '<a>已同意</a>';
-                                    } elseif ($r['static_join'] == 3) {
+                                    }elseif ($r['static_join']==3){
                                         echo '<a>已拒绝</a>';
                                     }
                                     ?>
+                                    <!--                                    <a>同意</a>-->
+                                    <!--                                    <a href="javascript:" onclick="toRefuse(this)" class="--><?php
+                                    //                                    echo $r['membersno'].$r['capsno'].'r';
+                                    //                                    ?><!--" data-type="--><?php
+                                    //                                    echo $r['membersno'].$r['capsno'].'r';
+                                    //                                    ?><!--"><span>拒绝</span></a>-->
                                 </font>
                             </td>
                         </tr>
@@ -381,13 +387,13 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                     echo "<script>var membersno = \"$membersno\"</script>";
                     echo "<script>var msno = \"$sno\"</script>";
                     ?>
-                        <script>
-                            function toAgree(news) {
-                                var animalType = news.getAttribute("data-type");
+                        <script >
+                            function toAgree (news){
+                                var team_id = news.getAttribute("data-type");
                                 var xhr = new XMLHttpRequest();
-                                xhr.open('POST', 'teamApplyAction.php')
-                                xhr.setRequestHeader('Content-TYpe', 'application/x-www-form-urlencoded');
-                                xhr.send(`static_join=2&&mber=${membersno}&&cap_sno=${msno}`);
+                                xhr.open('POST','teamApplyAction.php')
+                                xhr.setRequestHeader('Content-TYpe','application/x-www-form-urlencoded');
+                                xhr.send(`static_join=2&&mber=${membersno}&&cap_sno=${msno}&&team_id=${team_id}`);
                                 xhr.onreadystatechange = function () {
                                     if (this.readyState != 4) return;
                                     <?php
@@ -405,29 +411,27 @@ while ($rownums = mysqli_fetch_array($resultnums)) {
                                     console.log(this.responseText);
                                 }
                                 alert("已同意");
-                                window.location.href = "teamApply.php"
+                                window.location.href="teamApply.php"
+                                $('.'+team_id).html("已同意");
                             }
-
-                            $('.' + animalType).html("已同意");
                         </script>
                         <script>
                             function toRefuse(news) {
                                 var xhr1 = new XMLHttpRequest();
-                                var animalType = news.getAttribute("data-type");
-                                xhr1.open('POST', 'teamApplyRefuseAction.php')
-                                xhr1.setRequestHeader('Content-TYpe', 'application/x-www-form-urlencoded');
-                                xhr1.send(`static_join=3&&mber=${membersno}&&cap_sno=${msno}`);
+                                var team_id = news.getAttribute("data-type");
+                                xhr1.open('POST','teamApplyRefuseAction.php')
+                                xhr1.setRequestHeader('Content-TYpe','application/x-www-form-urlencoded');
+                                xhr1.send(`static_join=3&&mber=${membersno}&&cap_sno=${msno}&&team_id=${team_id}`);
                                 xhr1.onreadystatechange = function () {
                                     if (this.readyState != 4) return;
                                     console.log(this.responseText);
                                 }
                                 alert("已拒绝");
-                                window.location.href = "teamApply.php"
+                                window.location.href="teamApply.php"
                             }
-
-                            $('.' + animalType).html("已拒绝");
+                            $('.'+membersno+msno+team_id).html("已拒绝");
                         </script>
-                    <?php } ?>
+                    <?php }?>
                     </tbody>
                 </table>
             </div>

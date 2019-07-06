@@ -46,7 +46,7 @@ $name = $_GET["name"];
         <li><a href="z_list.php" target="right"><span class="icon-caret-right"></span>新闻管理</a></li>
         <li><a href="z_lecture.php" target="right"><span class="icon-caret-right"></span>宣讲会管理</a></li>
         <li><a href="z_nova.php" target="right"><span class="icon-caret-right"></span>赛事新星管理</a></li>
-
+        <li><a href="z_message.php" target="right"><span class="icon-caret-right"></span>问题反馈</a></li>
     </ul>
 </div>
 <script type="text/javascript">

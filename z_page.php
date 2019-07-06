@@ -19,17 +19,17 @@
 
         <table class="table table-hover text-center">
             <tr>
-                <th width="120">ID</th>
+                <th width="120">序号</th>
                 <th>活动名称</th>
                 <th>主办方</th>
-                <th>活动状态</th>
                 <th>截止时间</th>
                 <!-- <th width="120">留言时间</th>-->
                 <th colspan="5">操作</th>
             </tr>
             <?php
             include "z_mysql.php";
-            $num_rec_per_page = 4;   // 每页显示数量
+            $i=0;
+            $num_rec_per_page = 6;   // 每页显示数量
             if (isset($_GET["page"])) {
                 $page = $_GET["page"];
             } else {
@@ -39,10 +39,9 @@
             $result = $conn->query("SELECT id,name,host,state,time FROM activity  LIMIT $start_from, $num_rec_per_page");
             while ($row = mysqli_fetch_array($result)) { ?>
                 <tr>
-                    <td> <?php echo $row[0] ?></td>
+                    <td> <?php echo ++$i ?></td>
                     <td> <?php echo $row[1] ?></td>
                     <td> <?php echo $row[2] ?></td>
-                    <td> <?php echo $row[3] ?></td>
                     <td> <?php echo $row[4] ?></td>
 
                     <td>
@@ -90,7 +89,10 @@
                 <td colspan="8">
                     <div class="pagelist"><a href="z_page.php?page=1">首页</a>
 
-                        <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
+                        <?php
+                        if($total_pages==0)
+                            $total_pages=1;
+                        for ($i = 1; $i <= $total_pages; $i++) { ?>
                             <a href='z_page.php?page=<?php echo $i ?>'><?php echo $i ?></a>
                         <?php } ?>
 

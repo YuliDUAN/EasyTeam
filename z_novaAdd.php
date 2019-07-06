@@ -48,7 +48,7 @@ $number = $_GET["number"];
 
             <div class="form-group">
                 <div class="label">
-                    <label><h5><b>主办方：</b></h5></label>
+                    <label><h5><b>所属部门：</b></h5></label>
                 </div>
                 <div class="field">
                     <input type="text" class="input w50" name="authour" value="" maxlength="30" placeholder="字数请不要超过30"

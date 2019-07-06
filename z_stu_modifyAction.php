@@ -4,7 +4,6 @@ $sno=$_GET["sno"];
 $name=$_POST["name"];
 $sex=$_POST["sex"];
 $tel=$_POST["tel"];
-//$adpt=$_POST["adpt"];
 $major=$_POST["major"];
 $class=$_POST["class"];
 $image=$_POST["image"];

@@ -49,14 +49,6 @@ $row = mysqli_fetch_array($result);
                     <input type="text" class="input" name="tel" value="<?php echo $row[3] ?>"/>
                 </div>
             </div>
-<!--            <div class="form-group">-->
-<!--                <div class="label">-->
-<!--                    <label><h5><b>学院：</b></h5></label>-->
-<!--                </div>-->
-<!--                <div class="field">-->
-<!--                    <input type="text" class="input" name="adpt" value="--><?php //echo $row[4] ?><!--"/>-->
-<!--                </div>-->
-<!--            </div>-->
             <div class="form-group">
                 <div class="label">
                     <label><h5><b>专业：</b></h5></label>

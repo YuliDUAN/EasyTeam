@@ -27,7 +27,6 @@
         </div>
         <table class="table table-hover text-center">
             <tr>
-                <th width="100" style="text-align:left; padding-left:20px;">ID</th>
                 <th>图片</th>
                 <th>名称</th>
                 <th width="10%">宣讲会时间</th>
@@ -41,7 +40,6 @@
                 while ($row = mysqli_fetch_array($result)) {
                     ?>
                     <tr>
-                        <td style="text-align:left; padding-left:20px;"><?php echo $row[0] ?></td>
                         <td width="10%"><img src="<?php echo $row[1] ?>" alt="" width="70" height="50"/></td>
                         <td><?php echo $row[2] ?></td>
                         <td><font color="#00CC99"><?php echo $row[3] ?></font></td>

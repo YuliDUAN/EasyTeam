@@ -3,7 +3,6 @@
     include "z_mysql.php";
     $title=$_POST["title"];
     $file=$_FILES['fileField'];
-    $note=$_POST["note"];
     $content=$_POST["content"];
     $datetime=$_POST["datetime"];
     $authour=$_POST["authour"];
@@ -26,7 +25,7 @@
             return;
         }
 
-        $sql = "insert into article(ar_title,ar_image,ar_description,ar_content,ar_time,ar_repoter,ar_clicknum) values ('$title','$target','$note','$content','$datetime','$authour','$views')";
+        $sql = "insert into article(ar_title,ar_image,ar_content,ar_time,ar_repoter,ar_clicknum) values ('$title','$target','$content','$datetime','$authour','$views')";
         $result = $conn->query($sql);
         if ($result == true) {
             echo "<script >alert('添加成功');location.href='z_list.php';</script>";

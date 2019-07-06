@@ -38,17 +38,6 @@
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label><h5><b>描述：</b></h5></label>
-
-                </div>
-                <div class="field">
-                    <textarea class="input" name="note" style=" height:90px;" maxlength="50" placeholder="字数请不要超过50"
-                              data-validate="required:请输入描述"></textarea>
-                    <div class="tips"></div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="label">
                     <label><h5><b>内容：</b></h5></label>
                 </div>
                 <div class="field">

@@ -22,7 +22,7 @@
                 <li>搜索：</li>
 
                 <li>
-                    <input type="text" placeholder="请输入学号或关键字" name="keywords" class="input"
+                    <input type="text" placeholder="请输入学号或姓名" name="keywords" class="input"
                            style="width:250px; line-height:17px;display:inline-block"/>
                     <button class="button border-main icon-search" type="submit"> 搜索</button>
                 </li>
@@ -35,16 +35,14 @@
             <th>姓名</th>
             <th>性别</th>
             <th>电话</th>
-<!--            <th>学院</th>-->
             <th>专业</th>
             <th>班级</th>
-            <!-- <th width="120">留言时间</th>-->
             <th colspan="6">操作</th>
         </tr>
 
         <?php
         include "z_mysql.php";
-        $num_rec_per_page = 4;   // 每页显示数量
+        $num_rec_per_page = 6;   // 每页显示数量
         if (isset($_GET["page"])) {
             $page = $_GET["page"];
         } else {
@@ -83,7 +81,10 @@
             <td colspan="8">
                 <div class="pagelist"><a href="z_student.php?page=1">首页</a>
 
-                    <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
+                    <?php
+                    if($total_pages==0)
+                        $total_pages=1;
+                    for ($i = 1; $i <= $total_pages; $i++) { ?>
                         <a href='z_student.php?page=<?php echo $i ?>'><?php echo $i ?></a>
                     <?php } ?>
 

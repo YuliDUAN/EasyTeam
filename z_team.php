@@ -25,7 +25,7 @@ $ac_id = $_GET["id"];
                 <li>搜索：</li>
 
                 <li>
-                    <input type="text" placeholder="请输入队伍名称" name="keywords" class="input"
+                    <input type="text" placeholder="请输入队伍名称或队长名称" name="keywords" class="input"
                            style="width:250px; line-height:17px;display:inline-block"/>
                     <button class="button border-main icon-search" type="submit"> 搜索</button>
                 </li>
@@ -35,7 +35,7 @@ $ac_id = $_GET["id"];
 
     <table class="table table-hover text-center">
         <tr>
-            <th width="120">队伍ID</th>
+            <th width="120">序号</th>
             <th colspan="2">队名</th>
             <th>队长</th>
             <th colspan="2">获奖情况</th>
@@ -43,7 +43,8 @@ $ac_id = $_GET["id"];
         </tr>
         <?php
         include "z_mysql.php";
-        $num_rec_per_page = 4;   // 每页显示数量
+        $i=0;
+        $num_rec_per_page = 6;   // 每页显示数量
         if (isset($_GET["page"])) {
             $page = $_GET["page"];
         } else {
@@ -54,7 +55,7 @@ $ac_id = $_GET["id"];
         $result = $conn->query($sql);
         while ($row = mysqli_fetch_array($result)) { ?>
             <tr>
-                <td> <?php echo $row[0] ?></td>
+                <td> <?php echo ++$i; ?></td>
                 <td colspan="2"> <?php echo $row[1] ?></td>
                 <td> <?php echo $row[2] ?></td>
                 <!--                <td> --><?php //echo $row[4]?><!--</td>-->
@@ -92,7 +93,10 @@ $ac_id = $_GET["id"];
             <td colspan="8">
                 <div class="pagelist"><a href="z_team.php?page=1&id=<?php echo $ac_id ?>">首页</a>
 
-                    <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
+                    <?php
+                    if($total_pages==0)
+                        $total_pages=1;
+                    for ($i = 1; $i <= $total_pages; $i++) { ?>
                         <a href='z_team.php?page=<?php echo $i ?>&id=<?php echo $ac_id ?>'><?php echo $i ?></a>
                     <?php } ?>
 

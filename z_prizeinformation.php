@@ -28,7 +28,7 @@ $row = mysqli_fetch_array($result);
     <table class="table table-hover text-center">
         <tr>
             <!--            <th width="120">获奖队伍ID</th>-->
-            <th width="120">获奖队伍ID</th>
+            <th width="120">序号</th>
             <th colspan="2">队名</th>
             <th>队长</th>
             <th>学号</th>
@@ -36,7 +36,8 @@ $row = mysqli_fetch_array($result);
         </tr>
         <?php
         include "z_mysql.php";
-        $num_rec_per_page = 4;   // 每页显示数量
+        $i=0;
+        $num_rec_per_page = 6;   // 每页显示数量
         if (isset($_GET["page"])) {
             $page = $_GET["page"];
         } else {
@@ -47,7 +48,7 @@ $row = mysqli_fetch_array($result);
         $result2 = $conn->query($sql2);
         while ($rows = mysqli_fetch_array($result2)) { ?>
             <tr>
-                <td> <?php echo $rows[0] ?></td>
+                <td> <?php echo ++$i; ?></td>
                 <td colspan="2"> <?php echo $rows[1] ?></td>
                 <td> <?php echo $rows[2] ?></td>
                 <td> <?php echo $rows[4] ?></td>
@@ -73,7 +74,10 @@ $row = mysqli_fetch_array($result);
             <td colspan="8">
                 <div class="pagelist"><a href="z_prizeinformation.php?page=1&id=<?php echo $ac_id ?>">首页</a>
 
-                    <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
+                    <?php
+                    if($total_pages==0)
+                        $total_pages=1;
+                    for ($i = 1; $i <= $total_pages; $i++) { ?>
                         <a href='z_prizeinformation.php?page=<?php echo $i ?>&id=<?php echo $ac_id ?>'><?php echo $i ?></a>
                     <?php } ?>
 

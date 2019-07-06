@@ -31,7 +31,7 @@ $key = $_POST["keywords"];
             <th>姓名</th>
             <th>性别</th>
             <th>电话</th>
-            <th>学院</th>
+
             <th>专业</th>
             <th>班级</th>
             <!-- <th width="120">留言时间</th>-->
@@ -49,13 +49,17 @@ $key = $_POST["keywords"];
                     <td> <?php echo $row[1] ?></td>
                     <td> <?php echo $row[2] ?></td>
                     <td> <?php echo $row[3] ?></td>
-                    <td> <?php echo $row[4] ?></td>
                     <td> <?php echo $row[5] ?></td>
                     <td> <?php echo $row[6] ?></td>
-                    <td colspan="6">
+                    <td colspan="3">
                         <div class="button-group"><a class="button border-red"
                                                      href='z_stu_modify.php?sno=<?php echo $row[0] ?>'><span
                                         class="icon-trash-o"></span> 修改</a></div>
+                    </td>
+                    <td colspan="3">
+                        <div class="button-group"><a class="button border-red"
+                                                     href='z_stu_resetpwd.php?sno=<?php echo $row[0] ?>'><span
+                                        class="icon-trash-o"></span> 重置密码</a></div>
                     </td>
                 </tr>
             <?php }

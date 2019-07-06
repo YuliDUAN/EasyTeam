@@ -28,7 +28,6 @@
         </div>
         <table class="table table-hover text-center">
             <tr>
-                <th width="100" style="text-align:left; padding-left:20px;">ID</th>
                 <th>图片</th>
                 <th>姓名</th>
                 <th colspan="2">所属部门</th>
@@ -38,7 +37,7 @@
             <volist name="list" id="vo">
                 <?php
                 include("z_mysql.php");
-                $num_rec_per_page = 4;   // 每页显示数量
+                $num_rec_per_page = 6;   // 每页显示数量
                 if (isset($_GET["page"])) {
                     $page = $_GET["page"];
                 } else {
@@ -50,7 +49,6 @@
                 while ($row = mysqli_fetch_array($result)) {
                     ?>
                     <tr>
-                        <td style="text-align:left; padding-left:20px;"><?php echo $row[0] ?></td>
                         <td width="10%"><img src="<?php echo $row[1] ?>" alt="" width="70" height="50"/></td>
                         <td><?php echo $row[2] ?></td>
                         <td colspan="2"><font color="#00CC99"><?php echo $row[3] ?></font></td>
@@ -71,7 +69,10 @@
                     <td colspan="8">
                         <div class="pagelist"><a href="z_endnova.php?page=1">首页</a>
 
-                            <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
+                            <?php
+                            if($total_pages==0)
+                                $total_pages=1;
+                            for ($i = 1; $i <= $total_pages; $i++) { ?>
                                 <a href='z_endnova.php?page=<?php echo $i ?>'><?php echo $i ?></a>
                             <?php } ?>
 
