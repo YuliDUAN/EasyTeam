@@ -46,7 +46,7 @@ $row = mysqli_fetch_array($result);
             </div>
             <div class="form-group">
                 <div class="label">
-                    <label><h5><b>获奖队伍名称：</b></h5></label>
+                    <label><h5><b>获奖奖项：</b></h5></label>
                 </div>
                 <div class="label" style="width: auto">
                     <table>
@@ -56,6 +56,12 @@ $row = mysqli_fetch_array($result);
                             <td><input type="radio" name="team_prize" value="2"/>三等奖</td>
                             <td><input type="radio" name="team_prize" value="3"/>二等奖</td>
                             <td><input type="radio" name="team_prize" value="4"/>一等奖</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">
+                                <input style="margin-top: 20px" type="radio" name="team_prize" value="5"/>其他
+                                <textarea name="otherprize" style="resize:none;margin-top: 30px;width: 245px;height: 50px"></textarea>
+                            </td>
                         </tr>
                     </table>
                 </div>

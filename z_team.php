@@ -51,7 +51,7 @@ $ac_id = $_GET["id"];
             $page = 1;
         };
         $start_from = ($page - 1) * $num_rec_per_page;
-        $sql = "SELECT team_id,team_name,team_cap,team_prize FROM team,activity where team.ac_id=activity.id and activity.id='$ac_id' LIMIT $start_from, $num_rec_per_page ";
+        $sql = "SELECT team_id,team_name,team_cap,team_prize,otherprize FROM team,activity where team.ac_id=activity.id and activity.id='$ac_id' LIMIT $start_from, $num_rec_per_page ";
         $result = $conn->query($sql);
         while ($row = mysqli_fetch_array($result)) { ?>
             <tr>
@@ -70,6 +70,8 @@ $ac_id = $_GET["id"];
                         echo "一等奖";
                     } else if ($row[3] == 0) {
                         echo "未获奖";
+                    }else if ($row[3] == 5) {
+                        echo $row[4];
                     }
                     ?></td>
                 <td colspan="2">

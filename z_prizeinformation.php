@@ -44,7 +44,7 @@ $row = mysqli_fetch_array($result);
             $page = 1;
         };
         $start_from = ($page - 1) * $num_rec_per_page;
-        $sql2 = "SELECT team_id,team_name,team_cap,team_prize,cap_sno FROM team,activity where team.ac_id=activity.id and activity.id='$ac_id' and team_prize in(1,2,3,4) order by team_prize desc LIMIT $start_from, $num_rec_per_page";
+        $sql2 = "SELECT team_id,team_name,team_cap,team_prize,cap_sno,otherprize FROM team,activity where team.ac_id=activity.id and activity.id='$ac_id' and team_prize in(1,2,3,4,5) order by team_prize desc LIMIT $start_from, $num_rec_per_page";
         $result2 = $conn->query($sql2);
         while ($rows = mysqli_fetch_array($result2)) { ?>
             <tr>
@@ -61,11 +61,13 @@ $row = mysqli_fetch_array($result);
                         echo "二等奖";
                     } else if ($rows[3] == 4) {
                         echo "一等奖";
+                    }else if ($rows[3] == 5) {
+                        echo $rows[5];
                     }
                     ?></td>
             </tr>
         <?php }
-        $rs_result = $conn->query("SELECT * FROM team,activity where team.ac_id=activity.id and activity.id='$ac_id' and team_prize in(1,2,3,4)"); //查询数据
+        $rs_result = $conn->query("SELECT * FROM team,activity where team.ac_id=activity.id and activity.id='$ac_id' and team_prize in(1,2,3,4,5)"); //查询数据
         $total_records = mysqli_num_rows($rs_result);  // 统计总共的记录条数
         $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
         mysqli_free_result($result);
