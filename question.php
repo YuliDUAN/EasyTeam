@@ -105,7 +105,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         <nav class="navbar navbar-default">
             <div class="container">
                 <div style="margin-top: 15px;position:absolute;z-index:-3;margin-left: 70%">
-                    <iframe width="300" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
+                    <iframe width="250px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
                             allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&amp;
                         id=1&amp;icon=1&amp;wind=0&amp;num=1&amp;site=14">
                     </iframe>
@@ -137,7 +137,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
                         <li><a href="news.php" class="w3ls-hover active">
                                 <?php
-                                if (!empty($news_nums)) {
+                                if (!empty($news_nums)||!empty(count($arrstatic))) {
                                     ?>
                                     <?php
                                     echo '<' . 'span class="sp"' . '>';

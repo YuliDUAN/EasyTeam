@@ -93,7 +93,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         <nav class="navbar navbar-default">
             <div class="container">
                 <div style="margin-top: 15px;position:absolute;z-index:-3;margin-left: 70%">
-                    <iframe width="300" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
+                    <iframe width="250px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
                             allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&amp;
                         id=1&amp;icon=1&amp;wind=0&amp;num=1&amp;site=14">
                     </iframe>
@@ -124,7 +124,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
                         <li><a href="news.php" class="w3ls-hover active">
                                 <?php
-                                if (!empty($news_nums)) {
+                                if (!empty($news_nums)||!empty(count($arrstatic))) {
                                     ?>
                                     <?php
                                     echo '<' . 'span class="sp"' . '>';
@@ -333,6 +333,12 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                 </table>
             </div>
         </div>
+        <?php
+
+        $name=$row['username'];
+        $res0 = $conn->query("select team_cap from team where team_cap='$name'");
+
+        ?>
         <div class="agileits_mail_grids">
             <div class="col-md-7 agileits_mail_grid_left" style="border-radius: 10px;background-color: #ffffff">
                 <table class="table">
@@ -341,6 +347,9 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         <th class="anchorjs-icon"><font size="4" color="black">队伍名称</font></th>
                         <th class="anchorjs-icon"><font size="4" color="black">赛事名称</font></th>
                         <th class="anchorjs-icon"><font size="4" color="black">成绩</font></th>
+                        <th class="anchorjs-icon"><font size="4" color="black">查看队伍</font></th>
+
+                        <th class="anchorjs-icon"><font size="4" color="black">操作</font></th>
                     </tr>
                     <?php
                     $num_rec_per_page = 8;   // 每页显示数量
@@ -350,7 +359,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         $page = 1;
                     };
                     $start_from = ($page - 1) * $num_rec_per_page;
-                    $sql1 = "select team_name,activity.name,team_prize,activity.state from team,activity where team.ac_id=activity.id
+                    $sql1 = "select team_name,activity.name,team_prize,activity.state,team_id from team,activity where team.ac_id=activity.id
                   and team_id in(select distinct team_id from team where cap_sno=$sno union select distinct team_id from team_mem
                   where member_sno=$sno) LIMIT $start_from, $num_rec_per_page";
                     $result1 = $conn->query($sql1);
@@ -377,6 +386,12 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                                     }
 
                                     ?></font></td>
+                           <td class="anchorjs-icon"><font size="4"><a  name="popBox" onclick="" href="team.php?idd=<?php /*echo $rows[4] */?>">详情</a></font></td>
+                            <?php if(mysqli_num_rows($res0)>0){?>
+                                <td class="anchorjs-icon"><font size="4"><a href="teamDelete.php?teamid=<?php echo $rows[4] ?>">解散</a></font></td>
+                            <?php }else{?>
+                                <td class="anchorjs-icon"><font size="4"><a href="team_memDelete.php?teamid=<?php echo $rows[4] ?>">退出</a></font></td>
+                            <?php  }?>
                         </tr>
                         <?php
                     }

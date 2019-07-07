@@ -92,7 +92,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         <nav class="navbar navbar-default">
             <div class="container">
                 <div style="margin-top: 15px;position:absolute;z-index:-3;margin-left: 70%">
-                    <iframe width="300" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
+                    <iframe width="250px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
                             allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&amp;
                         id=1&amp;icon=1&amp;wind=0&amp;num=1&amp;site=14">
                     </iframe>
@@ -123,11 +123,11 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
                         <li><a href="news.php" class="w3ls-hover active">
                                 <?php
-                                if (!empty($news_nums)||!empty($arrstatic)) {
+                                if (!empty($news_nums) || !empty($arrstatic)) {
                                     ?>
                                     <?php
                                     echo '<' . 'span class="sp"' . '>';
-                                    echo count($news_nums)+count($arrstatic);
+                                    echo count($news_nums) + count($arrstatic);
                                     echo '</' . 'span' . '>';
                                     ?>
                                 <?php } else {
@@ -154,6 +154,8 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         }
     }
 </script>
+
+
 <!-- //banner -->
 <!--body start here-->
 <div class="mail" id="news_body">
@@ -268,7 +270,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         <td style="padding-left: 15px ;padding-top: 25px"><span><a
                                         href="news.php"><h4>
                                         <?php
-                                        if (!empty($news_nums)||!empty($arrstatic)) {
+                                        if (!empty($news_nums)) {
                                             echo '<span class="spa">';
                                             echo count($news_nums);
                                             echo '</span>';
@@ -330,8 +332,32 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                 </table>
             </div>
         </div>
+
+        <script>
+            function showDiv() {
+                var div1=document.getElementById("div1");
+                var div2=document.getElementById("div2");
+                if (div1.style.display=='block')
+                    div1.style.display='none';
+                else div1.style.display='block';
+                if (div2.style.display=='block')
+                    div2.style.display='none';
+                else div2.style.display='block';
+            }
+        </script>
+
         <div class="agileits_mail_grids">
-            <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff;border-radius:10px">
+            <div style="font-size: 0">
+                <button style="outline:none;border-radius:5px;background-color: #fdfdfe;border: none;width: 75px;height: 28px"
+                        onclick="showDiv();">
+                    <font size="4">进行中</font></button>
+                <button style="outline:none;border-radius:5px;background-color: #fdfdfe;border: none;width: 75px;height: 28px"
+                        onclick="showDiv();">
+                    <font size="4">已结束</font></button>
+            </div>
+
+            <div id="div1" class="col-md-7 agileits_mail_grid_left"
+                 style="display: block;background-color: #ffffff;border-radius:10px">
                 <table class="table" style="background-color: #ffffff">
                     <tbody>
                     <tr>
@@ -373,6 +399,51 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                     </tbody>
                 </table>
             </div>
+
+            <div id="div2" class="col-md-7 agileits_mail_grid_left"
+                 style="display: none;background-color: #ffffff;border-radius:10px">
+                <table class="table" style="background-color: #ffffff">
+                    <tbody>
+                    <tr>
+                        <th class="anchorjs-icon"><font size="4" color="black">赛事名称</font></th>
+                        <th class="anchorjs-icon"><font size="4" color="black">时间</font></th>
+                        <th class="anchorjs-icon"><font size="4" color="black">主办方</font></th>
+                    </tr>
+                    <?php
+                    $num_rec_per_page = 8;   // 每页显示数量
+                    if (isset($_GET["page"])) {
+                        $page = $_GET["page"];
+                    } else {
+                        $page = 1;
+                    };
+                    $start_from = ($page - 1) * $num_rec_per_page;
+                    $sql2 = "select distinct ac_id from team where
+                  team_id in(select team_id from team where cap_sno=$s_id union select team_id from team_mem
+                  where member_sno=$s_id) LIMIT $start_from, $num_rec_per_page ";
+                    $result2 = $conn->query($sql2);
+                    while ($rows2 = mysqli_fetch_array($result2)) {
+                        $sql1 = "select name,time,host from activity where state=0 and id=$rows2[0]";
+                        $result1 = $conn->query($sql1);
+                        $rows = mysqli_fetch_array($result1);
+                        ?>
+                        <tr>
+                            <td class="anchorjs-icon"><font size="4"><?php echo $rows[0] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4"><?php echo $rows[1] ?></font></td>
+                            <td class="type-info"><font size="4"><?php echo $rows[2] ?></font></td>
+                        </tr>
+                        <?php
+                    }
+                    $rs_result = $conn->query("select distinct ac_id from team where
+                  team_id in(select team_id from team where cap_sno=$s_id union select team_id from team_mem
+                  where member_sno=$s_id)"); //查询数据
+                    $total_records = mysqli_num_rows($rs_result);  // 统计总共的记录条数
+                    $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
+                    mysqli_free_result($result2);
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+
             <div class="clearfix"></div>
             <div align="center">
                 <tr align="center">
@@ -393,6 +464,8 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         </div>
     </div>
 </div>
+
+
 <!-- bootstrap-pop-up -->
 <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
     <div class="modal-dialog" role="document">

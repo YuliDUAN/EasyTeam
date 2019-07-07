@@ -92,9 +92,9 @@ include "MySqlConnect.php";
                 <div style="float: right;margin-right: 3%">
                     <form action="searchteamAction.php?id=<?php echo "$id" ?>" method="post">
                         <input type="text" name="team_name"
-                               style="width:180px;height:35px;border-radius: 15px;border:1px black solid;margin-right: 10px"
+                               style="width:210px;height:35px;border-radius: 15px;border:1px black solid;margin-right: 10px;outline:none"
                                placeholder="&nbsp;请输入队伍名称">
-                        <button style="background-color: transparent;border: transparent"><img src="images/serch.png" width=30px height=30px "/></button>
+                        <button style="background-color: transparent;border: transparent;outline:none"><img src="images/serch.png" width=30px height=30px "/></button>
                     </form>
                 </div>
             </div>
