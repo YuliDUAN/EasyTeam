@@ -31,7 +31,6 @@ if (!empty($_POST)&&!empty($sno) && !empty($psd)) {
             $result2 = $conn->query($sql2);
             $_SESSION['zhuangtai'] = $rand;
             //登陆成功跳转页面到首页
-//            header("location:homepage.php?zhuangtai=$rand");
             header("location:homepage.php");
         }
     }

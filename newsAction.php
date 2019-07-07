@@ -16,6 +16,5 @@ values('$send_id','$send_name','$titlenews','$txtnews','$receive_id','$send_time
     echo '<script>alert("发送内容不能为空！");/*window.location.href="apply.php"*/</script>';
     header("location:apply.php?id=".$a_id);
 }
-
 mysqli_free_result($result);
 ?>

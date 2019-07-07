@@ -316,24 +316,25 @@ $a_id = $row[6];
                             </tr>
                         </table>
                     </div>
-<!--                    <script>-->
-<!--                        function disfun() {-->
-<!--                            var dis = document.getElementById("dis");-->
-<!--                            if (dis.style.display == "none") {-->
-<!--                                dis.style.display ="block";-->
-<!--                            }else-->
-<!--                            {-->
-<!--                                dis.style.display = "none";-->
-<!--                            }-->
-<!--                        }-->
-<!--                    </script>-->
-<!--                    <div onclick="disfun()">隐藏</div>-->
-                    <div id="dis" style="padding-top: 10px;border-top:3px solid #ddd;">
+                    <script>
+                        function disfun(news) {
+                            var uid = news.getAttribute('data-type');
+                            var dis = document.getElementById(uid);
+                            if (dis.style.display == "none") {
+                                dis.style.display ="block";
+                            }else
+                            {
+                                dis.style.display = "none";
+                            }
+                        }
+                    </script>
+                    <div data-type="<?php echo $row['uid']?>" onclick="disfun(this)"><a>点击发送私信>>></a></div>
+                    <div id="<?php echo $row['uid']?>" style="padding-top: 10px;border-top:3px solid #ddd;display: none;">
                         <form action="newsAction.php?receive_id=<?php echo $row['uid'] ?>&send_id=<?php echo $_SESSION['sno'] ?>&send_name=<?php echo $_SESSION['username'] ?>"
                               enctype="multipart/form-data" method="post">
                             <th><input type="hidden" name="a_id" value="<?php echo $a_id ?>"/></th>
                             <div>
-                                <div style="padding-top: 10px">
+                                <div style="padding-top: 5px">
                                     <input type="text" name="titlenews" style="border-radius: 5px;width: 90%;height: 8%"
                                            placeholder="请输入私信标题">
                                 </div>
@@ -342,7 +343,7 @@ $a_id = $row[6];
                                               placeholder="请输入私信内容"></textarea>
                                 </div>
 
-                                <div style="padding-top: 10px">
+                                <div style="padding-top: 5px">
                                     <button type="submit"
                                             style="height: 10%;width: 40%;background-color:#2eaaf5;padding: 10px 10px;border-radius: 5px; border: 1px  #555 solid; color: #333"
                                             value="发送"><span><h5>发送</h5></span></button>

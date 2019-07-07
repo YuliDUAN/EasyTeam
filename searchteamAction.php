@@ -24,9 +24,9 @@ $team_name=$_GET['team_name'];
         while ($row = mysqli_fetch_array($result)) {
             ?>
             <tr>
-                <td><font size="4"><?php echo $row['team_name'] ?></font></td>
-                <td><font size="4"><?php echo $row['team_cap'] ?></font></td>
-                <td><font size="4"><?php echo $row['team_tel'] ?></font></td>
+                <td><font size="4" color="black"><?php echo $row['team_name'] ?></font></td>
+                <td><font size="4" color="black"><?php echo $row['team_cap'] ?></font></td>
+                <td><font size="4" color="black"><?php echo $row['team_tel'] ?></font></td>
                 <td><font size="4">6</font></td>
                 <td><font size="4" color="black">
                         <?php

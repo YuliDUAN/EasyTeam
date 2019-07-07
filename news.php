@@ -417,9 +417,41 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         </div>
         <div class="agileits_mail_grids">
             <div style="font-size: 0;margin-bottom: 10px">
-                <a href="#"><font size="3.5px">全部标记为已读 </font></a>
-                <a href="#"><font size="3.5px">| 清空所有消息</font></a>
+                <a href="#" onclick="readMessage()"><font size="3.5px">全部标记为已读 </font></a>
+                <a href="#" onclick="deleteMessage()"><font size="3.5px">| 清空所有消息</font></a>
             </div>
+            <?php echo "<script>var s_id = \"$s_id\"</script>";?>
+
+            <?php /*echo "<script>var sno = \"$s_id\"</script>";*/?>
+            <script src="js/jquery.js"></script>
+            <script>
+                function readMessage() {
+                    $.ajax({
+                        type:"POST",
+                        url:"readerMessageAction.php",
+                        data:{
+                            'sno':s_id
+                        },
+                        success:function (msg) {
+                            alert('提示:'+msg);window.location.href = "news.php";
+                        }
+                    });
+                }
+            </script>
+            <script>
+                function deleteMessage() {
+                    $.ajax({
+                        type:"POST",
+                        url:"deleteMessageAction.php",
+                        data:{
+                            'sno':s_id
+                        },
+                        success:function (msg) {
+                            alert('提示:'+msg);window.location.href = "news.php";
+                        }
+                    });
+                }
+            </script>
             <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff;border-radius:10px">
                 <table class="table">
                     <tbody>
