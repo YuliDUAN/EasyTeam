@@ -347,13 +347,13 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         </script>
 
         <div class="agileits_mail_grids">
-            <div style="font-size: 0">
+            <div style="font-size: 0"><!--取出两个button之间的间隙-->
                 <button style="outline:none;border-radius:5px;background-color: #fdfdfe;border: none;width: 75px;height: 28px"
                         onclick="showDiv();">
-                    <font size="4">进行中</font></button>
+                    <font size="4" color="#4a90e2">进行中</font></button>
                 <button style="outline:none;border-radius:5px;background-color: #fdfdfe;border: none;width: 75px;height: 28px"
                         onclick="showDiv();">
-                    <font size="4">已结束</font></button>
+                    <font size="4" color="#4a90e2">已结束</font></button>
             </div>
 
             <div id="div1" class="col-md-7 agileits_mail_grid_left"

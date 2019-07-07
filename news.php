@@ -416,6 +416,10 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
             </div>
         </div>
         <div class="agileits_mail_grids">
+            <div style="font-size: 0;margin-bottom: 10px">
+                <a href="#"><font size="3.5px">全部标记为已读 </font></a>
+                <a href="#"><font size="3.5px">| 清空所有消息</font></a>
+            </div>
             <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff;border-radius:10px">
                 <table class="table">
                     <tbody>
