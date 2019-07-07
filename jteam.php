@@ -151,35 +151,51 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                     <h3 class="hdg">加入队伍</h3>
                 </div>
                 <div style="float: right;margin-right: 3%">
-                    <form action="searchteamAction.php?id=<?php echo "$id" ?>" method="post">
-                        <input type="text" name="team_name"
-                               style="width:210px;height:35px;border-radius: 15px;border:1px black solid;margin-right: 10px;outline:none"
-                               placeholder="&nbsp;请输入队伍名称">
-                        <button style="background-color: transparent;border: transparent;outline:none"><img src="images/serch.png" width=30px height=30px "/></button>
-                    </form>
+<!--                    <form action="searchteamAction.php?id=--><?php //echo "$id" ?><!--" method="post">-->
+<!--                        <input type="text" name="team_name"-->
+<!--                               style="width:210px;height:35px;border-radius: 15px;border:1px black solid;margin-right: 10px;outline:none"-->
+<!--                               placeholder="&nbsp;请输入队伍名称">-->
+<!--                        <button style="background-color: transparent;border: transparent;outline:none"><img src="images/serch.png" width=30px height=30px "/></button>-->
+<!--                    </form>-->
+                    <input id="team_text" type="text" name="team_name"
+                           style="width:210px;height:35px;border-radius: 15px;border:1px black solid;margin-right: 10px;outline:none"
+                           placeholder="&nbsp;请输入队伍名称">
+                    <a href=#" onclick="show(this)" data-type="<?php echo $id?>" method="post" style="background-color: transparent;border: transparent"><img src="images/serch.png" width=30px height=30px "/></a>
                 </div>
+                <script src="js/jquery.js"></script>
+                <script>
+                    function show(news) {
+                        var t_name = document.getElementById('team_text').value;
+                        var t_id = news.getAttribute("data-type");
+                        $.get("searchteamAction.php", {'id': t_id,'team_name':t_name},
+                            function (data) {
+                                $('#main').html(data);
+                            });
+                    }
+                </script>
             </div>
-            <table class="table" style="background-color: #ffffff;border-radius: 10px">
-                <tbody>
-                <tr>
-                    <th><font size="4" color="black">队伍名称</font></th>
-                    <th><font size="4" color="black">队长</font></th>
-                    <th><font size="4" color="black">联系方式</font></th>
-                    <th><font size="4" color="black">队伍人数</font></th>
-                    <th><font size="4" color="black">操作</font></th>
-                </tr>
+            <mian id="main">
+                <table class="table" style="background-color: #ffffff;border-radius: 10px">
+                    <tbody>
+                    <tr>
+                        <th><font size="4" color="black">队伍名称</font></th>
+                        <th><font size="4" color="black">队长</font></th>
+                        <th><font size="4" color="black">联系方式</font></th>
+                        <th><font size="4" color="black">队伍人数</font></th>
+                        <th><font size="4" color="black">操作</font></th>
+                    </tr>
 
-                <?php
-                $result = $conn->query("SELECT team_id,team_name,team_cap,team_tel,cap_sno FROM activity,team where activity.id=team.ac_id and activity.id='$id'");
-                $aresult = array();
-                while ($rw = mysqli_fetch_array($result)) {
-                    array_push($aresult,$rw);
-                }
-                ?>
-
-                <?php
-                foreach ($aresult as $r) {
+                    <?php
+                    $result = $conn->query("SELECT team_id,team_name,team_cap,team_tel,cap_sno FROM activity,team where activity.id=team.ac_id and activity.id='$id'");
+                    $aresult = array();
+                    while ($rw = mysqli_fetch_array($result)) {
+                        array_push($aresult,$rw);
+                    }
                     ?>
+
+                    <?php
+                    foreach ($aresult as $r) {
+                        ?>
                         <tr>
                             <?php
                             $cap_sno = $r['cap_sno'];
@@ -202,7 +218,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                                     ?>
                                     <?php
                                     $cap_sno = $r['cap_sno'];
-                                    $sqlstatic = "select static_join from static where membersno = $sno and capsno = $cap_sno";
+                                    $sqlstatic = "select static_join from static where membersno = '$sno' and capsno = '$cap_sno' and tm_id = '$tm_id'";
                                     $resultstatic = $conn->query($sqlstatic);
                                     $rowstatic = mysqli_fetch_array($resultstatic);
                                     if ($rowstatic['static_join']==3){
@@ -218,13 +234,15 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                                     }
                                     else{?>
                                         <?php echo '<a style="color: #1D7AC7" href="jteamAction.php?member_sno='?><?php echo $member_sno?><?php echo '&cap_sno='?><?php echo $cap_sno?><?php echo '&id='?><?php echo $id?><?php echo '&tm_id='?><?php echo $tm_id?>
-                                    <?php echo '" '.'enctype="multipart/form-data" method="post">申请加入</a>'?>
+                                        <?php echo '" '.'enctype="multipart/form-data" method="post">申请加入</a>'?>
                                     <?php }?>
                                 </font></td>
                         </tr>
-                <?php } ?>
-                </tbody>
-            </table>
+                    <?php } ?>
+                    </tbody>
+                </table>
+            </mian>
+
         </div>
     </div>
 </div>
