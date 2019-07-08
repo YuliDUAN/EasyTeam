@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="css/admin.css">
     <script src="js/jquery.js"></script>
     <script src="js/pintuer.js"></script>
+    <script language="javascript">
+        function exit(news) {
+            var se = confirm("确定将该学生密码重置为111111吗？");
+            var sno = news.getAttribute('data-type');
+            if (se == true) {
+                location.href = "z_stu_resetpwd.php?sno="+sno;
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -66,9 +75,8 @@
                                     class="icon-trash-o"></span> 修改</a></div>
                 </td>
                 <td colspan="3">
-                    <div class="button-group"><a class="button border-red"
-                                                 href='z_stu_resetpwd.php?sno=<?php echo $row[0] ?>'><span
-                                    class="icon-trash-o"></span> 重置密码</a></div>
+                    <div class="button-group"><a class="button border-red"><span
+                                    class="icon-trash-o"></span><span data-type="<?php echo $row[0];?>" onclick="exit(this)"> 重置密码</span></a></div>
                 </td>
             </tr>
         <?php }

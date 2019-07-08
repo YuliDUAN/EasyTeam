@@ -287,7 +287,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
             <div style="height: 50px">
             </div>
 
-            <div class="bs-example">
+            <div class="bs-example" style="background-color: #ffffff;border-radius: 10px">
                 <table class="table">
                     <tbody>
                     <?php

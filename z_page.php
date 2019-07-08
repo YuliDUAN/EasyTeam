@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="css/admin.css">
     <script src="js/jquery.js"></script>
     <script src="js/pintuer.js"></script>
+    <script language="javascript">
+        function exit(news) {
+            var se = confirm("是否将该比赛状态修改为已结束？警告：此操作不可撤销！！！");
+            var id = news.getAttribute('data-type');
+            if (se == true) {
+                location.href = "z_state.php?id="+id;
+            }
+        }
+    </script>
 </head>
 <body>
 <form method="post" action="">
@@ -63,9 +72,8 @@
                     if ($row[3] == 1) {
                         ?>
                         <td>
-                            <div class="button-group"><a class="button border-red"
-                                                         href="z_state.php?id=<?php echo $row[0] ?>"><span
-                                            class="icon-trash-o"></span> 进行中</a></div>
+                            <div class="button-group"><a class="button border-red"><span
+                                            class="icon-trash-o"></span><span data-type="<?php echo $row[0];?>" onclick="exit(this)"> 进行中</span></a></div>
                         </td>
 
                     <?php } else { ?>

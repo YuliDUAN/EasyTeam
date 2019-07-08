@@ -8,12 +8,18 @@ if (!empty($_POST) && !empty($titlenews) && !empty($txtnews)) {
     $receive_id = $_GET['receive_id'];
     $send_name = $_GET['send_name'];
     $send_time = date("Y-m-d");
-    $sql = "insert into sendnews(send_id,send_name,titlenews,txtnews,receive_id,send_time)
+    if ($send_id == $receive_id){
+        echo '<script>alert("发送失败！");</script>';
+        header("location:apply.php?id=".$a_id);
+    }else{
+        $sql = "insert into sendnews(send_id,send_name,titlenews,txtnews,receive_id,send_time)
 values('$send_id','$send_name','$titlenews','$txtnews','$receive_id','$send_time')";
-    $conn->query($sql);
-    header("location:apply.php?id=".$a_id);
+        $conn->query($sql);
+        header("location:apply.php?id=".$a_id);
+    }
+
 } else {
-    echo '<script>alert("发送内容不能为空！");/*window.location.href="apply.php"*/</script>';
+    echo '<script>alert("发送内容不能为空！");</script>';
     header("location:apply.php?id=".$a_id);
 }
 mysqli_free_result($result);

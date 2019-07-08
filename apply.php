@@ -328,8 +328,8 @@ $a_id = $row[6];
                             }
                         }
                     </script>
-                    <div data-type="<?php echo $row['uid']?>" onclick="disfun(this)"><a>点击发送私信>>></a></div>
-                    <div id="<?php echo $row['uid']?>" style="padding-top: 10px;border-top:3px solid #ddd;display: none;">
+                    <div data-type="<?php echo $row['uid'].$i;?>" onclick="disfun(this)"><a>点击发送私信>>></a></div>
+                    <div id="<?php echo $row['uid'].$i;?>" style="padding-top: 10px;border-top:3px solid #ddd;display: none;">
                         <form action="newsAction.php?receive_id=<?php echo $row['uid'] ?>&send_id=<?php echo $_SESSION['sno'] ?>&send_name=<?php echo $_SESSION['username'] ?>"
                               enctype="multipart/form-data" method="post">
                             <th><input type="hidden" name="a_id" value="<?php echo $a_id ?>"/></th>

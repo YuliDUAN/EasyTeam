@@ -136,12 +136,12 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         </div>
         <div class="grid_3 grid_4 w3layouts">
             <div class="bs-example" style="background-color: #ffffff;border-radius: 10px">
-                <table class="table">
+                <table class="table" style="table-layout: fixed">
                     <tbody>
                     <tr>
-                        <th class="anchorjs-icon"><font size="4" color="black">赛事名称</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">时间</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">操作</font></th>
+                        <th class="anchorjs-icon" style="width: 50%"><font size="4" color="black">赛事名称</font></th>
+                        <th class="anchorjs-icon" style="width: 30%"><font size="4" color="black">时间</font></th>
+                        <th class="anchorjs-icon" style="width: 20%"><font size="4" color="black">操作</font></th>
                     </tr>
                     <?php
                     include "MySqlConnect.php";
@@ -157,8 +157,9 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                     while($row = mysqli_fetch_array($result))
                     { ?>
                         <tr>
-                            <td class="anchorjs-icon"><font size="4"><?php echo $row[1] ?></font></td>
-                            <td class="anchorjs-icon"><font size="4"><?php echo $row[6] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4"><p  style="font-weight: 500;color: #9d9d9d;font-size: 18px;width:100%;white-space: nowrap;display:inline-block;
+                                overflow:hidden;text-overflow: ellipsis"><?php echo $row[1] ?></p></font></td>
+                            <td class="anchorjs-icon"><font size="4"><p style="color: #9d9d9d;font-size: 18px"><?php echo $row[6] ?></p></font></td>
                             <td class="type-info"><a href="ranking.php?id=<?php echo $row[0] ?>"><font size="4">查看排名</font></a></td>
                         </tr>
                     <?php }

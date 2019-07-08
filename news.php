@@ -48,14 +48,16 @@ $row = mysqli_fetch_array($result);
             position: fixed;
             opacity: 1;
             z-index: 10000;
-            left: 25%;
+            left: 34%;
             right: 30%;
             top: 50%;
             margin-top: -250px;
             border-color: #b2b2b2;
-
+            border-radius: 10px;
             overflow: hidden;
             display: none;
+            background-color: #fff;
+
         }
 
         .content {
@@ -453,12 +455,12 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                 }
             </script>
             <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff;border-radius:10px">
-                <table class="table">
+                <table class="table" style="table-layout: fixed">
                     <tbody>
                     <tr>
                         <th width="15%">
                             <label style="color: black;font-size:18px">来源</label></th>
-                        <th width="40%">
+                        <th width="45%">
                             <label style="color: black;font-size:18px">标题</label></th>
                         <th width="20%">
                             <label style="color: black;font-size:18px">时间</label></th>
@@ -470,14 +472,18 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                     foreach ($receive_news as $v) {
                         ?>
                         <tr>
-                            <td>
-                                <p style="color: black;font-size: 14px"><?php echo $v['send_name']; ?></p></td>
-                            <td>
-                                <p style="color: black;font-size: 14px"><?php echo $v['titlenews']; ?></p></td>
-                            <td>
-                                <p style="color: black;font-size: 14px"><?php echo $v['send_time']; ?></p></td>
-                            <td>
-                                <p style="color: black;font-size: 14px">
+                            <td width="15%">
+                                <p style="color: black;font-size: 14px"><?php echo $v['send_name']; ?></p>
+                            </td>
+                            <td width="60%">
+                                <p style="font-weight: 500;color: black;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
+                                overflow:hidden;text-overflow: ellipsis"><font><?php echo $v['titlenews']; ?></font></p>
+                            </td>
+                            <td width="20%">
+                                <p style="color: black;font-size: 16px"><?php echo $v['send_time']; ?></p>
+                            </td>
+                            <td width="20%">
+                                <p style="color: black;font-size: 16px">
                                 <form action="">
                                     <!--                                    data-target="#myModal"-->
                                     <a href="#" onclick="show(this)" data-toggle="modal"
@@ -504,22 +510,24 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         </div>
     </div>
 </div>
-<div class="dialog" style="width: 50%;height:70%">
+<div class="dialog" style="width: 38%;height:69%">
     <div class="content" style="width: 100%;height: auto">
         <div align="center"><img src="images/new_image1.png" style="width: 50%;height: auto"></div>
 
         <div class="btn-close"><img src="images/new_image2.png"></div>
-        <div class="content-box" style="width: 90%;height: auto">
+        <div class="content-box" style="width: 90%;height:90%">
             <div style="padding-top: 15px;padding-bottom: 25px;width: 90%;height: auto"><font><h2
                             class="message-title"></h2></font></div>
             <div style="margin-left: 10px;margin-right: 10px;width:90%;height:300px;word-break: break-all;overflow-y:auto">
                 <h4 class="message-content"></h4></div>
         </div>
-        <div style="margin-right: 40px;margin-top: 20px">
-            <p class="message-sender"></p>
-        </div>
+     </div>
+    <div style="margin-right: 40px;margin-top: 20px;width: 95%;height: 100%">
+        <p class="message-sender"></p>
     </div>
 </div>
+
+
 <script src="./js/jquery-2.2.3.min.js"></script>
 <script src="./js/jquery.flexisel.js"></script>
 <script src="./js/jquery.flexslider.js"></script>

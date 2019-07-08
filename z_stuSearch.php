@@ -1,6 +1,6 @@
+
 <?php
 $key = $_POST["keywords"];
-
 ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
@@ -15,6 +15,15 @@ $key = $_POST["keywords"];
     <link rel="stylesheet" href="css/admin.css">
     <script src="js/jquery.js"></script>
     <script src="js/pintuer.js"></script>
+    <script language="javascript">
+        function exit(news) {
+            var se = confirm("确定将该学生密码重置为111111吗？");
+            var sno = news.getAttribute('data-type');
+            if (se == true) {
+                location.href = "z_stu_resetpwd.php?sno="+sno;
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="panel admin-panel">
@@ -40,7 +49,7 @@ $key = $_POST["keywords"];
 
         <?php
         include "z_mysql.php";
-        $result = $conn->query("SELECT sno,username,sex,phone,adpt,major,cls FROM ruser where sno='$key' or username='$key'");
+        $result = $conn->query("SELECT sno,username,sex,phone,adpt,major,cls FROM ruser where sno like '%$key%' or username like '%$key%'");
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result)) {
                 ?>
@@ -57,9 +66,8 @@ $key = $_POST["keywords"];
                                         class="icon-trash-o"></span> 修改</a></div>
                     </td>
                     <td colspan="3">
-                        <div class="button-group"><a class="button border-red"
-                                                     href='z_stu_resetpwd.php?sno=<?php echo $row[0] ?>'><span
-                                        class="icon-trash-o"></span> 重置密码</a></div>
+                        <div class="button-group"><a class="button border-red"><span
+                                        class="icon-trash-o"></span> <span data-type="<?php echo $row[0];?>" onclick="exit(this)"> 重置密码</span></a></div>
                     </td>
                 </tr>
             <?php }
@@ -67,7 +75,7 @@ $key = $_POST["keywords"];
             echo "<script>alert('无查询结果');location.href='z_student.php';</script>";
         }
         mysqli_free_result($result);
-        ?>
+      ?>
 
     </table>
 </div>

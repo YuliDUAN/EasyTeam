@@ -136,13 +136,13 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         </div>
     </div>
     <div class="grid_3 grid_4 w3layouts">
-        <div class="bs-example" style="padding-left:10%;padding-right: 10%">
-            <table class="table">
+        <div class="bs-example" style="margin-left:15%;margin-right: 15%;background-color: #ffffff;border-radius: 10px">
+            <table class="table" style="table-layout: fixed">
                 <tbody>
                 <tr>
-                    <th><font size="4" color="black">赛事名称</font></th>
-                    <th><font size="4" color="black">赛事截止时间</font></th>
-                    <th><font size="4" color="black"> 操作</font></th>
+                    <th style="width: 50%"><font size="4" color="black">赛事名称</font></th>
+                    <th style="width: 30%"><font size="4" color="black">赛事截止时间</font></th>
+                    <th style="width: 20%"><font size="4" color="black"> 操作</font></th>
                 </tr>
 
                 <?php
@@ -158,8 +158,9 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                 while ($row = mysqli_fetch_array($result)) {
                     ?>
                     <tr>
-                        <td><font size="4" color="black"><?php echo $row[1] ?></font></td>
-                        <td><font size="4" color="black"><?php echo $row[2] ?></font></td>
+                        <td><font size="4" color="black"><p style="font-weight: 500;color: black;font-size: 18px;width:100%;white-space: nowrap;display:inline-block;
+                                overflow:hidden;text-overflow: ellipsis"><?php echo $row[1] ?></p></font></td>
+                        <td><font size="4" color="black"><p style="font-size: 18px;color: black"><?php echo $row[2] ?></p></font></td>
                         <td><a href="apply.php?id=<?php echo $row[0] ?>"><font size="4">查看详情</font></a></td>
                     </tr>
                     <?php

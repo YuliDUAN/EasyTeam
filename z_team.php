@@ -14,6 +14,15 @@ $ac_id = $_GET["id"];
     <link rel="stylesheet" href="css/admin.css">
     <script src="js/jquery.js"></script>
     <script src="js/pintuer.js"></script>
+    <script language="javascript">
+        function exit(news) {
+            var se = confirm("确定删除该队伍吗？");
+            var id = news.getAttribute('data-type');
+            if (se == true) {
+                location.href = "z_teamDelete.php?id="+id;
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -80,9 +89,8 @@ $ac_id = $_GET["id"];
                                     class="icon-trash-o"></span> 获奖录入</a></div>
                 </td>
                 <td colspan="2">
-                    <div class="button-group"><a class="button border-red"
-                                                 href='z_teamDelete.php?id=<?php echo $row[0] ?>'><span
-                                    class="icon-trash-o"></span> 删除</a></div>
+                    <div class="button-group"><a class="button border-red"><span
+                                    class="icon-trash-o"></span> <span data-type="<?php echo $row[0];?>" onclick="exit(this)"> 删除 </span></a></div>
                 </td>
             </tr>
         <?php }

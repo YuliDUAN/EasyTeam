@@ -333,23 +333,18 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                 </table>
             </div>
         </div>
-        <?php
 
-        $name=$row['username'];
-        $res0 = $conn->query("select team_cap from team where team_cap='$name'");
-
-        ?>
         <div class="agileits_mail_grids">
             <div class="col-md-7 agileits_mail_grid_left" style="border-radius: 10px;background-color: #ffffff">
-                <table class="table">
+                <table class="table" style="table-layout: fixed">
                     <tbody>
                     <tr>
-                        <th class="anchorjs-icon"><font size="4" color="black">队伍名称</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">赛事名称</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">成绩</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">查看队伍</font></th>
+                        <th class="anchorjs-icon" style="width: 20%"><font size="4" color="black">队伍名称</font></th>
+                        <th class="anchorjs-icon" style="width: 30%"><font size="4" color="black">赛事名称</font></th>
+                        <th class="anchorjs-icon" style="width: 20%"><font size="4" color="black">成绩</font></th>
+                        <th class="anchorjs-icon" style="width: 15%"><font size="4" color="black">查看</font></th>
 
-                        <th class="anchorjs-icon"><font size="4" color="black">操作</font></th>
+                        <th class="anchorjs-icon" style="width: 15%"><font size="4" color="black">操作</font></th>
                     </tr>
                     <?php
                     $num_rec_per_page = 8;   // 每页显示数量
@@ -359,15 +354,17 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         $page = 1;
                     };
                     $start_from = ($page - 1) * $num_rec_per_page;
-                    $sql1 = "select team_name,activity.name,team_prize,activity.state,team_id from team,activity where team.ac_id=activity.id
+                    $sql1 = "select team_name,activity.name,team_prize,activity.state,team_id,otherprize from team,activity where team.ac_id=activity.id
                   and team_id in(select distinct team_id from team where cap_sno=$sno union select distinct team_id from team_mem
                   where member_sno=$sno) LIMIT $start_from, $num_rec_per_page";
                     $result1 = $conn->query($sql1);
                     while ($rows = mysqli_fetch_array($result1)) {
                         ?>
                         <tr>
-                            <td class="anchorjs-icon"><font size="4" color="black"><?php echo $rows[0] ?></font></td>
-                            <td class="anchorjs-icon"><font size="4" color="black"><?php echo $rows[1] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4" color="black"><p style="color: black;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
+                                overflow:hidden;text-overflow: ellipsis"><?php echo $rows[0] ?></p></font></td>
+                            <td class="anchorjs-icon"><font size="4" color="black"><p style="color: black;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
+                                overflow:hidden;text-overflow: ellipsis"><?php echo $rows[1] ?></p></font></td>
                             <td class="anchorjs-icon"><font size="4" color="black">
                                     <?php
                                     if ($rows[3] == 0) {
@@ -381,13 +378,35 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                                             echo "二等奖";
                                         else if ($rows[2] == 4)
                                             echo "一等奖";
+                                        else if ($rows[2] == 5)
+                                            echo $rows[5];
                                     } else {
                                         echo "";
                                     }
 
                                     ?></font></td>
-                           <td class="anchorjs-icon"><font size="4"><a  name="popBox" onclick="" href="team.php?idd=<?php /*echo $rows[4] */?>">详情</a></font></td>
-                            <?php if(mysqli_num_rows($res0)>0){?>
+                            <td class="anchorjs-icon"><font size="4"><a  name="popBox" data-type="<?php echo $rows[4];?>" onclick="details(this)" href="#">详情</a></font></td>
+                            <script>
+                                function details(news) {
+                                    var team_id = news.getAttribute('data-type');
+                                    alert(team_id);
+                                   /* $.ajax({
+                                        url:'team_men_infoAction.php',
+                                        type:'post',
+                                        data:{
+                                            'team_id':team_id
+                                        }
+                                        success:function (res) {
+                                            console.log(res);
+                                        }
+                                    })*/
+                                }
+                            </script>
+                            <?php
+                            $name=$row['username'];
+                            $td=$rows[4];
+                            $res0 = $conn->query("select team_cap from team where team_cap='$name' and team_id='$td'");
+                            if(mysqli_num_rows($res0)>0){?>
                                 <td class="anchorjs-icon"><font size="4"><a href="teamDelete.php?teamid=<?php echo $rows[4] ?>">解散</a></font></td>
                             <?php }else{?>
                                 <td class="anchorjs-icon"><font size="4"><a href="team_memDelete.php?teamid=<?php echo $rows[4] ?>">退出</a></font></td>

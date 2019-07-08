@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="css/admin.css">
     <script src="js/jquery.js"></script>
     <script src="js/pintuer.js"></script>
+    <script language="javascript">
+        function exit(news) {
+            var se = confirm("确定删除该宣讲会吗？");
+            var id = news.getAttribute('data-type');
+            if (se == true) {
+                location.href = "z_deletelecture.php?id="+id;
+            }
+        }
+    </script>
 
 </head>
 <body>
@@ -54,9 +63,8 @@
                         <td><font color="#00CC99"><?php echo $row[3] ?></font></td>
                         <td><?php echo $row[4] ?></td>
                         <td colspan="6">
-                            <div class="button-group"><a class="button border-main"
-                                                         href='z_deletelecture.php?id=<?php echo $row[0] ?>'><span
-                                            class="icon-edit"></span> 删除</a>
+                            <div class="button-group"><a class="button border-main"><span
+                                            class="icon-edit"></span><span data-type="<?php echo $row[0];?>" onclick="exit(this)"> 删除</span></a>
 
                     </tr>
                 <?php }

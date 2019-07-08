@@ -338,7 +338,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         </div>
         <div class="agileits_mail_grids">
             <div class="col-md-7 agileits_mail_grid_left" style="background-color: #ffffff;border-radius:10px">
-                <table class="table">
+                <table class="table" style="table-layout: fixed">
                     <tbody>
                     <tr>
                         <th width="15%"><font size="4" color="black">来源</font></th>
@@ -363,9 +363,12 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         $rowmber = mysqli_fetch_array($resultmber);
                         ?>
                         <tr>
-                            <td><font size="3"><?php echo $rowmber['username']?></font></td>
-                            <td><font size="3"><?php echo $rowmber['username'].'申请加入你的队伍'?></font></td>
-                            <td><font size="3"><?php echo $r['join_time']?></font></td>
+                            <td><font size="3"><p style="color: black;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
+                                overflow:hidden;text-overflow: ellipsis"><?php echo $rowmber['username']?></p></font></td>
+                            <td><font size="3"><p style="color: black;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
+                                overflow:hidden;text-overflow: ellipsis"><?php echo $rowmber['username'].'申请加入你的队伍'?></p></font></td>
+                            <td><font size="3"><p style="color: black;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
+                                overflow:hidden;text-overflow: ellipsis"><?php echo $r['join_time']?></p></font></td>
                             <td><font size="3">
                                     <?php
                                     if ($r['static_join']==1){

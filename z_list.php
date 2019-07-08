@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="css/admin.css">
     <script src="js/jquery.js"></script>
     <script src="js/pintuer.js"></script>
+    <script language="javascript">
+        function exit(news) {
+            var se = confirm("确定删除该文章吗？");
+            var id = news.getAttribute('data-type');
+            if (se == true) {
+                location.href = "z_articleDeleteAction.php?ar_id="+id;
+            }
+        }
+    </script>
 </head>
 <body>
 <form method="post" action="" id="listform">
@@ -56,9 +65,8 @@
                             <div class="button-group"><a class="button border-main"
                                                          href='z_article_modify.php?ar_id=<?php echo $row[0] ?>'><span
                                             class="icon-edit"></span> 修改</a>
-                                <a class="button border-red"
-                                   href='z_articleDeleteAction.php?ar_id=<?php echo $row[0] ?>'><span
-                                            class="icon-trash-o"></span> 删除</a></div>
+                                <a class="button border-red"><span
+                                            class="icon-trash-o"></span><span data-type="<?php echo $row[0];?>" onclick="exit(this)"> 删除</span></a></div>
                         </td>
                         <!--                    <a class="button border-red" onclick="del();" ><span class="icon-trash-o"></span> 删除</a> </div></td>-->
                     </tr>

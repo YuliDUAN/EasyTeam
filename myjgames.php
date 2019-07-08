@@ -334,36 +334,34 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         </div>
 
         <script>
-            function showDiv() {
-                var div1=document.getElementById("div1");
-                var div2=document.getElementById("div2");
-                if (div1.style.display=='block')
-                    div1.style.display='none';
-                else div1.style.display='block';
-                if (div2.style.display=='block')
-                    div2.style.display='none';
-                else div2.style.display='block';
+            function showDiv(str) {
+                var divs = [];
+                for(var i = 1;i <= 2;i++) {
+                    divs[i] = document.getElementById("div" + i);
+                    divs[i].style.display = "none";
+                }
+                document.getElementById(str).style.display = "block";
             }
         </script>
 
         <div class="agileits_mail_grids">
             <div style="font-size: 0"><!--取出两个button之间的间隙-->
                 <button style="outline:none;border-radius:5px;background-color: #fdfdfe;border: none;width: 75px;height: 28px"
-                        onclick="showDiv();">
+                        onclick="showDiv('div1');">
                     <font size="4" color="#4a90e2">进行中</font></button>
                 <button style="outline:none;border-radius:5px;background-color: #fdfdfe;border: none;width: 75px;height: 28px"
-                        onclick="showDiv();">
+                        onclick="showDiv('div2');">
                     <font size="4" color="#4a90e2">已结束</font></button>
             </div>
 
             <div id="div1" class="col-md-7 agileits_mail_grid_left"
                  style="display: block;background-color: #ffffff;border-radius:10px">
-                <table class="table" style="background-color: #ffffff">
+                <table class="table" style="background-color: #ffffff;table-layout: fixed">
                     <tbody>
                     <tr>
-                        <th class="anchorjs-icon"><font size="4" color="black">赛事名称</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">时间</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">主办方</font></th>
+                        <th class="anchorjs-icon" style="width: 50%"><font size="4" color="black">赛事名称</font></th>
+                        <th class="anchorjs-icon" style="width: 30%"><font size="4" color="black">时间</font></th>
+                        <th class="anchorjs-icon" style="width: 20%"><font size="4" color="black">主办方</font></th>
                     </tr>
                     <?php
                     $num_rec_per_page = 8;   // 每页显示数量
@@ -378,15 +376,19 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                   where member_sno=$s_id) LIMIT $start_from, $num_rec_per_page ";
                     $result2 = $conn->query($sql2);
                     while ($rows2 = mysqli_fetch_array($result2)) {
-                        $sql1 = "select name,time,host from activity where id=$rows2[0]";
+                        $sql1 = "select name,time,host from activity where id=$rows2[0] and state=1";
                         $result1 = $conn->query($sql1);
                         $rows = mysqli_fetch_array($result1);
                         ?>
+                        <?php if (!empty($rows)){?>
                         <tr>
-                            <td class="anchorjs-icon"><font size="4" color="black"><?php echo $rows[0] ?></font></td>
-                            <td class="anchorjs-icon"><font size="4" color="black"><?php echo $rows[1] ?></font></td>
-                            <td class="type-info"><font size="4" color="black"><?php echo $rows[2] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4" color="black"><p style="color: black;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
+                                overflow:hidden;text-overflow: ellipsis"><?php echo $rows[0] ?></p></font></td>
+                            <td class="anchorjs-icon"><font size="4" color="black"><p style="font-size: 16px"><?php echo $rows[1] ?></p></font></td>
+                            <td class="type-info"><font size="4" color="black"><p style="color: black;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
+                                overflow:hidden;text-overflow: ellipsis"><?php echo $rows[2] ?></p></font></td>
                         </tr>
+                            <?php }?>
                         <?php
                     }
                     $rs_result = $conn->query("select distinct ac_id from team where 
@@ -402,12 +404,12 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
 
             <div id="div2" class="col-md-7 agileits_mail_grid_left"
                  style="display: none;background-color: #ffffff;border-radius:10px">
-                <table class="table" style="background-color: #ffffff">
+                <table class="table" style="background-color: #ffffff;table-layout: fixed">
                     <tbody>
                     <tr>
-                        <th class="anchorjs-icon"><font size="4" color="black">赛事名称</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">时间</font></th>
-                        <th class="anchorjs-icon"><font size="4" color="black">主办方</font></th>
+                        <th class="anchorjs-icon" style="width: 50%"><font size="4" color="black">赛事名称</font></th>
+                        <th class="anchorjs-icon" style="width: 30%"><font size="4" color="black">时间</font></th>
+                        <th class="anchorjs-icon" style="width: 20%"><font size="4" color="black">主办方</font></th>
                     </tr>
                     <?php
                     $num_rec_per_page = 8;   // 每页显示数量
@@ -426,11 +428,15 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         $result1 = $conn->query($sql1);
                         $rows = mysqli_fetch_array($result1);
                         ?>
+                        <?php if (!empty($rows)){?>
                         <tr>
-                            <td class="anchorjs-icon"><font size="4"><?php echo $rows[0] ?></font></td>
-                            <td class="anchorjs-icon"><font size="4"><?php echo $rows[1] ?></font></td>
-                            <td class="type-info"><font size="4"><?php echo $rows[2] ?></font></td>
+                            <td class="anchorjs-icon"><font size="4"><p style="font-weight: 500;color: #9d9d9d;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
+                                overflow:hidden;text-overflow: ellipsis"><?php echo $rows[0] ?></p></font></td>
+                            <td class="anchorjs-icon"><font size="4"><p style="font-weight: 500;font-size: 16px;color: #9d9d9d"><?php echo $rows[1] ?></p></font></td>
+                            <td class="type-info"><font size="4"><p style="font-weight: 500;color: #9d9d9d;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
+                                overflow:hidden;text-overflow: ellipsis"><?php echo $rows[2] ?></p></font></td>
                         </tr>
+                            <?php }?>
                         <?php
                     }
                     $rs_result = $conn->query("select distinct ac_id from team where

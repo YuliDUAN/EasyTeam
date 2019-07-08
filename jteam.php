@@ -178,11 +178,11 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                 <table class="table" style="background-color: #ffffff;border-radius: 10px">
                     <tbody>
                     <tr>
-                        <th><font size="4" color="black">队伍名称</font></th>
-                        <th><font size="4" color="black">队长</font></th>
-                        <th><font size="4" color="black">联系方式</font></th>
-                        <th><font size="4" color="black">队伍人数</font></th>
-                        <th><font size="4" color="black">操作</font></th>
+                        <th style="width: 30%"><font size="4" color="black">队伍名称</font></th>
+                        <th style="width: 15%"><font size="4" color="black">队长</font></th>
+                        <th style="width: 20%"><font size="4" color="black">联系方式</font></th>
+                        <th style="width: 15%"><font size="4" color="black">队伍人数</font></th>
+                        <th style="width: 20%"><font size="4" color="black">操作</font></th>
                     </tr>
 
                     <?php
@@ -199,7 +199,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         <tr>
                             <?php
                             $cap_sno = $r['cap_sno'];
-                            $sqltm = "select count(team.team_id) n from team,team_mem where team.team_id=team_mem.team_id and cap_sno = $cap_sno";
+                            $sqltm = "select * from team,team_mem where team.team_id=team_mem.team_id and cap_sno = $cap_sno";
                             $resulttm = $conn->query($sqltm);
                             $ar = array();
                             while($rowtm = mysqli_fetch_array($resulttm)){
@@ -209,7 +209,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                             <td><font size="4" color="black"><?php echo $r[1] ?></font></td>
                             <td><font size="4" color="black"><?php echo $r[2] ?></font></td>
                             <td><font size="4" color="black"><?php echo $r[3] ?></font></td>
-                            <td><font size="4" color="black"><?php echo count($ar);?></font></td>
+                            <td><font size="4" color="black"><?php echo count($ar)+1;?></font></td>
                             <td><font size="4" color="black">
                                     <?php
                                     $member_sno = $row['sno'];
@@ -233,7 +233,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                                         echo '<input type="button" style="background-color: transparent;border: transparent"><a style="color: #66fa41">已加入</a></input>';
                                     }
                                     else{?>
-                                        <?php echo '<a style="color: #1D7AC7" href="jteamAction.php?member_sno='?><?php echo $member_sno?><?php echo '&cap_sno='?><?php echo $cap_sno?><?php echo '&id='?><?php echo $id?><?php echo '&tm_id='?><?php echo $tm_id?>
+                                        <?php echo '<a style="color: #1D7AC7" href="jteamAction.php?member_sno='?><?php echo $member_sno?><?php echo '&cap_sno='?><?php echo $cap_sno?><?php echo '&num='?><?php echo count($ar)+1;?><?php echo '&id='?><?php echo $id?><?php echo '&tm_id='?><?php echo $tm_id?>
                                         <?php echo '" '.'enctype="multipart/form-data" method="post">申请加入</a>'?>
                                     <?php }?>
                                 </font></td>
