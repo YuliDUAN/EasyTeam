@@ -137,7 +137,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                             </ul>
                         </li>
                         <li><a href="link.php" class="w3ls-hover active">报名入口</a></li>
-                        <li><a href="contact.php" class="w3ls-hover">
+                        <li><a href="news.php" class="w3ls-hover">
                                 <?php
                                 if (!empty($news_nums)||!empty($arrstatic)) {
                                     ?>
