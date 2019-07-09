@@ -37,6 +37,79 @@ $row = mysqli_fetch_array($result);
           rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
     <style>
+        .dialog {
+            position: fixed;
+            opacity: 1;
+            z-index: 10000;
+            left: 34%;
+            right: 30%;
+            top: 50%;
+            margin-top: -250px;
+            border-color: #b2b2b2;
+            border-radius: 10px;
+            overflow: hidden;
+            display: none;
+            background-color: #fff;
+
+        }
+
+        .content {
+            width: 550px;
+            height: 450px;
+            background-color: #fff;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .btn-close {
+            cursor: pointer;
+            position: absolute;
+            top: -11px;
+            right: 2%;
+            width: 5%;
+            height: 5%;
+            /* border-radius: 50%; */
+
+            padding-top: 34px;
+            /* padding-right: 34px; */
+            text-align: center;
+            line-height: 0px;
+            font-size: 32px;
+            color: black;
+        }
+
+        .title {
+            font-weight: normal;
+            margin-top: 60px;
+            font-size: 20px;
+            padding-left: 6px;
+        }
+
+        .content-box {
+            width: 80%;
+            height: 300px;
+            margin: 0 auto;
+            border: 2px solid #eeeeee;
+            border-radius: 10px;
+        }
+
+        .message-title {
+            text-align: center;
+            color: black;
+        }
+
+        .message-content {
+            width: 96%;
+            height: 80%;
+            margin: 0 auto;
+        }
+
+        .message-sender {
+            float: right;
+
+        }
+
+
         .gl_sm_list li .sp {
             position: absolute;
             /* left: 50%; */
@@ -333,7 +406,6 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                 </table>
             </div>
         </div>
-
         <div class="agileits_mail_grids">
             <div class="col-md-7 agileits_mail_grid_left" style="border-radius: 10px;background-color: #ffffff">
                 <table class="table" style="table-layout: fixed">
@@ -347,6 +419,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         <th class="anchorjs-icon" style="width: 15%"><font size="4" color="black">操作</font></th>
                     </tr>
                     <?php
+                    $sn=$row["sno"];
                     $num_rec_per_page = 8;   // 每页显示数量
                     if (isset($_GET["page"])) {
                         $page = $_GET["page"];
@@ -385,35 +458,60 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                                     }
 
                                     ?></font></td>
+                            <div class="dialog" style="width: 38%;height:69%">
+                                <div class="content" style="width: 100%;height: auto">
+                                    <div align="center"><img src="images/new_image1.png" style="width: 50%;height: auto"></div>
+
+                                    <div class="btn-close"><img src="images/new_image2.png"></div>
+                                    <div class="content-box" style="width: 90%;height:90%">
+                                        <div style="padding-top: 15px;padding-bottom: 25px;width: 90%;height: auto"><font><h2
+                                                        class="message-title"></h2></font></div>
+                                        <div style="margin-left: 10px;margin-right: 10px;width:90%;height:300px;word-break: break-all;overflow-y:auto">
+                                            <h4 class="message-content"></h4></div>
+                                    </div>
+                                </div>
+                                <div style="margin-right: 40px;margin-top: 20px;width: 95%;height: 100%">
+                                    <p class="message-sender"></p>
+                                </div>
+                            </div>
+
+
                             <td class="anchorjs-icon"><font size="4"><a  name="popBox" data-type="<?php echo $rows[4];?>" onclick="details(this)" href="#">详情</a></font></td>
                             <script>
                                 function details(news) {
                                     var team_id = news.getAttribute('data-type');
-                                    alert(team_id);
-                                   /* $.ajax({
-                                        url:'team_men_infoAction.php',
-                                        type:'post',
-                                        data:{
-                                            'team_id':team_id
-                                        }
-                                        success:function (res) {
-                                            console.log(res);
-                                        }
-                                    })*/
+                                    var dis = document.getElementById('main');
+
+                                    $.post("team_men_infoAction.php", {'team_id': team_id},
+                                        function (data) {
+                                            var mes = data.split(',');
+                                            console.log(mes);
+                                            $('.message-title').html(mes[0]);
+                                            $('.message-content').html(mes[1]);
+                                            $('.dialog').fadeIn(500);
+                                        });
+
                                 }
+
+                                //关闭弹框
+                                $('.btn-close').click(function () {
+                                    $('.dialog').fadeOut(300);
+                                    window.location.href = "team.php"
+                                });
                             </script>
                             <?php
                             $name=$row['username'];
                             $td=$rows[4];
                             $res0 = $conn->query("select team_cap from team where team_cap='$name' and team_id='$td'");
                             if(mysqli_num_rows($res0)>0){?>
-                                <td class="anchorjs-icon"><font size="4"><a href="teamDelete.php?teamid=<?php echo $rows[4] ?>">解散</a></font></td>
+                                <td class="anchorjs-icon"><font size="4"><a data-type="<?php echo $rows[4];?>" onclick="dissolve(this)" href="#">解散</a></font></td>
                             <?php }else{?>
-                                <td class="anchorjs-icon"><font size="4"><a href="team_memDelete.php?teamid=<?php echo $rows[4] ?>">退出</a></font></td>
+                                <td class="anchorjs-icon"><font size="4"><a href="team_memDelete.php?teamid=<?php echo $rows[4] ?>&?sno=$sn">退出</a></font></td>
                             <?php  }?>
                         </tr>
                         <?php
                     }
+                    /*teamid=<?php echo $rows[4] */
                     $rs_result = $conn->query("select team_name,activity.name,team_prize from team,activity where team.ac_id=activity.id
                   and team_id in(select distinct team_id from team where cap_sno=$sno union select distinct team_id from team_mem
                   where member_sno=$sno) "); //查询数据
@@ -423,6 +521,19 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                     </tbody>
                 </table>
             </div>
+            <script>
+                function dissolve(news) {
+                    var t_id = news.getAttribute('data-type');
+                    $.ajax({
+                        type: "POST",
+                        url: "teamDelete.php",
+                        data: {"teamid":t_id},
+                        success: function(msg){
+                            alert('队伍解散成功！消息已发送！');window.location.href='team.php';
+                        }
+                    });
+                }
+            </script>
             <div class="clearfix"></div>
             <div align="center">
                 <tr align="center">
