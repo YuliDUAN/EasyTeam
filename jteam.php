@@ -186,7 +186,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                     </tr>
 
                     <?php
-                    $num_rec_per_page = 6;   // 每页显示数量
+                    $num_rec_per_page = 8;   // 每页显示数量
                     if (isset($_GET["page"])) {
                         $page = $_GET["page"];
                     } else {
@@ -254,8 +254,6 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         <td colspan="5">
                             <div class=class="bs-example"><a href="jteam.php?page=1&id=<?php echo $id ?>">首页</a>
                                 <?php
-//                                if ($total_pages == 0)
-//                                    $total_pages = 1;
                                 for ($i = 1; $i <= $total_pages; $i++) { ?>
                                     <a href='jteam.php?page=<?php echo $i ?>&id=<?php echo $id ?>'><?php echo $i ?></a>
                                 <?php } ?>
