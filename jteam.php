@@ -85,7 +85,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         <nav class="navbar navbar-default">
             <div class="container">
                 <div style="margin-top: 15px;position:absolute;z-index:-3;margin-left: 70%">
-                    <iframe width="250px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
+                    <iframe width="210px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
                             allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&amp;
                         id=1&amp;icon=1&amp;wind=0&amp;num=1&amp;site=14">
                     </iframe>
@@ -186,7 +186,14 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                     </tr>
 
                     <?php
-                    $result = $conn->query("SELECT team_id,team_name,team_cap,team_tel,cap_sno FROM activity,team where activity.id=team.ac_id and activity.id='$id'");
+                    $num_rec_per_page = 6;   // 每页显示数量
+                    if (isset($_GET["page"])) {
+                        $page = $_GET["page"];
+                    } else {
+                        $page = 1;
+                    };
+                    $start_from = ($page - 1) * $num_rec_per_page;
+                    $result = $conn->query("SELECT team_id,team_name,team_cap,team_tel,cap_sno FROM activity,team where activity.id=team.ac_id and activity.id='$id' LIMIT $start_from, $num_rec_per_page");
                     $aresult = array();
                     while ($rw = mysqli_fetch_array($result)) {
                         array_push($aresult,$rw);
@@ -198,8 +205,8 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         ?>
                         <tr>
                             <?php
-                            $cap_sno = $r['cap_sno'];
-                            $sqltm = "select * from team,team_mem where team.team_id=team_mem.team_id and cap_sno = $cap_sno";
+                            $cap_sno = $r['team_id'];
+                            $sqltm = "select * from team,team_mem where team.team_id=team_mem.team_id and team_mem.team_id  = '$cap_sno'";
                             $resulttm = $conn->query($sqltm);
                             $ar = array();
                             while($rowtm = mysqli_fetch_array($resulttm)){
@@ -238,7 +245,25 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                                     <?php }?>
                                 </font></td>
                         </tr>
-                    <?php } ?>
+                    <?php }
+                    $rs_result = $conn->query("SELECT team_id,team_name,team_cap,team_tel,cap_sno FROM activity,team where activity.id=team.ac_id and activity.id='$id'"); //查询数据
+                    $total_records = mysqli_num_rows($rs_result);  // 统计总共的记录条数
+                    $total_pages = ceil($total_records / $num_rec_per_page);  // 计算总页数
+                    ?>
+                    <tr align="center">
+                        <td colspan="5">
+                            <div class=class="bs-example"><a href="jteam.php?page=1&id=<?php echo $id ?>">首页</a>
+                                <?php
+//                                if ($total_pages == 0)
+//                                    $total_pages = 1;
+                                for ($i = 1; $i <= $total_pages; $i++) { ?>
+                                    <a href='jteam.php?page=<?php echo $i ?>&id=<?php echo $id ?>'><?php echo $i ?></a>
+                                <?php } ?>
+
+                                <a href="jteam.php?page=<?php echo $total_pages ?>&id=<?php echo $id ?> ">末页</a>
+                            </div>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </mian>

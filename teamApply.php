@@ -94,7 +94,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         <nav class="navbar navbar-default">
             <div class="container">
                 <div style="margin-top: 15px;position:absolute;z-index:-3;margin-left: 70%">
-                    <iframe width="250px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
+                    <iframe width="210px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
                             allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&amp;
                         id=1&amp;icon=1&amp;wind=0&amp;num=1&amp;site=14">
                     </iframe>
@@ -347,7 +347,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         <th width="20%"><font size="4" color="black">处理</font></th>
                     </tr>
                     <?php
-                    $sqlst = "select * from static where capsno=$sno";
+                    $sqlst = "select * from static,team where team.team_id=static.tm_id and capsno='$sno'";
                     $resultst = $conn->query($sqlst);
                     $arr = array();
                     while ($rowst = mysqli_fetch_array($resultst)) {
@@ -366,7 +366,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                             <td><font size="3"><p style="color: black;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
                                 overflow:hidden;text-overflow: ellipsis"><?php echo $rowmber['username']?></p></font></td>
                             <td><font size="3"><p style="color: black;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
-                                overflow:hidden;text-overflow: ellipsis"><?php echo $rowmber['username'].'申请加入你的队伍'?></p></font></td>
+                                overflow:hidden;text-overflow: ellipsis"><?php echo '申请加入你的'.$r['team_name'].'队伍'?></p></font></td>
                             <td><font size="3"><p style="color: black;font-size: 16px;width:100%;white-space: nowrap;display:inline-block;
                                 overflow:hidden;text-overflow: ellipsis"><?php echo $r['join_time']?></p></font></td>
                             <td><font size="3">

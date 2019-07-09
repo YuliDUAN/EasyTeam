@@ -8,7 +8,7 @@ include "stateAction.php";
     <link rel="shortcut icon" href="images/logo.ico">
     <title>校园趣事</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="keywords" content=""/>
     <script type="application/x-javascript"> addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
@@ -78,7 +78,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         <nav class="navbar navbar-default">
             <div class="container">
                 <div style="margin-top: 15px;position:absolute;z-index:-3;margin-left: 70%">
-                    <iframe width="250px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
+                    <iframe width="210px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
                             allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&amp;
                         id=1&amp;icon=1&amp;wind=0&amp;num=1&amp;site=14">
                     </iframe>
@@ -304,7 +304,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         ?>
                         <tr>
                             <td class="anchorjs-icon"><font size="4" color="black"><b><?php echo $row[1]?></b></font>
-                                <br/><font color="#a9a9a9" size="3"><?php echo $row[3]?></font>
+                                <br/><font color="#a9a9a9" size="3"><?php echo mb_substr($row[4],0,50,"utf-8");echo "..."; ?></font>
                             </td>
                             <td class="anchorjs-icon"><font size="4"><?php echo $row[5]?></font></td>
                             <td class="anchorjs-icon"><font size="4"><a href="activity.php?ar_id=<?php  echo $row[0] ?>">详情了解&#x3e;&#x3e;</a></font></td>

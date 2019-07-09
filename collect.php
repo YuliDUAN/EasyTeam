@@ -92,7 +92,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         <nav class="navbar navbar-default">
             <div class="container">
                 <div style="margin-top: 15px;position:absolute;z-index:-3;margin-left: 70%">
-                    <iframe width="250px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
+                    <iframe width="210px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
                             allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&amp;
                         id=1&amp;icon=1&amp;wind=0&amp;num=1&amp;site=14">
                     </iframe>
@@ -123,11 +123,11 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                         <li><a href="link.php" class="btn w3ls-hover">报名入口</a></li>
                         <li><a href="news.php" class="w3ls-hover active">
                                 <?php
-                                if (!empty($news_nums)||!empty(count($arrstatic))) {
+                                if (!empty($news_nums) || !empty(count($arrstatic))) {
                                     ?>
                                     <?php
                                     echo '<' . 'span class="sp"' . '>';
-                                    echo count($news_nums)+count($arrstatic);
+                                    echo count($news_nums) + count($arrstatic);
                                     echo '</' . 'span' . '>';
                                     ?>
                                 <?php } else {
@@ -333,7 +333,14 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
 
 
         <?php
-        $csql = "select * from article,collect where ar_id=c_ar_id and c_sno = $sno ";
+        $num_rec_per_page = 3;   // 每页显示数量
+        if (isset($_GET["page"])) {
+            $page = $_GET["page"];
+        } else {
+            $page = 1;
+        };
+        $start_from = ($page - 1) * $num_rec_per_page;
+        $csql = "select * from article,collect where ar_id=c_ar_id and c_sno = $sno LIMIT $start_from, $num_rec_per_page ";
         $cresult = $conn->query($csql);
         $arr = array();
         while ($crow = mysqli_fetch_array($cresult)) {
@@ -386,6 +393,78 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                     </div>
                 </div>
             <?php } ?>
+
+            <?php
+            $asql = "select * from activity,collect where activity.id=collect.a_id and c_sno = '$sno' LIMIT $start_from, $num_rec_per_page";
+            $aresult = $conn->query($asql);
+            $ar = array();
+            while ($arow = mysqli_fetch_array($aresult)) {
+                array_push($ar, $arow);
+            }
+            ?>
+
+            <?php
+            echo "<script>var asno = \"$sno\"</script>";
+            ?>
+            <?php foreach ($ar as $item) { ?>
+                <?php $am_id = $item['a_id']; ?>
+                <div class="col-md-7 agileits_mail_grid_left"
+                     style="background-color: #ffffff;border-radius:10px;padding:10px;min-height: 100px;border:3px solid #ddd;margin-bottom: 5px">
+                    <script type="text/javascript">
+                        function cancelActivity(news) {
+                            var aid = news.getAttribute("data-type");
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('POST', 'collectCancelActivityAction.php', 'true')
+                            xhr.setRequestHeader('Content-TYpe', 'application/x-www-form-urlencoded');
+                            xhr.send(`c_id=${aid}&&c_sno=${asno}`);
+                            xhr.onreadystatechange = function () {
+                                if (this.readyState != 4) return;
+                                alert(this.responseText);
+                                window.location.href = 'collect.php';
+                            }
+                        }
+                    </script>
+                    <div style="width: 90%">
+                        <p class="anchorjs-icon" width="100%"><font size="4" color="black"
+                                                                    style="width:100%;white-space: nowrap;display:inline-block;overflow:hidden;text-overflow: ellipsis">
+                                <font color="#a9a9a9" size="5"><a
+                                            href="<?php echo $item['url']; ?>"><b><?php echo $item['name']; ?> </b></a>
+                                </font></font>
+                        </p>
+                    </div>
+                    <div>
+                        <table style="width: 90%">
+                            <td class="anchorjs-icon" width="22%"><font size="3"><?php echo $item['time']; ?></font>
+                            </td>
+                            <td class="anchorjs-icon" width="12%" align="right" style="float: right">
+                                <button type="submit"
+                                        style="height: 30px;width: 100px;border-radius: 5px; border: 1px  #555 solid; color: #333;background-color: transparent;border: transparent"
+                                        value="取消收藏" data-type="<?php echo $am_id ?>" onclick="cancelActivity(this)">
+                                    <span><b>取消收藏</b></span></button>
+                            </td>
+                        </table>
+                    </div>
+                </div>
+            <?php }
+//            $rs_result = $conn->query("select * from question where sno=$sno"); //查询数据
+            $total_record1 = mysqli_num_rows($cresult);
+            $total_record2 = mysqli_num_rows($aresult);  // 统计总共的记录条数
+            $total_pages = ceil(($total_record1+$total_record2) / $num_rec_per_page);  // 计算总页数
+            ?>
+            <tr align="center">
+                <td colspan="5">
+                    <div class=class="bs-example"><a href="collect.php?page=1">首页</a>
+                        <?php
+                        if ($total_pages == 0)
+                            $total_pages = 1;
+                        for ($i = 1; $i <= $total_pages; $i++) { ?>
+                            <a href='collect.php?page=<?php echo $i ?>'><?php echo $i ?></a>
+                        <?php } ?>
+
+                        <a href="collect.php?page=<?php echo $total_pages ?>">末页</a>
+                    </div>
+                </td>
+            </tr>
             <div class="clearfix"></div>
         </div>
     </div>

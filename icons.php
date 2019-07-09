@@ -73,7 +73,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
         <nav class="navbar navbar-default">
             <div class="container">
                 <div style="margin-top: 15px;position:absolute;z-index:-3;margin-left: 70%">
-                    <iframe width="250px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
+                    <iframe width="210px" scrolling="no" height="28" frameborder="0" sandbox="allow-scripts"
                             allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&amp;
                         id=1&amp;icon=1&amp;wind=0&amp;num=1&amp;site=14">
                     </iframe>
@@ -158,7 +158,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                 while ($row = mysqli_fetch_array($result)) {
                     ?>
                     <tr>
-                        <td><font size="4" color="black"><p style="font-weight: 500;color: black;font-size: 18px;width:100%;white-space: nowrap;display:inline-block;
+                        <td><font size="4" color="black"><p style="font-weight: 600;color: black;font-size: 18px;width:100%;white-space: nowrap;display:inline-block;
                                 overflow:hidden;text-overflow: ellipsis"><?php echo $row[1] ?></p></font></td>
                         <td><font size="4" color="black"><p style="font-size: 18px;color: black"><?php echo $row[2] ?></p></font></td>
                         <td><a href="apply.php?id=<?php echo $row[0] ?>"><font size="4">查看详情</font></a></td>

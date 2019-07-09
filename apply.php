@@ -192,10 +192,10 @@ $a_id = $row[6];
 
 ?>
 <div class="typo" style="background-color: #dddddd">
-    <div class="container" style="width:80%">
+    <div class="container" style="width:80%；">
         <h3 class="hdg"><?php echo $row[0] ?></h3>
         <div style="width:100%">
-            <div style="float: left;width:20%;height:430px;border-radius: 10px;background-color: #ffffff;padding: 20px">
+            <div style="float: left;width:20%;height:400px;border-radius: 10px;background-color: #ffffff;padding: 20px">
                 <div align="center">
                     <img src="images/t21.jpg" width="120px" height="120px" style="border-radius: 100px"/>
                 </div>
@@ -206,12 +206,12 @@ $a_id = $row[6];
                     <p align="center"><font size="4"><b><?php echo $row[8] ?></b></font></p>
                 </div>
             </div>
-            <div style="float: right;height: 430px;width:77%;border-radius: 10px;background-color:  #ffffff;padding-right:60px;padding-left:60px;padding-top:30px;word-break: break-all;overflow-y:auto">
-                <div>
+            <div style="float: right;height: 400px;width:77%;border-radius: 10px;background-color:  #ffffff;padding-right:15px;padding-left:15px;padding-top:1px;">
+                <div style="height:340px;word-break: break-all;overflow-y:auto;">
                     <table style="border-collapse:separate; border-spacing:0px 15px;">
                         <tr>
-                            <td style="width: 170px"><h4><b>比赛名称：</b></h4></td>
-                            <td><h4><b><?php echo $row[0] ?></b></h4></td>
+                            <td style="width: 170px"><h3><b>比赛名称：</b></h3></td>
+                            <td><h3><b><?php echo $row[0] ?></b></h3></td>
                         </tr>
                         <tr>
                             <td style="width: 150px"><h4><b>主题：</b></h4></td>
@@ -235,15 +235,15 @@ $a_id = $row[6];
                         </tr>
                     </table>
                 </div>
-                <div style="margin-top:12px;border-top:3px solid #ddd">
+                <div style="margin-top:2px;border-top:3px solid #ddd">
                     <table class="table" style="text-align: center">
                         <tbody>
                         <tr>
                             <td class="type-info"><a href="cteam.php?id=<?php echo $a_id ?>"><font
-                                                size="5">创建队伍</font></a>
+                                                size="4"><b>创建队伍</b></font></a>
                             </td>
                             <td class="type-info"><a href="jteam.php?id=<?php echo $a_id ?>"><font
-                                                size="5">加入队伍</font></a>
+                                                size="4"><b>加入队伍</b></font></a>
                             </td>
                         </tr>
                         </tbody>

@@ -160,6 +160,7 @@ echo "<script>var arid = \"$ar_id\"</script>";
         <div>
             <?php
             include("MySqlConnect.php");
+            $resultadd = $conn->query("update article set ar_clicknum=ar_clicknum+1 where ar_id=$ar_id");
             $result = $conn->query("SELECT * FROM article where ar_id=$ar_id");
             $row = mysqli_fetch_array($result);
             ?>
