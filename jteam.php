@@ -151,12 +151,6 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                     <h3 class="hdg">加入队伍</h3>
                 </div>
                 <div style="float: right;margin-right: 3%">
-<!--                    <form action="searchteamAction.php?id=--><?php //echo "$id" ?><!--" method="post">-->
-<!--                        <input type="text" name="team_name"-->
-<!--                               style="width:210px;height:35px;border-radius: 15px;border:1px black solid;margin-right: 10px;outline:none"-->
-<!--                               placeholder="&nbsp;请输入队伍名称">-->
-<!--                        <button style="background-color: transparent;border: transparent;outline:none"><img src="images/serch.png" width=30px height=30px "/></button>-->
-<!--                    </form>-->
                     <input id="team_text" type="text" name="team_name"
                            style="width:210px;height:35px;border-radius: 15px;border:1px black solid;margin-right: 10px;outline:none"
                            placeholder="&nbsp;请输入队伍名称">

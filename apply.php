@@ -192,7 +192,7 @@ $a_id = $row[6];
 
 ?>
 <div class="typo" style="background-color: #dddddd">
-    <div class="container" style="width:80%；">
+    <div class="container" style="width:80%">
         <h3 class="hdg"><?php echo $row[0] ?></h3>
         <div style="width:100%">
             <div style="float: left;width:20%;height:400px;border-radius: 10px;background-color: #ffffff;padding: 20px">
