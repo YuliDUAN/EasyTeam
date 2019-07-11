@@ -524,14 +524,18 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
             <script>
                 function dissolve(news) {
                     var t_id = news.getAttribute('data-type');
-                    $.ajax({
-                        type: "POST",
-                        url: "teamDelete.php",
-                        data: {"teamid":t_id},
-                        success: function(msg){
-                            alert('队伍解散成功！消息已发送！');window.location.href='team.php';
-                        }
-                    });
+                    var se=confirm("是否解散队伍？");
+                    if(se==true) {
+                        $.ajax({
+                            type: "POST",
+                            url: "teamDelete.php",
+                            data: {"teamid": t_id},
+                            success: function (msg) {
+                                alert('队伍解散成功！消息已发送！');
+                                window.location.href = 'team.php';
+                            }
+                        });
+                    }
                 }
             </script>
             <div class="clearfix"></div>
