@@ -490,9 +490,7 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                                             $('.message-content').html(mes[1]);
                                             $('.dialog').fadeIn(500);
                                         });
-
                                 }
-
                                 //关闭弹框
                                 $('.btn-close').click(function () {
                                     $('.dialog').fadeOut(300);
@@ -503,11 +501,21 @@ while ($rowstatic = mysqli_fetch_array($resultstatic)) {
                             $name=$row['username'];
                             $td=$rows[4];
                             $res0 = $conn->query("select team_cap from team where team_cap='$name' and team_id='$td'");
-                            if(mysqli_num_rows($res0)>0){?>
-                                <td class="anchorjs-icon"><font size="4"><a data-type="<?php echo $rows[4];?>" onclick="dissolve(this)" href="#">解散</a></font></td>
-                            <?php }else{?>
-                                <td class="anchorjs-icon"><font size="4"><a href="team_memDelete.php?teamid=<?php echo $rows[4] ?>&?sno=$sn">退出</a></font></td>
-                            <?php  }?>
+                            if($rows[3]==0){
+                                if(mysqli_num_rows($res0)>0){?>
+                                    <td class="anchorjs-icon"><font size="4"><a data-type="<?php echo $rows[4];?>" onclick="dissolve(this)" href="#">解散</a></font></td>
+                                <?php }else{?>
+                                    <td class="anchorjs-icon"><font size="4"><a>已结束</a></font></td>
+                                <?php  }
+                            }else{
+                                if(mysqli_num_rows($res0)>0){?>
+                                    <td class="anchorjs-icon"><font size="4"><a data-type="<?php echo $rows[4];?>" onclick="dissolve(this)" href="#">解散</a></font></td>
+                                <?php }else{?>
+                                    <td class="anchorjs-icon"><font size="4"><a href="team_memDelete.php?teamid=<?php echo $rows[4] ?>&?sno=$sn">退出</a></font></td>
+                                <?php  }
+
+                            }?>
+
                         </tr>
                         <?php
                     }

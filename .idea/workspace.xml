@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4c6ee583-e762-461f-bf34-3cb08e660540" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHPMailer/examples/contactform.phps" beforeDir="false" afterPath="$PROJECT_DIR$/PHPMailer/examples/contactform.phps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHPMailer/examples/mailing_list.phps" beforeDir="false" afterPath="$PROJECT_DIR$/PHPMailer/examples/mailing_list.phps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHPMailer/examples/pop_before_smtp.phps" beforeDir="false" afterPath="$PROJECT_DIR$/PHPMailer/examples/pop_before_smtp.phps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHPMailer/examples/smtp.phps" beforeDir="false" afterPath="$PROJECT_DIR$/PHPMailer/examples/smtp.phps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHPMailer/examples/smtp_no_auth.phps" beforeDir="false" afterPath="$PROJECT_DIR$/PHPMailer/examples/smtp_no_auth.phps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modernizr/modernizr-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modernizr/modernizr-custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emailCodeAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/emailCodeAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/team.php" beforeDir="false" afterPath="$PROJECT_DIR$/team.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,20 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/team.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="525" column="59" selection-start-line="525" selection-start-column="59" selection-end-line="525" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/question.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-95">
-              <caret line="391" column="50" selection-start-line="391" selection-start-column="50" selection-end-line="391" selection-end-column="50" />
+            <state relative-caret-position="140">
+              <caret line="517" lean-forward="true" selection-start-line="517" selection-end-line="517" />
             </state>
           </provider>
         </entry>
@@ -47,39 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/html5shiv/html5shiv.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-912" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/modernizr/modernizr-custom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PHPMailer/class.phpmaileroauthgoogle.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-              <folding>
-                <element signature="e#6#837#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="114">
+              <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -87,27 +41,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/retrieve.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+            <state relative-caret-position="798">
+              <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/emailAction.php">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="35" column="29" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="29" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/emailCodeAction.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/link.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3078">
-              <caret line="162" column="6" selection-start-line="88" selection-end-line="162" selection-end-column="6" />
+            <state relative-caret-position="209">
+              <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+              <folding>
+                <element signature="e#496#1309#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,9 +79,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>home</find>
-      <find>果然新鲜</find>
-      <find>contact</find>
       <find>contact.html</find>
       <find>news.html</find>
       <find>选择文件</find>
@@ -151,8 +104,11 @@
       <find>news.php</find>
       <find>未上传头像</find>
       <find>PHPMailer</find>
-      <find>PHPMailer</find>
       <find>$mail-&gt;Port</find>
+      <find>properties.put</find>
+      <find>$Port</find>
+      <find>fsockopen</find>
+      <find>25</find>
     </findStrings>
     <dirStrings>
       <dir>PHPMailer</dir>
@@ -165,9 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/searchteamAction.php" />
-        <option value="$PROJECT_DIR$/loginAction.php" />
-        <option value="$PROJECT_DIR$/applyAction.php" />
         <option value="$PROJECT_DIR$/jteamAction.php" />
         <option value="$PROJECT_DIR$/z_teamSearch.php" />
         <option value="$PROJECT_DIR$/z_team.php" />
@@ -208,14 +161,17 @@
         <option value="$PROJECT_DIR$/apply.php" />
         <option value="$PROJECT_DIR$/contactImageAction.php" />
         <option value="$PROJECT_DIR$/pay.html" />
-        <option value="$PROJECT_DIR$/team.php" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/lib/modernizr/modernizr-custom.js" />
         <option value="$PROJECT_DIR$/PHPMailer/examples/contactform.phps" />
-        <option value="$PROJECT_DIR$/PHPMailer/examples/pop_before_smtp.phps" />
         <option value="$PROJECT_DIR$/PHPMailer/examples/smtp.phps" />
+        <option value="$PROJECT_DIR$/PHPMailer/examples/pop_before_smtp.phps" />
         <option value="$PROJECT_DIR$/PHPMailer/examples/smtp_no_auth.phps" />
         <option value="$PROJECT_DIR$/PHPMailer/examples/mailing_list.phps" />
+        <option value="$PROJECT_DIR$/PHPMailer/class.phpmailer.php" />
+        <option value="$PROJECT_DIR$/PHPMailer/class.smtp.php" />
+        <option value="$PROJECT_DIR$/emailCodeAction.php" />
+        <option value="$PROJECT_DIR$/team.php" />
       </list>
     </option>
   </component>
@@ -228,10 +184,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1492" />
-    <option name="y" value="146" />
-    <option name="width" value="1551" />
-    <option name="height" value="839" />
+    <option name="x" value="-2044" />
+    <option name="y" value="257" />
+    <option name="width" value="1940" />
+    <option name="height" value="882" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -248,7 +204,8 @@
             </path>
             <path>
               <item name="EasyTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="EasyTeam" type="462c0819:PsiDirectoryNode" />
+              <item name="PHPMailer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -380,14 +337,11 @@
       <workItem from="1562724705928" duration="1987000" />
       <workItem from="1562745778654" duration="93000" />
       <workItem from="1562746373457" duration="4421000" />
-      <workItem from="1562809545888" duration="3347000" />
-    </task>
-    <task id="LOCAL-00030" summary="加入消息功能">
-      <created>1561468068211</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1561468068211</updated>
+      <workItem from="1562809545888" duration="5841000" />
+      <workItem from="1562818940360" duration="989000" />
+      <workItem from="1562827254024" duration="110000" />
+      <workItem from="1562850215677" duration="110000" />
+      <workItem from="1562850909221" duration="2472000" />
     </task>
     <task id="LOCAL-00031" summary="加入修改个人信息">
       <created>1561515216549</created>
@@ -725,7 +679,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562745836614</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="解散发送消息">
+      <created>1562813688818</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1562813688819</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -761,7 +722,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="441277000" />
+    <option name="totallyTimeSpent" value="447452000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -774,8 +735,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1448" y="100" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18794835" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19942611" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -837,7 +799,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="论坛界面" />
     <MESSAGE value="获奖模块" />
     <MESSAGE value="申请加入队伍功能" />
     <MESSAGE value="前端完善" />
@@ -862,19 +823,14 @@
     <MESSAGE value="我的队伍，详情查看" />
     <MESSAGE value="修改分页问题" />
     <MESSAGE value="修改头像上传问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改头像上传问题" />
+    <MESSAGE value="解散发送消息" />
+    <option name="LAST_COMMIT_MESSAGE" value="解散发送消息" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/images/bullets.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/434151531.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/416791037.jpeg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -935,13 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teamDelete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cteam.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -967,13 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contact_other.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1086,13 +1028,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/collect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8930">
-          <caret line="470" column="6" selection-start-line="334" selection-start-column="1" selection-end-line="470" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/icons.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2394">
@@ -1121,55 +1056,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/retrieve.php">
+    <entry file="file://$PROJECT_DIR$/teamDelete.php" />
+    <entry file="file://$PROJECT_DIR$/PHPMailer/class.phpmailer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+        <state relative-caret-position="4161">
+          <caret line="235" column="21" selection-start-line="235" selection-start-column="19" selection-end-line="235" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/emailAction.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/emailCodeAction.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/team.php">
+    <entry file="file://$PROJECT_DIR$/PHPMailer/class.smtp.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="525" column="59" selection-start-line="525" selection-start-column="59" selection-end-line="525" selection-end-column="59" />
+        <state relative-caret-position="22743">
+          <caret line="1213" column="61" selection-start-line="1213" selection-start-column="61" selection-end-line="1213" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/contact_other.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+        <state relative-caret-position="342">
+          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/html5shiv/html5shiv.js">
+    <entry file="file://$PROJECT_DIR$/collect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-912" />
+        <state relative-caret-position="198">
+          <caret line="445" column="26" lean-forward="true" selection-start-line="445" selection-start-column="26" selection-end-line="445" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHPMailer/class.phpmaileroauthgoogle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+          <folding>
+            <element signature="e#6#837#0#PHP" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/modernizr/modernizr-custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state relative-caret-position="25">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHPMailer/class.phpmaileroauthgoogle.php">
+    <entry file="file://$PROJECT_DIR$/lib/html5shiv/html5shiv.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="114">
+          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/emailAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="35" column="29" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/retrieve.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/emailCodeAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
           <folding>
-            <element signature="e#6#837#0#PHP" expanded="true" />
+            <element signature="e#496#1309#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="517" lean-forward="true" selection-start-line="517" selection-end-line="517" />
         </state>
       </provider>
     </entry>
